@@ -4,6 +4,7 @@
     </IfModule>
 
     RewriteEngine On
+    RewriteBase /Pokli/
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
