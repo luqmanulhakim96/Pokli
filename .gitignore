@@ -19,3 +19,4 @@ composer.lock
 yarn.lock
 package-lock.json
 yarn.lock
+.env
