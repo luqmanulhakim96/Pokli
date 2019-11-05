@@ -10,6 +10,8 @@
 /.idea
 /.vscode
 /.vagrant
+/.env
+public/.htaccess
 Homestead.json
 Homestead.yaml
 npm-debug.log
@@ -22,4 +24,4 @@ yarn.lock
 .env
 vendor.zip
 .DS_Store
-/public/.htaccess
+public/.htaccess
