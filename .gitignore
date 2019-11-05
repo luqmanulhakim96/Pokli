@@ -1,10 +1,10 @@
 /node_modules
-/public/hot
-/public/storage
-/public/css
-/public/js
-/public/vendor
-/public/themes
+# /public/hot
+# /public/storage
+# /public/css
+# /public/js
+# /public/vendor
+# /public/themes
 /storage/*.key
 /vendor
 /.idea
@@ -21,3 +21,5 @@ package-lock.json
 yarn.lock
 .env
 vendor.zip
+.DS_Store
+/public/.htaccess
