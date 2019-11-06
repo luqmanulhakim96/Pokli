@@ -250,8 +250,8 @@ return [
         Webkul\CMS\Providers\CMSServiceProvider::class
 
 
-        //selfmade packages
-        packageArtanis\Test\Providers\TestServiceProvider::class,
+        // //selfmade packages
+        // packageArtanis\Test\Providers\TestServiceProvider::class,
     ],
 
     /*
