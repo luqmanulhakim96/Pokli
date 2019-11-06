@@ -251,7 +251,7 @@ return [
 
 
         //selfmade packages
-        packageaArtanis\Test\Providers\TestServiceProvider::class,
+        packageArtanis\Test\Providers\TestServiceProvider::class,
     ],
 
     /*
