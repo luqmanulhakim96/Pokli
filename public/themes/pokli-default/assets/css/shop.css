@@ -3803,10 +3803,6 @@ a:active, a:focus, a:hover, a:link, a:visited {
     background: red;
     color: #fff;
 }
-/* .accordian-up-icon {
-    background-image: url(../images/Accordion-Arrow-Up.svg);
-    width: 24px;
-    height: 24px;
-    fill: red;
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-} */
+.accordian-up-icon, .accordian-down-icon {
+    filter: invert(12%) sepia(98%) saturate(7498%) hue-rotate(4deg) brightness(104%) contrast(111%);
+}
