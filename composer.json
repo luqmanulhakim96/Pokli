@@ -94,8 +94,7 @@
     },
     "autoload-dev": {
       "psr-4": {
-        "Tests\\": "tests/",
-        "Artanis\\HelloWorld\\":"packages/Artanis/HelloWorld/src"
+        "Tests\\": "tests/"
       }
     },
     "extra": {
