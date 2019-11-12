@@ -13,7 +13,7 @@
         <div id="checkout" class="checkout-process">
             <div class="col-main">
                 <ul class="checkout-steps">
-                    <li class="active" :class="[completed_step >= 0 ? 'active' : '', completed_step > 0 ? 'completed' : '']" @click="navigateToStep(1)">
+                    <li class="active" :class="[completed_step == 0 ? 'active' : '', completed_step > 0 ? 'completed' : '']" @click="navigateToStep(1)">
                         <div class="decorator address-info"></div>
                         <span>{{ __('shop::app.checkout.onepage.information') }}</span>
                     </li>
@@ -255,10 +255,11 @@
                                 shippingHtml = Vue.compile(response.data.html)
                             else
                                 paymentHtml = Vue.compile(response.data.html)
-
-                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] + 1;
+                            
+                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] - 1;
                             this_this.current_step = this_this.step_numbers[response.data.jump_to_section];
 
+                            shippingMethods = response.data.shippingMethods;
                             this_this.getOrderSummary();
                         })
                         .catch(function (error) {
@@ -278,9 +279,10 @@
                             this_this.disable_button = false;
 
                             paymentHtml = Vue.compile(response.data.html)
-                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] + 1;
+                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] - 1;
                             this_this.current_step = this_this.step_numbers[response.data.jump_to_section];
 
+                            paymentMethods = response.data.paymentMethods;
                             this_this.getOrderSummary();
                         })
                         .catch(function (error) {
@@ -300,7 +302,7 @@
                         this_this.disable_button = false;
 
                         reviewHtml = Vue.compile(response.data.html)
-                        this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] + 1;
+                        this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] - 1;
                         this_this.current_step = this_this.step_numbers[response.data.jump_to_section];
 
                         this_this.getOrderSummary();

@@ -79,7 +79,14 @@
                         <i class="icon account-icon"></i>
 
                         <span class="name">{{ __('shop::app.header.account') }}</span>
-
+                        {{-- @auth('customer')
+                            <span class="name">{{ auth()->guard('customer')->user()->first_name }}</span>
+                        @endauth
+                        
+                        @guest
+                            <span class="name">{{ __('shop::app.header.account') }}</span>
+                        @endguest --}}
+                        
                         <i class="icon arrow-down-icon"></i>
                     </span>
 

@@ -177,6 +177,12 @@ return [
                     'page-title' => 'Customer - Profile',
                     'title' => 'Profile',
                     'edit' => 'Edit',
+                    'gap' => [
+                        'title' => 'GAP',
+                    ],
+                    'sap' => [
+                        'title' => 'SAP',
+                    ],
                 ],
 
                 'edit-success' => 'Profile updated successfully.',

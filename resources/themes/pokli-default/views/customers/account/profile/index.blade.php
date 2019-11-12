@@ -67,7 +67,7 @@
             </table>
         </div>
 
-        <accordian :title="'{{ __('shop::app.customer.account.profile.index.title') }}'" :active="true">
+        {{-- <accordian :title="'{{ __('shop::app.customer.account.profile.index.title') }}'" :active="true">
             <div slot="body">
                 <div class="page-action">
                     <form method="POST" action="{{ route('customer.profile.destroy') }}">
@@ -75,6 +75,24 @@
                         <input type="submit" class="btn btn-lg btn-primary mt-10" value="Delete">
                     </form>
                 </div>
+
+            </div>
+        </accordian> --}}
+        <accordian :title="'{{ __('shop::app.customer.account.profile.index.gap.title') }}'" :active="true">
+            <div slot="body">
+                    <div class="account-items-list">
+                        <div class="account-table-content">
+        
+                            {{-- {!! app('Webkul\Shop\DataGrids\OrderDataGrid')->render() !!} --}}
+                            
+                        </div>
+                    </div>
+            </div>
+        </accordian>
+
+        <accordian :title="'{{ __('shop::app.customer.account.profile.index.sap.title') }}'" :active="true">
+            <div slot="body">
+                
 
             </div>
         </accordian>
