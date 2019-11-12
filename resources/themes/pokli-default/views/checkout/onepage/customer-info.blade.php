@@ -1,3 +1,4 @@
+@auth('customer')
 <form data-vv-scope="address-form">
 
     <div class="form-container" v-if="!this.new_billing_address">
@@ -454,3 +455,4 @@
     @endif
 
 </form>
+@endauth

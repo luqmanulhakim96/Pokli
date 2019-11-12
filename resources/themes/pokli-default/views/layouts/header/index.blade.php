@@ -78,14 +78,14 @@
                     <span class="dropdown-toggle">
                         <i class="icon account-icon"></i>
 
-                        <span class="name">{{ __('shop::app.header.account') }}</span>
-                        {{-- @auth('customer')
+                        {{-- <span class="name">{{ __('shop::app.header.account') }}</span> --}}
+                        @auth('customer')
                             <span class="name">{{ auth()->guard('customer')->user()->first_name }}</span>
                         @endauth
                         
-                        @guest
-                            <span class="name">{{ __('shop::app.header.account') }}</span>
-                        @endguest --}}
+                        @guest('customer')
+                            <span class="name">{{ __('shop::app.header.sign-in-sign-up') }}</span>
+                        @endguest
                         
                         <i class="icon arrow-down-icon"></i>
                     </span>
@@ -119,11 +119,11 @@
                     @auth('customer')
                         <ul class="dropdown-list account customer">
                             <li>
-                                <div>
+                                {{-- <div>
                                     <label style="color: #9e9e9e; font-weight: 700; text-transform: uppercase; font-size: 15px;">
                                         {{ auth()->guard('customer')->user()->first_name }}
                                     </label>
-                                </div>
+                                </div> --}}
 
                                 <ul>
                                     <li>

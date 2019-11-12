@@ -38,7 +38,8 @@ return [
         'wishlist' => 'Wishlist',
         'cart' => 'Cart',
         'logout' => 'Logout',
-        'search-text' => 'Search products here'
+        'search-text' => 'Search products here',
+        'sign-in-sign-up' => 'Sign In'
     ],
 
     'minicart' => [
@@ -135,6 +136,10 @@ return [
         'login-text' => [
             'no_account' => 'Do not have account',
             'title' => 'Sign Up',
+        ],
+
+        'please-login' => [
+            'login' => 'Please login before checkout'
         ],
 
         'login-form' => [
