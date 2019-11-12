@@ -191,7 +191,7 @@ INSERT INTO `goldrate` ( `currency_code`, `unit_type`,  `gold_rate`, `24karat_ra
 */
 
 
-$gmt_datetime_gold_updated_corrected = date("Y-m-d H:i:s", strtotime($gmt_datetime_gold_updated));
+$gmt_datetime_gold_updated_corrected = date("Y/m/d H:i:s", strtotime($gmt_datetime_gold_updated));
 $gmt_datetime_currency_updated_corrected = date("Y-m-d H:i:s", strtotime($gmt_datetime_currency_updated));
 
 $sql = "UPDATE goldrate 	SET  gold_rate='".$current_gold_price."',
