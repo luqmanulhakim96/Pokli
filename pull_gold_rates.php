@@ -191,13 +191,13 @@ INSERT INTO `goldrate` ( `currency_code`, `unit_type`,  `gold_rate`, `24karat_ra
 */
 
 
-// $gmt_datetime_gold_updated_corrected = date("Y/m/d H:i:s", strtotime($gmt_datetime_gold_updated));
-// $gmt_datetime_currency_updated_corrected = date("Y/m/d H:i:s", strtotime($gmt_datetime_currency_updated));
+$gmt_datetime_gold_updated_corrected = date("Y/m/d H:i:s", strtotime($gmt_datetime_gold_updated));
+$gmt_datetime_currency_updated_corrected = date("Y/m/d H:i:s", strtotime($gmt_datetime_currency_updated));
 
 $sql = "UPDATE goldrate 	SET  gold_rate='".$current_gold_price."',
-                                 gmt_datetime_gold_updated = STR_TO_DATE('".$gmt_datetime_gold_updated."','%d-%m-%Y %h:%i:%s %p'),
+                                 gmt_datetime_gold_updated = '".$gmt_datetime_gold_updated_corrected."',
                                  currency_rate ='".$currency_rate."',
-								                 gmt_datetime_currency_updated= STR_TO_DATE('".$gmt_datetime_currency_updated."','%d-%m-%Y %h:%i:%s %p'),
+								                 gmt_datetime_currency_updated='".$gmt_datetime_currency_updated_corrected."',
                                  24karat_rate ='".$currency_rate."',
                                  22karat_rate ='". ($currency_rate*0.916) ."',
                                  21karat_rate ='". ($currency_rate*0.875 )."',
@@ -206,6 +206,19 @@ $sql = "UPDATE goldrate 	SET  gold_rate='".$current_gold_price."',
                 								 14karat_rate ='". ($currency_rate*0.5833)."'
                 								 WHERE lower(currency_code) like '".strtolower($currency_code)."'
                 								 and lower(unit_type) like '".strtolower($unit_type)."'";
+
+// $sql = "UPDATE goldrate 	SET  gold_rate='".$current_gold_price."',
+//                                 gmt_datetime_gold_updated = STR_TO_DATE('".$gmt_datetime_gold_updated."','%d-%m-%Y %h:%i:%s %p'),
+//                                 currency_rate ='".$currency_rate."',
+// 								                 gmt_datetime_currency_updated= STR_TO_DATE('".$gmt_datetime_currency_updated."','%d-%m-%Y %h:%i:%s %p'),
+//                                 24karat_rate ='".$currency_rate."',
+//                                 22karat_rate ='". ($currency_rate*0.916) ."',
+//                                 21karat_rate ='". ($currency_rate*0.875 )."',
+//                                 18karat_rate ='". ($currency_rate*0.750) ."',
+//                								 16karat_rate ='". ($currency_rate*0.666) ."',
+//                								 14karat_rate ='". ($currency_rate*0.5833)."'
+//                								 WHERE lower(currency_code) like '".strtolower($currency_code)."'
+//                								 and lower(unit_type) like '".strtolower($unit_type)."'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully to goldrate table <br>";
