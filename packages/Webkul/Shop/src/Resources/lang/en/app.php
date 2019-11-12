@@ -38,7 +38,8 @@ return [
         'wishlist' => 'Wishlist',
         'cart' => 'Cart',
         'logout' => 'Logout',
-        'search-text' => 'Search products here'
+        'search-text' => 'Search products here',
+        'sign-in-sign-up' => 'Sign In'
     ],
 
     'minicart' => [
@@ -137,6 +138,10 @@ return [
             'title' => 'Sign Up',
         ],
 
+        'please-login' => [
+            'login' => 'Please login before checkout'
+        ],
+
         'login-form' => [
             'page-title' => 'Customer - Login',
             'title' => 'Sign In',
@@ -177,6 +182,12 @@ return [
                     'page-title' => 'Customer - Profile',
                     'title' => 'Profile',
                     'edit' => 'Edit',
+                    'gap' => [
+                        'title' => 'GAP',
+                    ],
+                    'sap' => [
+                        'title' => 'SAP',
+                    ],
                 ],
 
                 'edit-success' => 'Profile updated successfully.',

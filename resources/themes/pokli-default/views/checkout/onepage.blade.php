@@ -13,7 +13,7 @@
         <div id="checkout" class="checkout-process">
             <div class="col-main">
                 <ul class="checkout-steps">
-                    <li class="active" :class="[completed_step >= 0 ? 'active' : '', completed_step > 0 ? 'completed' : '']" @click="navigateToStep(1)">
+                    <li class="active" :class="[completed_step == 0 ? 'active' : '', completed_step > 0 ? 'completed' : '']" @click="navigateToStep(1)">
                         <div class="decorator address-info"></div>
                         <span>{{ __('shop::app.checkout.onepage.information') }}</span>
                     </li>
@@ -45,11 +45,30 @@
                 <div class="step-content information" v-show="current_step == 1" id="address-section">
                     @include('shop::checkout.onepage.customer-info')
 
+                    @guest('customer')
+                    <div class="center">
+                        <div class="please-login-text mt-90">
+                            {{ __('shop::app.customer.please-login.login') }}
+                        </div>
+                        
+                        <div class="button-group">
+                            <a class="btn btn-lg btn-primary" href="{{ route('customer.session.index') }}">
+                                {{ __('shop::app.checkout.onepage.sign-in') }}
+                            </a>
+                        </div>
+                        <div class="sign-up-text mb-90">
+                            {{ __('shop::app.customer.login-text.no_account') }} - <a href="{{ route('customer.register.index') }}">{{ __('shop::app.customer.login-text.title') }}</a>
+                        </div>
+                    </div>
+                    @endguest
+
+                    @auth('customer')
                     <div class="button-group">
                         <button type="button" class="btn btn-lg btn-primary" @click="validateForm('address-form')" :disabled="disable_button" id="checkout-address-continue-button">
                             {{ __('shop::app.checkout.onepage.continue') }}
                         </button>
                     </div>
+                    @endauth
                 </div>
 
                 <div class="step-content shipping" v-show="current_step == 2" id="shipping-section">
@@ -255,10 +274,11 @@
                                 shippingHtml = Vue.compile(response.data.html)
                             else
                                 paymentHtml = Vue.compile(response.data.html)
-
-                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] + 1;
+                            
+                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] - 1;
                             this_this.current_step = this_this.step_numbers[response.data.jump_to_section];
 
+                            shippingMethods = response.data.shippingMethods;
                             this_this.getOrderSummary();
                         })
                         .catch(function (error) {
@@ -278,9 +298,10 @@
                             this_this.disable_button = false;
 
                             paymentHtml = Vue.compile(response.data.html)
-                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] + 1;
+                            this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] - 1;
                             this_this.current_step = this_this.step_numbers[response.data.jump_to_section];
 
+                            paymentMethods = response.data.paymentMethods;
                             this_this.getOrderSummary();
                         })
                         .catch(function (error) {
@@ -300,7 +321,7 @@
                         this_this.disable_button = false;
 
                         reviewHtml = Vue.compile(response.data.html)
-                        this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] + 1;
+                        this_this.completed_step = this_this.step_numbers[response.data.jump_to_section] - 1;
                         this_this.current_step = this_this.step_numbers[response.data.jump_to_section];
 
                         this_this.getOrderSummary();

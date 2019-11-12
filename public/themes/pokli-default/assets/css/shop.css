@@ -2430,10 +2430,10 @@ section.cart .cart-content .right-side{
     margin-bottom:auto
 }
 .checkout-process .col-main ul.checkout-steps li.active{
-    color:#2650ef
+    color:red
 }
 .checkout-process .col-main ul.checkout-steps li.active .decorator{
-    border:1px solid #2650ef
+    border:1px solid red
 }
 .checkout-process .col-main .step-content{
     padding-top:20px
@@ -3810,3 +3810,21 @@ a:active, a:focus, a:hover, a:link, a:visited {
     fill: red;
     filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
 } */
+.checkout-process .col-main ul.checkout-steps li.completed .decorator {
+    filter: invert(29%) sepia(96%) saturate(7495%) hue-rotate(357deg) brightness(106%) contrast(117%);
+}
+.center {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: 500px;
+    min-width: 320px;
+    padding: 25px;
+}
