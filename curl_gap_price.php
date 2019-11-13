@@ -29,8 +29,8 @@
   $doc->loadHTMLFile('https://www.publicgold.com.my/');
 
   $xpath = new DOMXPath($doc);
-  
-  /////////////////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////////////////////////--CURL GOLD PRICE--////////////////////////////////////////////////
   // get the gold current price
   $get_gap_price = "//div[@id='gap-div-table2']";
   $get_gap_price_array = $xpath->query($get_gap_price);
@@ -39,7 +39,7 @@
   //get the gram for RM 100 and the price for a gram
   list(, , , , , , $weight_for_a_hundread, , $price_for_a_gram, , ) = explode(' ', $gold_price);
 
-  /////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////--CURL DATETIME--////////////////////////////////////////////////
   // get the datetime for gold update
   $get_datetime = "//div[@id='red-table2']";
   $get_datetime_array = $xpath->query($get_datetime);
@@ -54,7 +54,7 @@
   //convert $date_and_time_substr to datetime for db compatibility
   $datetime_gold_updated = date("Y/m/d H:i:s", strtotime($date_and_time_substr));
 
-  /////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////--CURL 24K--////////////////////////////////////////////////
   // get the 24k gold current price
   $get_24k_price = "//table[@id='goldbar-table-content2']";
   $get_24k_price_array = $xpath->query($get_24k_price);
@@ -85,7 +85,7 @@
   $buy_1000g = preg_replace('/[,]+/', '', trim($buy_1000g));
   $sell_1000g = preg_replace('/[,]+/', '', trim($sell_1000g));
 
-  /////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////--SQL UPDATE--////////////////////////////////////////////////
   //update gram value for per RM 100
   $sql_update_gram_value = "UPDATE gold_live_price_gap SET gram ='".$weight_for_a_hundread."' WHERE price = '100'";
 
