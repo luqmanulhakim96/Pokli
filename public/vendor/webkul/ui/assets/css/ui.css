@@ -1382,7 +1382,7 @@ modal{
 .helper-container .group code{
     font-weight:700
 }
-.active .dashboard-icon,
+/* .active .dashboard-icon,
 .active .sales-icon,
 .active .catalog-icon,
 .active .customer-icon,
@@ -1392,4 +1392,4 @@ modal{
 .active .configuration-icon,
 .accordian-up-icon, .accordian-down-icon {
     filter: invert(12%) sepia(98%) saturate(7498%) hue-rotate(4deg) brightness(104%) contrast(111%);
-}
+} */
