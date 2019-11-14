@@ -44,11 +44,40 @@ class SessionController extends Controller
      */
     public function show()
     {
+        // Bring customer to profile page
+        // if (auth()->guard('customer')->check()) {
+        //     return redirect()->route('customer.profile.index');
+        // } else {
+        //     return view($this->_config['view']);
+        // }
+        
+        // Bring customer to last page visited
+        // if (auth()->guard('customer')->check()) {
+        //     return redirect()->route('customer.profile.index');
+        // } else {
+        //     $intendedUrl = url()->previous();
+            
+        //     session()->put('url.intended', $intendedUrl);
+
+        //     return view($this->_config['view']);
+        // }
+        
+        // Bring customer to last page visited
+        // If last page is register then it direct to home page
         if (auth()->guard('customer')->check()) {
             return redirect()->route('customer.profile.index');
-        } else {
+        } 
+        else {
+            $intendedUrl = url()->previous();
+            if($intendedUrl != url()->route('customer.register.index')) {
+                session()->put('url.intended', $intendedUrl);
+            }
+            else {
+                session()->put('url.intended', route('shop.home.index'));
+            }
             return view($this->_config['view']);
         }
+        
     }
 
     /**
