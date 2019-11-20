@@ -79,10 +79,13 @@ class RegistrationController extends Controller
             'first_name' => 'string|required',
             'last_name' => 'string|required',
             'email' => 'email|required|unique:customers,email',
+            'referral_email' => 'exists:customers,email',
             'password' => 'confirmed|min:6|required',
         ]);
 
         $data = request()->input();
+
+        $referral = request()->input('referral_email');
 
         $data['password'] = bcrypt($data['password']);
 
@@ -93,6 +96,19 @@ class RegistrationController extends Controller
         }
 
         $data['customer_group_id'] = $this->customerGroupRepository->findOneWhere(['code' => 'general'])->id;
+
+        // unset($data['referral_email']);
+        // if($referral){
+        //     $data['referral_id'] = $this->customerRepository->findOneWhere(['email' => $referral])->id;
+        // }
+        // else{
+        //     $data['referral_id'] = null;
+        // }
+
+        $data['referral_id'] = $referral ? $this->customerRepository->findOneWhere(['email' => $referral])->id : null;
+        
+
+        // dd($data);
 
         $verificationData['email'] = $data['email'];
         $verificationData['token'] = md5(uniqid(rand(), true));

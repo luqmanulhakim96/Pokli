@@ -3835,3 +3835,6 @@ a:active, a:focus, a:hover, a:link, a:visited {
 .header .header-top div.right-content .right-content-menu .account li a:hover {
     color: red;
 }
+.accordian-header {
+    background-color: #fbfbfb;
+}

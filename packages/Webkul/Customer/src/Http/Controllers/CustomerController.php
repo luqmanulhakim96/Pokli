@@ -3,6 +3,8 @@
 namespace Webkul\Customer\Http\Controllers;
 
 use Hash;
+use Illuminate\Support\Facades\Auth;
+use Webkul\Customer\Models\Customer;
 use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Product\Repositories\ProductReviewRepository;
 
@@ -62,8 +64,9 @@ class CustomerController extends Controller
     public function index()
     {
         $customer = $this->customerRepository->find(auth()->guard('customer')->user()->id);
-
-        return view($this->_config['view'], compact('customer'));
+        $countReferral = Customer::where('referral_id','=', auth()->guard('customer')->user()->id)->count();
+        // dd($countReferral);
+        return view($this->_config['view'], compact(['customer','countReferral']));
     }
 
     /**

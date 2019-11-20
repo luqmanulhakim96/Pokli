@@ -51,10 +51,10 @@
                 <span class="control-error" v-if="errors.has('password_confirmation')">@{{ errors.first('password_confirmation') }}</span>
             </div>
 
-            <div class="control-group" :class="[errors.has('referral_code') ? 'has-error' : '']">
-                <label for="referral_code" class="">{{ __('shop::app.customer.signup-form.referral-code') }}</label>
-                <input type="email" class="control" name="referral_code" v-validate="'referral_code'" value="" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.referral-code') }}&quot;">
-                <span class="control-error" v-if="errors.has('referral_code')">@{{ errors.first('referral_code') }}</span>
+            <div class="control-group" :class="[errors.has('referral_email') ? 'has-error' : '']">
+                <label for="referral_email" class="">{{ __('shop::app.customer.signup-form.referral-code') }}</label>
+                <input type="email" class="control" name="referral_email" v-validate="'email'" value="{{ old('referral_email') }}" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.referral-code') }}&quot;">
+                <span class="control-error" v-if="errors.has('referral_email')">@{{ errors.first('referral_email') }}</span>
             </div>
 
             {{-- <div class="signup-confirm" :class="[errors.has('agreement') ? 'has-error' : '']">
