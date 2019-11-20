@@ -17,7 +17,7 @@ class Customer extends Authenticatable implements CustomerContract, JWTSubject
 
     protected $table = 'customers';
 
-    protected $fillable = ['first_name', 'last_name', 'gender', 'date_of_birth', 'email', 'phone', 'password', 'customer_group_id', 'subscribed_to_news_letter', 'is_verified', 'token', 'notes', 'status'];
+    protected $fillable = ['referral_id', 'first_name', 'last_name', 'gender', 'date_of_birth', 'email', 'phone', 'password', 'customer_group_id', 'subscribed_to_news_letter', 'is_verified', 'token', 'notes', 'status'];
 
     protected $hidden = ['password', 'remember_token'];
 
@@ -136,5 +136,42 @@ class Customer extends Authenticatable implements CustomerContract, JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    /**
+     * A user has a referrer.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function referrer()
+    {
+        return $this->belongsTo(Customer::class, 'referral_id', 'id');
+    }
+
+    /**
+     * A user has many referrals.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function referrals()
+    {
+        return $this->hasMany(Customer::class, 'referral_id', 'id');
+    }
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['referral_link'];
+
+    /**
+     * Get the user's referral link.
+     *
+     * @return string
+     */
+    public function getReferralLinkAttribute()
+    {
+        return $this->referral_link = route('register', ['ref' => $this->email]);
     }
 }
