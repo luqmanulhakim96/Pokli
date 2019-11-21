@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 //
 // use Billplz\Client;
 //
@@ -8,7 +8,7 @@
 // $response = $collection->create('My First API Collection');
 //
 // var_dump($response->toArray());
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
