@@ -247,10 +247,11 @@ return [
         Webkul\Tax\Providers\TaxServiceProvider::class,
         Webkul\API\Providers\APIServiceProvider::class,
         Webkul\Discount\Providers\DiscountServiceProvider::class,
-        Webkul\CMS\Providers\CMSServiceProvider::class,
+        Webkul\CMS\Providers\CMSServiceProvider::class
 
-        //Artanis package
-        Artanis\BillPlz\Providers\BillPlzServiceProvider::class
+
+        // //selfmade packages
+        // packageArtanis\Test\Providers\TestServiceProvider::class,
     ],
 
     /*
