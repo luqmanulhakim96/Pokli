@@ -65,8 +65,9 @@ class CustomerController extends Controller
     {
         $customer = $this->customerRepository->find(auth()->guard('customer')->user()->id);
         $countReferral = Customer::where('referral_id','=', auth()->guard('customer')->user()->id)->count();
-        // dd($countReferral);
-        return view($this->_config['view'], compact(['customer','countReferral']));
+        $uplineDetails = Customer::where('referral_id', auth()->guard('customer')->user()->id)->first();
+        // dd($customer);
+        return view($this->_config['view'], compact(['customer','countReferral','uplineDetails']));
     }
 
     /**
