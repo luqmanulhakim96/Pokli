@@ -57,7 +57,7 @@
 
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.upline-name') }}</td>
-                        <td>{{ $uplineDetails->first_name }} {{ $uplineDetails->last_name }}</td>
+                        <td>{{ $uplineDetails['first_name'] }} {{ $uplineDetails['last_name'] }}</td>
                     </tr>
 
                     <tr>
