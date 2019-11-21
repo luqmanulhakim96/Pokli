@@ -62,7 +62,7 @@
 
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.upline-email') }}</td>
-                        <td>{{ $uplineDetails->email }}</td>
+                        <td>{{ $uplineDetails['email'] }}</td>
                     </tr>
 
                     <tr>
