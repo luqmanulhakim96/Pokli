@@ -1,3 +1,11 @@
+@extends('shop::layouts.master')
+
+@section('page_title')
+    {{ __('admin::app.error.404.page-title') }}
+@stop
+
+@section('content-wrapper')
+
 <?php
   use Billplz\Client;
 
@@ -8,14 +16,6 @@
 
   var_dump($response->toArray());
 ?>
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    HELLO WORLD
-  </body>
-</html>
+  HELLO WORLD
+  
+@endsection
