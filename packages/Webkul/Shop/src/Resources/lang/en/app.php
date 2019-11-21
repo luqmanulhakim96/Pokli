@@ -205,6 +205,9 @@ return [
                 'password' => 'Password',
                 'cpassword' => 'Confirm Password',
                 'submit' => 'Update Profile',
+                'upline-name' => 'Upline Name',
+                'upline-email' => 'Upline Email',
+                'referral' => 'Referral',
 
                 'edit-profile' => [
                     'title' => 'Edit Profile',

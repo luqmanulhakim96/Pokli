@@ -56,8 +56,17 @@
                     </tr>
 
                     <tr>
-                        {{-- <td>{{ __('shop::app.customer.account.profile.email') }}</td> --}}
-                        <td>Referral</td>
+                        <td>{{ __('shop::app.customer.account.profile.upline-name') }}</td>
+                        <td>{{ $uplineDetails->first_name }} {{ $uplineDetails->last_name }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.upline-email') }}</td>
+                        <td>{{ $uplineDetails->email }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.referral') }}</td>
                         <td>{{ $countReferral }}</td>
                     </tr>
 
