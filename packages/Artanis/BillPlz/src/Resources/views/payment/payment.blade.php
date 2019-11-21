@@ -1,5 +1,4 @@
 <?php
-
   use Billplz\Client;
 
   $billplz = Client::make('155994cc-37ea-4c78-9460-1062df930f2c');
