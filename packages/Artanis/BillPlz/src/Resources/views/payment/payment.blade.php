@@ -12,7 +12,7 @@
       ],
   ]);
 
-  $response = $collection->all();
+  // $response = $collection->all();
 
   var_dump($response->toArray());
 ?>
