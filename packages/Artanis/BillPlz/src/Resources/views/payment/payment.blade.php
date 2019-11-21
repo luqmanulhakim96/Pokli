@@ -1,17 +1,4 @@
-<<<<<<< HEAD
 <?php
-
-use Billplz\Client;
-
-$billplz = Client::make('155994cc-37ea-4c78-9460-1062df930f2c');
-$billplz->useSandbox();
-$collection = $billplz->collection();
-$response = $collection->create('My First API Collection');
-
-var_dump($response->toArray());
-?>
-=======
-<!-- <?php
 //
 // use Billplz\Client;
 //
@@ -21,8 +8,7 @@ var_dump($response->toArray());
 // $response = $collection->create('My First API Collection');
 //
 // var_dump($response->toArray());
-?> -->
->>>>>>> addModule
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
