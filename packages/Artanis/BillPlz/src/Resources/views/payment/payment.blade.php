@@ -1,10 +1,10 @@
-@extends('shop::layouts.master')
+<!-- @extends('shop::layouts.master')
 
 @section('page_title')
     {{ __('admin::app.error.404.page-title') }}
 @stop
 
-@section('content-wrapper')
+@section('content-wrapper') -->
 
 <?php
   use Billplz\Client;
@@ -17,5 +17,5 @@
   var_dump($response->toArray());
 ?>
   HELLO WORLD
-  
-@endsection
+
+<!-- @endsection -->
