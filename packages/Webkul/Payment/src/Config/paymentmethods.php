@@ -5,7 +5,7 @@ return [
         'title' => 'Cash On Delivery',
         'description' => 'shop::app.checkout.onepage.cash-desc',
         'class' => 'Webkul\Payment\Payment\CashOnDelivery',
-        'active' => true,
+        'active' => false,
         'sort' => 1
     ],
 
@@ -14,7 +14,7 @@ return [
         'title' => 'Money Transfer',
         'description' => 'shop::app.checkout.onepage.money-desc',
         'class' => 'Webkul\Payment\Payment\MoneyTransfer',
-        'active' => true,
+        'active' => false,
         'sort' => 2
     ],
 
