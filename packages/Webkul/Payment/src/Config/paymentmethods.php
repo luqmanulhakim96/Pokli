@@ -5,7 +5,7 @@ return [
         'title' => 'Cash On Delivery',
         'description' => 'shop::app.checkout.onepage.cash-desc',
         'class' => 'Webkul\Payment\Payment\CashOnDelivery',
-        'active' => false,
+        'active' => true,
         'sort' => 1
     ],
 
