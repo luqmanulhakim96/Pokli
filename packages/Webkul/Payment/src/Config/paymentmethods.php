@@ -14,7 +14,7 @@ return [
         'title' => 'Money Transfer',
         'description' => 'shop::app.checkout.onepage.money-desc',
         'class' => 'Webkul\Payment\Payment\MoneyTransfer',
-        'active' => false,
+        'active' => true,
         'sort' => 2
     ],
 
