@@ -21,4 +21,11 @@ class Billplz extends Payment
     {
         return (new self())->billplz;
     }
+
+    protected $code  = 'cashondelivery';
+
+    public function getRedirectUrl()
+    {
+
+    }
 }
