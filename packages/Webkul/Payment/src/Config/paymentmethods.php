@@ -29,13 +29,4 @@ return [
         'sort' => 3
     ],
 
-    'billplz' => [
-        'code' => 'billplz',
-        'title' => 'Bank Transfer (FPX)',
-        'description' => 'BillPlz Payments',
-        'class' => 'Artanis\Billplz\Payment\Billplz',
-        'sandbox' => true,
-        'active' => true,
-        'sort' => 4
-    ]
 ];
