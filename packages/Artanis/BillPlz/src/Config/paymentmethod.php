@@ -5,7 +5,7 @@
         'code' => 'billplz',
         'title' => 'Bank Transfer (FPX)',
         'description' => 'BillPlz Payments',
-        'class' => 'Billplz\Laravel\Billplz',
+        'class' => 'Artanis\BillPlz\Payment\BillPlz',
         'sandbox' => true,
         'active' => true
     ]
