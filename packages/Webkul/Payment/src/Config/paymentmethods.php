@@ -35,7 +35,7 @@ return [
         'description' => 'BillPlz Payments',
         'class' => 'Billplz\Laravel\Billplz',
         'sandbox' => true,
-        'active' => ,
+        'active' => true,
         'sort' => 4
     ]
 ];
