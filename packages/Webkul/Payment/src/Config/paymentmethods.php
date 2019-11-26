@@ -28,4 +28,13 @@ return [
         'business_account' => 'test@webkul.com',
         'sort' => 3
     ],
+    'billplz' => [
+        'code' => 'billplz',
+        'title' => 'Bank Transfer (FPX)',
+        'description' => 'BillPlz Payments',
+        'class' => 'Billplz\Laravel\Billplz',
+        'sandbox' => true,
+        'active' => true,
+        'sort' => 3
+    ]
 ];
