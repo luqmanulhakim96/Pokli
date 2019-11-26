@@ -42,5 +42,12 @@ return [
         'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+
+    'billplz' => [
+        'key' => env('155994cc-37ea-4c78-9460-1062df930f2c'),
+        'version' => env('BILLPLZ_VERSION', 'v4'),
+        'x-signature' => env('S-b4db8m12r7Te8JmS9O79Rg'),
+        'sandbox' => env('BILLPLZ_SANDBOX', true),
     ]
 ];
