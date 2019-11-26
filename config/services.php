@@ -45,9 +45,9 @@ return [
     ],
 
     'billplz' => [
-        'key' => env('155994cc-37ea-4c78-9460-1062df930f2c'),
+        'key' => env('BILLPLZ_API_KEY'),
         'version' => env('BILLPLZ_VERSION', 'v4'),
-        'x-signature' => env('S-b4db8m12r7Te8JmS9O79Rg'),
+        'x-signature' => env('BILLPLZ_X_SIGNATURE'),
         'sandbox' => env('BILLPLZ_SANDBOX', true),
-    ]
+    ],
 ];
