@@ -27,5 +27,16 @@ return [
         'active' => true,
         'business_account' => 'test@webkul.com',
         'sort' => 3
+    ],
+
+    'billplz' => [
+        'code' => 'billplz',
+        'title' => 'FPX',
+        'description' => 'shop::app.checkout.onepage.paypal-desc',
+        'class' => 'Webkul\Paypal\Payment\Standard',
+        'sandbox' => true,
+        'active' => true,
+        'business_account' => 'test@webkul.com',
+        'sort' => 4
     ]
 ];
