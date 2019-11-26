@@ -8,21 +8,21 @@ use Billplz\Client;
  */
 class Billplz extends Payment
 {
-    private $billplz;
-    public function __construct()
-    {
-        $this->billplz = Client::make(config('billplz.api_key'));
-        $this->billplz->useVersion(config('billplz.version'));
-        if (app()->environment() != "production") {
-            $this->billplz->useSandbox();
-        }
-    }
-    public static function make()
-    {
-        return (new self())->billplz;
-    }
+    // private $billplz;
+    // public function __construct()
+    // {
+    //     $this->billplz = Client::make(config('billplz.api_key'));
+    //     $this->billplz->useVersion(config('billplz.version'));
+    //     if (app()->environment() != "production") {
+    //         $this->billplz->useSandbox();
+    //     }
+    // }
+    // public static function make()
+    // {
+    //     return (new self())->billplz;
+    // }
 
-    protected $code  = 'cashondelivery';
+    protected $code  = 'billplz';
 
     public function getRedirectUrl()
     {
