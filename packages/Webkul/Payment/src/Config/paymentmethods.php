@@ -28,11 +28,12 @@ return [
         'business_account' => 'test@webkul.com',
         'sort' => 3
     ],
+
     'billplz' => [
         'code' => 'billplz',
         'title' => 'Bank Transfer (FPX)',
         'description' => 'BillPlz Payments',
-        'class' => 'Billplz\Laravel\Billplz',
+        'class' => 'Artanis\Billplz\Payment\Billplz',
         'sandbox' => true,
         'active' => true,
         'sort' => 4
