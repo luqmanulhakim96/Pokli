@@ -29,4 +29,14 @@ return [
         'sort' => 3
     ],
 
+    'billplz' => [
+        'code' => 'billplz',
+        'title' => 'BillPlz',
+        'description' => 'BillPlz Payments',
+        'class' => 'Artanis\BillPlz\Payment\BillPlz',
+        'sandbox' => true,
+        'active' => true,
+        'sort' => 4
+    ]
+
 ];
