@@ -29,4 +29,13 @@ return [
         'sort' => 3
     ],
 
+    'billplz' => [
+        'code' => 'billplz',
+        'title' => 'BillPlz',
+        'description' => 'shop::app.checkout.onepage.billplz-desc',
+        'class' => 'Webkul\BillPlz\Payment\BillPlz',
+        'sandbox' => true,
+        'active' => true
+    ]
+
 ];
