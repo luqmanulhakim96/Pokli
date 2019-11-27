@@ -253,8 +253,7 @@ return [
         Artanis\BillPlz\Providers\BillPlzServiceProvider::class,
 
         //Billplz package
-        Billplz\Laravel\BillplzServiceProvider::class,
-        Webkul\BillPlz\Providers\BillPlzServiceProvider::class
+        Billplz\Laravel\BillplzServiceProvider::class
     ],
 
     /*
