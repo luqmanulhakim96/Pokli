@@ -31,8 +31,8 @@ return [
 
     'billplz' => [
         'code' => 'billplz',
-        'title' => 'BillPlz',
-        'description' => 'BillPlz Payments',
+        'title' => 'FPX',
+        'description' => 'Bank Transfer',
         'class' => 'Artanis\BillPlz\Payment\BillPlz',
         'sandbox' => true,
         'active' => true,
