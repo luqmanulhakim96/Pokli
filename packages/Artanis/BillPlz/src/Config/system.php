@@ -11,7 +11,7 @@
       'sort' => 2,
     ], [
       'key' =>'sales.paymentmethods.billplz',
-      'name' => 'Bank Transfer',
+      'name' => 'BillPlz Payments',
       'sort' => 4,
       'fields' => [
         [

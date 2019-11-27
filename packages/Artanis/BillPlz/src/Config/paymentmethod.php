@@ -3,7 +3,7 @@
   return [
     'billplz' => [
         'code' => 'billplz',
-        'title' => 'Bank Transfer (FPX)',
+        'title' => 'BillPlz',
         'description' => 'BillPlz Payments',
         'class' => 'Artanis\BillPlz\Payment\BillPlz',
         'sandbox' => true,
