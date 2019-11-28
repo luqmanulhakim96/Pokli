@@ -1,13 +1,13 @@
 <?php
 
-namespace Webkul\Payment\Providers;
+namespace Artanis\BillPlz\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Webkul\Payment\Payment;
 use Webkul\Payment\Facades\Payment as PaymentFacade;
 
-class PaymentServiceProvider extends ServiceProvider
+class BillPlzProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.

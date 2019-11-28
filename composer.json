@@ -94,7 +94,7 @@
         "Webkul\\Discount\\": "packages/Webkul/Discount/src",
         "Webkul\\CMS\\": "packages/Webkul/CMS/src",
         "Webkul\\BillPlz\\": "packages/Webkul/BillPlz/src",
-        "Artanis\\Payment\\": "packages/Artanis/Payment/src",
+        "Artanis\\BillPlz\\": "packages/Artanis/BillPlz/src",
         "Artanis\\GapSap\\": "packages/Artanis/GapSap/src"
       }
     },
