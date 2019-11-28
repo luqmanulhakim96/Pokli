@@ -3972,23 +3972,30 @@ input[type='radio']:checked:after {
     font-size: 15px;
     margin-top: 10px;
     margin-bottom: 5px;
-  }
-  .input-group > div{
+}
+.input-group > div{
     display: table-cell;
     border: 1px solid #ddd;
     vertical-align: middle;  /* needed for Safari */
-  }
-  .input-group-icon{
+}
+.input-group-icon{
     background:#eee;
     color: #777;
     padding: 0 12px
-  }
-  .input-group-area{
+}
+.input-group-area{
     width:100%;
-  }
-  .input-group input{
+}
+.input-group input{
     border: 0;
     display: block;
     width: 100%;
     padding: 8px;
-  }
+}
+/* Customer/account/profile */
+.account-balance-left {
+    justify-content: start;
+}
+.account-balance-right {
+    justify-content: end;
+}
