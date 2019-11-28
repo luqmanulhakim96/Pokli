@@ -95,13 +95,13 @@
         </accordian> --}}
         <accordian :title="'Referral'">
             <div slot="body">
-                    <div class="account-items-list">
-                        <div class="account-table-content">
-        
-                            {!! app('Webkul\Shop\DataGrids\ReferralDataGrid')->render() !!}
-                            
-                        </div>
+                <div class="account-items-list">
+                    <div class="account-table-content">
+    
+                        {!! app('Webkul\Shop\DataGrids\ReferralDataGrid')->render() !!}
+                        
                     </div>
+                </div>
             </div>
         </accordian>
         <accordian :title="'{{ __('shop::app.customer.account.profile.index.gap.title') }}'">

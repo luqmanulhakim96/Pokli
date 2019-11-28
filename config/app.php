@@ -251,6 +251,7 @@ return [
 
         //Artanis package
         Artanis\BillPlz\Providers\BillPlzServiceProvider::class,
+        Artanis\GapSap\Providers\GapSapServiceProvider::class,
 
         //Billplz package
         Billplz\Laravel\BillplzServiceProvider::class
