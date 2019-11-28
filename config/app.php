@@ -250,7 +250,7 @@ return [
         Webkul\CMS\Providers\CMSServiceProvider::class,
 
         //Artanis package
-        Artanis\BillPlz\Providers\BillPlzServiceProvider::class,
+        // Artanis\BillPlz\Providers\BillPlzServiceProvider::class,
         Artanis\GapSap\Providers\GapSapServiceProvider::class,
 
         //Billplz package
