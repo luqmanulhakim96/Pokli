@@ -251,7 +251,10 @@ return [
 
         //Artanis package
         Artanis\BillPlz\Providers\BillPlzServiceProvider::class,
-        Artanis\GapSap\Providers\GapSapServiceProvider::class
+        Artanis\GapSap\Providers\GapSapServiceProvider::class,
+
+        //Billplz package
+        Billplz\Laravel\BillplzServiceProvider::class
     ],
 
     /*
@@ -309,6 +312,8 @@ return [
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Concord' => Konekt\Concord\Facades\Concord::class,
-        'Helper'  => Konekt\Concord\Facades\Helper::class
+        'Helper'  => Konekt\Concord\Facades\Helper::class,
+
+        'Billplz' => Billplz\Laravel\Billplz::class
     ],
 ];
