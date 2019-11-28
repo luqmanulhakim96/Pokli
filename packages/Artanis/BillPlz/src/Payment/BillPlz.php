@@ -1,7 +1,7 @@
 <?php
 namespace Artanis\BillPlz\Payment;
 use Webkul\Payment\Payment\Payment;
-use Billplz\Client;
+// use Billplz\Client;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 // use Billplz\Laravel\Billplz;
