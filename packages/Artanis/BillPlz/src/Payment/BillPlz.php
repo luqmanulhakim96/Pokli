@@ -10,18 +10,18 @@ class Billplz extends Payment
 {
     protected $code  = 'billplz';
 
-    // public function createBill(Client $client)
-    // {
-    //     $bill = $client->bill()->create(
-    //       'x7afhxzc', //collection id
-    //       'api@billplz.com', // user email
-    //       null, //mobile phone
-    //       'Michael API V3', //API name
-    //       \Duit\MYR::given(20000), //amount
-    //       ['callback_url' => 'http://example.com/webhook/', 'redirect_url' => 'http://example.com/redirect/'], //callback and redirect url
-    //       'Maecenas eu placerat ante.' //description
-    //     );
-    // }
+    public function createBill(Client $client)
+    {
+        $bill = $client->bill()->create(
+          'x7afhxzc', //collection id
+          'api@billplz.com', // user email
+          null, //mobile phone
+          'Michael API V3', //API name
+          \Duit\MYR::given(20000), //amount
+          ['callback_url' => 'http://example.com/webhook/', 'redirect_url' => 'http://example.com/redirect/'], //callback and redirect url
+          'Maecenas eu placerat ante.' //description
+        );
+    }
 
 
     /**public function createBill(Client $client)
