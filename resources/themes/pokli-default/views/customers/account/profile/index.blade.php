@@ -104,22 +104,34 @@
                 </div>
             </div>
         </accordian>
-        <accordian :title="'{{ __('shop::app.customer.account.profile.index.gap.title') }}'">
+        <accordian :title="'Account Balance'">
             <div slot="body">
                     <div class="account-items-list">
                         <div class="account-table-content">
         
-                            {{-- {!! app('Webkul\Shop\DataGrids\OrderDataGrid')->render() !!} --}}
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6">
+                            <div class="row mb-20">
+                                <div class="account-balance-left ">
                                     &nbsp;<br>
                                     <span>Available Balance</span>
                                 </div>
-                                <div class="col-md-3 col-sm-3">
+                                <div class="account-balance-right ">
                                     <img class="mobile-hide" src="https://gap.publicgold.com.my/assets/images/singlegoldbar.png" alt="" style="float:left;">
                                     <span class="font-weight-bold title-small" style="line-height:1.5em"><u>GAP (gm)</u><br>
                                     11.0000</span>
                                 </div>
+                                <div class="account-balance-right">
+                                    <img class="mobile-hide" src="https://gap.publicgold.com.my/assets/images/singlesilverbar.png" alt="" style="float:left;">
+                                    <span class="font-weight-bold title-small" style="line-height:1.5em"><u>SAP (gm)</u><br>
+                                    0.0000</span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row mt-20">
+                                <h2>History</h2>
+                            </div>
+
+                            <div class="row ">
+                                {!! app('Webkul\Shop\DataGrids\ReferralDataGrid')->render() !!}
                             </div>
                             
                         </div>
@@ -127,12 +139,11 @@
             </div>
         </accordian>
 
-        <accordian :title="'{{ __('shop::app.customer.account.profile.index.sap.title') }}'">
+        {{-- <accordian :title="'{{ __('shop::app.customer.account.profile.index.sap.title') }}'">
             <div slot="body">
                     <div class="account-items-list">
                         <div class="account-table-content">
         
-                            {{-- {!! app('Webkul\Shop\DataGrids\OrderDataGrid')->render() !!} --}}
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     &nbsp;<br>
@@ -148,19 +159,17 @@
                         </div>
                     </div>
             </div>
-        </accordian>
+        </accordian> --}}
 
-        <accordian :title="'History'">
+        {{-- <accordian :title="'History'">
             <div slot="body">
                     <div class="account-items-list">
                         <div class="account-table-content">
-        
-                            {{-- {!! app('Webkul\Shop\DataGrids\OrderDataGrid')->render() !!} --}}
                             
                         </div>
                     </div>
             </div>
-        </accordian>
+        </accordian> --}}
 
          {!! view_render_event('bagisto.shop.customers.account.profile.view.after', ['customer' => $customer]) !!}
     </div>
