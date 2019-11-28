@@ -6,7 +6,7 @@ use Billplz\Client;
 /**
  * BillPlz Wrapper
  */
-class Billplz extends Payment
+abstract class Billplz extends Payment
 {
     protected $code  = 'billplz';
 
@@ -461,7 +461,7 @@ class Billplz extends Payment
 
 }
 
-class BillplzAction {
+abstract class BillplzAction {
 
     var $url, $action, $curldata, $api_key;
     public static $production = 'https://www.billplz.com/api/v3/';
