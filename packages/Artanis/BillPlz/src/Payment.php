@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Payment;
+namespace Artanis\BillPlz;
 
 use Illuminate\Support\Facades\Config;
 
