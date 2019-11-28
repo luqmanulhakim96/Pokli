@@ -170,7 +170,7 @@
         @include('shop::layouts.header.nav-menu.navmenu')
         <ul class="nav">
             <li parent="0">
-                <a href="/purchase">GAP/SAP</a>
+                <a href="/Pokli/purchase">GAP/SAP</a>
             </li>
         </ul>
     </div>
