@@ -1,81 +1,81 @@
 <?php
 namespace Artanis\BillPlz\Payment;
+
 use Webkul\Payment\Payment\Payment;
 use Billplz\Client;
-// use Billplz\Laravel\Billplz;
-/**
- * BillPlz Wrapper
- */
-class Billplz extends Payment
+use Illuminate\Support\Facades\Config;
+
+
+abstract class BillPlz extends Payment
 {
-      /**
-       * PayPal web URL generic getter
-       *
-       * @param array $params
-       * @return string
-       */
-      public function getPaypalUrl($params = [])
-      {
-          return sprintf('https://www.%spaypal.com/cgi-bin/webscr%s',
-                  $this->getConfigData('sandbox') ? 'sandbox.' : '',
-                  $params ? '?' . http_build_query($params) : ''
-              );
-      }
+    /**
+     * PayPal web URL generic getter
+     *
+     * @param array $params
+     * @return string
+     */
+    public function getPaypalUrl($params = [])
+    {
+        return sprintf('https://www.%spaypal.com/cgi-bin/webscr%s',
+                $this->getConfigData('sandbox') ? 'sandbox.' : '',
+                $params ? '?' . http_build_query($params) : ''
+            );
+    }
 
-      /**
-       * Add order item fields
-       *
-       * @param array $fields
-       * @param int $i
-       * @return void
-       */
-      protected function addLineItemsFields(&$fields, $i = 1)
-      {
-          $cartItems = $this->getCartItems();
+    /**
+     * Add order item fields
+     *
+     * @param array $fields
+     * @param int $i
+     * @return void
+     */
+    protected function addLineItemsFields(&$fields, $i = 1)
+    {
+        $cartItems = $this->getCartItems();
 
-          foreach ($cartItems as $item) {
+        foreach ($cartItems as $item) {
 
-              foreach ($this->itemFieldsFormat as $modelField => $paypalField) {
-                  $fields[sprintf($paypalField, $i)] = $item->{$modelField};
-              }
+            foreach ($this->itemFieldsFormat as $modelField => $paypalField) {
+                $fields[sprintf($paypalField, $i)] = $item->{$modelField};
+            }
 
-              $i++;
-          }
-      }
+            $i++;
+        }
+    }
 
-      /**
-       * Add billing address fields
-       *
-       * @param array $fields
-       * @return void
-       */
-      protected function addAddressFields(&$fields)
-      {
-          $cart = $this->getCart();
+    /**
+     * Add billing address fields
+     *
+     * @param array $fields
+     * @return void
+     */
+    protected function addAddressFields(&$fields)
+    {
+        $cart = $this->getCart();
 
-          $billingAddress = $cart->billing_address;
+        $billingAddress = $cart->billing_address;
 
-          $fields = array_merge($fields, [
-              'city'             => $billingAddress->city,
-              'country'          => $billingAddress->country,
-              'email'            => $billingAddress->email,
-              'first_name'       => $billingAddress->first_name,
-              'last_name'        => $billingAddress->last_name,
-              'zip'              => $billingAddress->postcode,
-              'state'            => $billingAddress->state,
-              'address1'         => $billingAddress->address1,
-              'address_override' => 1
-          ]);
-      }
+        $fields = array_merge($fields, [
+            'city'             => $billingAddress->city,
+            'country'          => $billingAddress->country,
+            'email'            => $billingAddress->email,
+            'first_name'       => $billingAddress->first_name,
+            'last_name'        => $billingAddress->last_name,
+            'zip'              => $billingAddress->postcode,
+            'state'            => $billingAddress->state,
+            'address1'         => $billingAddress->address1,
+            'address_override' => 1
+        ]);
+    }
 
-      /**
-       * Checks if line items enabled or not
-       *
-       * @param array $fields
-       * @return void
-       */
-      public function getIsLineItemsEnabled()
-      {
-          return true;
-      }
+    /**
+     * Checks if line items enabled or not
+     *
+     * @param array $fields
+     * @return void
+     */
+    public function getIsLineItemsEnabled()
+    {
+        return true;
+    }
 }
