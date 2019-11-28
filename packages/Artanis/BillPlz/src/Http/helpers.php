@@ -1,11 +1,12 @@
 <?php
-namespace Artanis\BillPlz\Helpers;
 /*
  * Billplz Helper
  */
+use Artanis\Payment\BillPlz;
+
 if (!function_exists('billplz')) {
     function billplz()
     {
-        return Artanis\Payment\Billplz::make();
+        return Billplz::make();
     }
 }
