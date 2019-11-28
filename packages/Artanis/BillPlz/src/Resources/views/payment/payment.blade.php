@@ -1,28 +1,20 @@
-<?php
-  use Billplz\Client;
+<?php $paypalStandard = app('Artanis\BillPlz\Payment\Billplz') ?>
 
-  $billplz = Client::make('155994cc-37ea-4c78-9460-1062df930f2c');
-  $billplz->useSandbox();
-  $collection = $billplz->collection();
-  $response = $collection->create('My First API', [
-      'logo' => '@/Users/Billplz/Documents/uploadPhoto.png',
-      'split_payment' => [
-          'email' => 'verified@account.com',
-          'fixed_cut' => \Duit\MYR::given(100),
-      ],
-  ]);
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+    You will be redirected to the FPX website in a few seconds.
 
-  // $response = $collection->all();
 
-  var_dump($response->toArray());
-?>
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    HELLO WORLD
-  </body>
-</html>
+    <form action="{{ $paypalStandard->getPaypalUrl() }}" id="billplz_checkout" method="POST">
+        <input value="Click here if you are not redirected within 10 seconds..." type="submit">
+
+        @foreach ($paypalStandard->getFormFields() as $name => $value)
+
+            <input type="hidden" name="{{ $name }}" value="{{ $value }}">
+
+        @endforeach
+    </form>
+
+    <script type="text/javascript">
+        document.getElementById("billplz_checkout").submit();
+    </script>
+</body>
