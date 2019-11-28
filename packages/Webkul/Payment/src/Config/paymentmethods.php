@@ -27,5 +27,16 @@ return [
         'active' => true,
         'business_account' => 'test@webkul.com',
         'sort' => 3
+    ],
+
+    'billplz' => [
+        'code' => 'billplz',
+        'title' => 'FPX',
+        'description' => 'Bank Transfer',
+        'class' => 'Artanis\BillPlz\Payment\BillPlz',
+        'sandbox' => true,
+        'active' => true,
+        'sort' => 4
     ]
+
 ];
