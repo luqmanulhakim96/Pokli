@@ -6,7 +6,7 @@ use Billplz\Client;
 /**
  * BillPlz Wrapper
  */
-abstract class Billplz extends Payment
+class Billplz extends Payment
 {
       /**
        * PayPal web URL generic getter
