@@ -27,8 +27,10 @@
 			var element = this.$el.getElementsByTagName('input')[0];
 			this.datepicker = new Flatpickr(
 				element, {
-					altFormat: 'Y-m-d',
-					dateFormat: 'Y-m-d',
+					// altFormat: 'Y-m-d',
+					// dateFormat: 'Y-m-d',
+					altFormat: 'd/M/Y',
+					dateFormat: 'd/M/Y',
 					onChange: function(selectedDates, dateStr, instance) {
 						this_this.$emit('onChange', dateStr)
 					},

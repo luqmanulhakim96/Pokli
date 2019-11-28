@@ -11,6 +11,14 @@
             {{ __('shop::app.products.new') }}
         </div>
     @endif
+    @if (!$product->haveSufficientQuantity(1))
+        {{-- <div class="stock-status {{! $product->haveSufficientQuantity(1) ? '' : 'active' }}">
+            {{ $product->haveSufficientQuantity(1) ? __('shop::app.products.in-stock') : __('shop::app.products.out-of-stock') }}
+        </div> --}}
+        <div class="sticker out-of-stock">
+            {{ __('Out of Stock') }}
+        </div>
+    @endif
 
     <div class="product-image">
         <a href="{{ route('shop.products.index', $product->url_key) }}" title="{{ $product->name }}">

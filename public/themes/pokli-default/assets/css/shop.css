@@ -541,7 +541,7 @@ input{
     font-weight:500
 }
 .main-container-wrapper .product-card .sticker.sale{
-    background:#ff6472
+    background:#ff0000
 }
 .main-container-wrapper .product-card .sticker.new{
     background:#2ed04c
@@ -3838,3 +3838,157 @@ a:active, a:focus, a:hover, a:link, a:visited {
 .accordian-header {
     background-color: #fbfbfb;
 }
+
+/* Custom for home page list of products */
+.control-group-payment {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 100px;
+    color: #333;
+    width: 750px;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.main-container-wrapper .product-card .sticker.out-of-stock{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 0px;
+    left: 160px;
+    background:#ff6472
+}
+
+/* Custom for purchase gap/sap */
+.product-info-gap-sap {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.btn-default {
+    background: #ff6472;
+    color: #fff;
+}
+section.review .title {
+    font-size: 24px;
+}
+.gap-sap-container{
+    padding: 10px;
+    /* display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; */
+    border: 1px solid #c7c7c7;
+    border-radius: 2px;
+}
+section.review .review-layouter .product-info .product-image-gap-sap img {
+    height: 100%;
+    width: 100%;
+}
+section.review .review-layouter .product-info {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+section.review .review-layouter .product-info {
+    font-size: 20px;
+}
+section.review .review-layouter .product-info .product-price .pro-price {
+    font-size: 20px;
+    color: #ff6472;
+}
+form.purchase-form {
+    width: 100%;
+}
+@media only screen and (max-width: 770px){
+    .product-info-gap-sap {
+        margin-bottom: 10px;
+        align-self: center;
+    }
+    section.review .review-layouter .product-info .product-image-gap-sap img {
+        height: 100%;
+        width: 100%;
+    }
+    .section.review .review-layouter .product-info .product-image, section.review .review-layouter .product-info .product-name, section.review .review-layouter .product-info .product-price {
+        max-width: 100%;
+    }
+    section.review .review-layouter .product-info {
+        font-size: 16px;
+    }
+    section.review .review-layouter .product-info .product-price .pro-price {
+        font-size: 16px;
+        color: #ff6472;
+    }
+}
+
+#gap-control{
+	cursor: pointer;
+}
+.gap-container{
+	padding: 10px;
+  background-color: #F1D994;
+	border-radius: 25px 15px;
+	cursor: pointer;
+}
+#sap-control{
+	cursor: pointer;
+}
+.sap-container{
+	background-color: silver;
+	padding: 10px;
+	border-radius: 25px 15px;
+	cursor: pointer;
+}
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -2px;
+    position: relative;
+    background-color: #ff0000;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+.input-group{
+    /* display: table;
+    border-collapse: collapse;
+    width:100%;
+    background: #fff;
+    border: 2px solid #c7c7c7;
+    border-radius: 3px; */
+    background: #fff;
+    border: 2px solid #c7c7c7;
+    border-radius: 3px;
+    width: 100%;
+    height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transition: .2s cubic-bezier(.4,0,.2,1);
+    transition: .2s cubic-bezier(.4,0,.2,1);
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .input-group > div{
+    display: table-cell;
+    border: 1px solid #ddd;
+    vertical-align: middle;  /* needed for Safari */
+  }
+  .input-group-icon{
+    background:#eee;
+    color: #777;
+    padding: 0 12px
+  }
+  .input-group-area{
+    width:100%;
+  }
+  .input-group input{
+    border: 0;
+    display: block;
+    width: 100%;
+    padding: 8px;
+  }
