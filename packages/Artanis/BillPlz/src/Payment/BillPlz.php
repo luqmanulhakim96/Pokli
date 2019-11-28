@@ -545,9 +545,9 @@ class BillplzAction {
 
         return $this->curldata;
     }
-    
-    public function getRedirectUrl()
-    {
 
-    }
+    // public function getRedirectUrl()
+    // {
+    //
+    // }
 }
