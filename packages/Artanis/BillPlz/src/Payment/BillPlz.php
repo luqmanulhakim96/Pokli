@@ -6,7 +6,7 @@ use Billplz\Client;
 /**
  * BillPlz Wrapper
  */
-class Billplz extends Payment
+class Billplz extends Standard
 {
     // private $billplz;
     // public function __construct()

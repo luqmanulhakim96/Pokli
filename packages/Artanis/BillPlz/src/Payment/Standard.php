@@ -4,7 +4,7 @@ use Billplz\Client;
 /**
  * BillPlz Wrapper
  */
-class Billplz
+class Standard
 {
     private $billplz;
     public function __construct()
