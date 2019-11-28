@@ -3,60 +3,28 @@
 namespace Artanis\BillPlz\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\AliasLoader;
-use Webkul\Payment\Payment;
-use Webkul\Payment\Facades\Payment as PaymentFacade;
 
-class BillPlzProvider extends ServiceProvider
+
+class BillPlzServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
+    * Bootstrap services.
+    *
+    * @return void
+    */
     public function boot()
     {
-        include __DIR__ . '/../Http/helpers.php';
+       include __DIR__ . '/../Http/routes.php';
+       $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'payment');
     }
 
     /**
-     * Register services.
-     *
-     * @return void
-     */
+    * Register services.
+    *
+    * @return void
+    */
     public function register()
     {
-        $this->registerFacades();
 
-        $this->registerConfig();
-    }
-    /**
-     * Register Bouncer as a singleton.
-     *
-     * @return void
-     */
-    protected function registerFacades()
-    {
-        $loader = AliasLoader::getInstance();
-        $loader->alias('payment', PaymentFacade::class);
-
-        $this->app->singleton('payment', function () {
-            return new Payment();
-        });
-    }
-    /**
-     * Register package config.
-     *
-     * @return void
-     */
-    protected function registerConfig()
-    {
-        $this->mergeConfigFrom(
-            dirname(__DIR__) . '/Config/paymentmethods.php', 'paymentmethods'
-        );
-
-        $this->mergeConfigFrom(
-            dirname(__DIR__) . '/Config/system.php', 'core'
-        );
     }
 }
