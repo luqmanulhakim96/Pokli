@@ -1,8 +1,6 @@
 <?php
 
 namespace Artanis\BillPlz\Payment;
-
-use Illuminate\Support\Facades\Config;
 use Webkul\Payment\Payment\Payment;
 
 abstract class BillPlz extends Payment
