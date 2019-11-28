@@ -2,7 +2,7 @@
 namespace Artanis\BillPlz\Payment;
 use Webkul\Payment\Payment\Payment;
 use Billplz\Client;
-// use Billplz\Laravel\Billplz;
+use Billplz\Laravel\Billplz;
 /**
  * BillPlz Wrapper
  */
