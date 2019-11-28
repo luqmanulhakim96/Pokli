@@ -1,6 +1,6 @@
 <?php
 
-namespace Artanis\Payment\Payment;
+namespace Artanis\BillPlz\Payment;
 
 /**
  * Cash On Delivery payment method class
