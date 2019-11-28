@@ -251,6 +251,7 @@ return [
 
         //Artanis package
         Artanis\BillPlz\Providers\BillPlzServiceProvider::class,
+        Artanis\Payment\Providers\PaymentServiceProvider::class,
         Artanis\GapSap\Providers\GapSapServiceProvider::class,
 
         //Billplz package
