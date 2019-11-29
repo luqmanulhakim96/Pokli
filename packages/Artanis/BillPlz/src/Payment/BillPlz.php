@@ -45,7 +45,7 @@ class BillPlz extends Payment
             'name'                 => $billingAddress->first_name,
             'amount'               => $cart->grand_total,
             'callback_url'         => route('billplz.cancel'),
-            'description'          => 'Testing API'
+            'description'          => 'Testing API',
             'redirect_url'         => route('billplz.redirect'),
             'deliver'              => core()->getCurrentChannel()->name,
             'reference_1_label'    => 'Item : ',
