@@ -30,6 +30,28 @@ class BillPlz extends Payment
 
     public function getRedirectUrl()
     {
+        return route('billplz.redirect');
+    }
 
+    public function getFormFields()
+    {
+        $cart = $this->getCart();
+        $billingAddress = $cart->billing_address;
+        $item = $this->getCartItems();
+
+        $fields = [
+            'collection_id'        => 'x7afhxzc',
+            'email'                => $billingAddress->email,
+            'name'                 => $billingAddress->first_name,
+            'amount'               => $cart->grand_total,
+            'callback_url'         => route('billplz.cancel'),
+            'description'          => 'Testing API'
+            'redirect_url'         => route('billplz.redirect'),
+            'deliver'              => core()->getCurrentChannel()->name,
+            'reference_1_label'    => 'Item : ',
+            'reference_1'          => $item->name,
+        ];
+
+        return $fields;
     }
 }
