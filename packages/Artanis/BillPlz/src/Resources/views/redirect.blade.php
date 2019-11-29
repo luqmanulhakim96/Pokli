@@ -12,7 +12,7 @@
       \Duit\MYR::given(200),
       " Item : ",
       "EMAS",
-      ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.redirect')],
+      "http://209.97.169.247/Pokli/",
       "Testing API"
   );
 
