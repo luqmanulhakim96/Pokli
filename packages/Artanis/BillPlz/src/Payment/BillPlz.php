@@ -69,8 +69,8 @@ class BillPlz extends Payment
             core()->getCurrentChannel()->name
         );
 
-        $id = $response[0]['id'];
-        
+        $id = $response->id;
+
       return 'https://www.billplz-sandbox.com/api/v3/'.$id;
     }
 }
