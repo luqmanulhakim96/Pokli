@@ -6,14 +6,14 @@
   $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
   $bill = $billplzCreate->bill();
   $bill->create(
-      "x7afhxzc",
-      "hakim@gmail.com",
+      'x7afhxzc',
+      'hakim@gmail.com',
       'LUQMAN',
-      \Duit\MYR::given(200),
-      " Item : ",
-      "EMAS",
-      "http://209.97.169.247/Pokli/",
-      "Testing API"
+      '200',
+      ' Item : ',
+      'EMAS',
+      'http://209.97.169.247/Pokli/',
+      'Testing API'
   );
 
 ?>
