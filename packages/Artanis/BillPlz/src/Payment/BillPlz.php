@@ -17,11 +17,8 @@ class BillPlz extends Payment
 
     public function __construct()
     {
-        $this->billplz = Client::make(config('billplz.api_key'));
-        $this->billplz->useVersion(config('billplz.version'));
-        if (app()->environment() != "production") {
-            $this->billplz->useSandbox();
-        }
+        $this->billplz = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg');
+        $this->billplz->useSandbox();
     }
     public static function make()
     {
