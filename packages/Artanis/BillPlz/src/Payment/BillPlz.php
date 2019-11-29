@@ -1,6 +1,7 @@
 <?php
 
 namespace Artanis\BillPlz\Payment;
+use Illuminate\Support\Facades\Config;
 use Webkul\Payment\Payment\Payment;
 use Billplz\Client;
 
