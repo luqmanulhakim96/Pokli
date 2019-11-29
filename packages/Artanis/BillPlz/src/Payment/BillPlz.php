@@ -2,12 +2,8 @@
 
 namespace Artanis\BillPlz\Payment;
 use Webkul\Payment\Payment\Payment;
-/**
- * Cash On Delivery payment method class
- *
- * @author    Jitendra Singh <jitendra@webkul.com>
- * @copyright 2018 Webkul Software Pvt Ltd (http://www.webkul.com)
- */
+use Billplz\Client;
+
 class BillPlz extends Payment
 {
     /**
@@ -16,6 +12,21 @@ class BillPlz extends Payment
      * @var string
      */
     protected $code  = 'billplz';
+
+    private $billplz;
+
+    public function __construct()
+    {
+        $this->billplz = Client::make(config('billplz.api_key'));
+        $this->billplz->useVersion(config('billplz.version'));
+        if (app()->environment() != "production") {
+            $this->billplz->useSandbox();
+        }
+    }
+    public static function make()
+    {
+        return (new self())->billplz;
+    }
 
     public function getRedirectUrl()
     {
