@@ -168,6 +168,11 @@
 
     <div class="header-bottom" id="header-bottom">
         @include('shop::layouts.header.nav-menu.navmenu')
+        <ul class="nav">
+            <li parent="0">
+                <a href="/Pokli/purchase">GAP/SAP</a>
+            </li>
+        </ul>
     </div>
 
     <div class="search-responsive mt-10" id="search-responsive">
