@@ -185,11 +185,6 @@ return [
       'name' => 'BillPlz Payments',
       'sort' => 4,
       'fields' => [
-        [
-          'name' => 'active',
-          'title' => 'Enable For Checkout',
-          'type' => 'select',
-          'options' => [
               [
                   'name' => 'title',
                   'title' => 'admin::app.admin.system.title',
@@ -240,8 +235,5 @@ return [
                   ],
               ]
           ],
-          'validation' => 'required'
         ]
-      ]
-    ]
 ];
