@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Paypal\Http\Controllers;
+namespace Artanis\BillPlz\Http\Controllers;
 
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Sales\Repositories\OrderRepository;
