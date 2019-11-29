@@ -1,4 +1,12 @@
-<?php $billplz = app('Artanis\BillPlz\Payment\BillPlz') ?>
+<?php
+  use Billplz\Client;
+  $billplz = app('Artanis\BillPlz\Payment\BillPlz');
+
+  $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
+  $billplzCreate->create(
+    foreach ($billplz->getFormFields() as $name => $value)
+  );
+?>
 
 <body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
     You will be redirected to the FPX website in a few seconds.
