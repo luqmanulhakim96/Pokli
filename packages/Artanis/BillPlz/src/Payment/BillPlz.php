@@ -52,8 +52,6 @@ class BillPlz extends Payment
     }
     public function getBillPlzlUrl($params = [])
     {
-      $billplz->create($fields);
-      $id = $billplz->get('id');
-      return 'https://www.billplz-sandbox.com/api/v3/'.$id;
+      return 'https://www.billplz-sandbox.com/api/v3/';
     }
 }
