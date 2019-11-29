@@ -557,6 +557,23 @@ input{
     .main-container-wrapper .main-container-wrapper{
         padding:0
     }
+    .main-container-wrapper .product-card .sticker.out-of-stock{
+        border-bottom-left-radius: 15px !important; 
+        border-bottom-right-radius: 0px !important;
+        left: 85px !important;
+        font-size: 10px !important;
+        background: #ff6472 !important;
+        font-weight: bolder !important;
+    }
+    .main-container-wrapper .product-card .cart-wish-wrap .addtocart {
+        margin-right: 10px;
+        text-transform: uppercase;
+        text-align: left;
+        -webkit-box-shadow: 1px 1px 0 #ccc;
+        box-shadow: 1px 1px 0 #ccc;
+        font-size: 12px;
+        font-weight: bolder;
+    }
 }
 @media only screen and (max-width:551px){
     .main-container-wrapper .product-grid-3{
