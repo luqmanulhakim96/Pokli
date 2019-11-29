@@ -557,28 +557,11 @@ input{
     .main-container-wrapper .main-container-wrapper{
         padding:0
     }
-    .main-container-wrapper .product-card .sticker.out-of-stock{
-        border-bottom-left-radius: 15px !important; 
-        border-bottom-right-radius: 0px !important;
-        left: 85px !important;
-        font-size: 10px !important;
-        background: #ff6472 !important;
-        font-weight: bolder !important;
-    }
-    .main-container-wrapper .product-card .cart-wish-wrap .addtocart {
-        margin-right: 10px;
-        text-transform: uppercase;
-        text-align: left;
-        -webkit-box-shadow: 1px 1px 0 #ccc;
-        box-shadow: 1px 1px 0 #ccc;
-        font-size: 12px;
-        font-weight: bolder;
-    }
 }
 @media only screen and (max-width:551px){
     .main-container-wrapper .product-grid-3{
-        grid-template-columns:48.5% 48.5%;
-        grid-column-gap:20px
+        /* grid-template-columns:48.5% 48.5%;
+        grid-column-gap:20px */
     }
 }
 @media only screen and (max-width:854px){
@@ -587,11 +570,14 @@ input{
         width:100%
     }
     .main-container-wrapper .product-grid-4{
-        grid-template-columns:29.5% 29.5% 29.5%;
-        grid-column-gap:35px
+        /* grid-template-columns:29.5% 29.5% 29.5%;
+        grid-column-gap:35px */
     }
     .main-container-wrapper .product-card:hover{
         padding:5px
+    }
+    .main-container-wrapper .product-card .sticker.out-of-stock{
+        left: 155px !important;
     }
 }
 @media only screen and (max-width:653px){
@@ -600,8 +586,8 @@ input{
         width:100%
     }
     .main-container-wrapper .product-grid-4{
-        grid-template-columns:48.5% 48.5%;
-        grid-column-gap:17px
+        /* grid-template-columns:48.5% 48.5%;
+        grid-column-gap:17px */
     }
 }
 @media only screen and (max-width:425px){
@@ -616,8 +602,8 @@ input{
         padding:5px
     }
     .main-container-wrapper .product-grid-4{
-        grid-template-columns:48.5% 48.5%;
-        grid-column-gap:10px
+        /* grid-template-columns:48.5% 48.5%;
+        grid-column-gap:10px */
     }
 }
 .main-container-wrapper .product-list{
@@ -2321,6 +2307,9 @@ section.cart .cart-content .right-side{
         position:relative;
         top:-20px
     }
+    .misc-controls {
+        top: 200px !important;
+    }
 }
 @media only screen and (max-width:600px){
     section.cart .cart-content .left-side .cart-item-list .item{
@@ -3871,8 +3860,11 @@ a:active, a:focus, a:hover, a:link, a:visited {
 .main-container-wrapper .product-card .sticker.out-of-stock{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 0px;
-    left: 160px;
+    left: 164px;
     background:#ff6472
+    /* top: 42px;
+    left: 15px;
+    background: #ff6472; */
 }
 
 /* Custom for purchase gap/sap */
