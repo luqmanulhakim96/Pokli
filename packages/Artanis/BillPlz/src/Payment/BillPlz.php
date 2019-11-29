@@ -44,9 +44,8 @@ class BillPlz extends Payment
             'callback_url'         => route('billplz.cancel'),
             'description'          => 'Testing API',
             'redirect_url'         => route('billplz.redirect'),
-            'deliver'              => core()->getCurrentChannel()->name,
             'reference_1_label'    => 'Item : ',
-            'reference_1'          => $item->name,
+            'reference_1'          => core()->getCurrentChannel()->name
         ];
 
         return $fields;
