@@ -1,4 +1,5 @@
 <?php
+  use Webkul\Payment\Payment\Payment;
   use Billplz\Client;
   $billplz = app('Artanis\BillPlz\Payment\BillPlz');
 
