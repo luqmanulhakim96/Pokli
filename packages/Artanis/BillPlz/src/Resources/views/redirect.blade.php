@@ -4,7 +4,8 @@
   $billplz = app('Artanis\BillPlz\Payment\BillPlz');
 
   $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
-  $bill = $billplzCreate->create(
+  $bill = $billplzCreate->bill();
+  $bill->create(
       "x7afhxzc",
       "hakim@gmail.com",
       'LUQMAN',
