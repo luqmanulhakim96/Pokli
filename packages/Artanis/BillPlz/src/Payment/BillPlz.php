@@ -1,7 +1,7 @@
 <?php
 
 namespace Artanis\BillPlz\Payment;
-
+use Webkul\Payment\Payment\Payment;
 /**
  * Cash On Delivery payment method class
  *
