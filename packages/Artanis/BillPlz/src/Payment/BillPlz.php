@@ -53,6 +53,24 @@ class BillPlz extends Payment
     }
     public function getBillPlzlUrl($params = [])
     {
-      return 'https://www.billplz-sandbox.com/api/v3/';
+        $cart = $this->getCart();
+        $billingAddress = $cart->billing_address;
+        $item = $this->getCartItems();
+
+        $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
+        $bill = $billplzCreate->bill();
+        $response = $bill->create(
+            'x7afhxzc',
+            $billingAddress->email,
+            null,
+            $billingAddress->first_name,
+            \Duit\MYR::given($cart->grand_total*100),
+            ['callback_url' => 'http://example.com/webhook/', 'redirect_url' => 'http://example.com/redirect/'],
+            core()->getCurrentChannel()->name
+        );
+
+        $id = $response[0]['id'];
+        
+      return 'https://www.billplz-sandbox.com/api/v3/'.$id;
     }
 }
