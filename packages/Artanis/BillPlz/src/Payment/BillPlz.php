@@ -52,8 +52,8 @@ class BillPlz extends Payment
     }
     public function getBillPlzlUrl($params = [])
     {
-        return sprintf('https://www.billplz.com/api/v3/bills',
-                $params ? '?' . http_build_query($params) : ''
-            );
+      $billplz->create($fields);
+      $id = $billplz->get('id');
+      return 'https://www.billplz-sandbox.com/api/v3/'.$id;
     }
 }
