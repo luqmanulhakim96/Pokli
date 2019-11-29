@@ -7,13 +7,12 @@
   $bill = $billplzCreate->bill();
   $bill->create(
       'x7afhxzc',
-      'hakim@gmail.com',
-      'LUQMAN',
-      '200',
-      ' Item : ',
-      'EMAS',
-      'http://209.97.169.247/Pokli/',
-      'Testing API'
+      'api@billplz.com',
+      null,
+      'Michael API V3',
+      \Duit\MYR::given(200),
+      ['callback_url' => 'http://example.com/webhook/', 'redirect_url' => 'http://example.com/redirect/'],
+      'Maecenas eu placerat ante.'
   );
 
 ?>
