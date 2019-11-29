@@ -604,6 +604,25 @@ input{
     .main-container-wrapper .product-grid-4{
         /* grid-template-columns:48.5% 48.5%;
         grid-column-gap:10px */
+        grid-template-columns:50% 50%;
+        grid-column-gap:10px
+    }
+    .main-container-wrapper .product-card .sticker.out-of-stock{
+        top: 15px !important;
+        left: 15px !important;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 15px !important;
+        -webkit-box-shadow: 1px 1px 1px #ccc !important;
+        box-shadow: 1px 1px 1px #ccc !important;
+    }
+    .main-container-wrapper .product-card .cart-wish-wrap .addtocart {
+        margin-right: 0px;
+        text-transform: uppercase;
+        text-align: left;
+        -webkit-box-shadow: 1px 1px 0 #ccc;
+        box-shadow: 1px 1px 0 #ccc;
+        font-size: 10px;
+        font-weight: bolder;
     }
 }
 .main-container-wrapper .product-list{
