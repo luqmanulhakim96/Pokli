@@ -3,18 +3,14 @@
   use Billplz\Client;
   $billplz = app('Artanis\BillPlz\Payment\BillPlz');
 
-  $cart = $this->getCart();
-  $billingAddress = $cart->billing_address;
-  $item = $this->getCartItems();
-
   $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
   $billplzCreate->create(
       "x7afhxzc",
-      $billingAddress->email,
-      $billingAddress->first_name,
-      \Duit\MYR::given($cart->grand_total),
+      "hakim@gmail.com",
+      'LUQMAN',
+      \Duit\MYR::given(200),
       " Item : ",
-      core()->getCurrentChannel()->name,
+      "EMAS",
       ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.redirect')],
       "Testing API"
   );
