@@ -8,14 +8,14 @@
 
   $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
   $billplzCreate->create(
-    "x7afhxzc",
-    $billingAddress->email,
-    $billingAddress->first_name,
-    \Duit\MYR::given($cart->grand_total),
-    " Item : ",
-    core()->getCurrentChannel()->name,
-    ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.redirect')],
-    "Testing API",
+      "x7afhxzc",
+      $billingAddress->email,
+      $billingAddress->first_name,
+      \Duit\MYR::given($cart->grand_total),
+      " Item : ",
+      core()->getCurrentChannel()->name,
+      ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.redirect')],
+      "Testing API"
   );
 
 ?>
