@@ -21,7 +21,7 @@ foreach (app('Webkul\Category\Repositories\CategoryRepository')->getVisibleCateg
 
 <script type="text/x-template" id="category-nav-template">
 
-    <ul class="nav">
+    <ul id="navigation" class="nav">
         <category-item
             v-for="(item, index) in items"
             :key="index"

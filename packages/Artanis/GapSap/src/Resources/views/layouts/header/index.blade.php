@@ -168,11 +168,11 @@
 
     <div class="header-bottom" id="header-bottom">
         @include('shop::layouts.header.nav-menu.navmenu')
-        <ul class="nav">
+        {{-- <ul class="nav">
             <li parent="3">
-                <a href="/Pokli/purchase">GAP/SAP</a>
+                <a href="/purchase">GAP/SAP</a>
             </li>
-        </ul>
+        </ul> --}}
     </div>
 
     <div class="search-responsive mt-10" id="search-responsive">
@@ -190,6 +190,16 @@
 
 @push('scripts')
     <script>
+        $(function () {
+            var ul = document.getElementById("navigation");
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.setAttribute("href", "/Pokli/purchase");
+            a.appendChild(document.createTextNode('GAP/SAP'));
+
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
         $(document).ready(function() {
 
             $('body').delegate('#search, .icon-menu-close, .icon.icon-menu', 'click', function(e) {
