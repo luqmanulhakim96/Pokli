@@ -45,7 +45,7 @@ class StandardController extends Controller
      */
     public function redirect()
     {
-        return view('redirect::redirect');
+        return view('billplz::redirect');
     }
 
     /**
