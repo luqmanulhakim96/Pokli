@@ -39,7 +39,7 @@ class StandardController extends Controller
     }
 
     /**
-     * Redirects to the paypal.
+     * Redirects to the billplz.
      *
      * @return \Illuminate\View\View
      */
@@ -49,7 +49,7 @@ class StandardController extends Controller
     }
 
     /**
-     * Cancel payment from paypal.
+     * Cancel payment from billplz.
      *
      * @return \Illuminate\Http\Response
      */
