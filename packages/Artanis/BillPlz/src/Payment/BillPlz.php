@@ -40,7 +40,7 @@ class BillPlz extends Payment
         $fields = [
             'collection_id'        => 'x7afhxzc',
             'email'                => $billingAddress->email,
-            'name'                 => $billingAddress->first_name,
+            'name'                 => $billingAddress->first_name.' '.$billingAddress->last_name,
             'amount'               => $cart->grand_total,
             'callback_url'         => route('billplz.cancel'),
             'description'          => 'Testing API',
