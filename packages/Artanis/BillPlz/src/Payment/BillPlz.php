@@ -71,7 +71,7 @@ class BillPlz extends Payment
 
         // $id = $response->id;
         // $id = 'kpfjespa';
-        var_dump($response->toArray());
-      // return 'https://www.billplz-sandbox.com/api/v3/bills/'.$id;
+        // var_dump($response->toArray());
+      return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
