@@ -69,7 +69,7 @@ class BillPlz extends Payment
             core()->getCurrentChannel()->name
         );
         // $id = 'h00uwxm6';
-        var_dump($response->url);
+        var_dump($response);
       // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
