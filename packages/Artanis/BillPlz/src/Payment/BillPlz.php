@@ -63,12 +63,11 @@ class BillPlz extends Payment
             'x7afhxzc',
             $billingAddress->email,
             null,
-            $billingAddress->first_name,
+            $billingAddress->first_name.' '.$billingAddress->last_name,
             \Duit\MYR::given($cart->grand_total*100),
             ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.success')],
             core()->getCurrentChannel()->name
         );
-        // $id = 'h00uwxm6';
         $responseArray = $response->toArray();
         $url = $responseArray['url'];
         return $url;
