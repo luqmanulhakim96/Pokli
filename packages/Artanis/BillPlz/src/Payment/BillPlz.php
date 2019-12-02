@@ -40,7 +40,7 @@ class BillPlz extends Payment
         $fields = [
             'collection_id'        => 'x7afhxzc',
             'email'                => $billingAddress->email,
-            'name'                 => $billingAddress->first_name,
+            'name'                 => $billingAddress->first_name.' '.$billingAddress->last_name,
             'amount'               => $cart->grand_total,
             'callback_url'         => route('billplz.cancel'),
             'description'          => 'Testing API',
@@ -68,7 +68,8 @@ class BillPlz extends Payment
             ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.success')],
             core()->getCurrentChannel()->name
         );
-        $id = 'h00uwxm6';
-      return 'https://billplz-staging.herokuapp.com/bills/'.$id;
+        // $id = 'h00uwxm6';
+        var_dump($response->url);
+      // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
