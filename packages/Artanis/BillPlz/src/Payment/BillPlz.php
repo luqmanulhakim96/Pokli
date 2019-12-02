@@ -72,6 +72,6 @@ class BillPlz extends Payment
         // $id = $response->id;
         $id = 'wm9xhrr0';
 
-      return 'https://www.billplz-sandbox.com/api/v3/'.$id;
+      return 'https://www.billplz-sandbox.com/bills/'.$id;
     }
 }
