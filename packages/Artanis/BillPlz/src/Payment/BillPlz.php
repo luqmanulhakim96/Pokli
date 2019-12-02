@@ -70,8 +70,8 @@ class BillPlz extends Payment
         );
 
         // $id = $response->id;
-        $id = 'kpfjespa';
-
-      return 'https://www.billplz-sandbox.com/api/v3/bills/'.$id;
+        // $id = 'kpfjespa';
+        var_dump($response->toArray());
+      // return 'https://www.billplz-sandbox.com/api/v3/bills/'.$id;
     }
 }
