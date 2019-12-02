@@ -68,10 +68,7 @@ class BillPlz extends Payment
             ['callback_url' => 'http://example.com/webhook/', 'redirect_url' => 'http://example.com/redirect/'],
             core()->getCurrentChannel()->name
         );
-
-        // $id = $response->id;
-        $id = 'ijk5twz0'; //id
-        // var_dump($response->toArray());
+        $id = 'ijk5twz0';
       return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
