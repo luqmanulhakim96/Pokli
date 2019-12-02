@@ -70,7 +70,7 @@ class BillPlz extends Payment
         );
 
         // $id = $response->id;
-        $id = 'wm9xhrr0';
+        $id = 'kpfjespa';
 
       return 'https://www.billplz-sandbox.com/bills/'.$id;
     }
