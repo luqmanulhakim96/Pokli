@@ -70,7 +70,7 @@ class BillPlz extends Payment
         );
 
         // $id = $response->id;
-        // $id = 'kpfjespa';
+        $id = 'ijk5twz0';
         // var_dump($response->toArray());
       return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
