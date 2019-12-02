@@ -68,7 +68,7 @@ class BillPlz extends Payment
             ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.success')],
             core()->getCurrentChannel()->name
         );
-        $id = 'vzdvx0p3';
+        $id = 'hr3lqvd4';
       return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
