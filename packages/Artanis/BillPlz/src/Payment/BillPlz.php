@@ -71,7 +71,7 @@ class BillPlz extends Payment
 
         // $id = $response->id;
         // $id = 'kpfjespa';
-        var_dump($response->url);
+        var_dump($response->toArray());
       // return 'https://www.billplz-sandbox.com/api/v3/bills/'.$id;
     }
 }
