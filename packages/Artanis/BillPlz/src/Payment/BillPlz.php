@@ -70,9 +70,7 @@ class BillPlz extends Payment
         );
         // $id = 'h00uwxm6';
         $responseArray = $response->toArray();
-        foreach($responseArray as $key => $val){
-           $url = $val['url'];
-        }
+        $url = $responseArray['url'];
         return $url;
       // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
