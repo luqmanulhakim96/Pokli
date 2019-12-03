@@ -178,6 +178,16 @@
 
 @push('scripts')
     <script>
+        $(function () {
+            var ul = document.getElementById("navigation");
+            var li = document.createElement("li");
+            var a = document.createElement("a");
+            a.setAttribute("href", "/Pokli/purchase");
+            a.appendChild(document.createTextNode('GAP/SAP'));
+
+            li.appendChild(a);
+            ul.appendChild(li);
+        });
         $(document).ready(function() {
 
             $('body').delegate('#search, .icon-menu-close, .icon.icon-menu', 'click', function(e) {
