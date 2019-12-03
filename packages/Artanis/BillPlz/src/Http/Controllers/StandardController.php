@@ -76,11 +76,17 @@ class StandardController extends Controller
         return redirect()->route('shop.checkout.success');
     }
 
-    /**
-     * Paypal Ipn listener
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function verify()
+    {
+        $data = $bill->webhook($_POST); //catch billplz payment
+        $responseArray = $data->toArray();
+        $url = $responseArray['paid'];
+        if($url == true)
+          return route('billplz.success');
+        else if ($url == false)
+          return route('billplz.cancel');
+    }
+
     public function ipn()
     {
         $this->ipnHelper->processIpn(request()->all());
