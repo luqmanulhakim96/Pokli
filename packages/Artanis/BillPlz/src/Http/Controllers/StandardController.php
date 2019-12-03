@@ -84,10 +84,10 @@ class StandardController extends Controller
         $data = $bill->redirect($_GET); //catch billplz payment
         $response = $data['paid'];
         dd($response);
-        if(strpos($response == true)
-          return redirect()->route('billplz.success');
-        else if ($response == false)
-          return redirect()->route('billplz.cancel');
+        // if ($response == true)
+        //   return redirect()->route('billplz.success');
+        // else if ($response == false)
+        //   return redirect()->route('billplz.cancel');
     }
 
     public function ipn()
