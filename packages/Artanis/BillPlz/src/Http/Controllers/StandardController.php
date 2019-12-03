@@ -82,12 +82,12 @@ class StandardController extends Controller
         $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
         $bill = $billplzCreate->bill();
         $data = $bill->redirect($_GET); //catch billplz payment
-        var_dump($data);
-        // $response = $data['paid'];
-        // if($response == TRUE)
-        //   return redirect()->route('billplz.success');
-        // else if ($response == FALSE)
-        //   return redirect()->route('billplz.cancel');
+        // var_dump($data);
+        $response = false;
+        if($response == TRUE)
+          return redirect()->route('billplz.success');
+        else if ($response == FALSE)
+          return redirect()->route('billplz.cancel');
     }
 
     public function ipn()
