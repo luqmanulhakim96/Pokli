@@ -83,7 +83,7 @@ class StandardController extends Controller
         $bill = $billplzCreate->bill();
         $data = $bill->webhook($_POST); //catch billplz payment
         $response = $data['paid'];
-        var_dump($response);
+        var_dump($data);
         // if($response == TRUE)
         //   return redirect()->route('billplz.success');
         // else if ($response == FALSE)
