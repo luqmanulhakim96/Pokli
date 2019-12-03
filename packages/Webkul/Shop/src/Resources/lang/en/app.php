@@ -637,7 +637,7 @@ return [
             ],
 
             'verification' => [
-                'heading' => 'Bagisto - Email Verification',
+                'heading' => 'Pokli - Email Verification',
                 'subject' => 'Verification Mail',
                 'verify' => 'Verify Your Account',
                 'summary' => 'This is the mail to verify that the email address you entered is yours.
