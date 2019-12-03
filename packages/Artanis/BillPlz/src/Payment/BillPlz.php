@@ -66,7 +66,7 @@ class BillPlz extends Payment
             null,
             $billingAddress->first_name.' '.$billingAddress->last_name, //user name
             \Duit\MYR::given($cart->grand_total*100), //total price
-            ['callback_url' => '', 'redirect_url' => route('billplz.verify')], //url
+            ['callback_url' => route('billplz.verify'), 'redirect_url' => route('billplz.verify')], //url
             core()->getCurrentChannel()->name //item price
         );
         $responseArray = $response->toArray();
