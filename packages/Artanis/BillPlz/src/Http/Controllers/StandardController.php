@@ -85,9 +85,9 @@ class StandardController extends Controller
         $responseArray = $data['paid'];
         $paid = $responseArray;
         if($paid == true)
-          return route('success');
+          return route('billplz.success');
         else if ($paid == false)
-          return route('cancel');
+          return route('billplz.cancel');
     }
 
     public function ipn()
