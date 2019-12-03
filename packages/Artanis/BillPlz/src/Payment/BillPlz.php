@@ -31,26 +31,26 @@ class BillPlz extends Payment
         return route('billplz.redirect');
     }
 
-    // public function getFormFields()
-    // {
-    //     $cart = $this->getCart();
-    //     $billingAddress = $cart->billing_address;
-    //     $item = $this->getCartItems();
-    //
-    //     $fields = [
-    //         'collection_id'        => 'x7afhxzc',
-    //         'email'                => $billingAddress->email,
-    //         'name'                 => $billingAddress->first_name.' '.$billingAddress->last_name,
-    //         'amount'               => $cart->grand_total,
-    //         'callback_url'         => route('billplz.cancel'),
-    //         'description'          => 'Testing API',
-    //         'redirect_url'         => route('billplz.redirect'),
-    //         'reference_1_label'    => 'Item : ',
-    //         'reference_1'          => core()->getCurrentChannel()->name
-    //     ];
-    //
-    //     return $fields;
-    // }
+    public function getFormFields()
+    {
+        $cart = $this->getCart();
+        $billingAddress = $cart->billing_address;
+        $item = $this->getCartItems();
+
+        $fields = [
+            'collection_id'        => 'x7afhxzc',
+            'email'                => $billingAddress->email,
+            'name'                 => $billingAddress->first_name.' '.$billingAddress->last_name,
+            'amount'               => $cart->grand_total,
+            'callback_url'         => route('billplz.cancel'),
+            'description'          => 'Testing API',
+            'redirect_url'         => route('billplz.redirect'),
+            'reference_1_label'    => 'Item : ',
+            'reference_1'          => core()->getCurrentChannel()->name
+        ];
+
+        return $fields;
+    }
 
     public function getBillPlzlUrl($params = [])
     {
