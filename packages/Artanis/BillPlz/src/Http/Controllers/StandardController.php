@@ -84,9 +84,9 @@ class StandardController extends Controller
         $data = $bill->webhook($_POST); //catch billplz payment
         $response = $data['paid'];
         if($response == true)
-          return route('billplz.success');
+          return redirect()->route('billplz.success');
         else if ($response == false)
-          return route('billplz.cancel');
+          return redirect()->route('billplz.cancel');
     }
 
     public function ipn()
