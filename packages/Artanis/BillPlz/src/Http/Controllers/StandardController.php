@@ -75,14 +75,4 @@ class StandardController extends Controller
 
         return redirect()->route('shop.checkout.success');
     }
-
-    /**
-     * Paypal Ipn listener
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function ipn()
-    {
-        $this->ipnHelper->processIpn(request()->all());
-    }
 }
