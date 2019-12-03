@@ -81,9 +81,9 @@ class StandardController extends Controller
     {
         $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
         $bill = $billplzCreate->bill();
-        $data = $bill->webhook($_GET); //catch billplz payment
-        $response = $data['paid'];
-        var_dump($data);
+        // $data = $bill->webhook($_GET); //catch billplz payment
+        // $response = $data['paid'];
+        var_dump($bill->webhook($_GET));
         // if($response == TRUE)
         //   return redirect()->route('billplz.success');
         // else if ($response == FALSE)
