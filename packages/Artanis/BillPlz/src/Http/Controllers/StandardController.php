@@ -5,6 +5,7 @@ namespace Artanis\BillPlz\Http\Controllers;
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Sales\Repositories\OrderRepository;
 use Artanis\BillPlz\Helpers\Ipn;
+use Billplz\Client;
 
 class StandardController extends Controller
 {
