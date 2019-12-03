@@ -56,7 +56,7 @@ class StandardController extends Controller
      */
     public function cancel()
     {
-        session()->flash('error', 'BillPlz payment has been canceled.');
+        session()->flash('error', 'FPX payment has been canceled.');
 
         return redirect()->route('shop.checkout.cart.index');
     }
