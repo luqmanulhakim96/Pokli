@@ -51,6 +51,7 @@ class BillPlz extends Payment
     //
     //     return $fields;
     // }
+
     public function getBillPlzlUrl($params = [])
     {
         $cart = $this->getCart();
