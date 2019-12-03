@@ -61,13 +61,13 @@ class BillPlz extends Payment
         $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
         $bill = $billplzCreate->bill();
         $response = $bill->create(
-            'x7afhxzc',
-            $billingAddress->email,
+            'x7afhxzc', //collection id
+            $billingAddress->email, //user email
             null,
-            $billingAddress->first_name.' '.$billingAddress->last_name,
-            \Duit\MYR::given($cart->grand_total*100),
-            ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.verify')],
-            core()->getCurrentChannel()->name
+            $billingAddress->first_name.' '.$billingAddress->last_name, //user name
+            \Duit\MYR::given($cart->grand_total*100), //total price
+            ['callback_url' => route('billplz.cancel'), 'redirect_url' => route('billplz.success')], //url
+            core()->getCurrentChannel()->name //item price
         );
         $responseArray = $response->toArray();
         $url = $responseArray['url'];
