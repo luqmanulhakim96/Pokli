@@ -8,10 +8,6 @@
 
     <div class="product-grid-4">
 
-      <div class="row">
-          <!-- style="width:100%; margin:auto;" -->
-          <div class="col-lg-12">
-
           <div class="title-table2 col-xs-12" id="red-table2">
           <b>Public Gold Price  (24 Hours Live)<br><font size="2">(Last updated 05-Dec-2019 11:36:01)</font>	</b></div>
           <b>
@@ -59,7 +55,5 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
 
 </section>
