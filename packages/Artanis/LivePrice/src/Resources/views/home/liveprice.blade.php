@@ -19,27 +19,13 @@
             					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="/images/liveprice/gap.png" alt="Gold Program" width="245px" height="15px" style="position: relative; top:-4px;"></a>
             				</div>
             					<table class="gold-live-price-table2" id="gap-table-content2">
-            						<tbody><tr>
-            						<th>
-            							(Last updated 05-Dec-2019)
-            						</th>
-            					</tr>
-
-            					<tr>
-            						<td class="hoverlinks"> <!-- Added by : Alex , Date: 24-oct-2014 -->
-            							<a class="gold_price_link" href="{{ route('gapsap.index') }}" target="_blank">
-            								MYR 100 = 0.4785 gram
-            							</a>
-            						</td>
-            					</tr>
-            					<tr>
-            						<td class="hoverlinks">
-            							<a class="gold_price_link" href="{{ route('gapsap.index') }}" target="_blank">
-            								MYR 209 = 1.0000 gram
-            							</a>
-            						</td>
-            					</tr>
-            					</tbody>
+                        @foreach ($gap as $gap)
+                        <tr>
+                        <td>{{ $gap->last_updated }}</td>
+                        <td>{{ $gap->gram }}</td>
+                        <td>{{ $gap->price }}</td>
+                        </tr>
+                        @endforeach
                     </table>
                        <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src="/images/liveprice/BuyGAP.png"></a>
     			        </div>
