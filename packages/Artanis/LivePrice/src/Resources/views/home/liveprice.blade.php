@@ -16,7 +16,7 @@
           			<div id="section-1" class="col-md-3 col-sm-6 col-xs-12" style="display: block;height: 533px;">
                   <div class="live-price-div2" id="gap-div-table2">
             				<div class="gold-live-price-title-table2" id="gap-div-title2">
-            					<a href="https://publicgold.com.my/images/files/pdf/tnc_gap.pdf" target="_BLANK"><img src="/images/liveprice/gap.png" alt="Gold Accumulation Program" width="245px" height="15px" style="position: relative; top:-4px;"></a>
+            					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="/images/liveprice/gap.png" alt="Gold Accumulation Program" width="245px" height="15px" style="position: relative; top:-4px;"></a>
             				</div>
             					<table class="gold-live-price-table2" id="gap-table-content2">
             						<tbody><tr>
@@ -27,21 +27,21 @@
 
             					<tr>
             						<td class="hoverlinks"> <!-- Added by : Alex , Date: 24-oct-2014 -->
-            							<a class="gold_price_link" href="https://publicgold.com.my/images/files/pdf/tnc_gap.pdf" target="_blank">
+            							<a class="gold_price_link" href="{{ route('gapsap.index') }}" target="_blank">
             								MYR 100 = 0.4785 gram
             							</a>
             						</td>
             					</tr>
             					<tr>
             						<td class="hoverlinks">
-            							<a class="gold_price_link" href="https://publicgold.com.my/images/files/pdf/tnc_gap.pdf" target="_blank">
+            							<a class="gold_price_link" href="{{ route('gapsap.index') }}" target="_blank">
             								MYR 209 = 1.0000 gram
             							</a>
             						</td>
             					</tr>
             					</tbody>
                     </table>
-                       <a href="https://publicgold.com.my/index.php/my-gap-2"><img style="display:block; width:230px; margin: 10px;" src="/images/liveprice/BuyGAP.png"></a>
+                       <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src="/images/liveprice/BuyGAP.png"></a>
     			        </div>
            <!-- BungaMas Taifook -->
           	<!-- End BungaMas TaiFook -->
