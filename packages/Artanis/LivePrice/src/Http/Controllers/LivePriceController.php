@@ -18,7 +18,7 @@ class LivePriceController extends Controller
     public function index()
     {
       $gap = DB::table('gold_live_price_gap')->select('last_updated','gram','price')->get();
-      return view('liveprice',['gold_live_price_gap'=>$gap]);
+      return view($this->_config['view'], compact(['gap']));
     }
 
 }
