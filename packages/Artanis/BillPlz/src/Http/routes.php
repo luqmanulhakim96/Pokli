@@ -1,7 +1,4 @@
 <?php
-
-    // Route::view('/payment', 'payment::payment.payment');
-
     Route::group(['middleware' => ['web']], function () {
 
         Route::get('billplz/redirect', 'Artanis\BillPlz\Http\Controllers\StandardController@redirect')->name('billplz.redirect');
