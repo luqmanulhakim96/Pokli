@@ -19,13 +19,7 @@
             					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="/images/liveprice/gap.png" alt="Gold Program" width="245px" height="15px" style="position: relative; top:-4px;"></a>
             				</div>
             					<table class="gold-live-price-table2" id="gap-table-content2">
-                        @foreach ($gap as $gaps)
-                        <tr>
-                        <td>{{ $gaps->last_updated }}</td>
-                        <td>{{ $gaps->gram }}</td>
-                        <td>{{ $gaps->price }}</td>
-                        </tr>
-                        @endforeach
+                        
                     </table>
                        <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src="/images/liveprice/BuyGAP.png"></a>
     			        </div>
