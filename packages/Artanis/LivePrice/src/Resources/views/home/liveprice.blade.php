@@ -1,7 +1,7 @@
 <section class="featured-products">
 
     <div class="featured-heading">
-        Live Price<br/>
+        {{ __('shop::app.home.new-products') }}<br/>
 
         <span class="featured-seperator" style="color:lightgrey;">_____</span>
     </div>
