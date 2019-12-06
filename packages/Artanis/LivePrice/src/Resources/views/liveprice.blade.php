@@ -19,7 +19,8 @@
             					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="https://www.publicgold.com.my/images/liveprice/BuyGAP.png" alt="Gold Program" width="50%" height="70%" style="position: relative; top:-4px;"></a>
             				</div>
             					<table class="gold-live-price-table2" id="gap-table-content2">
-
+                        <!-- put gold information here -->
+                        @include("liveprice::liveapi")
                     </table>
                        <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src=""></a>
     			        </div>
@@ -29,9 +30,9 @@
           			</span>
           			</div>
           		</div>
+            </div>
+          </div>
           </b>
-        </div>
-      </div>
     </div>
 
 </section>
