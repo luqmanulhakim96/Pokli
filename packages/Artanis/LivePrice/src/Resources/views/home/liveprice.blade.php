@@ -16,7 +16,7 @@
           			<div id="section-1" class="col-md-3 col-sm-6 col-xs-12" style="display: block;height: 533px;">
                   <div class="live-price-div2" id="gap-div-table2">
             				<div class="gold-live-price-title-table2" id="gap-div-title2">
-            					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="https://gap.publicgold.com.my/assets/images/singlegoldbar.png" alt="Gold Program" width="28px" height="50px" style="position: relative; top:-4px;"></a>
+            					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="https://www.publicgold.com.my/images/liveprice/BuyGAP.png" alt="Gold Program" width="245px" height="15px" style="position: relative; top:-4px;"></a>
             				</div>
             					<table class="gold-live-price-table2" id="gap-table-content2">
 
