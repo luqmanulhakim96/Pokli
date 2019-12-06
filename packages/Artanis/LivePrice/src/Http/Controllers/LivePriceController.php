@@ -14,7 +14,7 @@ use Webkul\Product\Repositories\ProductReviewRepository;
 class LivePriceController extends Controller
 {
 
-    protected $gap;
+    protected $gold_live_price_gap;
 
     public function index()
     {
