@@ -18,10 +18,10 @@ class LivePriceController extends Controller
 
     public function index()
     {
-      $gap = DB::table('gold_live_price_gap')->select('last_updated','gram','price')->get();
+      $gold_live_price_gap = DB::table('gold_live_price_gap')->select('last_updated','gram','price')->get();
       // $gap = DB::table('customers')->get();
       // dd($gap);
-       return view('liveapi')->with('gold_live_price_gap', $gap);
+       return view('liveapi')->with('gold_live_price_gap', $gold_live_price_gap);
        // return view($this->_config['view'], compact(['gap']));
     }
 
