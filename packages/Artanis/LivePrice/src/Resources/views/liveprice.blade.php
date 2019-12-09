@@ -4,11 +4,21 @@
     {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
      }
+
+    $getLast = "SELECT DATE_FORMAT(`last_updated`, '%d-%M-%Y %H:%i:%S') as dateLast FROM `gold_live_price_gap` GROUP BY `last_updated`";
+
     $getGAP = "SELECT * FROM gold_live_price_gap";
     $getGold24k = "SELECT * FROM gold_live_price_24k";
 
     $getSAP = "SELECT * FROM silver_live_price_sap";
     $getSilver24k = "SELECT * FROM silver_live_price_24k";
+
+    $queryLast= mysqli_query($db,$getLast)or Die("Sorry, dead query");
+    while($row = mysqli_fetch_array($queryLast))
+    {
+        $dataLast[]=$row;
+    } #end of while
+
 
     $queryGAP= mysqli_query($db,$getGAP)or Die("Sorry, dead query");
     while($row = mysqli_fetch_array($queryGAP))
@@ -32,7 +42,7 @@
     </div>
 
           <div class="title-table2 col-xs-12" id="red-table2">
-            <b>Pokli Gold Price (24 Hours Live)<br><font size="2">(Last updated 05-Dec-2019 11:36:01)</font></b>
+            <b>Pokli Gold Price (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
           </div>
           <b>
           		<div class="all-live-price-div2 col-lg-12" id="orange-table2">
@@ -47,7 +57,6 @@
 
                           @foreach($dataGAP as $key => $value)
                                 <tr>
-                                  <th>{{$value["last_updated"]}}</th>
                                   <th>{{$value["gram"]}}</th>
                                   <th>{{$value["price"]}}</th>
                                 </tr>
@@ -55,7 +64,6 @@
 
                           @foreach($dataSAP as $key => $value)
                               <tr>
-                                <th>{{$value["last_updated"]}}</th>
                                 <th>{{$value["gram"]}}</th>
                                 <th>{{$value["price"]}}</th>
                               </tr>
