@@ -16,9 +16,9 @@
 <body>
       @foreach($data as $key => $value)
         <tr>
-          <th>{{$value[last_updated]}}</th>
-          <th>{{$value[gram]}}</th>
-          <th>{{$value[price]}}</th>            
+          <th>{{$value["last_updated"]}}</th>
+          <th>{{$value["gram"]}}</th>
+          <th>{{$value["price"]}}</th>            
         </tr>
     @endforeach
 </body>
