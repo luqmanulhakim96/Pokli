@@ -55,7 +55,7 @@
             					<table class="gold-live-price-table2" id="gap-table-content2">
                         <!-- put gold information here -->
                         <div class="gold-live-price-title-table2" id="goldbar-div-title2">
-                        					<img src="/images/liveprice/LBMA Gold Bar 24K.png" alt="Gold Bar/Wafer 24K" width="100%" height="15px">
+                        					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Gold Bar/Wafer 24K" width="100%" height="15px">
                 				</div>
                           @foreach($dataGAP as $key => $value)
                                 <tr>
@@ -63,9 +63,9 @@
                                   <th>{{$value["price"]}}</th>
                                 </tr>
                           @endforeach
-                          
+
                           <div class="silver-live-price-title-table2" id="silverbar-div-title2">
-                          					<img src="/images/liveprice/LBMA SILVER BAR.png" alt="Silver Bar 999" width="100%" height="15px" style="top:-4px;position:relative;">
+                          					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="100%" height="15px" style="top:-4px;position:relative;">
                   				</div>
                           @foreach($dataSAP as $key => $value)
                               <tr>
