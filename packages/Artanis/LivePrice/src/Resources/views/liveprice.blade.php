@@ -56,7 +56,6 @@
                         <!-- put gold information here -->
                         <div class="gold-live-price-title-table2" id="goldbar-div-title2">
                         					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
-
                           @foreach($dataGAP as $key => $value)
                                 <tr>
                                   <th>{{$value["gram"]}}</th>
