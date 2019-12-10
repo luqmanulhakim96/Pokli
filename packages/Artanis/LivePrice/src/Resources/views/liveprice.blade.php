@@ -68,7 +68,7 @@
        <b>Pokli Gold Price (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
      </div>
      <div class="news-update-grid">
-         <div class="block1">
+         <div class="block2">
            <div class="sub-block1">
              <table>
                <!-- put gold information here -->
