@@ -137,6 +137,10 @@
                    </tbody>
                  </div>
                </table>
+             </div>
+         </div>
+         <div class="block2">
+             <div class="sub-block1">
                <span style="font-style:italic;line-height:1; "><br><br>
                * All LBMA products are SST exempted. <br>* All prices are quoted in Malaysia Ringgit (MYR) and excluding Gold Premium
                </span>
