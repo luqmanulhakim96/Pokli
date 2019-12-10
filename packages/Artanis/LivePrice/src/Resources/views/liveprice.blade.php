@@ -59,6 +59,7 @@
                           @foreach($dataGAP as $key => $value)
                                 <tr>
                                   <th>{{$value["gram"]}}</th>
+                                  <th></th>
                                   <th>{{$value["price"]}}</th>
                                 </tr>
                           @endforeach
@@ -68,6 +69,7 @@
                           @foreach($dataSAP as $key => $value)
                               <tr>
                                 <th>{{$value["gram"]}}</th>
+                                <th></th>
                                 <th>{{$value["price"]}}</th>
                               </tr>
                           @endforeach
