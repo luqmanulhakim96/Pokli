@@ -67,7 +67,7 @@
             					<table>
                         <!-- put gold information here -->
                         <div>
-                        					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
+                        					<img src="https://www.publicgold.com.my/images/liveprice/gap.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
                           @foreach($dataGAP as $key => $value)
                                 <tr>
                                   <th>MYR {{$value["price"]}}</th>
@@ -79,7 +79,7 @@
                     </table>
                     <table>
                       <div>
-                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
                                 <th>WEIGHT</th>
                                 <th>SELL</th>
                                 <th>BUY</th>
@@ -94,7 +94,7 @@
                     </table>
                     <table>
                       <div>
-                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                                <img src="https://www.publicgold.com.my/images/liveprice/sap.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
                       @foreach($dataSAP as $key => $value)
                           <tr>
                             <th>MYR {{$value["price"]}}</th>
