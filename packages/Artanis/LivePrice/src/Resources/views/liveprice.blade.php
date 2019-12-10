@@ -41,31 +41,44 @@
         <span class="featured-seperator" style="color:lightgrey;">_____</span>
     </div>
 
-          <div class="title-table2 col-xs-12" id="red-table2">
+          <div class="col-xs-12">
             <b>Pokli Gold Price (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
           </div>
           <b>
-          		<div class="all-live-price-div2 col-lg-12" id="orange-table2">
+          		<div class="col-lg-12">
           			<div class="col-md-12 col-xs-12">
-          			<div id="section-1" class="col-md-3 col-sm-6 col-xs-12" style="display: block;height: 533px;">
-                  <div class="live-price-div2" id="gap-div-table2">
-            				<div class="gold-live-price-title-table2" id="gap-div-title2">
+          			<div class="col-md-3 col-sm-6 col-xs-12" style="display: block;height: 533px;">
+                  <div>
+            				<div>
             					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="https://www.publicgold.com.my/images/liveprice/BuyGAP.png" alt="Gold Program" width="230px" height="99.7px" style="position: relative; top:-4px;"></a>
             				</div>
             					<table>
                         <!-- put gold information here -->
-                        <div class="gold-live-price-title-table2" id="goldbar-div-title2">
+                        <div>
                         					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
                           @foreach($dataGAP as $key => $value)
                                 <tr>
-                                  <th>{{$value["gram"]}}</th>
-                                  <th>{{$value["price"]}}</th>
+                                  <th>MYR {{$value["price"]}}</th>
+                                  <th> = </th>
+                                  <th>{{$value["gram"]}} gram</th>
                                 </tr>
                           @endforeach
                           </div>
                     </table>
                     <table>
-                      <div class="silver-live-price-title-table2" id="silverbar-div-title2">
+                      <div>
+                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                      @foreach($dataSAP as $key => $value)
+                          <tr>
+                            <th>MYR {{$value["price"]}}</th>
+                            <th> = </th>
+                            <th>{{$value["gram"]}} gram</th>
+                          </tr>
+                      @endforeach
+                    </div>
+                    </table>
+                    <table>
+                      <div>
                                 <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
                       @foreach($dataSAP as $key => $value)
                           <tr>
@@ -77,7 +90,7 @@
                     </table>
                        <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src=""></a>
     			        </div>
-          			<div class="live-price-bottom-label2" id="live-price-bottom-label2">
+          			<div>
                       <span style="font-style:italic;line-height:1; "><br><br>
           			* All LBMA products are SST exempted. <br>* All prices are quoted in Malaysia Ringgit (MYR) and excluding Gold Premium
           			</span>
