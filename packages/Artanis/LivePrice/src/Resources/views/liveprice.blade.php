@@ -26,10 +26,22 @@
         $dataGAP[]=$row;
     } #end of while
 
+    $queryGold24k= mysqli_query($db,$getGold24k)or Die("Sorry, dead query");
+    while($row = mysqli_fetch_array($queryGold24k))
+    {
+        $dataGold24k[]=$row;
+    } #end of while
+
     $querySAP= mysqli_query($db,$getSAP)or Die("Sorry, dead query");
     while($row = mysqli_fetch_array($querySAP))
     {
         $dataSAP[]=$row;
+    } #end of while
+
+    $querySilver24k= mysqli_query($db,$getSilver24k)or Die("Sorry, dead query");
+    while($row = mysqli_fetch_array($querySilver24k))
+    {
+        $dataSilver24k[]=$row;
     } #end of while
 
  ?>
@@ -68,6 +80,21 @@
                     <table>
                       <div>
                                 <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                      @foreach($dataGold24k as $key => $value)
+                          <tr>
+                            <th>WEIGHT</th>
+                            <td>{{$value["gram"]}}</td>
+                            <th>SELL</th>
+                            <td>{{$value["sell"]}}</td>
+                            <th>BUY</th>
+                            <td>{{$value["buy"]}}</td>
+                          </tr>
+                      @endforeach
+                    </div>
+                    </table>
+                    <table>
+                      <div>
+                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
                       @foreach($dataSAP as $key => $value)
                           <tr>
                             <th>MYR {{$value["price"]}}</th>
@@ -80,10 +107,14 @@
                     <table>
                       <div>
                                 <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
-                      @foreach($dataSAP as $key => $value)
+                      @foreach($dataSilver24k as $key => $value)
                           <tr>
-                            <th>{{$value["gram"]}}</th>
-                            <th>{{$value["price"]}}</th>
+                            <th>WEIGHT</th>
+                            <td>{{$value["gram"]}}</td>
+                            <th>SELL</th>
+                            <td>{{$value["sell"]}}</td>
+                            <th>BUY</th>
+                            <td>{{$value["buy"]}}</td>
                           </tr>
                       @endforeach
                     </div>
