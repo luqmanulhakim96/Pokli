@@ -45,7 +45,21 @@
     } #end of while
 
  ?>
-
+ <section class="news-update">
+     <div class="news-update-grid">
+         <div class="block1">
+             <img src="vendor/webkul/shop/assets/images/1.png" />
+         </div>
+         <div class="block2">
+             <div class="sub-block1">
+                 <img src="vendor/webkul/shop/assets/images/2.png" />
+             </div>
+             <div class="sub-block2">
+                 <img src="vendor/webkul/shop/assets/images/3.png" />
+             </div>
+         </div>
+     </div>
+ </section>
 <section class="featured-products">
     <div class="featured-heading">
         Live Price<br/>
@@ -68,9 +82,9 @@
                 					<img src="https://www.publicgold.com.my/images/liveprice/gap.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
                           @foreach($dataGAP as $key => $value)
                                 <tr>
-                                  <th>MYR {{$value["price"]}}</th>
-                                  <th> = </th>
-                                  <th>{{$value["gram"]}} gram</th>
+                                  <td>MYR {{$value["price"]}}</td>
+                                  <td> = </td>
+                                  <td>{{$value["gram"]}} gram</td>
                                 </tr>
                           @endforeach
                           </div>
@@ -97,9 +111,9 @@
                         <img src="https://www.publicgold.com.my/images/liveprice/sap.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
                       @foreach($dataSAP as $key => $value)
                           <tr>
-                            <th>MYR {{$value["price"]}}</th>
-                            <th> = </th>
-                            <th>{{$value["gram"]}} gram</th>
+                            <td>MYR {{$value["price"]}}</td>
+                            <td> = </td>
+                            <td>{{$value["gram"]}} gram</td>
                           </tr>
                       @endforeach
                     </div>
