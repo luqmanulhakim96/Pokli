@@ -45,7 +45,7 @@
     } #end of while
 
  ?>
- <style media="screen">
+ <style>
    .main-container-wrapper section.featured-products .featured-heading {
     width: 100%;
     text-align: center;
