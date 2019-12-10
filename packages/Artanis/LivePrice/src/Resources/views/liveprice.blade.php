@@ -52,28 +52,28 @@
             				<div class="gold-live-price-title-table2" id="gap-div-title2">
             					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="https://www.publicgold.com.my/images/liveprice/BuyGAP.png" alt="Gold Program" width="230px" height="99.7px" style="position: relative; top:-4px;"></a>
             				</div>
-            					<table class="gold-live-price-table2" id="gap-table-content2">
+            					<table>
                         <!-- put gold information here -->
                         <div class="gold-live-price-title-table2" id="goldbar-div-title2">
                         					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
                           @foreach($dataGAP as $key => $value)
                                 <tr>
                                   <th>{{$value["gram"]}}</th>
-                                  <th></th>
                                   <th>{{$value["price"]}}</th>
                                 </tr>
                           @endforeach
                           </div>
-                          <div class="silver-live-price-title-table2" id="silverbar-div-title2">
-                          					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
-                          @foreach($dataSAP as $key => $value)
-                              <tr>
-                                <th>{{$value["gram"]}}</th>
-                                <th></th>
-                                <th>{{$value["price"]}}</th>
-                              </tr>
-                          @endforeach
-                        </div>
+                    </table>
+                    <table>
+                      <div class="silver-live-price-title-table2" id="silverbar-div-title2">
+                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                      @foreach($dataSAP as $key => $value)
+                          <tr>
+                            <th>{{$value["gram"]}}</th>
+                            <th>{{$value["price"]}}</th>
+                          </tr>
+                      @endforeach
+                    </div>
                     </table>
                        <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src=""></a>
     			        </div>
