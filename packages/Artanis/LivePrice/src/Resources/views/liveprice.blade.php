@@ -45,7 +45,21 @@
     } #end of while
 
  ?>
- <section class="news-update">
+ <style media="screen">
+   .main-container-wrapper section.featured-products .featured-heading {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .main-container-wrapper section.news-update .news-update-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 20px;
+}
+</style>
+<section class="news-update">
      <div class="featured-heading">
          Live Price<br/>
          <span class="featured-seperator" style="color:lightgrey;">_____</span>
@@ -129,7 +143,7 @@
              </div>
          </div>
      </div>
- </section>
+</section>
 <!-- <section class="featured-products">
 
 
