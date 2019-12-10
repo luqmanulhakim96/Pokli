@@ -11,7 +11,7 @@
     $getGold24k = "SELECT * FROM gold_live_price_24k";
 
     $getSAP = "SELECT * FROM silver_live_price_sap";
-    $getSilver24k = "SELECT * FROM silver_live_price_24k";
+    $getSilver24k = "SELECT * FROM silver_live_price_24k ORDER BY gram ASC";
 
     $queryLast= mysqli_query($db,$getLast)or Die("Sorry, dead query");
     while($row = mysqli_fetch_array($queryLast))
