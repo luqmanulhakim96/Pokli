@@ -67,7 +67,7 @@
             					<table>
                         <!-- put gold information here -->
                         <div>
-                        					<img src="https://www.publicgold.com.my/images/liveprice/gap.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
+                					<img src="https://www.publicgold.com.my/images/liveprice/gap.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
                           @foreach($dataGAP as $key => $value)
                                 <tr>
                                   <th>MYR {{$value["price"]}}</th>
@@ -79,22 +79,24 @@
                     </table>
                     <table>
                       <div>
-                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
-                                <th>WEIGHT</th>
-                                <th>SELL</th>
-                                <th>BUY</th>
-                      @foreach($dataGold24k as $key => $value)
-                          <tr>
-                            <td>{{$value["gram"]}}</td>
-                            <td>{{$value["sell"]}}</td>
-                            <td>{{$value["buy"]}}</td>
-                          </tr>
-                      @endforeach
+                        <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                        <th class="grid_head" >WEIGHT</th>
+                        <th class="grid_head" >SELL</th>
+                        <th class="grid_head" >BUY</th>
+                        <tbody>
+                            @foreach($dataGold24k as $key => $value)
+                                <tr>
+                                  <td>{{$value["gram"]}}</td>
+                                  <td>{{$value["sell"]}}</td>
+                                  <td>{{$value["buy"]}}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </div>
                     </table>
                     <table>
                       <div>
-                                <img src="https://www.publicgold.com.my/images/liveprice/sap.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                        <img src="https://www.publicgold.com.my/images/liveprice/sap.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
                       @foreach($dataSAP as $key => $value)
                           <tr>
                             <th>MYR {{$value["price"]}}</th>
@@ -106,17 +108,19 @@
                     </table>
                     <table>
                       <div>
-                                <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
-                                <th>WEIGHT</th>
-                                <th>SELL</th>
-                                <th>BUY</th>
-                      @foreach($dataSilver24k as $key => $value)
-                          <tr>
-                            <td>{{$value["gram"]}}</td>
-                            <td>{{$value["sell"]}}</td>
-                            <td>{{$value["buy"]}}</td>
-                          </tr>
-                      @endforeach
+                        <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
+                        <th class="grid_head" >WEIGHT</th>
+                        <th class="grid_head" >SELL</th>
+                        <th class="grid_head" >BUY</th>
+                        <tbody>
+                          @foreach($dataSilver24k as $key => $value)
+                            <tr>
+                              <td>{{$value["gram"]}}</td>
+                              <td>{{$value["sell"]}}</td>
+                              <td>{{$value["buy"]}}</td>
+                            </tr>
+                          @endforeach
+                        </tbody>
                     </div>
                     </table>
                        <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src=""></a>
