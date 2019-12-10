@@ -59,7 +59,7 @@
     grid-gap: 20px;
 }
 </style>
-<section class="news-update">
+<section class="featured-products">
      <div class="featured-heading">
          Live Price<br/>
          <span class="featured-seperator" style="color:lightgrey;">_____</span>
