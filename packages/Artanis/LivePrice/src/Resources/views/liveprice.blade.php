@@ -55,25 +55,23 @@
             					<table class="gold-live-price-table2" id="gap-table-content2">
                         <!-- put gold information here -->
                         <div class="gold-live-price-title-table2" id="goldbar-div-title2">
-                        					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Gold Bar/Wafer 24K" width="100%" height="15px">
-                				</div>
+                        					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20Gold%20Bar%2024K.png" alt="Gold Bar/Wafer 24K" width="248px" height="15px">
                           @foreach($dataGAP as $key => $value)
                                 <tr>
                                   <th>{{$value["gram"]}}</th>
                                   <th>{{$value["price"]}}</th>
                                 </tr>
                           @endforeach
-
+                          </div>
                           <div class="silver-live-price-title-table2" id="silverbar-div-title2">
-                          					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="100%" height="15px" style="top:-4px;position:relative;">
-                  				</div>
+                          					<img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
                           @foreach($dataSAP as $key => $value)
                               <tr>
                                 <th>{{$value["gram"]}}</th>
                                 <th>{{$value["price"]}}</th>
                               </tr>
                           @endforeach
-
+                        </div>
                     </table>
                        <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src=""></a>
     			        </div>
