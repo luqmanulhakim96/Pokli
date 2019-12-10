@@ -47,7 +47,6 @@
  ?>
 
 <section class="featured-products">
-
     <div class="featured-heading">
         Live Price<br/>
         <span class="featured-seperator" style="color:lightgrey;">_____</span>
@@ -56,8 +55,7 @@
           <div class="col-xs-12">
             <b>Pokli Gold Price (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
           </div>
-          <b>
-          		<div class="col-lg-12">
+          		<div class="featured-grid product-grid-4">
           			<div class="col-md-12 col-xs-12">
           			<div class="col-md-3 col-sm-6 col-xs-12" style="display: block;height: 533px;">
                   <div>
@@ -86,7 +84,7 @@
                         <tbody>
                             @foreach($dataGold24k as $key => $value)
                                 <tr>
-                                  <td>{{$value["gram"]}}</td>
+                                  <td>{{$value["gram"]}} gram</td>
                                   <td>{{$value["sell"]}}</td>
                                   <td>{{$value["buy"]}}</td>
                                 </tr>
@@ -115,7 +113,7 @@
                         <tbody>
                           @foreach($dataSilver24k as $key => $value)
                             <tr>
-                              <td>{{$value["gram"]}}</td>
+                              <td>{{$value["gram"]}} gram</td>
                               <td>{{$value["sell"]}}</td>
                               <td>{{$value["buy"]}}</td>
                             </tr>
@@ -133,6 +131,4 @@
           		</div>
             </div>
           </div>
-          </b>
-
 </section>
