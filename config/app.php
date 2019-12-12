@@ -253,8 +253,7 @@ return [
         Artanis\BillPlz\Providers\BillPlzServiceProvider::class,
         Artanis\GapSap\Providers\GapSapServiceProvider::class,
         Artanis\AdminCustom\Providers\AdminCustomServiceProvider::class,
-
-
+        Artanis\LivePrice\Providers\LivePriceServiceProvider::class
         //Billplz package
         // Billplz\Laravel\BillplzServiceProvider::class
     ],
