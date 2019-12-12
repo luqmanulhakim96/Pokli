@@ -190,7 +190,8 @@
 
 @push('scripts')
     <script>
-        $(function () {
+        // $(function () {
+        window.onload = function(){
             var ul = document.getElementById("navigation");
             var li = document.createElement("li");
             var a = document.createElement("a");
@@ -199,7 +200,9 @@
 
             li.appendChild(a);
             ul.appendChild(li);
-        });
+        };
+        // });
+
         $(document).ready(function() {
 
             $('body').delegate('#search, .icon-menu-close, .icon.icon-menu', 'click', function(e) {

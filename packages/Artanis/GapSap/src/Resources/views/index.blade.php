@@ -34,9 +34,15 @@
                     <span class="control-error" v-if="errors.has('mode_of_payment')">@{{ errors.first('mode_of_payment') }}</span>
                 </div>
                 
-                <div id="date_of_payment_container" class="control-group"  :class="[errors.has('date_of_payment') ? 'has-error' : '']">
+                <div id="date_of_payment_container" class="control-group"  :class="[errors.has('date_of_payment') ? 'has-error' : '']" style="display:none">
                     <label for="date_of_payment" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
-                    <input id="date_of_payment" type="date" class="control" name="date_of_payment" value="{{ old('date_of_payment') }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;">
+                    {{-- <input id="date_of_payment" type="date" class="control" name="date_of_payment" value="{{ old('date_of_payment') }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;"> --}}
+                    <div class='input-group date' id='date_of_payment'>
+                        <input type='text' class="form-control" name="date_of_payment" />
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                     </div>
                     <span class="control-error" v-if="errors.has('date_of_payment')">@{{ errors.first('date_of_payment') }}</span>
                 </div>
 
@@ -57,6 +63,9 @@
 
 @push('css')
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous"> --}}
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 @endpush
 
 @push('scripts')
@@ -66,7 +75,18 @@
 
     <script type="text/javascript">
         $(function () {
+            $('#date_of_payment').datetimepicker({
+                useCurrent: true,
+                defaultDate: new Date(),
+                // showTodayButton: true,
+                format: "DD-MM-YYYY HH:mm:ss",
+                maxDate: new Date(),
+                
+            });
+        });
 
+        $(function () {
+            
             $("#date_of_payment_container").hide();
             $("#mode_of_payment").on( "change", function() {
                 var mode_of_payment = $("#mode_of_payment").val();
@@ -81,6 +101,11 @@
             });
         });
     </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
 
     <script type="text/x-template" id="purchase-template">
         <section id="purchase" class="review">
