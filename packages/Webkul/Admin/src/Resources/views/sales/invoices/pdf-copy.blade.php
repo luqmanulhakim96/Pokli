@@ -84,23 +84,6 @@
             <div class="invoice-summary">
 
                 <div class="row">
-                    <h3 style="background-image: none;background-color: #ff0000; border-style: solid; border-color:#000; width:50%;">Pokli Wealth Management (1061529-V)</h3>
-                </div>
-
-                <div class="row">
-                    <div class="col" style="width:60%">
-                        <p>POKLI WEALTH MANAGEMENT SDN. BHD</p>
-                
-                        <p>WISMA POKLI NO.101 JALAN S2 F2, 1 AVENUE, GARDEN HOMES, SEREMBAN 2,</p>
-                        
-                        <p>70300 SEREMBAN NEGERI SEMBILAN MALAYSIA. TEL: 019-6645066 / 06-6307797</p>
-                    </div>
-                    <div class="col" style="width:30%">
-                        <p>Website: www.pokli.com</p>
-                    </div>
-                </div>
-
-                <div class="row">
                     <span class="label">{{ __('admin::app.sales.invoices.invoice-id') }} -</span>
                     <span class="value">#{{ $invoice->id }}</span>
                 </div>

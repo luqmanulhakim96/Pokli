@@ -19,6 +19,8 @@ class GapSapServiceProvider extends ServiceProvider
        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'gapsap');
 
        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'gapsap');
+
+       $this->loadMigrationsFrom(__DIR__ .'/../Database/Migrations');
        
     }
 

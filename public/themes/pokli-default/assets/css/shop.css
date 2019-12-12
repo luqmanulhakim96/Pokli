@@ -3831,6 +3831,16 @@ a:active, a:focus, a:hover, a:link, a:visited {
     background: red;
     color: #fff;
 }
+.btn-primary:focus {
+    color: #fff;
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: thin dotted;
+    outline: 0 !important;
+    outline-offset: -2px;
+}
 /* .accordian-up-icon {
     background-image: url(../images/Accordion-Arrow-Up.svg);
     width: 24px;

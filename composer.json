@@ -95,7 +95,8 @@
         "Webkul\\CMS\\": "packages/Webkul/CMS/src",
         "Webkul\\BillPlz\\": "packages/Webkul/BillPlz/src",
         "Artanis\\BillPlz\\": "packages/Artanis/BillPlz/src",
-        "Artanis\\GapSap\\": "packages/Artanis/GapSap/src"
+        "Artanis\\GapSap\\": "packages/Artanis/GapSap/src",
+        "Artanis\\AdminCustom\\": "packages/Artanis/AdminCustom/src"
       }
     },
     "autoload-dev": {

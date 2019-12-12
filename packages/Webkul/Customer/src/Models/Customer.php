@@ -2,6 +2,7 @@
 
 namespace Webkul\Customer\Models;
 
+use Artanis\GapSap\Models\GoldSilverHistory;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -173,5 +174,9 @@ class Customer extends Authenticatable implements CustomerContract, JWTSubject
     public function getReferralLinkAttribute()
     {
         return $this->referral_link = route('register', ['ref' => $this->email]);
+    }
+
+    public function goldSilverHistory(){
+        return $this->hasMany(GoldSilverHistory::class);
     }
 }

@@ -628,7 +628,7 @@ h5{
 }
 .btn:active,.btn:focus,.btn:hover{
     opacity:.75;
-    border:none
+    /* border:none !important; */
 }
 .btn.btn-sm{
     padding:6px 12px
@@ -645,7 +645,15 @@ h5{
 }
 .btn.btn-primary{
     background:red;
-    color:#fff
+    color:#fff;
+    border-color: #ff0000 !important;
+    line-height: 1.42857143 !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+    line-height: 1.42857143 !important;
 }
 .btn.btn-black{
     background:#000;
@@ -1325,6 +1333,9 @@ modal{
 }
 .badge.badge-warning{
     background-color:#ffc107
+}
+.badge.badge-default{
+    background-color:#5a6268
 }
 .image-wrapper{
     margin-bottom:20px;
