@@ -144,7 +144,7 @@ class PurchaseDataGrid extends DataGrid
                 else 
                     // return 'http://127.0.0.1:8000/storage/'.$value->purchase_attachment;
                     // return '<a href="http://127.0.0.1:8000/storage/' .$value->purchase_attachment. '"> Attachment </a>';
-                    return '<a href="http://127.0.0.1:8000/storage/' .$value->purchase_attachment. '" target="_blank"> <img src="http://127.0.0.1:8000/storage/'.$value->purchase_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
+                    return '<a href="http://209.97.169.247/Pokli/storage/' .$value->purchase_attachment. '" target="_blank"> <img src="http://209.97.169.247/Pokli/storage/'.$value->purchase_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
             }
         ]);
 
