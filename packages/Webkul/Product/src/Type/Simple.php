@@ -15,11 +15,11 @@ class Simple extends AbstractType
      *
      * @var array
      */
-    protected $skipAttributes = [];
+    protected $skipAttributes = ['price', 'cost', 'special_price', 'special_price_from', 'special_price_to', 'width', 'height', 'depth', 'tax_category_id', 'brand', 'weight'];
 
     /**
      * These blade files will be included in product edit page
-     * 
+     *
      * @var array
      */
     protected $additionalViews = [
