@@ -120,6 +120,10 @@
                </table>
              </div>
              <div class="sub-block2">
+
+               
+             </div>
+             <div class="sub-block2">
                <table>
                  <div>
                    <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
