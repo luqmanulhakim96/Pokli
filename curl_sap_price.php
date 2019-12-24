@@ -8,7 +8,7 @@
   $servername = "localhost"; // IP
   $username = "root";  //please provide   login username of the database
   $password = "P@ssw0rd123";  //plear provide   password of the database
-  $dbname = "goldApiTest"; //Please provide   name of the database
+  $dbname = "live_price_api"; //Please provide   name of the database
 
   // Create connection in MYSQL
   $conn = new mysqli($servername, $username, $password, $dbname);
