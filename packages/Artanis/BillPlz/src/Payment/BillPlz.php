@@ -70,9 +70,8 @@ class BillPlz extends Payment
             core()->getCurrentChannel()->name //item name
         );
         $responseArray = $response->toArray();
-        dd($responseArray);
-        // $url = $responseArray['url'];
-        // return $url;
+        $url = $responseArray['url'];
+        return $url;
       // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
