@@ -8,7 +8,7 @@
   $servername = "localhost"; // IP
   $username = "root";  //please provide   login username of the database
   $password = "P@ssw0rd123";  //plear provide   password of the database
-  $dbname = "goldApiTest"; //Please provide   name of the database
+  $dbname = "live_price_api"; //Please provide   name of the database
 
   // Create connection in MYSQL
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -67,6 +67,7 @@
   list(, , , , , , , , $sell_10g, $buy_10g, , , $sell_20g, $buy_20g, , , $sell_50g, $buy_50g, , , $sell_100g, $buy_100g, , , $sell_250g, $buy_250g, , ,$sell_1000g,$buy_1000g ) = explode('_', $gold_24k_price);
 
   //replace comma with whitespace
+
   $buy_10g = preg_replace('/[,]+/', '', trim($buy_10g));
   $sell_10g = preg_replace('/[,]+/', '', trim($sell_10g));
 
@@ -84,6 +85,30 @@
 
   $buy_1000g = preg_replace('/[,]+/', '', trim($buy_1000g));
   $sell_1000g = preg_replace('/[,]+/', '', trim($sell_1000g));
+
+
+  ////////////////////////////////////////////////--CURL SMALL 24K--////////////////////////////////////////////////
+  // get the 24k gold current price
+  $get_small_24k_price = "//div[@id='lbmasmall-div-table2']";
+  $get_small_24k_price_array = $xpath->query($get_small_24k_price);
+  $gold_small_24k_price = $get_small_24k_price_array->item(0)->textContent;
+
+  $gold_small_24k_price = preg_replace('/\s+/', '_', $gold_small_24k_price);
+  echo $gold_small_24k_price;
+  echo "<br>";
+
+  list(, , , , , , , , $sell_05g , , , $sell_1g, , , $sell_12dinar, , ,$sell_5g) = explode('_', $gold_small_24k_price);
+
+  //replace comma with whitespace
+  
+  $sell_05g = preg_replace('/[,]+/', '', trim($sell_05g));
+
+  $sell_1g = preg_replace('/[,]+/', '', trim($sell_1g));
+
+  $sell_12dinar = preg_replace('/[,]+/', '', trim($sell_12dinar));
+
+  $sell_5g = preg_replace('/[,]+/', '', trim($sell_5g));
+
 
   ////////////////////////////////////////////////--SQL UPDATE--////////////////////////////////////////////////
   //update gram value for per RM 100
@@ -122,6 +147,38 @@
   }
 
   //update price per gram
+  $sql_update_price_value_05g = "UPDATE gold_live_price_24k SET sell='".$sell_05g."' WHERE gram = '0.5'";
+
+  if ($conn->query($sql_update_price_value_05g) === TRUE) {
+      echo "Price 0.5g updated successfully <br>";
+  } else {
+      echo "Error updating record: " . $conn->error;
+  }
+
+  $sql_update_price_value_1g = "UPDATE gold_live_price_24k SET sell='".$sell_1g."' WHERE gram = '1'";
+
+  if ($conn->query($sql_update_price_value_1g) === TRUE) {
+      echo "Price 1g updated successfully <br>";
+  } else {
+      echo "Error updating record: " . $conn->error;
+  }
+
+  $sql_update_price_value_12dinar = "UPDATE gold_live_price_24k SET sell='".$sell_12dinar."' WHERE gram = '2'";
+
+  if ($conn->query($sql_update_price_value_12dinar) === TRUE) {
+      echo "Price 1/2 dinar updated successfully <br>";
+  } else {
+      echo "Error updating record: " . $conn->error;
+  }
+
+  $sql_update_price_value_5g = "UPDATE gold_live_price_24k SET sell='".$sell_5g."' WHERE gram = '5'";
+
+  if ($conn->query($sql_update_price_value_5g) === TRUE) {
+      echo "Price 5g updated successfully <br>";
+  } else {
+      echo "Error updating record: " . $conn->error;
+  }
+
   $sql_update_price_value_20g = "UPDATE gold_live_price_24k SET buy ='".$buy_20g."', sell='".$sell_20g."' WHERE gram = '20'";
 
   if ($conn->query($sql_update_price_value_20g) === TRUE) {
