@@ -1,7 +1,7 @@
 @extends('admin::layouts.master')
 
 @section('page_title')
-    {{ __('Purchase #'.$purchase->increment_id) }}
+    {{ __('Buyback #'.$purchase->increment_id) }}
 @stop
 
 @section('content-wrapper')
@@ -12,20 +12,20 @@
 
             <div class="page-title">
                 <h1>
-                    <i class="icon angle-left-icon back-link" onclick="window.location = '{{ url('admin/sales/purchase') }}';"></i>
+                    <i class="icon angle-left-icon back-link" onclick="window.location = '{{ url('admin/sales/buyback') }}';"></i>
 
-                    {{ __('Purchase #'.$purchase->increment_id) }}
+                    {{ __('Buyback #'.$purchase->increment_id) }}
                 </h1>
             </div>
 
             <div class="page-action">
                 @if ($purchase->canCancel())
-                    <a href="{{ route('admincustom.sales.purchase.cancel', $purchase->id) }}" class="btn btn-lg btn-primary" v-alert:message="'{{ __('Are you sure you want to cancel this purchase ?') }}'">
+                    <a href="{{ route('admincustom.sales.buyback.cancel', $purchase->id) }}" class="btn btn-lg btn-primary" v-alert:message="'{{ __('Are you sure you want to cancel this buyback ?') }}'">
                         {{ __('admin::app.sales.orders.cancel-btn-title') }}
                     </a>
                 @endif
                 @if ($purchase->canConfirm())
-                    <a href="{{ route('admincustom.sales.purchase.confirm', $purchase->id) }}" class="btn btn-lg btn-primary" v-alert:message="'{{ __('Are you sure you want to confirm this purchase ?') }}'">
+                    <a href="{{ route('admincustom.sales.buyback.confirm', $purchase->id) }}" class="btn btn-lg btn-primary" v-alert:message="'{{ __('Are you sure you want to confirm this buyback ?') }}'">
                         {{ __('Confirm') }}
                     </a>
                 @endif
@@ -56,18 +56,18 @@
                 <tab name="{{ __('admin::app.sales.orders.info') }}" :selected="true">
                     <div class="sale-container">
 
-                        <accordian :title="'{{ __('admin::app.sales.orders.order-and-account') }}'" :active="true">
+                        <accordian :title="'{{ __('Buyback and Account') }}'" :active="true">
                             <div slot="body">
 
                                 <div class="sale-section">
                                     <div class="secton-title">
-                                        <span>{{ __('admin::app.sales.orders.order-info') }}</span>
+                                        <span>{{ __('Buyback Information') }}</span>
                                     </div>
 
                                     <div class="section-content">
                                         <div class="row">
                                             <span class="title">
-                                                {{ __('admin::app.sales.orders.order-date') }}
+                                                {{ __('Buyback Date') }}
                                             </span>
 
                                             <span class="value">
@@ -77,7 +77,7 @@
 
                                         <div class="row">
                                             <span class="title">
-                                                {{ __('admin::app.sales.orders.order-status') }}
+                                                {{ __('Buyback Status') }}
                                             </span>
 
                                             <span class="value">
@@ -198,7 +198,7 @@
                                     </div>
 
                                     <div class="section-content">
-                                        <div class="row">
+                                        {{-- <div class="row">
                                             <span class="title">
                                                 {{ __('admin::app.sales.orders.payment-method') }}
                                             </span>
@@ -206,7 +206,7 @@
                                             <span class="value">
                                                 {{ $purchase->payment_method_label }}
                                             </span>
-                                        </div>
+                                        </div> --}}
 
                                         <div class="row">
                                             <span class="title">
@@ -269,45 +269,6 @@
                             </div>
                         </accordian>
 
-                    </div>
-                </tab>
-
-                <tab name="{{ __('shop::app.customer.account.order.view.invoices') }}">
-                    <div class="table" style="padding: 20px 0">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>{{ __('No') }}</th>
-                                    <th>{{ __('Invoice') }}</th>
-                                    <th>{{ __('Date') }}</th>
-                                    <th>{{ __('Customer Name') }}</th>
-                                    <th>{{ __('Status') }}</th>
-                                    <th>{{ __('Amount') }}</th>
-                                    <th>{{ __('admin::app.sales.invoices.action') }}</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @if (! $purchase->invoice_id)
-                                    <tr>
-                                        <td class="empty" colspan="7">{{ __('admin::app.common.no-result-found') }}</td>
-                                    <tr>
-                                @else
-                                    <tr>
-                                        <td>#{{ $purchase->increment_id }}</td>
-                                        <td>#{{ $purchase->invoice_id }}</td>
-                                        <td>{{ $purchase->created_at }}</td>
-                                        <td>{{ $purchase->customer_full_name }}</td>
-                                        <td>{{ ucfirst($purchase->status) }}</td>
-                                        <td>RM {{ $purchase->amount }}</td>
-                                        <td class="action">
-                                            <a href="{{ route('admincustom.sales.purchase.print', $purchase->id) }}">
-                                                <i class="icon eye-icon"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endif
-                        </table>
                     </div>
                 </tab>
 

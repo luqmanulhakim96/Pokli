@@ -8,26 +8,23 @@
 @section('content-wrapper')
 <div class="auth-content">
         <div class="sign-up-text">
-            Purchase GAP/SAP
+            Buyback of GAP/SAP
         </div>
 
-        <form method="POST" action="{{ route('gapsap.form-submit') }}" enctype="multipart/form-data" @submit.prevent="onSubmit">
+        <form method="POST" action="{{ route('gapsap.buyback.confirm') }}" enctype="multipart/form-data" @submit.prevent="onSubmit">
             {{ csrf_field() }}
             <div class="login-form">
                 {{-- <div class="login-text">{{ __('shop::app.customer.login-form.title') }}</div> --}}
                 <input id="product_type" name="product_type" type="hidden">
                 <input id="current_price_per_gram" name="current_price_per_gram" type="hidden">
-                <input id="current_price_datetime" name="current_price_datetime" type="hidden">
-                <input id="gold_datetime" name="gold_datetime" value="{{ $gold_datetime }}" type="hidden">
-                <input id="silver_datetime" name="silver_datetime" value="{{ $silver_datetime }}" type="hidden">
-                <input name="customer_id" type="hidden" value="{{ $customer->id }}">
-                <input name="payment_method" type="hidden" value="{{ $input['mode_of_payment'] }}">
-                <input name="increment_id" type="hidden" value="">
-
+                <input id="current_price_datetime" name="current_price_datetime" value="{{ $current_price_datetime }}" type="hidden">
+                <input name="buyback_datetime" type="hidden" value="{{ now() }}">
+                <input id="maxGold" type="hidden" value="{{ $gold_balance }}">
+                <input id="maxSilver" type="hidden" value="{{ $silver_balance }}">
 
                 <div class="control-group" :class="[errors.has('first_name') ? 'has-error' : '']">
                     <label for="first_name" class="">{{ __('gapsap::app.purchase.form-customer-name') }}</label>
-                    <input type="text" class="control" name="first_name" value="{{ old('first_name') ?? $input['first_name'] }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-customer-name') }}&quot;" disabled="disabled">
+                    <input type="text" class="control" name="first_name" value="{{ old('first_name') ?? $customer->first_name.' '.$customer->last_name }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-customer-name') }}&quot;" disabled="disabled">
                     <span class="control-error" v-if="errors.has('first_name')">@{{ errors.first('first_name') }}</span>
                 </div>
 
@@ -45,88 +42,53 @@
                         <div id="gap-control" class="" style="padding:10px;">
                             <input name="product_type" id="gap-select" type="radio" value="gold" v-validate="'required'" data-vv-as="&quot;Product Type&quot;"> <strong>Gold - GAP</strong> (Au 999.9)<br><br>
                             <input id="gold_price" name="gold_price" type="hidden" value="{{ $gold_price }}">
-                            <span>MYR 100 = {{ round(100/$gold_price,4) }} gm</span>
+                            <span>MYR {{ $gold_price }} = 1.0000 gm</span>
                             <br>
-                            <span>MYR {{ round($gold_price, 0) }} = 1.0000 gm</span>
+                            <span>Balance = {{ $gold_balance }} gm</span>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div id="sap-control" class="" style="padding:10px;">
                                 <input name="product_type" id="sap-select" type="radio" value="silver" v-validate="'required'" data-vv-as="&quot;Product Type&quot;"> <strong>Silver - SAP</strong> (Ag 999)<br><br>
                             <input id="silver_price" name="silver_price" type="hidden" value="{{ $silver_price }}">
-                            <span>MYR 100 = {{ round(10000/$silver_price, 4) }} gm</span>
-                            {{-- <span>MYR 100 = 36.4964 gm</span> --}}
+                            <span>MYR {{ $silver_price }} = 1.0000 gm</span>
                             <br>
-                            <span>MYR {{ round($silver_price, 0) }} = 100.0000 gm</span>
+                            <span>Balance = {{ $silver_balance }} gm</span>
                         </div>
                     </div>
                     <span class="control-error" v-if="errors.has('product_type')">@{{ errors.first('product_type') }}</span>
                 </div>
-
                 
                 <div class="control-group"  :class="[errors.has('amount') ? 'has-error' : '']">
-                    <label for="amount" class="required">Purchase Amount</label>
+                    <label for="amount" class="required">Buyback Amount</label>
                     {{-- <input id="amount" type="number" step="any" min="100" v-validate="'decimal:2|min_value:100|required'" name="amount" class="control" value="" data-vv-as="&quot;Purchase Amount&quot;"/>
                     <span class="control-error" v-if="errors.has('amount')">@{{ errors.first('amount') }}</span> --}}
 
                     <div class="input-group">
                         <div class="input-group-icon">RM</div>
                         <div class="input-group-area">
-                            <input id="amount" type="number" step="any" min="100" v-validate="'decimal:2|min_value:100|required'" name="amount" class="" value="" data-vv-as="&quot;Purchase Amount&quot;"/>
+                            <input id="amount" type="number" step="any" min="1" v-validate="'decimal:2|min_value:1|required'" name="amount" class="" value="" data-vv-as="&quot;Purchase Amount&quot;"/>
                         </div>
                     </div>
                     <span class="control-error" v-if="errors.has('amount')">@{{ errors.first('amount') }}</span>
                 </div>
                 
-
-                
                 <div class="control-group"  :class="[errors.has('quantity') ? 'has-error' : '']">
-                    <label for="quantity" class="required">Purchase Quantity</label>
+                    <label for="quantity" class="required">Buyback Quantity</label>
                     {{-- <input id="quantity" type="number" step="any" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="control" value="" data-vv-as="&quot;Purchase Quantity&quot;"/>
                     <span class="control-error" v-if="errors.has('quantity')">@{{ errors.first('quantity') }}</span> --}}
 
                     <div class="input-group">
                         <div class="input-group-area">
-                            <input id="quantity" type="number" step="any" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="" value="" 
+                        <input id="quantity" type="number" step="any" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="" max="" value="" 
                             data-vv-as="&quot;Purchase Quantity&quot;"/>
                         </div>
                         <div class="input-group-icon">gm</div>
                     </div>
                     <span class="control-error" v-if="errors.has('quantity')">@{{ errors.first('quantity') }}</span>
                 </div>
-                
-                <div class="control-group" :class="[errors.has('mode_of_payment') ? 'has-error' : '']">
-                    <label for="mode_of_payment" class="required">{{ __('gapsap::app.purchase.form-mode-of-payment') }}</label>
-
-                    <select disabled="disabled" id="mode_of_payment" name="mode_of_payment" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-mode-of-payment') }}&quot;">
-                        <option  value="{{ old('mode_of_payment') ?? $input['mode_of_payment'] }}">{{ old('mode_of_payment') ?? ($input['mode_of_payment'] == 'fpx' ? 'FPX' : 'Bank In')  }}</option>
-                    </select>
-                    <span class="control-error" v-if="errors.has('mode_of_payment')">@{{ errors.first('mode_of_payment') }}</span>
-                </div>
-
-                @if($input['mode_of_payment']=='bankin')
-                <div class="control-group"  :class="[errors.has('payment_on') ? 'has-error' : '']">
-                    <label for="payment_on" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
-                    <input type="datetime" class="control" name="payment_on" value="{{ old('payment_on') ?? $input['payment_on'] }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;" disabled="disabled">
-                    <input type="hidden" name="payment_on" value="{{ old('payment_on') ?? $input['payment_on'] }}">
-                    <span class="control-error" v-if="errors.has('payment_on')">@{{ errors.first('payment_on') }}</span>
-                </div>
-                <div class="control-group"  :class="[errors.has('payment_attachment') ? 'has-error' : '']">
-                    {{-- <label for="payment_attachment" class="required">Attachment</label>
-                    <input type="text" class="control" name="payment_attachment" value="Attachment" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;" disabled="disabled">
-                    <input type="hidden" name="payment_attachment" value="Attachment">
-                    <span class="control-error" v-if="errors.has('payment_attachment')">@{{ errors.first('payment_attachment') }}</span> --}}
-                    <label for="payment_attachment" class="required">Attachment</label>
-                    <input type="file" class="form-control-file mt-10" id="image" v-validate="'required|image|size:100'" name="payment_attachment" data-vv-as="&quot;Attachment Bankin&quot;">
-                    <span class="control-error" v-if="errors.has('payment_attachment')">@{{ errors.first('payment_attachment') }}</span>
-                    {{-- @if ($errors->has('image'))
-                        <strong>{{ $errors->first('image') }}</strong>
-                    @endif --}}
-                </div>
-                @endif
 
                 <div class="row">
-                    {{-- <input name="submit-button" class="btn btn-default btn-lg" type="submit" value="Back"> --}}
                     <input name="submit-button" class="btn btn-primary btn-lg" type="submit" value="Next">
                 </div>
             </div>
@@ -146,6 +108,8 @@
 
     <script type="text/javascript">
         $(function () {
+            var maxGold = $("#maxGold").val();
+            var maxSilver = $("#maxSilver").val();
 
             $("#amount").on( "input", function() {
                 var amount = $("#amount").val();
@@ -156,7 +120,7 @@
                     $("#quantity").val(total.toFixed(4));
                 }
                 else if ($('input[name=product_type]:checked').val() == 'silver'){
-                    var silver_price = 100/$("#silver_price").val();
+                    var silver_price = 1/$("#silver_price").val();
                     var total = amount*silver_price;
                     $("#quantity").val(total.toFixed(4));
                 }
@@ -171,7 +135,7 @@
                     $("#amount").val(total.toFixed(2));
                 }
                 else if ($('input[name=product_type]:checked').val() == 'silver'){
-                    var silver_price = $("#silver_price").val()/100;
+                    var silver_price = $("#silver_price").val();
                     var total = quantity*silver_price;
                     $("#amount").val(total.toFixed(2));
                 }
@@ -185,8 +149,8 @@
                 $("#sap-select").prop("checked",false);
                 $("#amount").val('');
                 $("#quantity").val('');
+                $("#quantity").attr("max",maxGold);
                 $("#current_price_per_gram").val($("#gold_price").val());
-                $("#current_price_datetime").val($("#gold_datetime").val());
                 $("#product_type").val('gold');
             });
         
@@ -197,8 +161,8 @@
                 $("#gap-select").prop("checked",false);
                 $("#amount").val('');
                 $("#quantity").val('');
+                $("#quantity").attr("max",maxSilver);
                 $("#current_price_per_gram").val($("#silver_price").val()/100);
-                $("#current_price_datetime").val($("#silver_datetime").val());
                 $("#product_type").val('silver');
             });
         
@@ -285,8 +249,6 @@
                     first_iteration : true,
                 }
             },
-
-            
         })
     </script>
 @endpush

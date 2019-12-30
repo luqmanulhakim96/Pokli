@@ -93,7 +93,7 @@
 
             </div>
         </accordian> --}}
-        <accordian :title="'Referral'">
+        {{-- <accordian :title="'Referral'">
             <div slot="body">
                 <div class="account-items-list">
                     <div class="account-table-content">
@@ -103,8 +103,8 @@
                     </div>
                 </div>
             </div>
-        </accordian>
-        <accordian :title="'Account Balance'">
+        </accordian> --}}
+        <accordian :title="'Account Balance'" :active="true">
             <div slot="body">
                     <div class="account-items-list">
                         <div class="account-table-content">
@@ -117,12 +117,12 @@
                                 <div class="account-balance-right ">
                                     <img class="mobile-hide" src="https://gap.publicgold.com.my/assets/images/singlegoldbar.png" alt="" style="float:left;">
                                     <span class="font-weight-bold title-small" style="line-height:1.5em"><u>GAP (gm)</u><br>
-                                    11.0000</span>
+                                    {{$gold_balance==0 ? '0.0000' : $gold_balance}}</span>
                                 </div>
                                 <div class="account-balance-right">
                                     <img class="mobile-hide" src="https://gap.publicgold.com.my/assets/images/singlesilverbar.png" alt="" style="float:left;">
                                     <span class="font-weight-bold title-small" style="line-height:1.5em"><u>SAP (gm)</u><br>
-                                    0.0000</span>
+                                    {{$silver_balance==0 ? '0.0000' : $silver_balance}}</span>
                                 </div>
                             </div>
                             <hr>
@@ -131,7 +131,7 @@
                             </div>
 
                             <div class="row ">
-                                {!! app('Webkul\Shop\DataGrids\ReferralDataGrid')->render() !!}
+                                {!! app('Webkul\Shop\DataGrids\GapSapBalanceDataGrid')->render() !!}
                             </div>
                             
                         </div>

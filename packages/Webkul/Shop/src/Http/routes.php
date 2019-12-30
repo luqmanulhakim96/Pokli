@@ -259,6 +259,48 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
                     'view' => 'shop::customers.account.orders.index'
                 ])->name('customer.orders.index');
 
+                /* Purchase route */
+                //Customer purchase(listing)
+                Route::get('purchase', 'Artanis\GapSap\Http\Controllers\PurchaseController@index')->defaults('_config', [
+                    'view' => 'gapsap::customers.account.purchase.index'
+                ])->name('gapsap.purchase.index');
+
+                Route::get('purchase/view/{id}', 'Artanis\GapSap\Http\Controllers\PurchaseController@view')->defaults('_config', [
+                    'view' => 'gapsap::customers.account.purchase.view'
+                ])->name('gapsap.purchase.view');
+
+                // Route::get('purchase/print/{id}', function (Codedge\Fpdf\Fpdf\Fpdf $fpdf) {
+
+                //     $fpdf->AddPage();
+                //     $fpdf->SetFont('Courier', 'B', 18);
+                //     $fpdf->Cell(50, 25, 'Hello World!');
+                //     $fpdf->Output();
+
+                //     $response = response($fpdf->Output('S'));
+                //     $response->header('Content-Type', 'application/pdf');
+                //     $response->header('Content-Disposition', 'inline; filename="output.pdf"');
+                //     $response->header('Cache-Control:', 'private, max-age=0, must-revalidate');
+                
+                // })->name('gapsap.purchase.print');
+
+                Route::get('purchase/print/{id}', 'Artanis\GapSap\Http\Controllers\PurchaseController@print')->defaults('_config', [
+                    'view' => 'gapsap::customers.account.purchase.pdf'
+                ])->name('gapsap.purchase.print');
+
+                /* Buyback route */
+                //Customer purchase(listing)
+                Route::get('buyback', 'Artanis\GapSap\Http\Controllers\BuybackController@index2')->defaults('_config', [
+                    'view' => 'gapsap::customers.account.buyback.index'
+                ])->name('gapsap.account.buyback.index');
+
+                Route::get('buyback/view/{id}', 'Artanis\GapSap\Http\Controllers\BuybackController@view')->defaults('_config', [
+                    'view' => 'gapsap::customers.account.buyback.view'
+                ])->name('gapsap.account.buyback.view');
+
+                Route::get('buyback/print/{id}', 'Artanis\GapSap\Http\Controllers\BuybackController@print')->defaults('_config', [
+                    'view' => 'gapsap::customers.account.buyback.pdf'
+                ])->name('gapsap.buyback.print');
+
                 //Customer downloadable products(listing)
                 Route::get('downloadable-products', 'Webkul\Shop\Http\Controllers\DownloadableProductController@index')->defaults('_config', [
                     'view' => 'shop::customers.account.downloadable_products.index'
@@ -275,8 +317,11 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
                 ])->name('customer.orders.view');
 
                 //Prints invoice
+                // Route::get('orders/print/{id}', 'Webkul\Shop\Http\Controllers\OrderController@print')->defaults('_config', [
+                //     'view' => 'shop::customers.account.orders.print'
+                // ])->name('customer.orders.print');
                 Route::get('orders/print/{id}', 'Webkul\Shop\Http\Controllers\OrderController@print')->defaults('_config', [
-                    'view' => 'shop::customers.account.orders.print'
+                    'view' => 'shop::customers.account.orders.pdf2'
                 ])->name('customer.orders.print');
 
                 /* Reviews route */

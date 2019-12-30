@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Webkul\Customer\Models\Customer;
 use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Product\Repositories\ProductReviewRepository;
+use Artanis\GapSap\Repositories\GapSapBalanceRepository;
 
 /**
  * Customer controlller for the customer basically for the tasks of customers which will be
@@ -39,13 +40,20 @@ class CustomerController extends Controller
     protected $productReviewRepository;
 
     /**
+     * GapSapBalanceRepository object
+     *
+     * @var array
+    */
+    protected $gapSapBalanceRepository;
+
+    /**
      * Create a new controller instance.
      *
      * @param  \Webkul\Customer\Repositories\CustomerRepository $customer
      * @param  \Webkul\Product\Repositories\ProductReviewRepository $productReview
      * @return void
     */
-    public function __construct(CustomerRepository $customerRepository, ProductReviewRepository $productReviewRepository)
+    public function __construct(CustomerRepository $customerRepository, ProductReviewRepository $productReviewRepository, GapSapBalanceRepository $gapSapBalanceRepository)
     {
         $this->middleware('customer');
 
@@ -54,6 +62,8 @@ class CustomerController extends Controller
         $this->customerRepository = $customerRepository;
 
         $this->productReviewRepository = $productReviewRepository;
+
+        $this->gapSapBalanceRepository = $gapSapBalanceRepository;
     }
 
     /**
@@ -66,8 +76,10 @@ class CustomerController extends Controller
         $customer = $this->customerRepository->find(auth()->guard('customer')->user()->id);
         $countReferral = Customer::where('referral_id','=', auth()->guard('customer')->user()->id)->count();
         $uplineDetails = $this->customerRepository->find(($customer->referral_id));
+        $gold_balance = $this->gapSapBalanceRepository->goldBalance($customer->id);
+        $silver_balance = $this->gapSapBalanceRepository->silverBalance($customer->id);
         // dd($uplineDetails);
-        return view($this->_config['view'], compact(['customer','countReferral','uplineDetails']));
+        return view($this->_config['view'], compact(['customer','countReferral','uplineDetails', 'gold_balance', 'silver_balance']));
     }
 
     /**

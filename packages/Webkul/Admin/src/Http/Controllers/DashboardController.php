@@ -2,6 +2,7 @@
 
 namespace Webkul\Admin\Http\Controllers;
 
+use Artanis\GapSap\Models\GoldSilverHistory;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Webkul\Sales\Repositories\OrderRepository;
@@ -167,8 +168,52 @@ class DashboardController extends Controller
             $statistics['sale_graph']['formated_total'][] = core()->formatBasePrice($total);
         }
 
-        return view($this->_config['view'], compact('statistics'))->with(['startDate' => $this->startDate, 'endDate' => $this->endDate]);
+        $gold = $this->totalGold();
+        $silver = $this->totalSilver();
+        $goldPurchase = $this->totalGoldPurchasePending();
+        $silverPurchase = $this->totalSilverPurchasePending();
+        $goldBuyback = $this->totalGoldBuybackPending();
+        $silverBuyback = $this->totalSilverBuybackPending();
+        // dd($silver);
+
+        return view($this->_config['view'], compact(['statistics','gold','silver','goldPurchase','silverPurchase','goldBuyback','silverBuyback']))->with(['startDate' => $this->startDate, 'endDate' => $this->endDate]);
     }
+
+    public function totalGold(){
+        $plus = GoldSilverHistory::where([['status','completed'],['product_type','gold'],['activity','purchase']])->sum('quantity');
+        $minus = GoldSilverHistory::where([['status','completed'],['product_type','gold'],['activity','buyback']])->sum('quantity');
+        $gold = $plus-$minus;
+        return $gold;
+    }
+
+    public function totalSilver(){
+        $plus = GoldSilverHistory::where([['status','completed'],['product_type','silver'],['activity','purchase']])->sum('quantity');
+        $minus = GoldSilverHistory::where([['status','completed'],['product_type','silver'],['activity','buyback']])->sum('quantity');
+        $silver = $plus-$minus;
+        return $silver;
+    }
+
+    public function totalGoldPurchasePending(){
+        $goldPurchase = GoldSilverHistory::where([['status','processing'],['product_type','gold'],['activity','purchase']])->count();
+        return $goldPurchase;
+    }
+
+    public function totalSilverPurchasePending(){
+        $goldPurchase = GoldSilverHistory::where([['status','processing'],['product_type','silver'],['activity','purchase']])->count();
+        return $goldPurchase;
+    }
+
+    public function totalGoldBuybackPending(){
+        $goldPurchase = GoldSilverHistory::where([['status','processing'],['product_type','gold'],['activity','buyback']])->count();
+        return $goldPurchase;
+    }
+
+    public function totalSilverBuybackPending(){
+        $goldPurchase = GoldSilverHistory::where([['status','processing'],['product_type','silver'],['activity','buyback']])->count();
+        return $goldPurchase;
+    }
+
+    
 
     /**
      * Returns the list of top selling categories

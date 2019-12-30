@@ -96,8 +96,14 @@ class OrderController extends Controller
     {
         $invoice = $this->invoiceRepository->findOrFail($id);
 
-        $pdf = PDF::loadView('shop::customers.account.orders.pdf', compact('invoice'))->setPaper('a4');
+        // $pdf = PDF::loadView('shop::customers.account.orders.pdf', compact('invoice'))->setPaper('a4');
+
+        // return $pdf->download('invoice-' . $invoice->created_at->format('d-m-Y') . '.pdf');
+
+        $pdf = PDF::loadView('shop::customers.account.orders.pdf2', compact('invoice'))->setPaper('a4');
 
         return $pdf->download('invoice-' . $invoice->created_at->format('d-m-Y') . '.pdf');
+
+        
     }
 }

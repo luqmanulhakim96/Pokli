@@ -228,6 +228,35 @@ Route::group(['middleware' => ['web']], function () {
                     'view' => 'admincustom::sales.purchase.view'
                 ])->name('admincustom.sales.purchase.view');
 
+                Route::get('/purchase/print/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\PurchaseController@print')->defaults('_config', [
+                    'view' => 'admincustom::sales.purchase.invoice.pdf'
+                ])->name('admincustom.sales.purchase.print');
+
+                Route::get('/purchase/cancel/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\PurchaseController@cancel')->defaults('_config', [
+                    'view' => 'admincustom::sales.purchase.cancel'
+                ])->name('admincustom.sales.purchase.cancel');
+
+                Route::get('/purchase/confirm/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\PurchaseController@confirm')->defaults('_config', [
+                    'view' => 'admincustom::sales.purchase.confirm'
+                ])->name('admincustom.sales.purchase.confirm');
+
+                // Sales Buyback Routes
+                Route::get('/buyback', 'Artanis\AdminCustom\Http\Controllers\Sales\BuybackController@index')->defaults('_config', [
+                    'view' => 'admincustom::sales.buyback.index'
+                ])->name('admincustom.sales.buyback.index');
+
+                Route::get('/buyback/view/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\BuybackController@view')->defaults('_config', [
+                    'view' => 'admincustom::sales.buyback.view'
+                ])->name('admincustom.sales.buyback.view');
+
+                Route::get('/buyback/cancel/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\BuybackController@cancel')->defaults('_config', [
+                    'view' => 'admincustom::sales.buyback.cancel'
+                ])->name('admincustom.sales.buyback.cancel');
+
+                Route::get('/buyback/confirm/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\BuybackController@confirm')->defaults('_config', [
+                    'view' => 'admincustom::sales.buyback.confirm'
+                ])->name('admincustom.sales.buyback.confirm');
+
                 // Route::get('/refunds/create/{order_id}', 'Webkul\Admin\Http\Controllers\Sales\RefundController@create')->defaults('_config', [
                 //     'view' => 'admin::sales.refunds.create'
                 // ])->name('admin.sales.refunds.create');

@@ -127,6 +127,68 @@
 
             </div>
 
+            <div class="dashboard-stats" style="margin-top:15px;">
+                <div class="dashboard-card">
+                    <div class="title">
+                        {{ __('GAP Pending') }}
+                    </div>
+
+                    <div class="data">
+                        <a href="{{ route('admincustom.sales.purchase.index')}}">{{ $goldPurchase }}</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="title">
+                        {{ __('SAP Pending') }}
+                    </div>
+
+                    <div class="data">
+                        <a href="{{ route('admincustom.sales.purchase.index')}}">{{ $silverPurchase }}</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="title">
+                        {{ __('Gold Buyback Pending') }}
+                    </div>
+
+                    <div class="data">
+                        <a href="{{ route('admincustom.sales.buyback.index')}}">{{ $goldBuyback }}</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="title">
+                        {{ __('Silver Buyback Pending') }}
+                    </div>
+
+                    <div class="data">
+                        <a href="{{ route('admincustom.sales.buyback.index')}}">{{ $silverBuyback }}</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="title">
+                        {{ __('Gap/gram') }}
+                    </div>
+
+                    <div class="data">
+                        {{ $gold }}
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="title">
+                        {{ __('Sap/gram') }}
+                    </div>
+
+                    <div class="data">
+                        {{ $silver }}
+                    </div>
+                </div>
+            </div>
+
             <div class="graph-stats">
 
                 <div class="left-card-container graph">

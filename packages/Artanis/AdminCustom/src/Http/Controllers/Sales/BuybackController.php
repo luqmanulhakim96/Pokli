@@ -3,8 +3,7 @@
 namespace Artanis\AdminCustom\Http\Controllers\Sales;
 
 use Artanis\AdminCustom\Http\Controllers\Controller;
-use Artanis\GapSap\Repositories\PurchaseRepository;
-use PDF;
+use Artanis\GapSap\Repositories\BuybackRepository;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\OrderItemRepository;
 use Webkul\Sales\Repositories\RefundRepository;
@@ -15,7 +14,7 @@ use Webkul\Sales\Repositories\RefundRepository;
  * @author    Jitendra Singh <jitendra@webkul.com>
  * @copyright 2018 Webkul Software Pvt Ltd (http://www.webkul.com)
  */
-class PurchaseController extends Controller
+class BuybackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,11 +45,11 @@ class PurchaseController extends Controller
     protected $refundRepository;
 
     /**
-     * PurchaseRepository object
+     * BuybackRepository object
      *
      * @var Object
      */
-    protected $purchaseRepository;
+    protected $buybackRepository;
 
     /**
      * Create a new controller instance.
@@ -58,7 +57,7 @@ class PurchaseController extends Controller
      * @param  \Webkul\Sales\Repositories\OrderRepository     $orderRepository
      * @param  \Webkul\Sales\Repositories\OrderItemRepository $orderItemRepository
      * @param  \Webkul\Sales\Repositories\RefundRepository    $refundRepository
-     * @param  \Artanis\AdminCustom\Repositories\PurchaseRepository    $purchaseRepository
+     * @param  \Artanis\AdminCustom\Repositories\BuybackRepository    $buybackRepository
      * @return void
      * @return void
      */
@@ -66,7 +65,7 @@ class PurchaseController extends Controller
         OrderRepository $orderRepository,
         OrderItemRepository $orderItemRepository,
         RefundRepository $refundRepository,
-        PurchaseRepository $purchaseRepository
+        BuybackRepository $buybackRepository
     )
     {
         $this->middleware('admin');
@@ -79,7 +78,7 @@ class PurchaseController extends Controller
 
         $this->refundRepository = $refundRepository;
 
-        $this->purchaseRepository = $purchaseRepository;
+        $this->buybackRepository = $buybackRepository;
     }
 
     /**
@@ -176,10 +175,10 @@ class PurchaseController extends Controller
      */
     public function view($id)
     {
-        $result = $this->purchaseRepository->check($id);
+        $result = $this->buybackRepository->findOrFail($id);
         // dd($result);
         if ($result){
-            $purchase = $this->purchaseRepository->findOrFail($id);
+            $purchase = $this->buybackRepository->findOrFail($id);
             // dd($purchase);
             return view($this->_config['view'], compact(['purchase']));
         }
@@ -197,7 +196,7 @@ class PurchaseController extends Controller
      */
     public function cancel($id)
     {
-        $result = $this->purchaseRepository->cancel($id);
+        $result = $this->buybackRepository->cancel($id);
 
         if ($result) {
             session()->flash('success', 'Purchase canceled successfully.');
@@ -216,22 +215,14 @@ class PurchaseController extends Controller
      */
     public function confirm($id)
     {
-        $result = $this->purchaseRepository->confirm($id);
-
+        $result = $this->buybackRepository->confirm($id);
+        
         if ($result) {
-            session()->flash('success', 'Purchase confirmation successfully.');
+            session()->flash('success', 'Buyback confirmation successfully.');
         } else {
-            session()->flash('error', 'Purchase can not be confirm.');
+            session()->flash('error', 'Buyback can not be confirm. Insufficient balance.');
         }
 
         return redirect()->back();
-    }
-    public function print($id)
-    {
-        $invoice = $this->purchaseRepository->findOrFail($id);
-        $purchase = $this->purchaseRepository->findOrFail($id);
-        $pdf = PDF::loadView('gapsap::customers.account.purchase.pdf', compact(['purchase']))->setPaper('a4');
-
-        return $pdf->download('admin-' . $invoice->created_at->format('d-m-Y') . '.pdf');
     }
 }
