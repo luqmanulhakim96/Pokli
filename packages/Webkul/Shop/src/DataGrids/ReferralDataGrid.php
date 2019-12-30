@@ -83,12 +83,12 @@ class ReferralDataGrid extends DataGrid
         ]);
     }
 
-    public function prepareActions() {
-        // $this->addAction([
-        //     'type' => 'View',
-        //     'method' => 'GET',
-        //     'route' => 'customer.orders.view',
-        //     'icon' => 'icon eye-icon'
-        // ]);
-    }
+    // public function prepareActions() {
+    //     $this->addAction([
+    //         'type' => 'View',
+    //         'method' => 'GET',
+    //         'route' => 'customer.orders.view',
+    //         'icon' => 'icon eye-icon'
+    //     ]);
+    // }
 }

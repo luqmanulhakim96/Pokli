@@ -4037,3 +4037,9 @@ input[type='radio']:checked:after {
 .account-balance-right {
     justify-content: end;
 }
+
+.input-group input[disabled=disabled] {
+    border-color: #d3d3d3;
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}

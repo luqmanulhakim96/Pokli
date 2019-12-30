@@ -2,8 +2,10 @@
 
 namespace Webkul\Admin\DataGrids;
 
+use Artanis\GapSap\Models\GoldSilverHistory;
 use Webkul\Ui\DataGrid\DataGrid;
 use DB;
+use Webkul\Customer\Models\Customer;
 
 /**
  * CustomerDataGrid class
@@ -19,17 +21,52 @@ class CustomerDataGrid extends DataGrid
 
     protected $itemsPerPage = 10;
 
+    public function goldTotal($id){
+        $purchase = GoldSilverHistory::where('customer_id', $id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+
+        return $purchase-$buyback;
+    }
+
+    public function silverTotal($id){
+        $purchase = GoldSilverHistory::where('customer_id', $id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+
+        return $purchase-$buyback;
+    }
+
     public function prepareQueryBuilder()
     {
+        // $gold = $this->goldTotal(2);
+        // $silver = $this->silverTotal(2);
+        // DB::enableQueryLog();
+        // $gold = DB::table('gold_silver_history')
+        //         ->select('customer_id', 'activity', 'product_type', 'quantity', DB::raw('SUM(quantity) AS quantity_pg'))
+        //         ->where('activity','purchase')
+        //         ->where('product_type','gold')
+        //         ->get();
+        // dd(DB::getQueryLog());
+        // dd($gold);
+        
+
         $queryBuilder = DB::table('customers')
                 ->leftJoin('customer_groups', 'customers.customer_group_id', '=', 'customer_groups.id')
-                ->addSelect('customers.id as customer_id', 'customers.email', 'customer_groups.name', 'status')
-                ->addSelect(DB::raw('CONCAT(customers.first_name, " ", customers.last_name) as full_name'));
+                ->leftJoin('gold_silver_history as gold_history', function($leftJoin) {
+                    $leftJoin->on('gold_history.customer_id', '=', 'customers.id')
+                             ->distinct('gold_history.customer_id');
+                })
+                ->leftJoin('gold_silver_history as silver_history', function($leftJoin) {
+                    $leftJoin->on('silver_history.customer_id', '=', 'customers.id')
+                             ->distinct('silver_history.customer_id');
+                })
+                ->addSelect('customers.id as customer_id', 'customers.email', 'customer_groups.name', 'customers.status', 'gold_history.quantity', 'silver_history.quantity')
+                ->addSelect(DB::raw('CONCAT(customers.first_name, " ", customers.last_name) as full_name'))->groupBy('customers.id');
 
         $this->addFilter('customer_id', 'customers.id');
         $this->addFilter('full_name', DB::raw('CONCAT(customers.first_name, " ", customers.last_name)'));
 
         $this->setQueryBuilder($queryBuilder);
+        // dd($queryBuilder);
     }
 
     public function addColumns()
@@ -59,6 +96,30 @@ class CustomerDataGrid extends DataGrid
             'searchable' => true,
             'sortable' => true,
             'filterable' => true
+        ]);
+
+        $this->addColumn([
+            'index' => 'gold_history.quantity',
+            'label' => 'Gold',
+            'type' => 'string',
+            // 'searchable' => true,
+            'sortable' => true,
+            // 'filterable' => true,
+            'wrapper' => function ($value) {
+                return $gold = $this->goldTotal($value->customer_id);
+            }
+        ]);
+
+        $this->addColumn([
+            'index' => 'silver_history.quantity',
+            'label' => 'Silver',
+            'type' => 'string',
+            // 'searchable' => true,
+            'sortable' => true,
+            // 'filterable' => true,
+            'wrapper' => function ($value) {
+                return $silver = $this->silverTotal($value->customer_id);
+            }
         ]);
 
         $this->addColumn([

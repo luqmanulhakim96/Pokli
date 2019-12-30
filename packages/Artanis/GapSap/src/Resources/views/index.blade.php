@@ -34,23 +34,23 @@
                     <span class="control-error" v-if="errors.has('mode_of_payment')">@{{ errors.first('mode_of_payment') }}</span>
                 </div>
                 
-                <div id="date_of_payment_container" class="control-group"  :class="[errors.has('date_of_payment') ? 'has-error' : '']" style="display:none">
-                    <label for="date_of_payment" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
-                    {{-- <input id="date_of_payment" type="date" class="control" name="date_of_payment" value="{{ old('date_of_payment') }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;"> --}}
-                    <div class='input-group date' id='date_of_payment'>
-                        <input type='text' class="form-control" name="date_of_payment" />
+                <div id="date_of_payment_container" class="control-group"  :class="[errors.has('payment_on') ? 'has-error' : '']" style="display:none">
+                    <label for="payment_on" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
+                    {{-- <input id="payment_on" type="date" class="control" name="payment_on" value="{{ old('payment_on') }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;"> --}}
+                    <div class='input-group date' id='payment_on'>
+                        <input type='text' class="form-control" name="payment_on" />
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                      </div>
-                    <span class="control-error" v-if="errors.has('date_of_payment')">@{{ errors.first('date_of_payment') }}</span>
+                    <span class="control-error" v-if="errors.has('payment_on')">@{{ errors.first('payment_on') }}</span>
                 </div>
 
-                {{-- <div class="control-group"  :class="[errors.has('date_of_payment') ? 'has-error' : '']">
+                {{-- <div class="control-group"  :class="[errors.has('payment_on') ? 'has-error' : '']">
                     <datetime>
-                        <label for="date_of_payment" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
-                        <input id="date_of_payment" type="text" class="control" name="date_of_payment" value="{{ old('date_of_payment') ?? $customer->date_of_payment }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;">
-                        <span class="control-error" v-if="errors.has('date_of_payment')">@{{ errors.first('date_of_payment') }}</span>
+                        <label for="payment_on" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
+                        <input id="payment_on" type="text" class="control" name="payment_on" value="{{ old('payment_on') ?? $customer->payment_on }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;">
+                        <span class="control-error" v-if="errors.has('payment_on')">@{{ errors.first('payment_on') }}</span>
                     </datetime>
                 </div> --}}
 
@@ -75,7 +75,7 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#date_of_payment').datetimepicker({
+            $('#payment_on').datetimepicker({
                 useCurrent: true,
                 defaultDate: new Date(),
                 // showTodayButton: true,
@@ -92,11 +92,11 @@
                 var mode_of_payment = $("#mode_of_payment").val();
                 if(mode_of_payment == 'fpx') {
                     $("#date_of_payment_container").hide();
-                    $("#date_of_payment").prop( "disabled", true );
+                    $("#payment_on").prop( "disabled", true );
                 }
                 else if(mode_of_payment == 'bankin') {
                     $("#date_of_payment_container").show();
-                    $("#date_of_payment").prop( "disabled", false );
+                    $("#payment_on").prop( "disabled", false );
                 }
             });
         });
@@ -149,10 +149,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="control-group"  :class="[errors.has('date_of_payment') ? 'has-error' : '']">
-                                    <label for="date_of_payment" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
-                                    <input type="date" class="control" name="date_of_payment" value="{{ old('date_of_payment') ?? $customer->date_of_payment }}" v-validate="" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;">
-                                    <span class="control-error" v-if="errors.has('date_of_payment')">@{{ errors.first('date_of_payment') }}</span>
+                                <div class="control-group"  :class="[errors.has('payment_on') ? 'has-error' : '']">
+                                    <label for="payment_on" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
+                                    <input type="date" class="control" name="payment_on" value="{{ old('payment_on') ?? $customer->payment_on }}" v-validate="" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;">
+                                    <span class="control-error" v-if="errors.has('payment_on')">@{{ errors.first('payment_on') }}</span>
                                 </div>
                             </div>
                             <div class="row">
@@ -200,8 +200,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="control-group"  :class="[errors.has('date_of_payment') ? 'has-error' : '']">
-                                <label for="date_of_payment" class="required">Purchase Quantity</label>
+                            <div class="control-group"  :class="[errors.has('payment_on') ? 'has-error' : '']">
+                                <label for="payment_on" class="required">Purchase Quantity</label>
                                 <input type="number" v-validate="'numeric|min:0'" name="" class="control" value="" data-vv-as="&quot;{{ ('gapsap::app.purchase.form-customer-name') }}&quot;"/>
                                 <span class="control-error" v-if="errors.has('purchase_amount')">@{{ errors.first('purchase_amount') }}</span>
                             </div>

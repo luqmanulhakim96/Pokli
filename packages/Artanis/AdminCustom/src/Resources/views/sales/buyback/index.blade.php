@@ -1,14 +1,14 @@
 @extends('admin::layouts.content')
 
 @section('page_title')
-    {{ __('Purchase') }}
+    {{ __('Buyback') }}
 @stop
 
 @section('content')
     <div class="content">
         <div class="page-header">
             <div class="page-title">
-                <h1>Purchase</h1>
+                <h1>{{ __('Buyback') }}</h1>
             </div>
 
             {{-- <div class="page-action">
@@ -22,9 +22,9 @@
         </div>
 
         <div class="page-content">
-            @inject('purchaseGrid', 'Artanis\AdminCustom\DataGrids\PurchaseDataGrid')
+            @inject('buybackGrid', 'Artanis\AdminCustom\DataGrids\BuybackDataGrid')
             
-            {!! $purchaseGrid->render() !!}
+            {!! $buybackGrid->render() !!}
         </div>
     </div>
 
@@ -38,5 +38,5 @@
 @stop
 
 @push('scripts')
-    @include('admin::export.export', ['gridName' => $purchaseGrid])
+    @include('admin::export.export', ['gridName' => $buybackGrid])
 @endpush

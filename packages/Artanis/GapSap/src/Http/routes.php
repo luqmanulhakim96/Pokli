@@ -11,6 +11,16 @@
         Route::post('/purchase/form-submit', 'Artanis\GapSap\Http\Controllers\GapSapController@formSubmit')->defaults('_config', [
             'view' => 'gapsap::form.submit'
         ])->name('gapsap.form-submit');
+
+        Route::get('/buyback', 'Artanis\GapSap\Http\Controllers\BuybackController@index')->defaults('_config', [
+            'view' => 'gapsap::buyback.index'
+        ])->name('gapsap.buyback.index');
+        Route::post('/buyback/confirm', 'Artanis\GapSap\Http\Controllers\BuybackController@confirm')->defaults('_config', [
+            'view' => 'gapsap::buyback.confirm'
+        ])->name('gapsap.buyback.confirm');
+        Route::post('/buyback/confirm-submit', 'Artanis\GapSap\Http\Controllers\BuybackController@confirmSubmit')->defaults('_config', [
+            'view' => 'gapsap::buyback.confirm-submit'
+        ])->name('gapsap.buyback.confirm-submit');
     // });
 
     // Route::group(['middleware' => ['web']], function () {

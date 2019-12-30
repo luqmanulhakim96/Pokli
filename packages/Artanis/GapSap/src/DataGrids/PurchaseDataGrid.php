@@ -1,6 +1,6 @@
 <?php
 
-namespace Artanis\AdminCustom\DataGrids;
+namespace Artanis\GapSap\DataGrids;
 
 use Artanis\GapSap\Models\GoldSilverHistory;
 use Webkul\Ui\DataGrid\DataGrid;
@@ -42,9 +42,10 @@ class PurchaseDataGrid extends DataGrid
                 ->leftJoin('customers', function($leftJoin) {
                     $leftJoin->on('customers.id', '=', 'gold_silver_history.customer_id');
                 })
-                ->addSelect('gold_silver_history.increment_id', 'gold_silver_history.invoice_id' ,'gold_silver_history.id', 'gold_silver_history.product_type', 'gold_silver_history.current_price_per_gram', 'gold_silver_history.current_price_datetime', 'gold_silver_history.amount', 'gold_silver_history.quantity', 'gold_silver_history.payment_method', 'gold_silver_history.payment_on', 'gold_silver_history.status', 'gold_silver_history.payment_attachment')
+                ->addSelect('gold_silver_history.increment_id' , 'gold_silver_history.invoice_id', 'gold_silver_history.id', 'gold_silver_history.product_type', 'gold_silver_history.current_price_per_gram', 'gold_silver_history.current_price_datetime', 'gold_silver_history.amount', 'gold_silver_history.quantity', 'gold_silver_history.payment_method', 'gold_silver_history.payment_on', 'gold_silver_history.status', 'gold_silver_history.payment_attachment')
                 ->addSelect(DB::raw('CONCAT(customers.first_name, " ", customers.last_name) as customer_full_name'))
-                ->where('activity','purchase');
+                ->where('activity', 'purchase')
+                ->where('customer_id', auth()->guard('customer')->user()->id);
 
         $this->addFilter('increment_id', 'gold_silver_history.increment_id');
         $this->addFilter('customer_full_name', DB::raw('CONCAT(customers.first_name, " ", customers.last_name)'));
@@ -84,7 +85,7 @@ class PurchaseDataGrid extends DataGrid
 
         $this->addColumn([
             'index' => 'gold_silver_history.product_type',
-            'label' => 'Product Type',
+            'label' => 'Type',
             'type' => 'string',
             'searchable' => true,
             'sortable' => true,
@@ -98,15 +99,15 @@ class PurchaseDataGrid extends DataGrid
             }
         ]);
         
-        $this->addColumn([
-            'index' => 'customer_full_name',
-            'label' => 'Customer Name',
-            'type' => 'string',
-            'searchable' => true,
-            'sortable' => true,
-            'closure' => true,
-            'filterable' => true
-        ]);
+        // $this->addColumn([
+        //     'index' => 'customer_full_name',
+        //     'label' => 'Customer Name',
+        //     'type' => 'string',
+        //     'searchable' => true,
+        //     'sortable' => true,
+        //     'closure' => true,
+        //     'filterable' => true
+        // ]);
 
         // $this->addColumn([
         //     'index' => 'amount',
@@ -156,24 +157,22 @@ class PurchaseDataGrid extends DataGrid
             'filterable' => true
         ]);
 
-        $this->addColumn([
-            'index' => 'gold_silver_history.payment_attachment',
-            'label' => 'Attachement',
-            'type' => 'string',
-            'searchable' => true,
-            'closure' => true,
-            'sortable' => true,
-            'filterable' => true,
-            'wrapper' => function ($value) {
-                if (!$value->payment_attachment) {
-                    return 'Null';
-                }
-                else 
-                    // return 'http://127.0.0.1:8000/storage/'.$value->payment_attachment;
-                    // return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '"> Attachment </a>';
-                    return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '" target="_blank"> <img src="http://127.0.0.1:8000/storage/'.$value->payment_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
-            }
-        ]);
+        // $this->addColumn([
+        //     'index' => 'gold_silver_history.payment_attachment',
+        //     'label' => 'Attachement',
+        //     'type' => 'string',
+        //     'searchable' => true,
+        //     'closure' => true,
+        //     'sortable' => true,
+        //     'filterable' => true,
+        //     'wrapper' => function ($value) {
+        //         if (!$value->payment_attachment) {
+        //             return 'Null';
+        //         }
+        //         else 
+        //             return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '" target="_blank"> <img src="http://127.0.0.1:8000/storage/'.$value->payment_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
+        //     }
+        // ]);
 
         $this->addColumn([
             'index' => 'gold_silver_history.payment_method',
@@ -221,7 +220,7 @@ class PurchaseDataGrid extends DataGrid
         $this->addAction([
             'title' => 'Purchase View',
             'method' => 'GET', // use GET request only for redirect purposes
-            'route' => 'admincustom.sales.purchase.view',
+            'route' => 'gapsap.purchase.view',
             'icon' => 'icon eye-icon'
         ]);
     }
