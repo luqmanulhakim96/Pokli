@@ -195,12 +195,12 @@
                 var ul = document.getElementById("navigation");
                 var li = document.createElement("li");
                 var a = document.createElement("a");
-                a.setAttribute("href", "/purchase");
+                a.setAttribute("href", "/Pokli/purchase");
                 a.appendChild(document.createTextNode('GAP/SAP'));
 
                 var li2 = document.createElement("li");
                 var b = document.createElement("a");
-                b.setAttribute("href", "/buyback");
+                b.setAttribute("href", "/Pokli/buyback");
                 b.appendChild(document.createTextNode('BuyBack'));
 
                 li.appendChild(a);
