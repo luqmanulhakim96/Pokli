@@ -182,7 +182,7 @@
             var ul = document.getElementById("navigation");
             var li = document.createElement("li");
             var a = document.createElement("a");
-            a.setAttribute("href", "/Pokli/purchase");
+            a.setAttribute("href", "/purchase");
             a.appendChild(document.createTextNode('GAP/SAP'));
 
             li.appendChild(a);
