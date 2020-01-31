@@ -33,7 +33,7 @@ return [
         'code' => 'billplz',
         'title' => 'FPX',
         'description' => 'Bank Transfer',
-        'class' => 'Artanis\BillPlz\Payment\BillPlz',
+        'class' => 'Artanis\BillPlz\Controller\StandardController',
         'sandbox' => true,
         'active' => true,
         'sort' => 4
