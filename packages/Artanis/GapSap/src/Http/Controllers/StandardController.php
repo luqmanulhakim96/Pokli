@@ -129,7 +129,7 @@ class StandardController extends Controller
       $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
       $bill = $billplzCreate->bill();
       $response = $bill->create(
-          'wf6m9pmq', //collection id
+          'x7afhxzc', //collection id
           $purchase->customer->email, //user email
           null,
           $purchase->customer->first_name.' '.$purchase->customer->last_name, //user name
