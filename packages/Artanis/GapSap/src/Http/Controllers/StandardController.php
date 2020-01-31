@@ -125,7 +125,7 @@ class StandardController extends Controller
       // $billingAddress = $cart->billing_address;
       // $item = $this->getCartItems();
       // dd($cart);
-      dd($purchase->amount);
+      // dd($purchase->amount);
 
       $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
       $bill = $billplzCreate->bill();
@@ -134,7 +134,7 @@ class StandardController extends Controller
           $purchase->customer->email, //user email
           null,
           $purchase->customer->first_name.' '.$purchase->customer->last_name, //user name
-          \Duit\MYR::given($purchase->purchase_amount*100), //total price
+          \Duit\MYR::given($purchase->amount*100), //total price
           ['callback_url' => route('gapsap.verify'), 'redirect_url' => route('gapsap.verify')], //url
           "POKLI Wealth Management"
       );
