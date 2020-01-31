@@ -4,6 +4,7 @@ namespace Artanis\BillPlz\Payment;
 use Illuminate\Support\Facades\Config;
 use Webkul\Payment\Payment\Payment;
 use Billplz\Client;
+use Illuminate\Http\RedirectResponse;
 
 class BillPlz extends Payment
 {
@@ -95,9 +96,8 @@ class BillPlz extends Payment
         );
         $responseArray = $response->toArray();
         $url = $responseArray['url'];
-        // return redirect()->away($url);
+        return redirect()->away($url);
         // return redirect($url);
-        return Redirect::to($url);
       // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
