@@ -138,10 +138,10 @@ class StandardController extends Controller
           ['callback_url' => route('gapsap.verify'), 'redirect_url' => route('gapsap.verify')], //url
           "POKLI Wealth Management"
       );
-      dd($response);
+      // dd($response);
       $responseArray = $response->toArray();
       $url = $responseArray['url'];
-      dd($url);
+      // dd($url);
       return redirect()->away($url);
     }
 }
