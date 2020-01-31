@@ -96,7 +96,7 @@ class BillPlz extends Payment
         );
         $responseArray = $response->toArray();
         $url = $responseArray['url'];
-        dd($url);
+        // dd($url);
         return redirect()->away($responseArray['url']);
         // return redirect($url);
       // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
