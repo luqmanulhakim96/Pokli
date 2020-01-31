@@ -65,10 +65,10 @@ class BillPlz extends Payment
         // $item = $this->getCartItems();
         // dd($cart);
 
-        $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
+        $billplzCreate = Client::make('9e044b22-afda-4245-ba20-a9c4249d5cc2', 'S-Fq-j4wtQghYPQ80vd0kjbw');
         $bill = $billplzCreate->bill();
         $response = $bill->create(
-            'x7afhxzc', //collection id
+            'wf6m9pmq', //collection id
             $purchase->customer->email, //user email
             null,
             $purchase->customer->first_name.' '.$purchase->customer->last_name, //user name
@@ -78,7 +78,7 @@ class BillPlz extends Payment
         );
         $responseArray = $response->toArray();
         $url = $responseArray['url'];
-        return $url;
+        return redirect()->away($url);
       // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
     }
 }
