@@ -134,7 +134,7 @@ class StandardController extends Controller
         $this->ipnHelper->processIpn(request()->all());
     }
 
-    public function redirectAway()
+    public function redirectBillPlz()
     {
 
       $cart = $this->getCart();
