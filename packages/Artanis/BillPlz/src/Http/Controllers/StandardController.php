@@ -99,26 +99,9 @@ class StandardController extends Controller
         $this->ipnHelper->processIpn(request()->all());
     }
 
-    public function redirectAway()
+    public function redirectAway($id)
     {
-      $cart = $this->getCart();
-      $billingAddress = $cart->billing_address;
-      $item = $this->getCartItems();
-
-      $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
-      $bill = $billplzCreate->bill();
-      $response = $bill->create(
-          'x7afhxzc', //collection id
-          $billingAddress->email, //user email
-          null,
-          $billingAddress->first_name.' '.$billingAddress->last_name, //user name
-          \Duit\MYR::given($cart->grand_total*100), //total price
-          ['callback_url' => route('billplz.verify'), 'redirect_url' => route('billplz.verify')], //url
-          "POKLI Wealth Management"
-      );
-      $responseArray = $response->toArray();
-      $url = $responseArray['url'];
-      dd($url);
+      $url = $id;
       return redirect()->away($url);
     }
 }
