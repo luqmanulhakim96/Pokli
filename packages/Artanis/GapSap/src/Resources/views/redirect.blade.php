@@ -4,7 +4,7 @@
     You will be redirected to the FPX website in a few seconds.
 
 
-    <form action="{{ $billplz->getBillPlzlUrl() }}" id="billplz_checkout" method="POST">
+    <form action="{{ route('billplz.redirectAway') }}" id="billplz_checkout" method="POST">
         <input value="Click here if you are not redirected within 10 seconds..." type="submit">
 
         @foreach ($billplz->getFormFields() as $name => $value)
