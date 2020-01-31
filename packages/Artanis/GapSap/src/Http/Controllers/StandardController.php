@@ -125,7 +125,6 @@ class StandardController extends Controller
       // $billingAddress = $cart->billing_address;
       // $item = $this->getCartItems();
       // dd($cart);
-      dd($purchase);
       $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
       $bill = $billplzCreate->bill();
       $response = $bill->create(
