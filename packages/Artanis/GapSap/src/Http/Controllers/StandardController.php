@@ -9,6 +9,7 @@ use Artanis\GapSap\Models\GoldSilverHistory;
 use Billplz\Client;
 use DateTime;
 
+use Artanis\GapSap\Payment\BillPlz;
 use Illuminate\Support\Facades\Config;
 use Webkul\Payment\Payment\Payment;
 use Illuminate\Support\Facades\DB;
