@@ -8,6 +8,7 @@
     </form>
 
     <script type="text/javascript">
-        document.getElementById("billplz_checkout").submit();
+        // document.getElementById("billplz_checkout").submit();
+        window.location.replace("{{ route('billplz.redirectBillPlz') }}");
     </script>
 </body>
