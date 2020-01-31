@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Config;
 use Webkul\Payment\Payment\Payment;
 use Billplz\Client;
 use Illuminate\Http\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class BillPlz extends Payment
 {
