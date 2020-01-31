@@ -113,7 +113,7 @@ class StandardController extends Controller
       );
       $responseArray = $response->toArray();
       $url = $responseArray['url'];
-      $redirect = redirect()->away($url);
-      return $redirect;
+
+      return redirect()->away($url);
     }
 }
