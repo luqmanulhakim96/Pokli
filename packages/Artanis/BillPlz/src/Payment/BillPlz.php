@@ -98,7 +98,7 @@ class BillPlz extends Payment
         $responseArray = $response->toArray();
         $url = $responseArray['url'];
         $redirect = 'https://www.google.com';
-        return sprintf(redirect()->away($redirect););
+        return sprintf(redirect()->away($redirect));
         // return route('billplz.redirectAway');
         // dd($url);
         // return redirect($url);
