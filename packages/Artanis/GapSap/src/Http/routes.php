@@ -40,4 +40,6 @@
         Route::get('gapsap/billplz/cancel', 'Artanis\GapSap\Http\Controllers\StandardController@cancel')->name('gapsap.cancel');
 
         Route::get('gapsap/billplz/verify', 'Artanis\GapSap\Http\Controllers\StandardController@verify')->name('gapsap.verify');
+
+        Route::get('gapsap/billplz/redirect-away', 'Artanis\GapSap\Http\Controllers\StandardController@redirectBillPlz')->name('gapsap.redirectBillPlz');
     });

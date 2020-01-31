@@ -1,26 +1,16 @@
-<?php $billplz = app('Artanis\GapSap\Payment\BillPlz');?>
+<?php// $billplz = app('Artanis\GapSap\Payment\BillPlz');?>
+<?php $billplz = app('Artanis\GapSap\Http\Controllers\StandardController');?>
 
 <body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
     You will be redirected to the FPX website in a few seconds.
 
 
-    <form action="{{ $billplz->getBillPlzlUrl() }}" id="billplz_checkout" method="POST">
-        <input value="Click here if you are not redirected within 10 seconds..." type="submit">
+    <form action="{{  route('gapsap.redirectBillPlz') }}" id="billplz_checkout" method="GET">
 
-        {{-- @foreach ($billplz->getFormFields() as $name => $value)
-
-            <input type="hidden" name="{{ $name }}" value="{{ $value }}">
-
-        @endforeach --}}
-
-        @foreach ($input as $name => $value)
-
-            <input type="hidden" name="{{ $name }}" value="{{ $value }}">
-
-        @endforeach
     </form>
 
     <script type="text/javascript">
-        document.getElementById("billplz_checkout").submit();
+        // document.getElementById("billplz_checkout").submit();
+        window.location.replace("{{ route('billplz.redirectBillPlz') }}");
     </script>
 </body>

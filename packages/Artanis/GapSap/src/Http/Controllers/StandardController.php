@@ -107,4 +107,30 @@ class StandardController extends Controller
     {
         $this->ipnHelper->processIpn(request()->all());
     }
+
+    public function redirectBillPlz()
+    {
+      $purchase = GoldSilverHistory::where('customer_id',auth()->guard('customer')->user()->id)->latest()->first();
+      // dd($purchase->customer->email);
+
+      // $cart = $this->getCart();
+      // $billingAddress = $cart->billing_address;
+      // $item = $this->getCartItems();
+      // dd($cart);
+
+      $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
+      $bill = $billplzCreate->bill();
+      $response = $bill->create(
+          'wf6m9pmq', //collection id
+          $purchase->customer->email, //user email
+          null,
+          $purchase->customer->first_name.' '.$purchase->customer->last_name, //user name
+          \Duit\MYR::given($purchase->purchase_amount*100), //total price
+          ['callback_url' => route('gapsap.verify'), 'redirect_url' => route('gapsap.verify')], //url
+          $purchase->increment_id
+      );
+      $responseArray = $response->toArray();
+      $url = $responseArray['url'];
+      return redirect()->away($url);
+    }
 }
