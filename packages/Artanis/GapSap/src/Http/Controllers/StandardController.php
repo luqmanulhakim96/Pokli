@@ -135,7 +135,7 @@ class StandardController extends Controller
           $purchase->customer->first_name.' '.$purchase->customer->last_name, //user name
           \Duit\MYR::given($purchase->purchase_amount*100), //total price
           ['callback_url' => route('gapsap.verify'), 'redirect_url' => route('gapsap.verify')], //url
-          $purchase->increment_id
+          "POKLI Wealth Management"
       );
       $responseArray = $response->toArray();
       $url = $responseArray['url'];
