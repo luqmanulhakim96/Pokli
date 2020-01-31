@@ -278,6 +278,29 @@ Route::group(['middleware' => ['web']], function () {
             Route::prefix('catalog')->group(function () {
                 Route::get('/sync', 'Webkul\Product\Http\Controllers\ProductController@sync');
 
+                //Deliver Order Routes
+                Route::get('/delivery-order', 'Artanis\AdminCustom2\Http\Controllers\AdminCustom2Controller@index')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.products.index'
+                ])->name('admincustom2.catalog.products.index');
+
+                Route::get('/delivery-order/create', 'Artanis\AdminCustom2\Http\Controllers\AdminCustom2Controller@create')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.products.create'
+                ])->name('admincustom2.catalog.products.create');
+
+                Route::get('/delivery-order/edit/{id}', 'Artanis\AdminCustom2\Http\Controllers\AdminCustom2Controller@edit')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.products.edit'
+                ])->name('admincustom2.catalog.products.edit');
+
+                Route::post('/delivery-order/form-submit', 'Artanis\AdminCustom2\Http\Controllers\AdminCustom2Controller@formSubmit')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.products.form.submit'
+                ])->name('admincustom2.catalog.products.form-submit');
+
+                Route::post('/delivery-order/download/{id}', 'Artanis\AdminCustom2\Http\Controllers\AdminCustom2Controller@download')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.products.download'
+                ])->name('admincustom2.catalog.products.download');
+
+                Route::post('/delivery-order/delete/{id}', 'Artanis\AdminCustom2\Http\Controllers\AdminCustom2Controller@destroy')->name('admincustom2.catalog.products.delete');
+
                 // Catalog Product Routes
                 Route::get('/products', 'Webkul\Product\Http\Controllers\ProductController@index')->defaults('_config', [
                     'view' => 'admin::catalog.products.index'
@@ -302,7 +325,7 @@ Route::group(['middleware' => ['web']], function () {
                 Route::post('/products/upload-file/{id}', 'Webkul\Product\Http\Controllers\ProductController@uploadLink')->name('admin.catalog.products.upload_link');
 
                 Route::post('/products/upload-sample/{id}', 'Webkul\Product\Http\Controllers\ProductController@uploadSample')->name('admin.catalog.products.upload_sample');
-                
+
                 //product delete
                 Route::post('/products/delete/{id}', 'Webkul\Product\Http\Controllers\ProductController@destroy')->name('admin.catalog.products.delete');
 

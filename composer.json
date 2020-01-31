@@ -97,6 +97,7 @@
         "Artanis\\BillPlz\\": "packages/Artanis/BillPlz/src",
         "Artanis\\GapSap\\": "packages/Artanis/GapSap/src",
         "Artanis\\AdminCustom\\": "packages/Artanis/AdminCustom/src",
+        "Artanis\\AdminCustom2\\": "packages/Artanis/AdminCustom2/src",
         "Artanis\\LivePrice\\": "packages/Artanis/LivePrice/src"
       }
     },
