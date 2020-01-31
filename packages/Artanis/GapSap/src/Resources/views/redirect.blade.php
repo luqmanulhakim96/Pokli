@@ -11,6 +11,6 @@
 
     <script type="text/javascript">
         // document.getElementById("billplz_checkout").submit();
-        window.location.replace("{{ route('billplz.redirectBillPlz') }}");
+        window.location.replace("{{ route('gapsap.redirectBillPlz') }}");
     </script>
 </body>
