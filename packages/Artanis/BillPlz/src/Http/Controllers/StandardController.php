@@ -14,6 +14,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 class StandardController extends Controller
 {
+
+    protected $cart;
     /**
      * OrderRepository object
      *
@@ -42,6 +44,39 @@ class StandardController extends Controller
         $this->orderRepository = $orderRepository;
 
         $this->ipnHelper = $ipnHelper;
+    }
+
+
+    public function setCart()
+    {
+        if (! $this->cart)
+            $this->cart = Cart::getCart();
+    }
+
+    /**
+     * Returns cart insrance
+     *
+     * @var mixed
+     */
+    public function getCart()
+    {
+        if (! $this->cart)
+            $this->setCart();
+
+        return $this->cart;
+    }
+
+    /**
+     * Return paypal redirect url
+     *
+     * @var Collection
+     */
+    public function getCartItems()
+    {
+        if (! $this->cart)
+            $this->setCart();
+
+        return $this->cart->items;
     }
 
     /**
