@@ -3,8 +3,7 @@
 
 <body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
     You will be redirected to the FPX website in a few seconds.
-
-
+    
     <form action="{{  route('gapsap.redirectBillPlz') }}" id="billplz_checkout" method="GET">
 
     </form>
