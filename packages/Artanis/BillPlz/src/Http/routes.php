@@ -12,5 +12,5 @@
 
         Route::get('billplz/verify', 'Artanis\BillPlz\Http\Controllers\StandardController@verify')->name('billplz.verify');
 
-        Route::get('billplz/redirect-away', 'Artanis\BillPlz\Http\Controllers\StandardController@redirectAway')->name('billplz.redirectAway');
+        Route::post('billplz/redirect-away', 'Artanis\BillPlz\Http\Controllers\StandardController@redirectAway')->name('billplz.redirectAway');
     });
