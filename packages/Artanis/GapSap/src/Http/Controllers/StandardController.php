@@ -9,6 +9,13 @@ use Artanis\GapSap\Models\GoldSilverHistory;
 use Billplz\Client;
 use DateTime;
 
+use Illuminate\Support\Facades\Config;
+use Webkul\Payment\Payment\Payment;
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Http\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
+
 class StandardController extends Controller
 {
     /**
