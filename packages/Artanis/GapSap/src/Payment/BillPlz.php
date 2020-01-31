@@ -55,6 +55,33 @@ class BillPlz extends Payment
         return $fields;
     }
 
+    // public function getBillPlzlUrl($params = [])
+    // {
+    //     $purchase = GoldSilverHistory::where('customer_id',auth()->guard('customer')->user()->id)->latest()->first();
+    //     // dd($purchase->customer->email);
+    //
+    //     // $cart = $this->getCart();
+    //     // $billingAddress = $cart->billing_address;
+    //     // $item = $this->getCartItems();
+    //     // dd($cart);
+    //
+    //     $billplzCreate = Client::make('9e044b22-afda-4245-ba20-a9c4249d5cc2', 'S-Fq-j4wtQghYPQ80vd0kjbw');
+    //     $bill = $billplzCreate->bill();
+    //     $response = $bill->create(
+    //         'wf6m9pmq', //collection id
+    //         $purchase->customer->email, //user email
+    //         null,
+    //         $purchase->customer->first_name.' '.$purchase->customer->last_name, //user name
+    //         \Duit\MYR::given($purchase->purchase_amount*100), //total price
+    //         ['callback_url' => route('gapsap.verify'), 'redirect_url' => route('gapsap.verify')], //url
+    //         $purchase->increment_id
+    //     );
+    //     $responseArray = $response->toArray();
+    //     $url = $responseArray['url'];
+    //     return redirect()->away($url);
+    //   // return 'https://billplz-staging.herokuapp.com/bills/'.$id;
+    // }
+
     public function getBillPlzlUrl($params = [])
     {
         $purchase = GoldSilverHistory::where('customer_id',auth()->guard('customer')->user()->id)->latest()->first();
@@ -65,7 +92,7 @@ class BillPlz extends Payment
         // $item = $this->getCartItems();
         // dd($cart);
 
-        $billplzCreate = Client::make('9e044b22-afda-4245-ba20-a9c4249d5cc2', 'S-Fq-j4wtQghYPQ80vd0kjbw');
+        $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
         $bill = $billplzCreate->bill();
         $response = $bill->create(
             'wf6m9pmq', //collection id
