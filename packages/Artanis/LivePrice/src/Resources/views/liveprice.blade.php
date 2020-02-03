@@ -210,7 +210,77 @@
 
                     </div>
                 </section>
-            </div>
+                 <div id="generic_price_table">
+                    <section>
+                          <div class="container">
+
+                              <!--BLOCK ROW START-->
+                              <div class="row">
+                                  <div class="col-md-4">
+
+                                  	<!--PRICE CONTENT START-->
+                                      <div class="generic_content clearfix">
+
+                                          <!--HEAD PRICE DETAIL START-->
+                                          <div class="generic_head_price clearfix">
+
+                                              <!--HEAD CONTENT START-->
+                                              <div class="generic_head_content clearfix">
+
+                                              	<!--HEAD START-->
+                                                  <div class="head_bg"></div>
+                                                  <div class="head">
+                                                      <span>MY Uncang Perak</span>
+                                                  </div>
+                                                  <!--//HEAD END-->
+
+                                              </div>
+                                              <!--//HEAD CONTENT END-->
+
+                                              <!--PRICE START-->
+                                              @foreach($dataSAP as $key => $value)
+                                               <!-- <div class="generic_price_tag clearfix">
+                                                   <span class="price">
+                                                       <span class="sign">RM</span>
+                                                       <span class="currency">{{$value["price"]}}</span>
+                                                       <span class="cent"> = </span>
+                                                       <span class="month">{{$value["gram"]}} g</span>
+                                                   </span>
+                                               </div> -->
+                                               @endforeach
+                                              <!--//PRICE END-->
+
+                                          </div>
+                                          <!--//HEAD PRICE DETAIL END-->
+
+                                          <!--FEATURE LIST START-->
+                                          <div class="generic_feature_list">
+                                          	<ul>
+                                              @foreach($dataSAP as $key => $value)
+                                              	<li>RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
+                                              @endforeach
+                                            </ul>
+                                          </div>
+                                          <!--//FEATURE LIST END-->
+
+                                          <!--BUTTON START-->
+                                          <!-- <div class="generic_price_btn clearfix">
+                                          	<a class="" href="">Sign up</a>
+                                          </div> -->
+                                          <!--//BUTTON END-->
+
+                                      </div>
+                                      <!--//PRICE CONTENT END-->
+
+                                  </div>
+
+                              </div>
+                              <!--//BLOCK ROW END-->
+
+                          </div>
+                      </section>
+                  </div>
+             </div>
        </div>
        <div class="block1">
             <div id="generic_price_table">
@@ -331,78 +401,6 @@
                                       </ul>
                                       </div>
 
-                                      <!--//FEATURE LIST END-->
-
-                                      <!--BUTTON START-->
-                                      <!-- <div class="generic_price_btn clearfix">
-                                      	<a class="" href="">Sign up</a>
-                                      </div> -->
-                                      <!--//BUTTON END-->
-
-                                  </div>
-                                  <!--//PRICE CONTENT END-->
-
-                              </div>
-
-                          </div>
-                          <!--//BLOCK ROW END-->
-
-                      </div>
-                  </section>
-              </div>
-         </div>
-        <div class="block2">
-             <div id="generic_price_table">
-                <section>
-                      <div class="container">
-
-                          <!--BLOCK ROW START-->
-                          <div class="row">
-                              <div class="col-md-4">
-
-                              	<!--PRICE CONTENT START-->
-                                  <div class="generic_content clearfix">
-
-                                      <!--HEAD PRICE DETAIL START-->
-                                      <div class="generic_head_price clearfix">
-
-                                          <!--HEAD CONTENT START-->
-                                          <div class="generic_head_content clearfix">
-
-                                          	<!--HEAD START-->
-                                              <div class="head_bg"></div>
-                                              <div class="head">
-                                                  <span>MY Uncang Perak</span>
-                                              </div>
-                                              <!--//HEAD END-->
-
-                                          </div>
-                                          <!--//HEAD CONTENT END-->
-
-                                          <!--PRICE START-->
-                                          @foreach($dataSAP as $key => $value)
-                                           <!-- <div class="generic_price_tag clearfix">
-                                               <span class="price">
-                                                   <span class="sign">RM</span>
-                                                   <span class="currency">{{$value["price"]}}</span>
-                                                   <span class="cent"> = </span>
-                                                   <span class="month">{{$value["gram"]}} g</span>
-                                               </span>
-                                           </div> -->
-                                           @endforeach
-                                          <!--//PRICE END-->
-
-                                      </div>
-                                      <!--//HEAD PRICE DETAIL END-->
-
-                                      <!--FEATURE LIST START-->
-                                      <div class="generic_feature_list">
-                                      	<ul>
-                                          @foreach($dataSAP as $key => $value)
-                                          	<li>RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                          @endforeach
-                                        </ul>
-                                      </div>
                                       <!--//FEATURE LIST END-->
 
                                       <!--BUTTON START-->
