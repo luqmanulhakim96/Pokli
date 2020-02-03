@@ -48,7 +48,7 @@
  <style>
    .main-container-wrapper section.featured-products .featured-heading {
     width: 100%;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     font-size: 18px;
     margin-bottom: 20px;
