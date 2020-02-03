@@ -35,6 +35,7 @@
             <meta name="keywords" content="{{ $metaKeywords }}" />
         @endisset
     @endif
+
     <style>
    /* table {
      font-family: arial, sans-serif;
