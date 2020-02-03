@@ -49,7 +49,7 @@
    .main-container-wrapper section.featured-products .featured-heading {
     width: 100%;
     text-align: center;
-    text-transform: lowercase;
+    text-transform: uppercase;
     font-size: 18px;
     margin-bottom: 20px;
   }
@@ -61,7 +61,7 @@
 </style>
 <section class="featured-products">
      <div class="featured-heading">
-         Live Price<br/>
+         Live Prices<br/>
          <span class="featured-seperator" style="color:lightgrey;">_____</span>
      </div>
      <div class="col-xs-12">
