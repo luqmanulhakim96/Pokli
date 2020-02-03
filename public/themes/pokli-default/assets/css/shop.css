@@ -4066,7 +4066,7 @@ input[type='radio']:checked:after {
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price .sign{
-    color: #414141;
+    color: #FFFFFF;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price .currency{
