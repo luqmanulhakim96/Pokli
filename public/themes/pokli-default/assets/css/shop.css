@@ -4170,7 +4170,7 @@ input[type='radio']:checked:after {
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price .sign{
     display: inline-block;
-    font-family: "Lato",sans-serif;
+    font-family: "Montserrat",sans-serif;
     font-size: 28px;
     font-weight: 400;
     vertical-align: middle;
