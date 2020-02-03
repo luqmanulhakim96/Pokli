@@ -48,16 +48,16 @@
  <style>
    .main-container-wrapper section.featured-products .featured-heading {
     width: 100%;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 20px;
   }
   .main-container-wrapper section.news-update .news-update-grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 40%;
     grid-gap: 20px;
-}
+  }
 </style>
 <section class="featured-products">
      <div class="featured-heading">
@@ -120,10 +120,6 @@
                </table>
              </div>
              <div class="sub-block2">
-
-
-             </div>
-             <div class="sub-block2">
                <table>
                  <div>
                    <img src="https://www.publicgold.com.my/images/liveprice/LBMA%20SILVER%20BAR.png" alt="Silver Bar 999" width="248px" height="15px" style="top:-4px;position:relative;">
@@ -143,7 +139,7 @@
                </table>
              </div>
          </div>
-         <div class="block2">
+         <div class="block1">
              <div class="sub-block1">
                <span style="font-style:italic;line-height:1; "><br><br>
                * All LBMA products are SST exempted. <br>* All prices are quoted in Malaysia Ringgit (MYR) and excluding Gold Premium
@@ -152,27 +148,3 @@
          </div>
      </div>
 </section>
-<!-- <section class="featured-products">
-
-
-
-          		<div class="featured-grid product-grid-4">
-          			<div class="col-md-12 col-xs-12">
-          			<div class="col-md-3 col-sm-6 col-xs-12" style="display: block;height: 533px;">
-                  <div>
-            				<div>
-            					<a href="{{ route('gapsap.index') }}" target="_BLANK"><img src="https://www.publicgold.com.my/images/liveprice/BuyGAP.png" alt="Gold Program" width="230px" height="99.7px" style="position: relative; top:-4px;"></a>
-            				</div>
-
-
-
-
-                       <a href="{{ route('gapsap.index') }}"><img style="display:block; width:230px; margin: 10px;" src=""></a>
-    			        </div>
-          			<div>
-
-          			</div>
-          		</div>
-            </div>
-          </div>
-</section> -->
