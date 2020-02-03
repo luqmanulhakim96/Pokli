@@ -8,7 +8,7 @@
     $getLast = "SELECT DATE_FORMAT(`last_updated`, '%d-%M-%Y %H:%i:%S') as dateLast FROM `gold_live_price_gap` GROUP BY `last_updated`";
 
     $getGAP = "SELECT * FROM gold_live_price_gap";
-    $getGold24kBuys = "SELECT * FROM gold_live_price_24k WHERE buy = 'null' ORDER BY gram ASC";
+    $getGold24kBuys = "SELECT * FROM gold_live_price_24k WHERE buy IS NULL ORDER BY gram ASC";
     $getGold24k = "SELECT * FROM gold_live_price_24k ORDER BY gram ASC";
 
     $getSAP = "SELECT * FROM silver_live_price_sap";
