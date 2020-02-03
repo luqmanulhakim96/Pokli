@@ -8,6 +8,7 @@
     $getLast = "SELECT DATE_FORMAT(`last_updated`, '%d-%M-%Y %H:%i:%S') as dateLast FROM `gold_live_price_gap` GROUP BY `last_updated`";
 
     $getGAP = "SELECT * FROM gold_live_price_gap";
+    $getGold24kBuy = "SELECT * FROM gold_live_price_24k WHERE buy = 'null' ORDER BY gram ASC";
     $getGold24k = "SELECT * FROM gold_live_price_24k ORDER BY gram ASC";
 
     $getSAP = "SELECT * FROM silver_live_price_sap";
@@ -30,6 +31,12 @@
     while($row = mysqli_fetch_array($queryGold24k))
     {
         $dataGold24k[]=$row;
+    } #end of while
+
+    $queryGold24kBuy= mysqli_query($db,$getGold24kBuy)or Die("Sorry, dead query");
+    while($row = mysqli_fetch_array($queryGold24kBuy))
+    {
+        $dataGold24kBuy[]=$row;
     } #end of while
 
     $querySAP= mysqli_query($db,$getSAP)or Die("Sorry, dead query");
@@ -318,7 +325,7 @@
                                       <!--FEATURE LIST START-->
                                       <div class="generic_feature_list">
                                       	<ul>
-                                        @foreach($dataGold24k as $key => $value)
+                                        @foreach($dataGold24kBuy as $key => $value)
    	                                    <li>RM <span>{{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
                                          @endforeach
                                       </ul>
