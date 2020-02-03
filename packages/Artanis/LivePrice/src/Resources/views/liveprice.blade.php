@@ -45,27 +45,12 @@
     } #end of while
 
  ?>
- <style>
-   .main-container-wrapper section.featured-products .featured-heading {
-    width: 100%;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  .main-container-wrapper section.news-update .news-update-grid {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-gap: 20px;
-  }
-</style>
 <section class="featured-products">
      <div class="featured-heading">
-         Live Prices<br/>
-         <span class="featured-seperator" style="color:lightgrey;">_____</span>
+        <b>Pokli Gold Price <br> (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
      </div>
      <div class="col-xs-12">
-       <b>Pokli Gold Price (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
+
      </div>
      <div class="featured-grid product-grid-4">
          <div class="block1">
@@ -84,6 +69,8 @@
                  </div>
              </table>
            </div>
+         </div>
+         <div class="block1">
            <div class="sub-block2">
              <table>
                <div>
@@ -119,6 +106,8 @@
                  </div>
                </table>
              </div>
+           </div>
+           <div class="block1">
              <div class="sub-block2">
                <table>
                  <div>
