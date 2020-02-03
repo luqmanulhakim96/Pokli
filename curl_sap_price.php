@@ -93,7 +93,7 @@
   }
 
   //update price per gram
-  $sql_update_price_value = "UPDATE silver_live_price_sap SET price ='".$price_for_a_gram."' WHERE gram = '1'";
+  $sql_update_price_value = "UPDATE silver_live_price_sap SET price ='".$price_for_a_gram."' WHERE gram = '100'";
 
   if ($conn->query($sql_update_price_value) === TRUE) {
       echo "Price per gram updated successfully <br>";
