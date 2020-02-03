@@ -49,7 +49,7 @@
    .main-container-wrapper section.featured-products .featured-heading {
     width: 100%;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-size: 18px;
     margin-bottom: 20px;
   }
@@ -121,7 +121,7 @@
              </div>
              <div class="sub-block2">
 
-               
+
              </div>
              <div class="sub-block2">
                <table>
