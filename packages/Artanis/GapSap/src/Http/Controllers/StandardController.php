@@ -100,7 +100,7 @@ class StandardController extends Controller
         if ($response == 'true')
         {
             $purchase = GoldSilverHistory::where('customer_id',auth()->guard('customer')->user()->id)->latest()->first();
-            $purchase->purchase_status = 'paid';
+            $purchase->status = 'paid';
             $purchase->purchase_on = $data['paid_at']->format('Y-m-d H:i:s');
             $purchase->purchase_status_datetime = $data['paid_at']->format('Y-m-d H:i:s');
             $purchase->save();
