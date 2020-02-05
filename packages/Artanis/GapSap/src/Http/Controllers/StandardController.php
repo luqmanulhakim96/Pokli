@@ -101,8 +101,8 @@ class StandardController extends Controller
         {
             $purchase = GoldSilverHistory::where('customer_id',auth()->guard('customer')->user()->id)->latest()->first();
             $purchase->status = 'paid';
-            $purchase->purchase_on = $data['paid_at']->format('Y-m-d H:i:s');
-            $purchase->purchase_status_datetime = $data['paid_at']->format('Y-m-d H:i:s');
+            $purchase->payment_on = $data['paid_at']->format('Y-m-d H:i:s');
+            $purchase->status_datetime = $data['paid_at']->format('Y-m-d H:i:s');
             $purchase->save();
             // dd($purchase);
             return redirect()->route('gapsap.success');
