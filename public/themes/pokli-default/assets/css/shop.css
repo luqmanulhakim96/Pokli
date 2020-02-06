@@ -464,6 +464,33 @@ input{
     grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
     justify-items:center
 }
+
+.main-container-wrapper .product-grid-2{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(500px,1fr));
+    justify-items:center
+}
+
+.main-container-wrapper .product-grid-2{
+    grid-auto-rows:auto;
+    grid-column-gap:30px;
+    grid-row-gap:15px
+}
+
+.main-container-wrapper .product-grid-price{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+
+     /* grid-template-rows: auto; */
+    justify-items:center
+}
+
+.main-container-wrapper .product-grid-price{
+    grid-auto-rows:auto;
+    grid-column-gap:30px;
+    grid-row-gap:15px
+}
+
 .main-container-wrapper .product-grid-3{
     grid-gap:27px;
     grid-auto-rows:auto
@@ -4131,7 +4158,7 @@ input[type='radio']:checked:after {
 }
 
 #generic_price_table .generic_content .generic_head_price {
-  margin: 0 0 20px 0;
+  margin: 0 0 0px 0;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content{
@@ -4140,28 +4167,30 @@ input[type='radio']:checked:after {
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head_bg{
     border-style: solid;
-    border-width: 90px 1411px 23px 399px;
+    border-width: 85px 1411px 23px 399px;
   position: absolute;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head{
-  padding-top: 40px;
+  padding-top: 30px;
   position: relative;
   z-index: 1;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head span{
     font-family: "Montserrat",sans-serif;
-    font-size: 28px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    margin: 0;
-    padding: 0;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-transform: uppercase;
+    line-height: 1;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag{
-  padding: 0 0 20px;
+  padding: 0 0 10px;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price{
@@ -4210,8 +4239,8 @@ input[type='radio']:checked:after {
 
 #generic_price_table .generic_content .generic_feature_list ul li{
   font-family: "Lato",sans-serif;
-  font-size: 18px;
-  padding: 15px 0;
+  font-size: 16px;
+  padding: 10px 0;
   transition: all 0.3s ease-in-out 0s;
 }
 #generic_price_table .generic_content .generic_feature_list ul li:hover{
