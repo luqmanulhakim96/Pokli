@@ -22,9 +22,9 @@ class AdminCustom2ServiceProvider extends ServiceProvider
 
        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'admincustom2');
 
-       Event::listen('bagisto.admin.layout.head', function($viewRenderEventManager) {
-            $viewRenderEventManager->addTemplate('admincustom2::layouts.style');
-        });
+       // Event::listen('bagisto.admin.layout.head', function($viewRenderEventManager) {
+       //      $viewRenderEventManager->addTemplate('admincustom2::layouts.style');
+       //  });
 
        $this->loadMigrationsFrom(__DIR__ .'/../Database/Migrations');
 
