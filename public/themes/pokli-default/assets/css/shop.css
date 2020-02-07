@@ -4178,15 +4178,15 @@ input[type='radio']:checked:after {
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head span{
-    font-family: "Montserrat",sans-serif;
-    font-size: 23px;
-    font-weight: 700;
-    letter-spacing: 8px;
-    margin: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
-    text-transform: uppercase;
-    line-height: 1;
+  font-family: "Montserrat",sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  text-transform: uppercase;
+  line-height: 0;
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_price_tag{
@@ -4200,8 +4200,8 @@ input[type='radio']:checked:after {
 #generic_price_table .generic_content .generic_head_price .generic_price_tag .price .sign{
     display: inline-block;
     font-family: "Montserrat",sans-serif;
-    font-size: 28px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 800;
     vertical-align: middle;
 }
 
@@ -4239,8 +4239,8 @@ input[type='radio']:checked:after {
 
 #generic_price_table .generic_content .generic_feature_list ul li{
   font-family: "Lato",sans-serif;
-  font-size: 16px;
-  padding: 10px 0;
+  font-size: 14px;
+  padding: 9px 0;
   transition: all 0.3s ease-in-out 0s;
 }
 #generic_price_table .generic_content .generic_feature_list ul li:hover{
@@ -4477,4 +4477,26 @@ input[type='radio']:checked:after {
   background-color: #666;
   color: #FFF;
   text-decoration:none;
+}
+
+.tablePrice {
+  border: 1px solid #dddddd;
+  width: 100%;
+}
+.tablePrice td, tr {
+  padding: 1px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.tablePrice th {
+  padding: 1px;
+  text-align: center;
+  font-size: 14px;
+  background: red;
+  color: white;
+}
+
+.tablePrice tr:nth-child(even) {
+  background-color: #dddddd;
 }
