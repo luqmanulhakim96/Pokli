@@ -29,7 +29,7 @@
   }
 
   //gold
-  $sql_get_gold_24k_05g = "SELECT gram, sell FROM gold_live_price_24k WHERE gram='0.5'";
+  $sql_get_gold_24k_05g = "SELECT gram, sell FROM gold_live_price_small_24k WHERE gram='0.5'";
   $query_get_gold_24k_05g = mysqli_query($conn2, $sql_get_gold_24k_05g) or Die("Sorry, dead query");
 
   while($row = mysqli_fetch_array($query_get_gold_24k_05g))
@@ -38,7 +38,7 @@
     $get_gold_24k_05g_price = $row['sell'];
   }
 
-  $sql_get_gold_24k_1g = "SELECT gram, sell FROM gold_live_price_24k WHERE gram='1'";
+  $sql_get_gold_24k_1g = "SELECT gram, sell FROM gold_live_price_small_24k WHERE gram='1'";
   $query_get_gold_24k_1g = mysqli_query($conn2, $sql_get_gold_24k_1g) or Die("Sorry, dead query");
 
   while($row = mysqli_fetch_array($query_get_gold_24k_1g))
@@ -47,7 +47,7 @@
     $get_gold_24k_1g_price = $row['sell'];
   }
 
-  $sql_get_gold_24k_5g = "SELECT gram, sell FROM gold_live_price_24k WHERE gram='5'";
+  $sql_get_gold_24k_5g = "SELECT gram, sell FROM gold_live_price_small_24k WHERE gram='5'";
   $query_get_gold_24k_5g = mysqli_query($conn2, $sql_get_gold_24k_5g) or Die("Sorry, dead query");
 
   while($row = mysqli_fetch_array($query_get_gold_24k_5g))

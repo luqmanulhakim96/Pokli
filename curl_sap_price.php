@@ -82,6 +82,22 @@
   $buy_5000g = preg_replace('/[,]+/', '', trim($buy_5000g));
   $sell_5000g = preg_replace('/[,]+/', '', trim($sell_5000g));
 
+
+  ////////////////////////////////////////////////--SILVER WAFER DIRHAM 999--////////////////////////////////////////////////
+  // get the 24k gold current price
+  $get_dirham_price = "//table[@id='dirham-table-content2']";
+  $get_dirham_price_array = $xpath->query($get_dirham_price);
+  $dirham_24k_price = $get_dirham_price_array->item(0)->textContent;
+
+  $dirham_24k_price = preg_replace('/\s+/', '_', $dirham_24k_price);
+  // echo $dirham_24k_price;
+
+  list(, , , , , , , , $dirham_10_sell ) = explode('_', $dirham_24k_price);
+  // echo $dirham_10_sell;
+
+  //replace comma with whitespace
+  $dirham_10_sell = preg_replace('/[,]+/', '', trim($dirham_10_sell));
+
   ////////////////////////////////////////////////--SQL UPDATE--////////////////////////////////////////////////
   // update gram value for per RM 100
   $sql_update_gram_value = "UPDATE silver_live_price_sap SET gram ='".$weight_for_a_hundread."' WHERE price = '100'";
@@ -152,6 +168,13 @@
       echo "Error updating record: " . $conn->error;
   }
 
+  $sql_update_10g_dirham = "UPDATE silver_live_price_dirham SET sell='".$dirham_10_sell."' WHERE gram = '10'";
+
+  if ($conn->query($sql_update_10g_dirham) === TRUE) {
+      echo "Price 10g Dirham updated successfully <br>";
+  } else {
+      echo "Error updating record: " . $conn->error;
+  }
 
   $conn->close();
 
