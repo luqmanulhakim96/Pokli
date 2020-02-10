@@ -1,14 +1,14 @@
 @extends('gapsap::layouts.master')
 
 @section('page_title')
-    Purchase GAP/SAP
+    Purchase MYUncang Emas / MYUncang Perak
 @endsection
 
 
 @section('content-wrapper')
 <div class="auth-content">
         <div class="sign-up-text">
-            Buyback of GAP/SAP
+            Buyback of MYUncang Emas / MYUncang Perak
         </div>
 
         <form method="POST" action="{{ route('gapsap.buyback.confirm-submit') }}" enctype="multipart/form-data" @submit.prevent="onSubmit">
@@ -26,18 +26,18 @@
                     <label for="first_name" class="bold">{{ __('gapsap::app.purchase.form-customer-name') }}</label>
                     <p>{{ $customer->first_name.' '.$customer->last_name }}</p>
                 </div>
-                
+
                 <div class="control-group" :class="[errors.has('product_type') ? 'has-error' : '']">
                     <label for="product_type" class="bold">Product Type</label>
                     <p>{{ $input['product_type']=='gold' ? 'Gold' : 'Silver' }}</p>
                 </div>
 
-                
+
                 <div class="control-group"  :class="[errors.has('amount') ? 'has-error' : '']">
                     <label for="amount" class="bold">Buyback Amount</label>
                     <p>{{ 'RM '.$input['amount'] }}</p>
                 </div>
-                
+
                 <div class="control-group"  :class="[errors.has('quantity') ? 'has-error' : '']">
                     <label for="quantity" class="bold">Buyback Quantity</label>
                     <p>{{ $input['quantity'].' gram' }}</p>
@@ -82,7 +82,7 @@
                     var total = amount*silver_price;
                     $("#quantity").val(total.toFixed(4));
                 }
-                
+
             });
 
             $("#quantity").on( "input", function() {
@@ -97,7 +97,7 @@
                     var total = quantity*silver_price;
                     $("#amount").val(total.toFixed(2));
                 }
-                
+
             });
 
             $("#gap-control").on( "click", function() {
@@ -110,7 +110,7 @@
                 $("#current_price_per_gram").val($("#gold_price").val());
                 $("#product_type").val('gold');
             });
-        
+
             $("#sap-control").on( "click", function() {
                 $("#sap-select").prop("checked",true);
                 $('#sap-control').attr('class','sap-container');
@@ -121,7 +121,7 @@
                 $("#current_price_per_gram").val($("#silver_price").val()/100);
                 $("#product_type").val('silver');
             });
-        
+
             $("#gap-select").change(function() {
             if(this.checked) {
                 $('#gap-control').attr('class','gap-container');
@@ -164,7 +164,7 @@
 
                 validateStepOne: function() {
                     var this_this = this;
-                    
+
                     // this.current_step = 2;
                     this.$http.post("{{ route('gapsap.form') }}")
                     .then(function(response) {
@@ -180,7 +180,7 @@
                 },
                 backToStepOne: function() {
                     var this_this = this;
-                    
+
                     this.current_step = 1;
                 },
 
@@ -206,7 +206,7 @@
                 }
             },
 
-            
+
         })
     </script>
 @endpush
