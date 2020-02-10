@@ -1,7 +1,7 @@
 @extends('gapsap::layouts.master')
 
 @section('page_title')
-    Purchase GAP/SAP
+    Purchase MYUncang Emas / MYUncang Perak
 @endsection
 
 

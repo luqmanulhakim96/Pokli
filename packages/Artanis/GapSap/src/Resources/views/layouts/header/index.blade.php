@@ -196,7 +196,7 @@
             var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("href", "/Pokli/purchase");
-            a.appendChild(document.createTextNode('GAP/SAP'));
+            a.appendChild(document.createTextNode('MYUncang Emas / MYUncang Perak'));
 
             var li2 = document.createElement("li");
             var b = document.createElement("a");

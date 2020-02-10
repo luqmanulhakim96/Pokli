@@ -1,14 +1,14 @@
 @extends('gapsap::layouts.master')
 
 @section('page_title')
-    Purchase GAP/SAP
+    Purchase MYUncang Emas / MYUncang Perak
 @endsection
 
 
 @section('content-wrapper')
 <div class="auth-content">
         <div class="sign-up-text">
-            Buyback of GAP/SAP
+            Buyback of MYUncang Emas / MYUncang Perak
         </div>
 
         <form method="POST" action="{{ route('gapsap.buyback.confirm') }}" enctype="multipart/form-data" @submit.prevent="onSubmit">
@@ -35,7 +35,7 @@
                         <span class="control-error" v-if="errors.has('product_type')">@{{ errors.first('product_type') }}</span>
                     </div>
                 </div> --}}
-                
+
                 <div class="control-group" :class="[errors.has('product_type') ? 'has-error' : '']">
                     <label for="product_type" class="required">Product Type</label>
                     <div class="col-md-3">
@@ -58,7 +58,7 @@
                     </div>
                     <span class="control-error" v-if="errors.has('product_type')">@{{ errors.first('product_type') }}</span>
                 </div>
-                
+
                 <div class="control-group"  :class="[errors.has('amount') ? 'has-error' : '']">
                     <label for="amount" class="required">Buyback Amount</label>
                     {{-- <input id="amount" type="number" step="any" min="100" v-validate="'decimal:2|min_value:100|required'" name="amount" class="control" value="" data-vv-as="&quot;Purchase Amount&quot;"/>
@@ -72,7 +72,7 @@
                     </div>
                     <span class="control-error" v-if="errors.has('amount')">@{{ errors.first('amount') }}</span>
                 </div>
-                
+
                 <div class="control-group"  :class="[errors.has('quantity') ? 'has-error' : '']">
                     <label for="quantity" class="required">Buyback Quantity</label>
                     {{-- <input id="quantity" type="number" step="any" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="control" value="" data-vv-as="&quot;Purchase Quantity&quot;"/>
@@ -80,7 +80,7 @@
 
                     <div class="input-group">
                         <div class="input-group-area">
-                        <input id="quantity" type="number" step="any" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="" max="" value="" 
+                        <input id="quantity" type="number" step="any" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="" max="" value=""
                             data-vv-as="&quot;Purchase Quantity&quot;"/>
                         </div>
                         <div class="input-group-icon">gm</div>
@@ -124,7 +124,7 @@
                     var total = amount*silver_price;
                     $("#quantity").val(total.toFixed(4));
                 }
-                
+
             });
 
             $("#quantity").on( "input", function() {
@@ -139,7 +139,7 @@
                     var total = quantity*silver_price;
                     $("#amount").val(total.toFixed(2));
                 }
-                
+
             });
 
             $("#gap-control").on( "click", function() {
@@ -153,7 +153,7 @@
                 $("#current_price_per_gram").val($("#gold_price").val());
                 $("#product_type").val('gold');
             });
-        
+
             $("#sap-control").on( "click", function() {
                 $("#sap-select").prop("checked",true);
                 $('#sap-control').attr('class','sap-container');
@@ -165,7 +165,7 @@
                 $("#current_price_per_gram").val($("#silver_price").val()/100);
                 $("#product_type").val('silver');
             });
-        
+
             $("#gap-select").change(function() {
             if(this.checked) {
                 $('#gap-control').attr('class','gap-container');
@@ -208,7 +208,7 @@
 
                 validateStepOne: function() {
                     var this_this = this;
-                    
+
                     // this.current_step = 2;
                     this.$http.post("{{ route('gapsap.form') }}")
                     .then(function(response) {
@@ -224,7 +224,7 @@
                 },
                 backToStepOne: function() {
                     var this_this = this;
-                    
+
                     this.current_step = 1;
                 },
 
