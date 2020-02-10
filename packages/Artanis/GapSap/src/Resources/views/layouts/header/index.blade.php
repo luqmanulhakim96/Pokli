@@ -82,11 +82,11 @@
                         @auth('customer')
                             <span class="name">{{ auth()->guard('customer')->user()->first_name }}</span>
                         @endauth
-                        
+
                         @guest('customer')
                             <span class="name">{{ __('shop::app.header.sign-in-sign-up') }}</span>
                         @endguest
-                        
+
                         <i class="icon arrow-down-icon"></i>
                     </span>
 
@@ -170,7 +170,7 @@
         @include('shop::layouts.header.nav-menu.navmenu')
         {{-- <ul class="nav">
             <li parent="3">
-                <a href="/purchase">GAP/SAP</a>
+                <a href="/purchase">MYUncang Emas / MYUncang Perak</a>
             </li>
         </ul> --}}
     </div>

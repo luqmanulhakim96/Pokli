@@ -8,7 +8,7 @@
 @section('content-wrapper')
     <div class="auth-content">
         <div class="sign-up-text">
-            Purchase GAP/SAP
+            Purchase MYUncang Emas / MYUncang Perak
         </div>
 
         <form method="POST" action="{{ route('gapsap.form') }}" @submit.prevent="onSubmit">
@@ -33,7 +33,7 @@
                     </select>
                     <span class="control-error" v-if="errors.has('mode_of_payment')">@{{ errors.first('mode_of_payment') }}</span>
                 </div>
-                
+
                 <div id="date_of_payment_container" class="control-group"  :class="[errors.has('payment_on') ? 'has-error' : '']" style="display:none">
                     <label for="payment_on" class="required">{{ __('gapsap::app.purchase.form-payment-date') }}</label>
                     {{-- <input id="payment_on" type="date" class="control" name="payment_on" value="{{ old('payment_on') }}" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-payment-date') }}&quot;"> --}}
@@ -63,7 +63,7 @@
 
 @push('css')
     {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous"> --}}
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 @endpush
@@ -81,12 +81,12 @@
                 // showTodayButton: true,
                 format: "DD-MM-YYYY HH:mm:ss",
                 maxDate: new Date(),
-                
+
             });
         });
 
         $(function () {
-            
+
             $("#date_of_payment_container").hide();
             $("#mode_of_payment").on( "change", function() {
                 var mode_of_payment = $("#mode_of_payment").val();
@@ -113,7 +113,7 @@
                 {{ __('gapsap::app.purchase.form-title') }}
             </div>
             <div class="review-layouter mt-30">
-                
+
                 @include('gapsap::gap.product-info')
                 <form class="purchase-form" data-vv-scope="purchase-form">
                     <div class="review-form" v-show="current_step == 1" id="form-one-section">
@@ -123,8 +123,8 @@
                                     <label for="product_type" class="required">{{ __('gapsap::app.purchase.product-type') }}</label>
                                     <select name="product_type" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.product-type') }}&quot;">
                                         <option value="">Please Select Product Type</option>
-                                        <option value="gap">Gold - GAP</option>
-                                        <option value="sap">Silver - SAP</option>
+                                        <option value="gap">Gold - MYUncang Emas</option>
+                                        <option value="sap">Silver - MYUncang Perak</option>
                                     </select>
                                     <span class="control-error" v-if="errors.has('product_type')">@{{ errors.first('product_type') }}</span>
                                 </div>
@@ -139,7 +139,7 @@
                             <div class="row">
                                 <div class="control-group" :class="[errors.has('mode_of_payment') ? 'has-error' : '']">
                                     <label for="mode_of_payment" class="required">{{ __('gapsap::app.purchase.form-mode-of-payment') }}</label>
-            
+
                                     <select name="mode_of_payment" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-mode-of-payment') }}&quot;">
                                         <option value="">Please Select Payment Method</option>
                                         <option value="fpx">FPX</option>
@@ -178,8 +178,8 @@
                                 <label for="product_type" class="required">{{ __('gapsap::app.purchase.product-type') }}</label>
                                 <select name="product_type" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.product-type') }}&quot;">
                                     <option value="">Please Select Product Type</option>
-                                    <option value="gap">Gold - GAP</option>
-                                    <option value="sap">Silver - SAP</option>
+                                    <option value="gap">Gold - MYUncang Emas</option>
+                                    <option value="sap">Silver - MYUncange Perak</option>
                                 </select>
                                 <span class="control-error" v-if="errors.has('product_type')">@{{ errors.first('product_type') }}</span>
                             </div>
@@ -194,7 +194,7 @@
                         <div class="row">
                             <div class="control-group" :class="[errors.has('purchase_amount') ? 'has-error' : '']">
                                 <label for="purchase_amount" class="required">Purchase Amount</label>
-        
+
                                 <input type="text" v-validate="'numeric|min:0'" name="" class="control" value="" data-vv-as="&quot;{{ ('gapsap::app.purchase.form-customer-name') }}&quot;"/>
                                 <span class="control-error" v-if="errors.has('purchase_amount')">@{{ errors.first('purchase_amount') }}</span>
                             </div>
@@ -223,7 +223,7 @@
             </div>
         </section>
     </script>
-    
+
     <script>
         var paymentTemplateRenderFns = [];
 
@@ -256,7 +256,7 @@
 
                 validateStepOne: function() {
                     var this_this = this;
-                    
+
                     // this.current_step = 2;
                     this.$http.post("{{ route('gapsap.form') }}")
                     .then(function(response) {
@@ -272,7 +272,7 @@
                 },
                 backToStepOne: function() {
                     var this_this = this;
-                    
+
                     this.current_step = 1;
                 },
 
@@ -298,7 +298,7 @@
                 }
             },
 
-            
+
         })
     </script>
 @endpush
