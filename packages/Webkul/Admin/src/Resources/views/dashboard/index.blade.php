@@ -130,7 +130,7 @@
             <div class="dashboard-stats" style="margin-top:15px;">
                 <div class="dashboard-card">
                     <div class="title">
-                        {{ __('GAP Pending') }}
+                        {{ __('MYUncang Emas Pending') }}
                     </div>
 
                     <div class="data">
@@ -140,7 +140,7 @@
 
                 <div class="dashboard-card">
                     <div class="title">
-                        {{ __('SAP Pending') }}
+                        {{ __('MYUncang Perak Pending') }}
                     </div>
 
                     <div class="data">
@@ -170,7 +170,7 @@
 
                 <div class="dashboard-card">
                     <div class="title">
-                        {{ __('Gap/gram') }}
+                        {{ __('MYUncang Emas/gram') }}
                     </div>
 
                     <div class="data">
@@ -180,7 +180,7 @@
 
                 <div class="dashboard-card">
                     <div class="title">
-                        {{ __('Sap/gram') }}
+                        {{ __('MYUncang Perak/gram') }}
                     </div>
 
                     <div class="data">
