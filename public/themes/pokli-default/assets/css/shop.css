@@ -3021,7 +3021,8 @@ section.review .review-layouter .ratings-reviews .right-side .rater .line-bar .l
     height:45px
 }
 .account-table-content table tbody tr td{
-    width:250px
+    width:250px;
+    font-size: 16px;
 }
 .address-holder{
     display:-webkit-box;
