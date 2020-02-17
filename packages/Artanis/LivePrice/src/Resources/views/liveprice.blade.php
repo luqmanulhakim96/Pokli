@@ -422,8 +422,8 @@
                                                      <table class="tablePrice">
                                                           @foreach($dataGoldWafer22k as $key => $value)
                                                        <tr>
-                                                         <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                         <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
+                                                         <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li></td>
+                                                         <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li></td>
                                                        </tr>
                                                           @endforeach
                                                      </table>
@@ -923,7 +923,7 @@
                                                     <table class="tablePrice">
                                                          @foreach($dataSilverDirham as $key => $value)
                                                       <tr>
-                                                        <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
+                                                        <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>Dirham</li></td>
                                                       </tr>
                                                          @endforeach
                                                     </table>
