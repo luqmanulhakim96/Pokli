@@ -949,10 +949,10 @@
                             </section>
                         </div>
                         <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:300px; height:44px; margin:0px 0px 0px 0px; border: 1px solid rgb(202,010,021)">
-                        <a href="javascript:NewWindow('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
+                        <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
                           <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="140" height="90" style="border: 1px solid rgb(202,010,021)">
                         </a>
-                        <a href="javascript:NewWindow('https://www.kitco.com/images/live/silver.gif','SilverChart','top=50,left=200,width=640,height=480');">
+                        <a href="javascript:window.open('https://www.kitco.com/images/live/silver.gif','SilverChart','top=50,left=200,width=640,height=480');">
            							<img src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" border="0" alt="Click to enlarge" align="right" width="140" height="90" style="border: 1px solid rgb(202,010,021)">
            						</a>
                       </div>
