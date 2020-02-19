@@ -4549,7 +4549,7 @@ input[type='radio']:checked:after {
 .pricingTable .pricingTable-signup a{
     color: #fff;
     background-color: #daa520 ;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     /* text-transform: uppercase; */
     letter-spacing: 1px;
