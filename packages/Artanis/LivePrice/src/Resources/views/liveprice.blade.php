@@ -132,7 +132,7 @@
                                          <li>15 Subdomains</li> -->
                                      </ul>
                                      <div class="pricingTable-signup">
-                                       <table style="width: 268px;">
+                                       <table style="width: 100%;">
                                          @foreach($dataGAP as $key => $value)
                                          <tr>
                                            <td><a href="#">RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</a></td>
@@ -208,7 +208,7 @@
                                        <li>15 Subdomains</li> -->
                                    </ul>
                                    <div class="pricingTable-signup">
-                                     <table style="width: 268px;">
+                                     <table style="width: 100%;">
                                        <th><a href="#">Weight</th>
                                        <th><a href="#">Sell</th>
                                        <th><a href="#">Buy</th>
@@ -246,7 +246,7 @@
                                         <!-- <li>Sell | Buy</li> -->
                                     </ul>
                                    <div class="pricingTable-signup">
-                                     <table style="width: 296px;">
+                                     <table style="width: 100%;">
                                        <th><a href="#">Weight</th>
                                        <th><a href="#">Sell</th>
                                        <th><a href="#">Buy</th>
@@ -281,7 +281,7 @@
                                         <li>15 Subdomains</li> -->
                                     </ul>
                                     <div class="pricingTable-signup">
-                                      <table style="width: 296px;">
+                                      <table style="width: 100%;">
                                         <th><a href="#">Weight</th>
                                         <th><a href="#">Sell</th>
                                         @foreach($dataGold24kSmall as $key => $value)
@@ -313,7 +313,7 @@
                                         <li>15 Subdomains</li> -->
                                     </ul>
                                     <div class="pricingTable-signup">
-                                      <table style="width: 296px;">
+                                      <table style="width: 100%;">
                                         <th><a href="#">Weight</th>
                                         <th><a href="#">Sell</th>
                                         <th><a href="#">Buy</th>
@@ -356,7 +356,7 @@
                                      </ul>
 
                                      <div class="pricingTable-signup">
-                                       <table style="width: 252px;">
+                                       <table style="width: 100%;">
                                          @foreach($dataSAP as $key => $value)
                                          <tr>
                                            <td><a href="#">RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</a></td>
@@ -421,7 +421,7 @@
                                           <!-- <li>Sell</li> -->
                                       </ul>
                                       <div class="pricingTable-signup">
-                                        <table style="width: 300px;">
+                                        <table style="width: 100%;">
                                           <th><a href="#">Weight</th>
                                           <th><a href="#">Sell</th>
                                           @foreach($dataSilverDirham as $key => $value)
@@ -435,12 +435,12 @@
                                   </div>
                               </div>
                           </div>
-                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:330px; height:44px; margin:0px 0px 0px 0px; border: 1px solid rgb(218, 165, 32)">
+                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; margin:0px 0px 0px 0px; border: 1px solid rgb(218, 165, 32)">
                           <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
-                            <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="163" height="90" style="border: 1px solid rgb(218, 165, 32)">
+                            <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
                           </a>
                           <a href="javascript:window.open('https://www.kitco.com/images/live/silver.gif','SilverChart','top=50,left=200,width=640,height=480');">
-                          <img src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" border="0" alt="Click to enlarge" align="right" width="163" height="90" style="border: 1px solid rgb(218, 165, 32)">
+                          <img src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" border="0" alt="Click to enlarge" align="right" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
                         </a>
                       </div>
                   </div>
