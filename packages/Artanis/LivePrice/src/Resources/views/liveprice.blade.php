@@ -167,7 +167,7 @@
                                         <li>15 Subdomains</li> -->
                                     </ul>
                                     <div class="pricingTable-signup">
-                                      <table>
+                                      <table style="width: 100%;">
                                         <th><a href="#">Weight</th>
                                         <th><a href="#">Sell</th>
                                         <th><a href="#">Buy</th>
@@ -381,7 +381,7 @@
                                          <!-- <li>Sell</li> -->
                                      </ul>
                                      <div class="pricingTable-signup">
-                                       <table>
+                                       <table style="width: 100%;">
                                          <th><a href="#">Weight</th>
                                          <th><a href="#">Sell</th>
                                          <th><a href="#">Buy</th>
