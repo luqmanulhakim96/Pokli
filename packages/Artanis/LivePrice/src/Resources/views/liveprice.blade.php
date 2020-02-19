@@ -108,853 +108,343 @@
               <b>Pokli Gold Price <br> (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
            </div>
            <div class="col-xs-12">
-
            </div>
-           <div class="featured-grid product-grid-2">
+           <div class="featured-grid product-grid-price">
             <div class="block1">
-
-                </div>
-                 <div class="block2">
-
-                    </div>
-             </div>
-             <div class="featured-grid product-grid-price">
-               <div class="block1">
-                 <div id="generic_price_table" style="height: 160px;">
-                    <section>
-                          <div class="container">
-
-                              <!--BLOCK ROW START-->
-                              <div class="row">
-                                  <div class="col-md-4">
-
-                                  	<!--PRICE CONTENT START-->
-                                      <div class="generic_content clearfix">
-
-                                          <!--HEAD PRICE DETAIL START-->
-                                          <div class="generic_head_price clearfix">
-
-                                              <!--HEAD CONTENT START-->
-                                              <div class="generic_head_content clearfix">
-
-                                              	<!--HEAD START-->
-                                                  <div class="head_bg"></div>
-                                                  <div class="head">
-                                                      <span>MY Uncang Emas </span>
-                                                  </div>
-                                                  <!--//HEAD END-->
-
-                                              </div>
-                                              <!--//HEAD CONTENT END-->
-
-                                              <!--PRICE START-->
-
-                                              <!-- <div class="generic_price_tag clearfix">
-                                                  <span class="price">
-                                                      <span class="sign">RM</span>
-                                                      <span class="currency"></span>
-                                                      <span class="cent"> = </span>
-                                                      <span class="month"> g</span>
-                                                  </span>
-                                              </div> -->
-                                              <!--//PRICE END-->
-
-                                          </div>
-                                          <!--//HEAD PRICE DETAIL END-->
-
-                                          <!--FEATURE LIST START-->
-                                          <!-- <div class="generic_feature_list">
-                                          	<ul>
-                                              @foreach($dataGAP as $key => $value)
-                                              	<li>RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                              @endforeach
-                                              </ul>
-                                          </div> -->
-                                          <div class="generic_feature_list">
-                                           <ul>
-                                              <table class="tablePrice">
-                                              @foreach($dataGAP as $key => $value)
-                                                <tr>
-                                                <td align="center"><li>RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</li></td>
-                                                </tr>
-                                                   @endforeach
-                                              </table>
-                                            </ul>
-                                          </div>
-                                          <!--//FEATURE LIST END-->
-
-                                          <!--BUTTON START-->
-                                          <!-- <div class="generic_price_btn clearfix">
-                                          	<a class="" href="">Sign up</a>
-                                          </div> -->
-                                          <!--//BUTTON END-->
-
-                                      </div>
-                                      <!--//PRICE CONTENT END-->
-
-                                  </div>
-
-                              </div>
-                              <!--//BLOCK ROW END-->
-
-                          </div>
-                      </section>
-                  </div>
-                 <!-- <div class="sub-block1"> -->
-                    <div id="generic_price_table" style="height: 352px;">
-                       <section>
-                             <div class="container">
-
-                                 <!--BLOCK ROW START-->
-                                 <div class="row">
-                                     <div class="col-md-4">
-
-                                     	<!--PRICE CONTENT START-->
-                                         <div class="generic_content clearfix">
-
-                                             <!--HEAD PRICE DETAIL START-->
-                                             <div class="generic_head_price clearfix">
-
-                                                 <!--HEAD CONTENT START-->
-                                                 <div class="generic_head_content clearfix">
-
-                                                 	<!--HEAD START-->
-                                                     <div class="head_bg"></div>
-                                                     <div class="head">
-                                                         <span>LBMA Gold Bar (24k)</span>
-                                                     </div>
-                                                     <!--//HEAD END-->
-
-                                                 </div>
-                                                 <!--//HEAD CONTENT END-->
-
-                                                 <!--PRICE START-->
-                                                 <div class="generic_price_tag clearfix">
-                                                     <span class="price">
-                                                         <span class="sign">Sell | Buy</span>
-                                                         <!-- <span class="currency">99</span>
-                                                         <span class="cent">.99</span> -->
-                                                         <!-- <span class="month">/MON</span> -->
-                                                     </span>
-                                                 </div>
-                                                 <!--//PRICE END-->
-
-                                             </div>
-                                             <!--//HEAD PRICE DETAIL END-->
-
-                                             <!--FEATURE LIST START-->
-                                             <div class="generic_feature_list">
-                                             	<ul>
-                                                 <table class="tablePrice">
-                                                     @foreach($dataGold24k as $key => $value)
-                                                   <tr>
-                                                     <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                     <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                   </tr>
-                                                      @endforeach
-                                                 </table>
-                                               </ul>
-                                             </div>
-
-                                             <!--//FEATURE LIST END-->
-
-                                             <!--BUTTON START-->
-                                             <!-- <div class="generic_price_btn clearfix">
-                                             	<a class="" href="">Sign up</a>
-                                             </div> -->
-                                             <!--//BUTTON END-->
-
-                                         </div>
-                                         <!--//PRICE CONTENT END-->
-
-                                     </div>
-
+              <div class="gold">
+                 <div class="container">
+                     <div class="col">
+                         <div class="col-md-4 col-sm-6">
+                             <div class="pricingTable">
+                                 <div class="pricingTable-header">
+                                     <h3 class="title" style="color:white;">MY Uncang Emas</h3>
+                                     <!-- <span class="duration">Monthly Plan</span> -->
                                  </div>
-                                 <!--//BLOCK ROW END-->
-
+                                 <div class="pricing-content">
+                                     <div class="price-value">
+                                         <!-- <span class="amount">$10.99</span> -->
+                                     </div>
+                                     <ul class="inner-content">
+                                         <!-- <li>50GB Disk Space</li>
+                                         <li>50 Email Accounts</li>
+                                         <li>50GB Bandwidth</li>
+                                         <li>15 Subdomains</li>
+                                         <li>15 Subdomains</li> -->
+                                     </ul>
+                                     <div class="pricingTable-signup">
+                                       <table style="width: 268px;">
+                                         @foreach($dataGAP as $key => $value)
+                                         <tr>
+                                           <td><a href="#">RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</a></td>
+                                         </tr>
+                                          @endforeach
+                                       </table>
+                                     </div>
+                                 </div>
                              </div>
-                         </section>
-                     </div>
-                  <!-- </div>
-                  <div class="sub-block2"> -->
-                     <div id="generic_price_table" style="height: 250px;">
-                        <section>
-                              <div class="container">
-
-                                  <!--BLOCK ROW START-->
-                                  <div class="row">
-                                      <div class="col-md-4">
-
-                                      	<!--PRICE CONTENT START-->
-                                          <div class="generic_content clearfix">
-
-                                              <!--HEAD PRICE DETAIL START-->
-                                              <div class="generic_head_price clearfix">
-
-                                                  <!--HEAD CONTENT START-->
-                                                  <div class="generic_head_content clearfix">
-
-                                                  	<!--HEAD START-->
-                                                      <div class="head_bg"></div>
-                                                      <div class="head">
-                                                          <span>LBMA Gold Wafer - Dinar (24k)</span>
-                                                      </div>
-                                                      <!--//HEAD END-->
-
-                                                  </div>
-                                                  <!--//HEAD CONTENT END-->
-
-                                                  <!--PRICE START-->
-                                                  <div class="generic_price_tag clearfix">
-                                                      <span class="price">
-                                                          <span class="sign">Sell | Buy</span>
-                                                          <!-- <span class="currency">99</span>
-                                                          <span class="cent">.99</span> -->
-                                                          <!-- <span class="month">/MON</span> -->
-                                                      </span>
-                                                  </div>
-                                                  <!--//PRICE END-->
-
-                                              </div>
-                                              <!--//HEAD PRICE DETAIL END-->
-
-                                              <!--FEATURE LIST START-->
-                                              <!-- <div class="generic_feature_list">
-                                              	<ul>
-                                                @foreach($dataGoldWafer24k as $key => $value)
-           	                                    <li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li>
-                                                 @endforeach
-                                              </ul>
-                                              </div> -->
-
-                                              <div class="generic_feature_list">
-                                              	<ul>
-                                                  <table class="tablePrice">
-                                                       @foreach($dataGoldWafer24k as $key => $value)
-                                                    <tr>
-                                                      <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li></td>
-                                                      <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li></td>
-                                                    </tr>
-                                                       @endforeach
-                                                  </table>
-                                                </ul>
-                                              </div>
-
-                                              <!--//FEATURE LIST END-->
-
-                                              <!--BUTTON START-->
-                                              <!-- <div class="generic_price_btn clearfix">
-                                              	<a class="" href="">Sign up</a>
-                                              </div> -->
-                                              <!--//BUTTON END-->
-
-                                          </div>
-                                          <!--//PRICE CONTENT END-->
-
-                                      </div>
-
-                                  </div>
-                                  <!--//BLOCK ROW END-->
-
-                              </div>
-                          </section>
-                      </div>
-                   <!-- </div>
-                   <div class="sub-block2">
-
-                    </div>
-                    <div class="sub-block2">
-
-                     </div>
-                     <div class="sub-block2"> -->
-                        <div id="generic_price_table">
-                           <section>
-                                 <div class="container">
-
-                                     <!--BLOCK ROW START-->
-                                     <div class="row">
-                                         <div class="col-md-4">
-
-                                           <!--PRICE CONTENT START-->
-                                             <div class="generic_content clearfix">
-
-                                                 <!--HEAD PRICE DETAIL START-->
-                                                 <div class="generic_head_price clearfix">
-
-                                                     <!--HEAD CONTENT START-->
-                                                     <div class="generic_head_content clearfix">
-
-                                                       <!--HEAD START-->
-                                                         <div class="head_bg"></div>
-                                                         <div class="head">
-                                                             <span>Gold Wafer - Dinar (22k)</span>
-                                                         </div>
-                                                         <!--//HEAD END-->
-
-                                                     </div>
-                                                     <!--//HEAD CONTENT END-->
-
-                                                     <!--PRICE START-->
-                                                     <div class="generic_price_tag clearfix">
-                                                         <span class="price">
-                                                             <span class="sign">Sell | Buy</span>
-                                                             <!-- <span class="currency">99</span>
-                                                             <span class="cent">.99</span> -->
-                                                             <!-- <span class="month">/MON</span> -->
-                                                         </span>
-                                                     </div>
-                                                     <!--//PRICE END-->
-
-                                                 </div>
-                                                 <!--//HEAD PRICE DETAIL END-->
-
-                                                 <!--FEATURE LIST START-->
-                                                 <!-- <div class="generic_feature_list">
-                                                   <ul>
-                                                    @foreach($dataGoldWafer22k as $key => $value)
-                                                     <li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li>
-                                                     @endforeach
-                                                 </ul>
-                                                 </div> -->
-
-                                                 <div class="generic_feature_list">
-                                                 	<ul>
-                                                     <table class="tablePrice">
-                                                          @foreach($dataGoldWafer22k as $key => $value)
-                                                       <tr>
-                                                         <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li></td>
-                                                         <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>Dinar</li></td>
-                                                       </tr>
-                                                          @endforeach
-                                                     </table>
-                                                   </ul>
-                                                 </div>
-
-                                                 <!--//FEATURE LIST END-->
-
-                                                 <!--BUTTON START-->
-                                                 <!-- <div class="generic_price_btn clearfix">
-                                                   <a class="" href="">Sign up</a>
-                                                 </div> -->
-                                                 <!--//BUTTON END-->
-
-                                             </div>
-                                             <!--//PRICE CONTENT END-->
-
-                                         </div>
-
-                                     </div>
-                                     <!--//BLOCK ROW END-->
-
-                                 </div>
-                             </section>
                          </div>
-                      <!-- </div> -->
-
-                </div>
-                <div class="block1">
-                     <div id="generic_price_table" style="height: 290px;">
-                        <section>
-                              <div class="container">
-
-                                  <!--BLOCK ROW START-->
-                                  <div class="row">
-                                      <div class="col-md-4">
-
-                                        <!--PRICE CONTENT START-->
-                                          <div class="generic_content clearfix">
-
-                                              <!--HEAD PRICE DETAIL START-->
-                                              <div class="generic_head_price clearfix">
-
-                                                  <!--HEAD CONTENT START-->
-                                                  <div class="generic_head_content clearfix">
-
-                                                    <!--HEAD START-->
-                                                      <div class="head_bg"></div>
-                                                      <div class="head">
-                                                          <span>Classic \ Bungamas \ Tai fook (24k)</span>
-                                                      </div>
-                                                      <!--//HEAD END-->
-
-                                                  </div>
-                                                  <!--//HEAD CONTENT END-->
-
-                                                  <!--PRICE START-->
-                                                  <div class="generic_price_tag clearfix">
-                                                      <span class="price">
-                                                          <span class="sign">Sell | Buy</span>
-                                                          <!-- <span class="currency">99</span>
-                                                          <span class="cent">.99</span> -->
-                                                          <!-- <span class="month">/MON</span> -->
-                                                      </span>
-                                                  </div>
-                                                  <!--//PRICE END-->
-
-                                              </div>
-                                              <!--//HEAD PRICE DETAIL END-->
-
-                                              <!--FEATURE LIST START-->
-                                              <!-- <div class="generic_feature_list">
-                                                <ul>
-                                                 @foreach($dataGold24kTaifook as $key => $value)
-                                                  <li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                                  @endforeach
-                                              </ul>
-                                              </div> -->
-
-                                              <div class="generic_feature_list">
-                                               <ul>
-                                                  <table class="tablePrice">
-                                                        @foreach($dataGold24kTaifook as $key => $value)
-                                                    <tr>
-                                                      <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                      <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                    </tr>
-                                                       @endforeach
-                                                  </table>
-                                                </ul>
-                                              </div>
-
-                                              <!--//FEATURE LIST END-->
-
-                                              <!--BUTTON START-->
-                                              <!-- <div class="generic_price_btn clearfix">
-                                                <a class="" href="">Sign up</a>
-                                              </div> -->
-                                              <!--//BUTTON END-->
-
-                                          </div>
-                                          <!--//PRICE CONTENT END-->
-
-                                      </div>
-
-                                  </div>
-                                  <!--//BLOCK ROW END-->
-
-                              </div>
-                          </section>
-                      </div>
-                      <div id="generic_price_table" style="height: 270px;">
-                         <section>
-                               <div class="container">
-
-                                   <!--BLOCK ROW START-->
-                                   <div class="row">
-                                       <div class="col-md-4">
-
-                                         <!--PRICE CONTENT START-->
-                                           <div class="generic_content clearfix">
-
-                                               <!--HEAD PRICE DETAIL START-->
-                                               <div class="generic_head_price clearfix">
-
-                                                   <!--HEAD CONTENT START-->
-                                                   <div class="generic_head_content clearfix">
-
-                                                     <!--HEAD START-->
-                                                       <div class="head_bg"></div>
-                                                       <div class="head">
-                                                           <span>LBMA Small Bar / Wafer (24k)</span>
-                                                       </div>
-                                                       <!--//HEAD END-->
-
-                                                   </div>
-                                                   <!--//HEAD CONTENT END-->
-
-                                                   <!--PRICE START-->
-                                                   <div class="generic_price_tag clearfix">
-                                                       <span class="price">
-                                                           <span class="sign">Sell</span>
-                                                           <!-- <span class="currency">99</span>
-                                                           <span class="cent">.99</span> -->
-                                                           <!-- <span class="month">/MON</span> -->
-                                                       </span>
-                                                   </div>
-                                                   <!--//PRICE END-->
-
-                                               </div>
-                                               <!--//HEAD PRICE DETAIL END-->
-
-                                               <!--FEATURE LIST START-->
-                                               <!-- <div class="generic_feature_list">
-                                                 <ul>
-                                                  @foreach($dataGold24kSmall as $key => $value)
-                                                   <li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                                   @endforeach
-                                               </ul>
-                                               </div> -->
-
-                                               <div class="generic_feature_list">
-                                                <ul>
-                                                   <table class="tablePrice">
-                                                    @foreach($dataGold24kSmall as $key => $value)
-                                                     <tr>
-                                                     <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>gram</li></td>
-                                                     </tr>
-                                                        @endforeach
-                                                   </table>
-                                                 </ul>
-                                               </div>
-
-                                               <!--//FEATURE LIST END-->
-
-                                               <!--BUTTON START-->
-                                               <!-- <div class="generic_price_btn clearfix">
-                                                 <a class="" href="">Sign up</a>
-                                               </div> -->
-                                               <!--//BUTTON END-->
-
-                                           </div>
-                                           <!--//PRICE CONTENT END-->
-
-                                       </div>
-
-                                   </div>
-                                   <!--//BLOCK ROW END-->
-
-                               </div>
-                           </section>
-                       </div>
-                       <div id="generic_price_table">
-                          <section>
-                                <div class="container">
-
-                                    <!--BLOCK ROW START-->
-                                    <div class="row">
-                                        <div class="col-md-4">
-
-                                          <!--PRICE CONTENT START-->
-                                            <div class="generic_content clearfix">
-
-                                                <!--HEAD PRICE DETAIL START-->
-                                                <div class="generic_head_price clearfix">
-
-                                                    <!--HEAD CONTENT START-->
-                                                    <div class="generic_head_content clearfix">
-
-                                                      <!--HEAD START-->
-                                                        <div class="head_bg"></div>
-                                                        <div class="head">
-                                                            <span>Gold Flexibar (24k)</span>
-                                                        </div>
-                                                        <!--//HEAD END-->
-
-                                                    </div>
-                                                    <!--//HEAD CONTENT END-->
-
-                                                    <!--PRICE START-->
-                                                    <div class="generic_price_tag clearfix">
-                                                        <span class="price">
-                                                            <span class="sign">Sell | Buy</span>
-                                                            <!-- <span class="currency">99</span>
-                                                            <span class="cent">.99</span> -->
-                                                            <!-- <span class="month">/MON</span> -->
-                                                        </span>
-                                                    </div>
-                                                    <!--//PRICE END-->
-
-                                                </div>
-                                                <!--//HEAD PRICE DETAIL END-->
-
-                                                <!--FEATURE LIST START-->
-                                                <!-- <div class="generic_feature_list">
-                                                  <ul>
-                                                   @foreach($dataGold24kFlexibar as $key => $value)
-                                                    <li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                                    @endforeach
-                                                </ul>
-                                                </div> -->
-
-                                                <div class="generic_feature_list">
-                                                	<ul>
-                                                    <table class="tablePrice">
-                                                          @foreach($dataGold24kFlexibar as $key => $value)
-                                                      <tr>
-                                                        <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                        <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                      </tr>
-                                                         @endforeach
-                                                    </table>
-                                                  </ul>
-                                                </div>
-
-                                                <!--//FEATURE LIST END-->
-
-                                                <!--BUTTON START-->
-                                                <!-- <div class="generic_price_btn clearfix">
-                                                  <a class="" href="">Sign up</a>
-                                                </div> -->
-                                                <!--//BUTTON END-->
-
-                                            </div>
-                                            <!--//PRICE CONTENT END-->
-
-                                        </div>
-
-                                    </div>
-                                    <!--//BLOCK ROW END-->
-
-                                </div>
-                            </section>
-                        </div>
+                     </div>
                  </div>
-                 <div class="block2">
-                   <div id="generic_price_table" style="height: 158px;">
-                      <section>
-                            <div class="container">
-
-                                <!--BLOCK ROW START-->
-                                <div class="row">
-                                    <div class="col-md-4">
-
-                                     <!--PRICE CONTENT START-->
-                                        <div class="generic_content clearfix">
-
-                                            <!--HEAD PRICE DETAIL START-->
-                                            <div class="generic_head_price clearfix">
-
-                                                <!--HEAD CONTENT START-->
-                                                <div class="generic_head_content clearfix">
-
-                                                 <!--HEAD START-->
-                                                    <div class="head_bg"></div>
-                                                    <div class="head">
-                                                        <span>MY Uncang Perak</span>
-                                                    </div>
-                                                    <!--//HEAD END-->
-
-                                                </div>
-                                                <!--//HEAD CONTENT END-->
-
-                                                <!--PRICE START-->
-                                                @foreach($dataSAP as $key => $value)
-                                                 <!-- <div class="generic_price_tag clearfix">
-                                                     <span class="price">
-                                                         <span class="sign">RM</span>
-                                                         <span class="currency">{{$value["price"]}}</span>
-                                                         <span class="cent"> = </span>
-                                                         <span class="month">{{$value["gram"]}} g</span>
-                                                     </span>
-                                                 </div> -->
-                                                 @endforeach
-                                                <!--//PRICE END-->
-
-                                            </div>
-                                            <!--//HEAD PRICE DETAIL END-->
-
-                                            <!--FEATURE LIST START-->
-                                            <!-- <div class="generic_feature_list">
-                                             <ul>
-                                                @foreach($dataSAP as $key => $value)
-                                                 <li>RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                                @endforeach
-                                              </ul>
-                                            </div -->
-
-                                            <div class="generic_feature_list">
-                                             <ul>
-                                                <table class="tablePrice">
-                                                @foreach($dataSAP as $key => $value)
-                                                  <tr>
-                                                  <td align="center"><li>RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</li></td>
-                                                  </tr>
-                                                     @endforeach
-                                                </table>
-                                              </ul>
-                                            </div>
-                                            <!--//FEATURE LIST END-->
-
-                                            <!--BUTTON START-->
-                                            <!-- <div class="generic_price_btn clearfix">
-                                             <a class="" href="">Sign up</a>
-                                            </div> -->
-                                            <!--//BUTTON END-->
-
-                                        </div>
-                                        <!--//PRICE CONTENT END-->
-
-                                    </div>
-
-                                </div>
-                                <!--//BLOCK ROW END-->
-
-                            </div>
-                        </section>
-                    </div>
-                   <div class="sub-block1">
-                      <div id="generic_price_table">
-                         <section>
-                               <div class="container">
-
-                                   <!--BLOCK ROW START-->
-                                   <div class="row">
-                                       <div class="col-md-4">
-
-                                       	<!--PRICE CONTENT START-->
-                                           <div class="generic_content clearfix">
-
-                                               <!--HEAD PRICE DETAIL START-->
-                                               <div class="generic_head_price clearfix">
-
-                                                   <!--HEAD CONTENT START-->
-                                                   <div class="generic_head_content clearfix">
-
-                                                   	<!--HEAD START-->
-                                                       <div class="head_bg"></div>
-                                                       <div class="head">
-                                                           <span>Silver Bar (999)</span>
-                                                       </div>
-                                                       <!--//HEAD END-->
-
-                                                   </div>
-                                                   <!--//HEAD CONTENT END-->
-
-                                                   <!--PRICE START-->
-                                                   <div class="generic_price_tag clearfix">
-                                                       <span class="price">
-                                                           <span class="sign">Sell | Buy</span>
-                                                           <!-- <span class="currency">99</span>
-                                                           <span class="cent">.99</span>
-                                                           <span class="month">/MON</span> -->
-                                                       </span>
-                                                   </div>
-                                                   <!--//PRICE END-->
-
-                                               </div>
-                                               <!--//HEAD PRICE DETAIL END-->
-
-                                               <!--FEATURE LIST START-->
-                                               <!-- <div class="generic_feature_list">
-                                               	<ul>
-                                                   @foreach($dataSilver24k as $key => $value)
-                                                   <li>RM <span>{{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                                    @endforeach
-                                                    <li>.</li>
-                                                  </ul>
-                                               </div> -->
-
-                                               <div class="generic_feature_list">
-                                                 <ul>
-                                                   <table class="tablePrice">
-                                                        @foreach($dataSilver24k as $key => $value)
-                                                     <tr>
-                                                       <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                       <td align="center"><li> RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>g</li></td>
-                                                     </tr>
-                                                        @endforeach
-                                                   </table>
-                                                 </ul>
-                                               </div>
-                                               <!--//FEATURE LIST END-->
-
-                                               <!--BUTTON START-->
-                                               <!-- <div class="generic_price_btn clearfix">
-                                               	<a class="" href="">Sign up</a>
-                                               </div> -->
-                                               <!--//BUTTON END-->
-
-                                           </div>
-                                           <!--//PRICE CONTENT END-->
-
-                                       </div>
-
-                                   </div>
-                                   <!--//BLOCK ROW END-->
-
-                               </div>
-                           </section>
-                       </div>
-                    </div>
-                    <!--  -->
-                  </div>
-                  <div class="block2">
-                       <div id="generic_price_table">
-                          <section>
-                                <div class="container">
-
-                                    <!--BLOCK ROW START-->
-                                    <div class="row">
-                                        <div class="col-md-4">
-
-                                        	<!--PRICE CONTENT START-->
-                                            <div class="generic_content clearfix">
-
-                                                <!--HEAD PRICE DETAIL START-->
-                                                <div class="generic_head_price clearfix">
-
-                                                    <!--HEAD CONTENT START-->
-                                                    <div class="generic_head_content clearfix">
-
-                                                    	<!--HEAD START-->
-                                                        <div class="head_bg"></div>
-                                                        <div class="head">
-                                                            <span>Silver Wafer - Dirham (999)</span>
-                                                        </div>
-                                                        <!--//HEAD END-->
-
-                                                    </div>
-                                                    <!--//HEAD CONTENT END-->
-
-                                                    <!--PRICE START-->
-                                                    <div class="generic_price_tag clearfix">
-                                                        <span class="price">
-                                                            <span class="sign">Sell</span>
-                                                            <!-- <span class="currency">99</span>
-                                                            <span class="cent">.99</span>
-                                                            <span class="month">/MON</span> -->
-                                                        </span>
-                                                    </div>
-                                                    <!--//PRICE END-->
-
-                                                </div>
-                                                <!--//HEAD PRICE DETAIL END-->
-
-                                                <!--FEATURE LIST START-->
-                                                <!-- <div class="generic_feature_list">
-                                                	<ul>
-                                                    @foreach($dataSilver24k as $key => $value)
-                                                    <li>RM <span>{{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>gram</li>
-                                                     @endforeach
-                                                   </ul>
-                                                </div> -->
-                                                <div class="generic_feature_list">
-                                                  <ul>
-                                                    <table class="tablePrice">
-                                                         @foreach($dataSilverDirham as $key => $value)
-                                                      <tr>
-                                                        <td align="center"><li>RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>Dirham</li></td>
-                                                      </tr>
-                                                         @endforeach
-                                                    </table>
-                                                  </ul>
-                                                </div>
-                                                <!--//FEATURE LIST END-->
-
-                                                <!--BUTTON START-->
-                                                <!-- <div class="generic_price_btn clearfix">
-                                                	<a class="" href="">Sign up</a>
-                                                </div> -->
-                                                <!--//BUTTON END-->
-
-                                            </div>
-                                            <!--//PRICE CONTENT END-->
-
-                                        </div>
-
-                                    </div>
-                                    <!--//BLOCK ROW END-->
-
-                                </div>
-                            </section>
-                        </div>
-                        <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:300px; height:44px; margin:0px 0px 0px 0px; border: 1px solid rgb(202,010,021)">
-                        <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
-                          <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="140" height="90" style="border: 1px solid rgb(202,010,021)">
-                        </a>
-                        <a href="javascript:window.open('https://www.kitco.com/images/live/silver.gif','SilverChart','top=50,left=200,width=640,height=480');">
-           							<img src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" border="0" alt="Click to enlarge" align="right" width="140" height="90" style="border: 1px solid rgb(202,010,021)">
-           						</a>
-                      </div>
              </div>
+             <div class="gold">
+                <div class="container">
+                    <div class="col">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="pricingTable">
+                                <div class="pricingTable-header">
+                                    <h3 class="title" style="color:white;">LBMA Gold Bar (24k)</h3>
+                                    <!-- <span class="duration">Monthly Plan</span> -->
+                                </div>
+                                <div class="pricing-content">
+                                    <div class="price-value">
+                                        <!-- <span class="amount">Sell | Buy</span> -->
+                                    </div>
+                                    <ul class="inner-content">
+                                        <!-- <li>50GB Disk Space</li>
+                                        <li>50 Email Accounts</li>
+                                        <li>50GB Bandwidth</li>
+                                        <li>15 Subdomains</li>
+                                        <li>15 Subdomains</li> -->
+                                    </ul>
+                                    <div class="pricingTable-signup">
+                                      <table>
+                                        <th><a href="#">Weight</th>
+                                        <th><a href="#">Sell</th>
+                                        <th><a href="#">Buy</th>
+                                        @foreach($dataGold24k as $key => $value)
+                                        <tr>
+                                          <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                          <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                          <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
+                                        </tr>
+                                         @endforeach
+                                      </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+              <div class="gold">
+                 <div class="container">
+                     <div class="col">
+                       <div class="col-md-4 col-sm-6">
+                           <div class="pricingTable">
+                               <div class="pricingTable-header">
+                                   <h3 class="title" style="color:white;">LBMA Gold Wafer - Dinar (24k)</h3>
+                                   <!-- <span class="duration">Monthly Plan</span> -->
+                               </div>
+                               <div class="pricing-content">
+                                   <div class="price-value">
+                                       <!-- <span class="amount">Sell | Buy</span> -->
+                                   </div>
+                                   <ul class="inner-content">
+                                       <!-- <li>50GB Disk Space</li>
+                                       <li>50 Email Accounts</li>
+                                       <li>50GB Bandwidth</li>
+                                       <li>15 Subdomains</li>
+                                       <li>15 Subdomains</li> -->
+                                   </ul>
+                                   <div class="pricingTable-signup">
+                                     <table style="width: 268px;">
+                                       <th><a href="#">Weight</th>
+                                       <th><a href="#">Sell</th>
+                                       <th><a href="#">Buy</th>
+                                       @foreach($dataGoldWafer24k as $key => $value)
+                                       <tr>
+                                         <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                         <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                         <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
+                                       </tr>
+                                        @endforeach
+                                     </table>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                     </div>
+                 </div>
+             </div>
+            </div>
+           <div class="block2">
+               <div class="gold">
+                  <div class="container">
+                      <div class="col">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="pricingTable">
+                                <div class="pricingTable-header">
+                                    <h3 class="title" style="color:white;">Classic \ Bungamas \ Tai fook (24k)</h3>
+                                    <!-- <span class="duration">Monthly Plan</span> -->
+                                </div>
+                                <div class="pricing-content">
+                                    <div class="price-value">
+                                        <!-- <span class="amount">Sell | Buy</span> -->
+                                    </div>
+                                    <ul class="inner-content">
+                                        <!-- <li>Sell | Buy</li> -->
+                                    </ul>
+                                   <div class="pricingTable-signup">
+                                     <table style="width: 296px;">
+                                       <th><a href="#">Weight</th>
+                                       <th><a href="#">Sell</th>
+                                       <th><a href="#">Buy</th>
+                                       @foreach($dataGold24kTaifook as $key => $value)
+                                       <tr>
+                                         <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                         <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                         <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
+                                       </tr>
+                                        @endforeach
+                                     </table>
+                                   </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="pricingTable">
+                                <div class="pricingTable-header">
+                                    <h3 class="title" style="color:white;">LBMA Small Bar / Wafer (24k)</h3>
+                                    <!-- <span class="duration">Monthly Plan</span> -->
+                                </div>
+                                <div class="pricing-content">
+                                    <div class="price-value">
+                                        <!-- <span class="amount">Sell</span> -->
+                                    </div>
+                                    <ul class="inner-content">
+                                        <!-- <li>50GB Disk Space</li>
+                                        <li>50 Email Accounts</li>
+                                        <li>50GB Bandwidth</li>
+                                        <li>15 Subdomains</li>
+                                        <li>15 Subdomains</li> -->
+                                    </ul>
+                                    <div class="pricingTable-signup">
+                                      <table style="width: 296px;">
+                                        <th><a href="#">Weight</th>
+                                        <th><a href="#">Sell</th>
+                                        @foreach($dataGold24kSmall as $key => $value)
+                                        <tr>
+                                          <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                          <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                        </tr>
+                                         @endforeach
+                                      </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="pricingTable">
+                                <div class="pricingTable-header">
+                                    <h3 class="title" style="color:white;">Gold Wafer - Dinar (22k)</h3>
+                                    <!-- <span class="duration">Monthly Plan</span> -->
+                                </div>
+                                <div class="pricing-content">
+                                    <div class="price-value">
+                                        <!-- <span class="amount">Sell | Buy</span> -->
+                                    </div>
+                                    <ul class="inner-content">
+                                        <!-- <li>50GB Disk Space</li>
+                                        <li>50 Email Accounts</li>
+                                        <li>50GB Bandwidth</li>
+                                        <li>15 Subdomains</li>
+                                        <li>15 Subdomains</li> -->
+                                    </ul>
+                                    <div class="pricingTable-signup">
+                                      <table style="width: 296px;">
+                                        <th><a href="#">Weight</th>
+                                        <th><a href="#">Sell</th>
+                                        <th><a href="#">Buy</th>
+                                        @foreach($dataGoldWafer22k as $key => $value)
+                                        <tr>
+                                          <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                          <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                          <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
+                                        </tr>
+                                         @endforeach
+                                      </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="block3">
+              <div class="silver">
+                 <div class="container">
+                     <div class="col">
+                         <div class="col-md-4 col-sm-6">
+                             <div class="pricingTable blue">
+                                 <div class="pricingTable-header">
+                                     <h3 class="title" style="color:white;">MY Uncang Perak</h3>
+                                     <!-- <span class="duration">Monthly Plan</span> -->
+                                 </div>
+                                 <div class="pricing-content">
+                                     <div class="price-value">
+                                         <!-- <span class="amount">$10.99</span> -->
+                                     </div>
+                                     <ul class="inner-content">
+                                         <!-- <li>50GB Disk Space</li>
+                                         <li>50 Email Accounts</li>
+                                         <li>50GB Bandwidth</li>
+                                         <li>15 Subdomains</li>
+                                         <li>15 Subdomains</li> -->
+                                     </ul>
+
+                                     <div class="pricingTable-signup">
+                                       <table style="width: 252px;">
+                                         @foreach($dataSAP as $key => $value)
+                                         <tr>
+                                           <td><a href="#">RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</a></td>
+                                         </tr>
+                                          @endforeach
+                                       </table>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="col-md-4 col-sm-6">
+                             <div class="pricingTable blue">
+                                 <div class="pricingTable-header">
+                                     <h3 class="title" style="color:white;">Silver Bar (999)</h3>
+                                     <!-- <span class="duration">Monthly Plan</span> -->
+                                 </div>
+                                 <div class="pricing-content">
+                                     <div class="price-value">
+                                         <!-- <span class="amount">Sell | Buy</span> -->
+                                     </div>
+                                     <ul class="inner-content">
+                                         <!-- <li>Sell</li> -->
+                                     </ul>
+                                     <div class="pricingTable-signup">
+                                       <table>
+                                         <th><a href="#">Weight</th>
+                                         <th><a href="#">Sell</th>
+                                         <th><a href="#">Buy</th>
+                                         @foreach($dataSilver24k as $key => $value)
+                                         <tr>
+                                           <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                           <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                           <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
+                                           <!-- <td><a href="#">RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</a></td> -->
+                                           <!-- <td><a href="#">RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>g</a></td> -->
+                                         </tr>
+                                          @endforeach
+                                       </table>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+           </div>
+           <div class="block4">
+               <div class="silver">
+                  <div class="container">
+                      <div class="col">
+                          <div class="col-md-12 col-sm-12">
+                              <div class="pricingTable blue">
+                                  <div class="pricingTable-header">
+                                      <h3 class="title" style="color:white;">Silver Wafer - Dirham (999)</h3>
+                                      <!-- <span class="duration">Monthly Plan</span> -->
+                                  </div>
+                                  <div class="pricing-content">
+                                      <!-- <div class="price-value">
+                                          <span class="amount">Sell</span>
+                                      </div> -->
+                                      <ul class="inner-content">
+                                          <!-- <li>Sell</li> -->
+                                      </ul>
+                                      <div class="pricingTable-signup">
+                                        <table style="width: 300px;">
+                                          <th><a href="#">Weight</th>
+                                          <th><a href="#">Sell</th>
+                                          @foreach($dataSilverDirham as $key => $value)
+                                          <tr>
+                                            <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                            <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                          </tr>
+                                           @endforeach
+                                        </table>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:330px; height:44px; margin:0px 0px 0px 0px; border: 1px solid rgb(218, 165, 32)">
+                          <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
+                            <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="163" height="90" style="border: 1px solid rgb(218, 165, 32)">
+                          </a>
+                          <a href="javascript:window.open('https://www.kitco.com/images/live/silver.gif','SilverChart','top=50,left=200,width=640,height=480');">
+                          <img src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" border="0" alt="Click to enlarge" align="right" width="163" height="90" style="border: 1px solid rgb(218, 165, 32)">
+                        </a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+           </div>
       </section>
