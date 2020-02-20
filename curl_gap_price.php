@@ -402,7 +402,7 @@
 
   $sql_update_price_taifook_100 = "UPDATE gold_live_price_taifook_24k SET buy ='".$taifook_100g_buy."', sell='".$taifook_100g_sell."' WHERE gram = '100'";
 
-  if ($conn->query($sql_update_price_taifook_10) === TRUE) {
+  if ($conn->query($sql_update_price_taifook_100) === TRUE) {
       echo "Price 100g TAIFOOK updated successfully <br>";
   } else {
       echo "Error updating record: " . $conn->error;
