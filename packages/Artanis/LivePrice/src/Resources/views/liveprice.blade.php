@@ -405,7 +405,7 @@
                   </div>
               </div>
             </div>
-            <div class="block3">
+            <div class="block3" style="width:100%">
               <div class="silver">
                  <div class="container">
                      <div class="col">
@@ -475,7 +475,7 @@
                  </div>
              </div>
            </div>
-           <div class="block4">
+           <div class="block4" style="width:100%">
                <div class="silver">
                   <div class="container">
                       <div class="col">
@@ -507,7 +507,7 @@
                                   </div>
                               </div>
                           </div>
-                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; margin:0px 0px 0px 0px; border: 1px solid rgb(218, 165, 32)">
+                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; margin:10px 10px 10px 10px; border: 1px solid rgb(218, 165, 32)">
                           <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
                             <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
                           </a>
