@@ -68,23 +68,23 @@
 
   //replace comma with whitespace
 
-  $buy_10g = preg_replace('/[,]+/', '', trim($buy_10g));
-  $sell_10g = preg_replace('/[,]+/', '', trim($sell_10g));
-
-  $buy_20g = preg_replace('/[,]+/', '', trim($buy_20g));
-  $sell_20g = preg_replace('/[,]+/', '', trim($sell_20g));
-
-  $buy_50g = preg_replace('/[,]+/', '', trim($buy_50g));
-  $sell_50g = preg_replace('/[,]+/', '', trim($sell_50g));
-
-  $buy_100g = preg_replace('/[,]+/', '', trim($buy_100g));
-  $sell_100g = preg_replace('/[,]+/', '', trim($sell_100g));
-
-  $buy_250g = preg_replace('/[,]+/', '', trim($buy_250g));
-  $sell_250g = preg_replace('/[,]+/', '', trim($sell_250g));
-
-  $buy_1000g = preg_replace('/[,]+/', '', trim($buy_1000g));
-  $sell_1000g = preg_replace('/[,]+/', '', trim($sell_1000g));
+  // $buy_10g = preg_replace('/[,]+/', '', trim($buy_10g));
+  // $sell_10g = preg_replace('/[,]+/', '', trim($sell_10g));
+  //
+  // $buy_20g = preg_replace('/[,]+/', '', trim($buy_20g));
+  // $sell_20g = preg_replace('/[,]+/', '', trim($sell_20g));
+  //
+  // $buy_50g = preg_replace('/[,]+/', '', trim($buy_50g));
+  // $sell_50g = preg_replace('/[,]+/', '', trim($sell_50g));
+  //
+  // $buy_100g = preg_replace('/[,]+/', '', trim($buy_100g));
+  // $sell_100g = preg_replace('/[,]+/', '', trim($sell_100g));
+  //
+  // $buy_250g = preg_replace('/[,]+/', '', trim($buy_250g));
+  // $sell_250g = preg_replace('/[,]+/', '', trim($sell_250g));
+  //
+  // $buy_1000g = preg_replace('/[,]+/', '', trim($buy_1000g));
+  // $sell_1000g = preg_replace('/[,]+/', '', trim($sell_1000g));
 
 
   ////////////////////////////////////////////////--CURL SMALL 24K--////////////////////////////////////////////////
@@ -101,13 +101,13 @@
 
   //replace comma with whitespace
 
-  $sell_05g = preg_replace('/[,]+/', '', trim($sell_05g));
-
-  $sell_1g = preg_replace('/[,]+/', '', trim($sell_1g));
-
-  $sell_12dinar = preg_replace('/[,]+/', '', trim($sell_12dinar));
-
-  $sell_5g = preg_replace('/[,]+/', '', trim($sell_5g));
+  // $sell_05g = preg_replace('/[,]+/', '', trim($sell_05g));
+  //
+  // $sell_1g = preg_replace('/[,]+/', '', trim($sell_1g));
+  //
+  // $sell_12dinar = preg_replace('/[,]+/', '', trim($sell_12dinar));
+  //
+  // $sell_5g = preg_replace('/[,]+/', '', trim($sell_5g));
 
 
   ////////////////////////////////////////////////--CURL LBMA GOLD WAFER - DINAR 24K--////////////////////////////////////////////////
@@ -122,17 +122,17 @@
 
   //replace comma with whitespace
 
-  $dinar_1_sell = preg_replace('/[,]+/', '', trim($dinar_1_sell));
-
-  $dinar_1_buy = preg_replace('/[,]+/', '', trim($dinar_1_buy));
-
-  $dinar_5_sell = preg_replace('/[,]+/', '', trim($dinar_5_sell));
-
-  $dinar_5_buy = preg_replace('/[,]+/', '', trim($dinar_5_buy));
-
-  $dinar_10_sell = preg_replace('/[,]+/', '', trim($dinar_10_sell));
-
-  $dinar_10_buy = preg_replace('/[,]+/', '', trim($dinar_10_buy));
+  // $dinar_1_sell = preg_replace('/[,]+/', '', trim($dinar_1_sell));
+  //
+  // $dinar_1_buy = preg_replace('/[,]+/', '', trim($dinar_1_buy));
+  //
+  // $dinar_5_sell = preg_replace('/[,]+/', '', trim($dinar_5_sell));
+  //
+  // $dinar_5_buy = preg_replace('/[,]+/', '', trim($dinar_5_buy));
+  //
+  // $dinar_10_sell = preg_replace('/[,]+/', '', trim($dinar_10_sell));
+  //
+  // $dinar_10_buy = preg_replace('/[,]+/', '', trim($dinar_10_buy));
 
 
   ////////////////////////////////////////////////--CLASSIC / BUNGAMAS / TAIFOOK 24K--////////////////////////////////////////////////
@@ -157,27 +157,30 @@
   // echo "<br>";
   // echo $taifook_50g_buy;
   // echo "<br>";
+  // echo $taifook_100g_sell;
+  // echo "<br>";
+  // echo $taifook_100g_buy;
+  // echo "<br>";
 
   //
   // //replace comma with whitespace
   //
 
-  $taifook_10g_sell = preg_replace('/[,]+/', '', trim($taifook_10g_sell));
-
-  $taifook_10g_buy = preg_replace('/[,]+/', '', trim($taifook_10g_buy));
-
-  $taifook_20g_sell = preg_replace('/[,]+/', '', trim($taifook_20g_sell));
-
-  $taifook_20g_buy = preg_replace('/[,]+/', '', trim($taifook_20g_buy));
-
-  $taifook_50g_sell = preg_replace('/[,]+/', '', trim($taifook_50g_sell));
-
-  $taifook_50g_buy = preg_replace('/[,]+/', '', trim($taifook_50g_buy));
-
-  $taifook_100g_sell = preg_replace('/[,]+/', '', trim($taifook_100g_sell));
-
-  $taifook_100g_buy = preg_replace('/[,]+/', '', trim($taifook_100g_buy));
-
+  // $taifook_10g_sell = preg_replace('/[,]+/', '', trim($taifook_10g_sell));
+  //
+  // $taifook_10g_buy = preg_replace('/[,]+/', '', trim($taifook_10g_buy));
+  //
+  // $taifook_20g_sell = preg_replace('/[,]+/', '', trim($taifook_20g_sell));
+  //
+  // $taifook_20g_buy = preg_replace('/[,]+/', '', trim($taifook_20g_buy));
+  //
+  // $taifook_50g_sell = preg_replace('/[,]+/', '', trim($taifook_50g_sell));
+  //
+  // $taifook_50g_buy = preg_replace('/[,]+/', '', trim($taifook_50g_buy));
+  //
+  // $taifook_100g_sell = preg_replace('/[,]+/', '', trim($taifook_100g_sell));
+  //
+  // $taifook_100g_buy = preg_replace('/[,]+/', '', trim($taifook_100g_buy));
 
   ////////////////////////////////////////////////-- FLEXIBAR(24k) --////////////////////////////////////////////////
   // get the 24k gold current price
@@ -196,8 +199,8 @@
   //
   // //replace comma with whitespace
   //
-  $flexibar_24k_sell = preg_replace('/[,]+/', '', trim($flexibar_24k_sell));
-  $flexibar_24k_buy = preg_replace('/[,]+/', '', trim($flexibar_24k_buy));
+  // $flexibar_24k_sell = preg_replace('/[,]+/', '', trim($flexibar_24k_sell));
+  // $flexibar_24k_buy = preg_replace('/[,]+/', '', trim($flexibar_24k_buy));
 
 
   ////////////////////////////////////////////////-- GOLD WAFER - DINAR (22k) --////////////////////////////////////////////////
@@ -217,8 +220,8 @@
 
   // //replace comma with whitespace
   //
-  $gold_wafer_22k_sell = preg_replace('/[,]+/', '', trim($gold_wafer_22k_sell));
-  $gold_wafer_22k_buy = preg_replace('/[,]+/', '', trim($gold_wafer_22k_buy));
+  // $gold_wafer_22k_sell = preg_replace('/[,]+/', '', trim($gold_wafer_22k_sell));
+  // $gold_wafer_22k_buy = preg_replace('/[,]+/', '', trim($gold_wafer_22k_buy));
 
 
   ////////////////////////////////////////////////-- GOLD JEWELLARY (22k) --////////////////////////////////////////////////
@@ -236,7 +239,7 @@
 
   // //replace comma with whitespace
   //
-  $gold_jewellary_22k_buy = preg_replace('/[,]+/', '', trim($gold_jewellary_22k_buy));
+  // $gold_jewellary_22k_buy = preg_replace('/[,]+/', '', trim($gold_jewellary_22k_buy));
 
   ////////////////////////////////////////////////--SQL UPDATE--////////////////////////////////////////////////
   //update gram value for per RM 100
@@ -403,7 +406,7 @@
   $sql_update_price_taifook_100 = "UPDATE gold_live_price_taifook_24k SET buy ='".$taifook_100g_buy."', sell='".$taifook_100g_sell."' WHERE gram = '100'";
 
   if ($conn->query($sql_update_price_taifook_100) === TRUE) {
-      echo "Price 100g TAIFOOK updated successfully <br>";
+      echo "Price 100g TAIFOOK updated successfully <br>".$taifook_100g_buy." ".$taifook_100g_sell;
   } else {
       echo "Error updating record: " . $conn->error;
   }
