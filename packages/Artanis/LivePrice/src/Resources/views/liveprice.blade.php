@@ -498,7 +498,7 @@
                                           <th><a href="#">Sell</th>
                                           @foreach($dataSilverDirham as $key => $value)
                                           <tr>
-                                            <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                            <td><a href="#"><span>{{$value["gram"]}} Dirham</span></a></td>
                                             <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
                                           </tr>
                                            @endforeach
