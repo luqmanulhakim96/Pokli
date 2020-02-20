@@ -12,7 +12,7 @@
           $getGold24k = "SELECT * FROM gold_live_price_24k ORDER BY gram ASC";
           $getGoldFlexibar = "SELECT * FROM gold_live_price_flexibar_24k ORDER BY gram ASC";
           $getGoldWafer22k = "SELECT * FROM gold_live_price_gold_wafer_22k ORDER BY gram ASC";
-          $getGoldWafer24k = "SELECT * FROM gold_live_price_gold_wafer_24k ORDER BY sell ASC";
+          $getGoldWafer24k = "SELECT * FROM gold_live_price_gold_wafer_24k ORDER BY gram ASC";
           $getGoldJewellary = "SELECT * FROM gold_live_price_jewellary_22k ORDER BY gram ASC";
           $getGoldSmall = "SELECT * FROM gold_live_price_small_24k ORDER BY gram ASC";
           $getGoldTaifook = "SELECT * FROM gold_live_price_taifook_24k ORDER BY gram ASC";

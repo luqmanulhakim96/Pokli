@@ -67,20 +67,20 @@
   list(, , , , , , , , $sell_100g, $buy_100g, , , $sell_250g, $buy_250g, , , $sell_500g, $buy_500g, , , $sell_1000g, $buy_1000g, , , $sell_5000g, $buy_5000g) = explode('_', $silver_24k_price);
 
   //replace comma with whitespace
-  $buy_100g = preg_replace('/[,]+/', '', trim($buy_100g));
-  $sell_100g = preg_replace('/[,]+/', '', trim($sell_100g));
-
-  $buy_250g = preg_replace('/[,]+/', '', trim($buy_250g));
-  $sell_250g = preg_replace('/[,]+/', '', trim($sell_250g));
-
-  $buy_500g = preg_replace('/[,]+/', '', trim($buy_500g));
-  $sell_500g = preg_replace('/[,]+/', '', trim($sell_500g));
-
-  $buy_1000g = preg_replace('/[,]+/', '', trim($buy_1000g));
-  $sell_1000g = preg_replace('/[,]+/', '', trim($sell_1000g));
-
-  $buy_5000g = preg_replace('/[,]+/', '', trim($buy_5000g));
-  $sell_5000g = preg_replace('/[,]+/', '', trim($sell_5000g));
+  // $buy_100g = preg_replace('/[,]+/', '', trim($buy_100g));
+  // $sell_100g = preg_replace('/[,]+/', '', trim($sell_100g));
+  //
+  // $buy_250g = preg_replace('/[,]+/', '', trim($buy_250g));
+  // $sell_250g = preg_replace('/[,]+/', '', trim($sell_250g));
+  //
+  // $buy_500g = preg_replace('/[,]+/', '', trim($buy_500g));
+  // $sell_500g = preg_replace('/[,]+/', '', trim($sell_500g));
+  //
+  // $buy_1000g = preg_replace('/[,]+/', '', trim($buy_1000g));
+  // $sell_1000g = preg_replace('/[,]+/', '', trim($sell_1000g));
+  //
+  // $buy_5000g = preg_replace('/[,]+/', '', trim($buy_5000g));
+  // $sell_5000g = preg_replace('/[,]+/', '', trim($sell_5000g));
 
 
   ////////////////////////////////////////////////--SILVER WAFER DIRHAM 999--////////////////////////////////////////////////
@@ -96,7 +96,7 @@
   // echo $dirham_10_sell;
 
   //replace comma with whitespace
-  $dirham_10_sell = preg_replace('/[,]+/', '', trim($dirham_10_sell));
+  // $dirham_10_sell = preg_replace('/[,]+/', '', trim($dirham_10_sell));
 
   ////////////////////////////////////////////////--SQL UPDATE--////////////////////////////////////////////////
   // update gram value for per RM 100
