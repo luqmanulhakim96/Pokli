@@ -227,6 +227,46 @@
                      </div>
                  </div>
              </div>
+             <div class="gold">
+                <div class="container">
+                    <div class="col">
+                      <div class="col-md-4 col-sm-6">
+                          <div class="pricingTable">
+                              <div class="pricingTable-header">
+                                  <h3 class="title" style="color:white;">Flexibar (24k)</h3>
+                                  <!-- <span class="duration">Monthly Plan</span> -->
+                              </div>
+                              <div class="pricing-content">
+                                  <div class="price-value">
+                                      <!-- <span class="amount">Sell | Buy</span> -->
+                                  </div>
+                                  <ul class="inner-content">
+                                      <!-- <li>50GB Disk Space</li>
+                                      <li>50 Email Accounts</li>
+                                      <li>50GB Bandwidth</li>
+                                      <li>15 Subdomains</li>
+                                      <li>15 Subdomains</li> -->
+                                  </ul>
+                                  <div class="pricingTable-signup">
+                                    <table style="width: 100%;">
+                                      <th><a href="#">Weight</th>
+                                      <th><a href="#">Sell</th>
+                                      <th><a href="#">Buy</th>
+                                      @foreach($dataGold24kFlexibar as $key => $value)
+                                      <tr>
+                                        <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
+                                        <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                        <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
+                                      </tr>
+                                       @endforeach
+                                    </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
             </div>
            <div class="block2">
                <div class="gold">
@@ -321,6 +361,38 @@
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} Dinar</span></a></td>
                                           <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
+                                          <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
+                                        </tr>
+                                         @endforeach
+                                      </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="pricingTable">
+                                <div class="pricingTable-header">
+                                    <h3 class="title" style="color:white;">Gold Jewellary (22k)</h3>
+                                    <!-- <span class="duration">Monthly Plan</span> -->
+                                </div>
+                                <div class="pricing-content">
+                                    <div class="price-value">
+                                        <!-- <span class="amount">Sell | Buy</span> -->
+                                    </div>
+                                    <ul class="inner-content">
+                                        <!-- <li>50GB Disk Space</li>
+                                        <li>50 Email Accounts</li>
+                                        <li>50GB Bandwidth</li>
+                                        <li>15 Subdomains</li>
+                                        <li>15 Subdomains</li> -->
+                                    </ul>
+                                    <div class="pricingTable-signup">
+                                      <table style="width: 100%;">
+                                        <th><a href="#">Weight</th>
+                                        <th><a href="#">Buy</th>
+                                        @foreach($dataGold24kJewellary as $key => $value)
+                                        <tr>
+                                          <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
                                           <td><a href="#">RM<span> {{$value["buy"]}}</span></a></td>
                                         </tr>
                                          @endforeach
@@ -426,7 +498,7 @@
                                           <th><a href="#">Sell</th>
                                           @foreach($dataSilverDirham as $key => $value)
                                           <tr>
-                                            <td><a href="#"><span>{{$value["gram"]}} Dirham</span></a></td>
+                                            <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
                                             <td><a href="#">RM<span> {{$value["sell"]}}</span></a></td>
                                           </tr>
                                            @endforeach
