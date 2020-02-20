@@ -102,6 +102,9 @@ return [
             'firstname' => 'First Name',
             'lastname' => 'Last Name',
             'email' => 'Email',
+            'ic' => 'IC',
+            'bank-name' => 'Bank Name',
+            'bank-no' => 'Bank Account No.',
             'password' => 'Password',
             'confirm_pass' => 'Confirm Password',
             'button_title' => 'Register',
@@ -212,7 +215,10 @@ return [
                 'edit-profile' => [
                     'title' => 'Edit Profile',
                     'page-title' => 'Customer - Edit Profile Form'
-                ]
+                ],
+                'ic' => 'IC',
+                'bank-name' => 'Bank Name',
+                'bank-no' => 'Bank Account No.'
             ],
 
             'address' => [

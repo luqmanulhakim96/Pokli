@@ -106,6 +106,9 @@ class CustomerController extends Controller
             'last_name' => 'string|required',
             'gender' => 'required',
             'email' => 'required|unique:customers,email',
+            'ic' => 'required|unique:customers,ic|max:12|min:12',
+            // 'bank_name' => 'required',
+            // 'bank_no' => 'required',
             'date_of_birth' => 'date|before:today'
         ]);
 

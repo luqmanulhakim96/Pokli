@@ -60,6 +60,32 @@
                         <span class="control-error" v-if="errors.has('date_of_birth')">@{{ errors.first('date_of_birth') }}</span>
                     </div>
 
+                    <div class="control-group" :class="[errors.has('ic') ? 'has-error' : '']">
+                        <label for="ic" class="required">{{ __('shop::app.customer.account.profile.ic') }}</label>
+                        @if($customer->ic)
+                            <input type="text" class="control" name="ic" value="{{ old('ic') ?? $customer->ic }}" v-validate="'required|numeric|min:12|max:12'" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.ic') }}&quot;" disabled="disabled">
+                        @else
+                            <input type="text" class="control" name="ic" value="{{ old('ic') ?? $customer->ic }}" v-validate="'required|numeric|min:12|max:12'" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.ic') }}&quot;">
+                        @endif
+                        <span class="control-error" v-if="errors.has('ic')">@{{ errors.first('ic') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('bank_name') ? 'has-error' : '']">
+                        <label for="bank_name" class="">{{ __('shop::app.customer.account.profile.bank-name') }}</label>
+                        <select name="bank_name" class="control" v-validate="''" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.bank-name') }}&quot;">
+                            <option value="">-</option>
+                            <option value="Maybank" @if ($customer->bank_name == "Maybank") selected @endif>Maybank</option>
+                            <option value="CIMB" @if ($customer->bank_name == "CIMB") selected @endif>CIMB</option>
+                        </select>
+                        <span class="control-error" v-if="errors.has('bank_name')">@{{ errors.first('bank_name') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('bank_no') ? 'has-error' : '']">
+                        <label for="bank_no" class="">{{ __('shop::app.customer.account.profile.bank-no') }}</label>
+                        <input type="bank_no" class="control" name="bank_no" v-validate="'numeric'" value="{{ old('bank_no') ?? $customer->bank_no }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.bank-no') }}&quot;">
+                        <span class="control-error" v-if="errors.has('bank_no')">@{{ errors.first('bank_no') }}</span>
+                    </div>
+
                     <div class="control-group" :class="[errors.has('email') ? 'has-error' : '']">
                         <label for="email" class="required">{{ __('shop::app.customer.account.profile.email') }}</label>
                         <input type="email" class="control" name="email" value="{{ old('email') ?? $customer->email }}" v-validate="'required'" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.email') }}&quot;">
