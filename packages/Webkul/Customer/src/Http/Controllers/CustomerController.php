@@ -108,6 +108,7 @@ class CustomerController extends Controller
             'last_name' => 'string',
             'gender' => 'required',
             'date_of_birth' => 'date|before:today',
+            'ic' => 'unique:customers,ic|max:12|min:12',
             'email' => 'email|unique:customers,email,'.$id,
             'oldpassword' => 'required_with:password',
             'password' => 'confirmed|min:6'
