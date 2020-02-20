@@ -507,7 +507,7 @@
                                   </div>
                               </div>
                           </div>
-                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; margin:10px 10px 10px 10px; border: 1px solid rgb(218, 165, 32)">
+                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; border: 1px solid rgb(218, 165, 32)">
                           <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
                             <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
                           </a>
