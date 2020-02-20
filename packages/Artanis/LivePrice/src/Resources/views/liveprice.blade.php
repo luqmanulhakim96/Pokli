@@ -110,7 +110,7 @@
            <div class="col-xs-12">
            </div>
            <div class="featured-grid product-grid-price">
-            <div class="block1">
+            <div class="block1" style="width:100%">
               <div class="gold">
                  <div class="container">
                      <div class="col">
@@ -268,7 +268,7 @@
                 </div>
             </div>
             </div>
-           <div class="block2">
+           <div class="block2" style="width:100%">
                <div class="gold">
                   <div class="container">
                       <div class="col">
