@@ -66,6 +66,21 @@
                     </tr>
 
                     <tr>
+                        <td>{{ __('shop::app.customer.account.profile.ic') }}</td>
+                        <td>{{ $customer->ic }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.bank-name') }}</td>
+                        <td>{{ $customer->bank_name }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.bank-no') }}</td>
+                        <td>{{ $customer->bank_no }}</td>
+                    </tr>
+
+                    <tr>
                         <td>{{ __('shop::app.customer.account.profile.referral') }}</td>
                         <td>{{ $countReferral }}</td>
                     </tr>

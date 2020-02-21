@@ -79,6 +79,9 @@ class RegistrationController extends Controller
             'first_name' => 'string|required',
             'last_name' => 'string|required',
             'email' => 'email|required|unique:customers,email',
+            'ic' => 'unique:customers,ic|max:12|min:12',
+            'bank_name' => 'required',
+            'bank_no' => 'required',
             'referral_email' => 'exists:customers,email',
             'password' => 'confirmed|min:6|required',
         ]);
