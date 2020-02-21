@@ -371,7 +371,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="pricingTable">
                                 <div class="pricingTable-header">
-                                    <h3 class="title" style="color:white;">Gold Jewellary (22k)</h3>
+                                    <h3 class="title" style="color:white;">Gold Jewellery (22k)</h3>
                                     <!-- <span class="duration">Monthly Plan</span> -->
                                 </div>
                                 <div class="pricing-content">
