@@ -57,6 +57,28 @@
                 <span class="control-error" v-if="errors.has('referral_email')">@{{ errors.first('referral_email') }}</span>
             </div>
 
+            <div class="control-group" :class="[errors.has('ic') ? 'has-error' : '']">
+                <label for="ic" class="required">{{ __('shop::app.customer.signup-form.ic') }}</label>
+                <input id="ic" type="text" class="control" name="ic" v-validate="'required|numeric|min:12|max:12'" value="{{ old('ic') }}" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.ic') }}&quot;">
+                <span class="control-error" v-if="errors.has('ic')">@{{ errors.first('ic') }}</span>
+            </div>
+
+            <div class="control-group" :class="[errors.has('bank_name') ? 'has-error' : '']">
+                <label for="bank_name" class="required">{{ __('shop::app.customer.signup-form.bank-name') }}</label>
+                <select name="bank_name" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.bank-name') }}&quot;">
+                    <option value="">-</option>
+                    <option value="Maybank">Maybank</option>
+                    <option value="CIMB">CIMB</option>
+                </select>
+                <span class="control-error" v-if="errors.has('bank_name')">@{{ errors.first('bank_name') }}</span>
+            </div>
+
+            <div class="control-group" :class="[errors.has('bank_no') ? 'has-error' : '']">
+                <label for="bank_no" class="required">{{ __('shop::app.customer.signup-form.bank-no') }}</label>
+                <input type="bank_no" class="control" name="bank_no" v-validate="'required|numeric'" value="{{ old('bank_no') }}" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.bank-no') }}&quot;">
+                <span class="control-error" v-if="errors.has('bank_no')">@{{ errors.first('bank_no') }}</span>
+            </div>
+
             {{-- <div class="signup-confirm" :class="[errors.has('agreement') ? 'has-error' : '']">
                 <span class="checkbox">
                     <input type="checkbox" id="checkbox2" name="agreement" v-validate="'required'">
