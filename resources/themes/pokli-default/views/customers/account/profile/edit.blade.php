@@ -75,8 +75,20 @@
                         <label for="bank_name" class="">{{ __('shop::app.customer.account.profile.bank-name') }}</label>
                         <select name="bank_name" class="control" v-validate="''" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.bank-name') }}&quot;">
                             <option value="">-</option>
-                            <option value="Maybank" @if ($customer->bank_name == "Maybank") selected @endif>Maybank</option>
-                            <option value="CIMB" @if ($customer->bank_name == "CIMB") selected @endif>CIMB</option>
+                            <option value="Affin Bank" @if ($customer->bank_name == "Affin Bank") selected @endif>Affin Bank</option>
+                            <option value="Agrobank" @if ($customer->bank_name == "Agrobank") selected @endif>Agrobank</option>
+                            <option value="Alliance Bank Malaysia" @if ($customer->bank_name == "Alliance Bank Malaysia") selected @endif>Alliance Bank Malaysia</option>
+                            <option value="AmBank" @if ($customer->bank_name == "AmBank") selected @endif>AmBank</option>
+                            <option value="Bank Islam Malaysia" @if ($customer->bank_name == "Bank Islam Malaysia") selected @endif>Bank Islam Malaysia</option>
+                            <option value="Bank Muamalat Malaysia Berhad" @if ($customer->bank_name == "Bank Muamalat Malaysia Berhad") selected @endif>Bank Muamalat Malaysia Berhad</option>
+                            <option value="Bank Rakyat" @if ($customer->bank_name == "Bank Rakyat") selected @endif>Bank Rakyat</option>
+                            <option value="Bank Simpanan Nasional (BSN)" @if ($customer->bank_name == "Bank Simpanan Nasional (BSN)") selected @endif>Bank Simpanan Nasional (BSN)</option>
+                            <option value="CIMB Bank" @if ($customer->bank_name == "CIMB Bank") selected @endif>CIMB Bank</option>
+                            <option value="Citibank" @if ($customer->bank_name == "Citibank") selected @endif>Citibank</option>
+                            <option value="HSBC Bank" @if ($customer->bank_name == "HSBC Bank") selected @endif>HSBC Bank</option>
+                            <option value="Hong Leong Bank" @if ($customer->bank_name == "Hong Leong Bank") selected @endif>Hong Leong Bank</option>
+                            <option value="Public Bank" @if ($customer->bank_name == "Public Bank") selected @endif>Public Bank</option>
+                            <option value="RHB Bank" @if ($customer->bank_name == "RHB Bank") selected @endif>RHB Bank</option>
                         </select>
                         <span class="control-error" v-if="errors.has('bank_name')">@{{ errors.first('bank_name') }}</span>
                     </div>
@@ -101,7 +113,14 @@
 
                     <div class="control-group" :class="[errors.has('heir_relation') ? 'has-error' : '']">
                         <label for="heir_relation" class="">{{ __('shop::app.customer.account.profile.heir-relation') }}</label>
-                        <input type="text" class="control" name="heir_relation" v-validate="''" value="{{ old('heir_relation') ?? $customer->heir_relation }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-relation') }}&quot;">
+                        <select name="heir_relation" class="control" v-validate="''" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-relation') }}&quot;">
+                            <option value="">-</option>
+                            <option value="Grandfather/Grandmother" @if ($customer->heir_relation == "Grandfather/Grandmother") selected @endif>Grandfather/Grandmother</option>
+                            <option value="Father/Mother" @if ($customer->heir_relation == "Father/Mother") selected @endif>Father/Mother</option>
+                            <option value="Son/Daughter" @if ($customer->heir_relation == "Son/Daughter") selected @endif>Son/Daughter</option>
+                            <option value="Siblings" @if ($customer->heir_relation == "Siblings") selected @endif>Siblings</option>
+                            <option value="Grandchild" @if ($customer->heir_relation == "Grandchild") selected @endif>Grandchild</option>
+                        </select>
                         <span class="control-error" v-if="errors.has('heir_relation')">@{{ errors.first('heir_relation') }}</span>
                     </div>
 
