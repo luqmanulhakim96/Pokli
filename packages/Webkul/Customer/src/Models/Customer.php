@@ -18,7 +18,7 @@ class Customer extends Authenticatable implements CustomerContract, JWTSubject
 
     protected $table = 'customers';
 
-    protected $fillable = ['referral_id', 'first_name', 'last_name', 'gender', 'date_of_birth', 'email', 'ic', 'bank_name', 'bank_no', 'phone', 'password', 'customer_group_id', 'subscribed_to_news_letter', 'is_verified', 'token', 'notes', 'status'];
+    protected $fillable = ['referral_id', 'first_name', 'last_name', 'gender', 'date_of_birth', 'email', 'ic', 'bank_name', 'bank_no', 'job_description', 'heir_name', 'heir_relation', 'heir_phone_no', 'phone', 'password', 'customer_group_id', 'subscribed_to_news_letter', 'is_verified', 'token', 'notes', 'status'];
 
     protected $hidden = ['password', 'remember_token'];
 

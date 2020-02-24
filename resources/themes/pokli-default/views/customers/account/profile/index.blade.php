@@ -32,27 +32,67 @@
                 <tbody>
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.fname') }}</td>
-                        <td>{{ $customer->first_name }}</td>
+                        <td>{{ $customer->first_name ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.lname') }}</td>
-                        <td>{{ $customer->last_name }}</td>
+                        <td>{{ $customer->last_name ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.gender') }}</td>
-                        <td>{{ $customer->gender }}</td>
+                        <td>{{ $customer->gender ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.dob') }}</td>
-                        <td>{{ $customer->date_of_birth }}</td>
+                        <td>{{ $customer->date_of_birth ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.email') }}</td>
-                        <td>{{ $customer->email }}</td>
+                        <td>{{ $customer->email ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.ic') }}</td>
+                        <td>{{ $customer->ic ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.bank-name') }}</td>
+                        <td>{{ $customer->bank_name ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.bank-no') }}</td>
+                        <td>{{ $customer->bank_no ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.job-description') }}</td>
+                        <td>{{ $customer->job_description ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.heir-name') }}</td>
+                        <td>{{ $customer->heir_name ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.heir-relation') }}</td>
+                        <td>{{ $customer->heir_relation ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.heir-phone-no') }}</td>
+                        <td>{{ $customer->heir_phone_no ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>{{ __('shop::app.customer.account.profile.referral') }}</td>
+                        <td>{{ $countReferral ?? '' }}</td>
                     </tr>
 
                     <tr>
@@ -63,26 +103,6 @@
                     <tr>
                         <td>{{ __('shop::app.customer.account.profile.upline-email') }}</td>
                         <td>{{ $uplineDetails->email ?? '' }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.ic') }}</td>
-                        <td>{{ $customer->ic }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.bank-name') }}</td>
-                        <td>{{ $customer->bank_name }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.bank-no') }}</td>
-                        <td>{{ $customer->bank_no }}</td>
-                    </tr>
-
-                    <tr>
-                        <td>{{ __('shop::app.customer.account.profile.referral') }}</td>
-                        <td>{{ $countReferral }}</td>
                     </tr>
 
                     {{-- @if ($customer->subscribed_to_news_letter == 1)
