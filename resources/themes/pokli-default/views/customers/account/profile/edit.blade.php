@@ -61,10 +61,11 @@
                     </div>
 
                     <div class="control-group" :class="[errors.has('ic') ? 'has-error' : '']">
-                        <label for="ic" class="required">{{ __('shop::app.customer.account.profile.ic') }}</label>
                         @if($customer->ic)
+                            <label for="ic" class="">{{ __('shop::app.customer.account.profile.ic') }}</label>
                             <input type="text" class="control" name="ic" value="{{ old('ic') ?? $customer->ic }}" v-validate="'required|numeric|min:12|max:12'" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.ic') }}&quot;" disabled="disabled">
                         @else
+                            <label for="ic" class="required">{{ __('shop::app.customer.account.profile.ic') }}</label>
                             <input type="text" class="control" name="ic" value="{{ old('ic') ?? $customer->ic }}" v-validate="'required|numeric|min:12|max:12'" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.ic') }}&quot;">
                         @endif
                         <span class="control-error" v-if="errors.has('ic')">@{{ errors.first('ic') }}</span>
@@ -84,6 +85,30 @@
                         <label for="bank_no" class="">{{ __('shop::app.customer.account.profile.bank-no') }}</label>
                         <input type="bank_no" class="control" name="bank_no" v-validate="'numeric'" value="{{ old('bank_no') ?? $customer->bank_no }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.bank-no') }}&quot;">
                         <span class="control-error" v-if="errors.has('bank_no')">@{{ errors.first('bank_no') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('job_description') ? 'has-error' : '']">
+                        <label for="job_description" class="">{{ __('shop::app.customer.account.profile.job-description') }}</label>
+                        <input type="text" class="control" name="job_description" v-validate="''" value="{{ old('job_description') ?? $customer->job_description }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.job-description') }}&quot;">
+                        <span class="control-error" v-if="errors.has('job_description')">@{{ errors.first('job_description') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('heir_name') ? 'has-error' : '']">
+                        <label for="heir_name" class="">{{ __('shop::app.customer.account.profile.heir-name') }}</label>
+                        <input type="text" class="control" name="heir_name" v-validate="''" value="{{ old('heir_name') ?? $customer->heir_name }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-name') }}&quot;">
+                        <span class="control-error" v-if="errors.has('heir_name')">@{{ errors.first('heir_name') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('heir_relation') ? 'has-error' : '']">
+                        <label for="heir_relation" class="">{{ __('shop::app.customer.account.profile.heir-relation') }}</label>
+                        <input type="text" class="control" name="heir_relation" v-validate="''" value="{{ old('heir_relation') ?? $customer->heir_relation }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-relation') }}&quot;">
+                        <span class="control-error" v-if="errors.has('heir_relation')">@{{ errors.first('heir_relation') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('heir_phone_no') ? 'has-error' : '']">
+                        <label for="heir_phone_no" class="">{{ __('shop::app.customer.account.profile.heir-phone-no') }}</label>
+                        <input type="text" class="control" name="heir_phone_no" v-validate="'numeric|min:10|max:13'" value="{{ old('heir_phone_no') ?? $customer->heir_phone_no }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-phone-no') }}&quot;">
+                        <span class="control-error" v-if="errors.has('heir_phone_no')">@{{ errors.first('heir_phone_no') }}</span>
                     </div>
 
                     <div class="control-group" :class="[errors.has('email') ? 'has-error' : '']">

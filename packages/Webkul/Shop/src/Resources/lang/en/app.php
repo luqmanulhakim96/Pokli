@@ -218,7 +218,11 @@ return [
                 ],
                 'ic' => 'IC',
                 'bank-name' => 'Bank Name',
-                'bank-no' => 'Bank Account No.'
+                'bank-no' => 'Bank Account No.',
+                'job-description' => 'Job Description',
+                'heir-name' => 'Heir\'s Name',
+                'heir-relation' => 'Heir\'s Relation',
+                'heir-phone-no' => 'Heir\'s Phone No.',
             ],
 
             'address' => [
