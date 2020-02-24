@@ -66,9 +66,21 @@
             <div class="control-group" :class="[errors.has('bank_name') ? 'has-error' : '']">
                 <label for="bank_name" class="required">{{ __('shop::app.customer.signup-form.bank-name') }}</label>
                 <select name="bank_name" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.bank-name') }}&quot;">
-                    <option value="">-</option>
-                    <option value="Maybank">Maybank</option>
-                    <option value="CIMB">CIMB</option>
+                  <option value="">-</option>
+                  <option value="Affin Bank" >Affin Bank</option>
+                  <option value="Agrobank" >Agrobank</option>
+                  <option value="Alliance Bank Malaysia">Alliance Bank Malaysia</option>
+                  <option value="AmBank">AmBank</option>
+                  <option value="Bank Islam Malaysia" >Bank Islam Malaysia</option>
+                  <option value="Bank Muamalat Malaysia Berhad" >Bank Muamalat Malaysia Berhad</option>
+                  <option value="Bank Rakyat" >Bank Rakyat</option>
+                  <option value="Bank Simpanan Nasional (BSN)" >Bank Simpanan Nasional (BSN)</option>
+                  <option value="CIMB Bank">CIMB Bank</option>
+                  <option value="Citibank" >Citibank</option>
+                  <option value="HSBC Bank" >HSBC Bank</option>
+                  <option value="Hong Leong Bank" >Hong Leong Bank</option>
+                  <option value="Public Bank" >Public Bank</option>
+                  <option value="RHB Bank">RHB Bank</option>
                 </select>
                 <span class="control-error" v-if="errors.has('bank_name')">@{{ errors.first('bank_name') }}</span>
             </div>
