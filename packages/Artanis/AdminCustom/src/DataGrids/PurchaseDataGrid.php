@@ -97,7 +97,7 @@ class PurchaseDataGrid extends DataGrid
                     return 'Silver';
             }
         ]);
-        
+
         $this->addColumn([
             'index' => 'customer_full_name',
             'label' => 'Customer Name',
@@ -168,10 +168,10 @@ class PurchaseDataGrid extends DataGrid
                 if (!$value->payment_attachment) {
                     return 'Null';
                 }
-                else 
+                else
                     // return 'http://127.0.0.1:8000/storage/'.$value->payment_attachment;
                     // return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '"> Attachment </a>';
-                    return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '" target="_blank"> <img src="http://127.0.0.1:8000/storage/'.$value->payment_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
+                    return '<a href="http://209.97.169.247/storage/' .$value->payment_attachment. '" target="_blank"> <img src="http://127.0.0.1:8000/storage/'.$value->payment_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
             }
         ]);
 
