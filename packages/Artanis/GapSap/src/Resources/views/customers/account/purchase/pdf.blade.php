@@ -240,7 +240,7 @@
             <td align="center" style="width: 40%;border: 1px solid black;">
                 Description
             </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
+            <td align="center" style="width: 10%;border: 1px solid black;">
                 Price / gram
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
@@ -263,7 +263,7 @@
             <td align="center" style="width: 40%;border: 1px solid black;">
             <pre style="font-size: 10px"><b> {{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</b></pre>
             </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
+            <td align="center" style="width: 10%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->current_price_per_gram }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
@@ -297,13 +297,14 @@
         <tr style="top:10px;">
             <td align="left" style="width: 60%;">
                 <pre style="font-size: 10px">
-                Risk Disclosure:
+                <b>Risk Disclosure:</b>
                 <br /><br />
                 You are considering dealing with Pokli Wealth Management Sdn Bhd, trading in bullion involves the potential for profit as
                 well as the risk of loss. Movements in the price of bullion rates are influenced by a variety of factors of global origin which are
                 unpredictable. Violent movement in the price of bullion rates may result in action by the market as a result of which you may be
                 incurring extra loss. However, please note that this disclosure cannot and does not explain all the risks involved. Some of the risks
                 associated with using our bullion trading facilities include:-
+                <br />
                 1. Customer should read through all the related sales literature, prospectuses or other offering documents before making purchase.
                 2. Customer should carefully consider all precious metals risks and/ or considerations contained in the documents.
                 3. There is no assurance that the acquisition of precious metals will achieve your monetary gain objectives.
