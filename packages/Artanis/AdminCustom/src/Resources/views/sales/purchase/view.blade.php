@@ -113,26 +113,6 @@
                                             </span>
                                         </div>
 
-                                        <div class="row">
-                                            <span class="title">
-                                                {{ __('Bank Name') }}
-                                            </span>
-
-                                            <span class="value">
-                                                {{ $purchase->customer->bank_name }}
-                                            </span>
-                                        </div>
-
-                                        div class="row">
-                                            <span class="title">
-                                                {{ __('Bank Number') }}
-                                            </span>
-
-                                            <span class="value">
-                                                {{ $purchase->customer->bank_no }}
-                                            </span>
-                                        </div>
-
                                     </div>
                                 </div>
 
