@@ -267,7 +267,7 @@
             <pre style="font-size: 10px"><b>{{ $purchase->current_price_per_gram }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ $purchase->product_type=='gold' ? CustomerDataGrid->goldTotal : CustomerDataGrid->silverTotal }}</b></pre>
+            <pre style="font-size: 10px"><b>{{ $purchase->product_type=='gold' ?  'testgold' : 'testsilver'  }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->quantity }}</b></pre>
