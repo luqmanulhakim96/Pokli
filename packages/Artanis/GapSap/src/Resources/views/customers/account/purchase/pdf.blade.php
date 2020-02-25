@@ -174,17 +174,17 @@
         </tr>
         <tr style="top:10px;">
             <td align="center">
-                <h2>Pokli Wealth Management Sdn Bhd (1061529-V)</h2>
+                <h2>Pokli Wealth Management Sdn Bhd (1349069-M)</h2>
                 <pre style="font-size: 10px">
                 Wisma Pokli,101A- 1 Avenue,Jalan S2F2,Garden Homes, Seremban 270300 Seremban, Negeri Sembilan
                 Tel : +6066307797
                 Email : admin@pokli.com
-                Website : www.pokli.com
+                Website : www.pokli.com.my
                 </pre>
             </td>
         </tr>
-        
-        
+
+
     </table>
 </div>
 
@@ -197,8 +197,8 @@
                 <br /><br />
                 Date: {{ date('d/m/Y', strtotime($purchase->created_at)) }}
                 Customer: {{ $purchase->customer_full_name }}
-                780801-01-6353
-                Tel: 012-3969746
+                {{ $purchase->customer->ic }}
+                {{ $purchase->customer->phone }}
                 Email: {{ $purchase->customer->email }}
 
                 {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
@@ -206,17 +206,17 @@
             </td>
             <td align="left" style="width: 40%;">
                 <pre style="font-size: 10px">
-                
+
                 <br/>
-                
+
                 Ordered By:
                 Payment By: {{ $purchase->payment_method_label }}
-                
+
 
                 </pre>
             </td>
         </tr>
-        
+
     </table>
 </div>
 
@@ -244,6 +244,9 @@
                 Price / gram
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
+                Current Balance (Gram)
+            </td>
+            <td align="center" style="width: 20%;border: 1px solid black;">
                 Total Weight (Gram)
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
@@ -262,6 +265,9 @@
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->current_price_per_gram }}</b></pre>
+            </td>
+            <td align="center" style="width: 20%;border: 1px solid black;">
+            <pre style="font-size: 10px"><b>{{ $purchase->product_type=='gold' ? CustomerDataGrid->goldTotal : CustomerDataGrid->silverTotal }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->quantity }}</b></pre>
@@ -302,13 +308,13 @@
                 2. Customer should carefully consider all precious metals risks and/ or considerations contained in the documents.
                 3. There is no assurance that the acquisition of precious metals will achieve your monetary gain objectives.
                 4. Customer should make certain that they understand the correlation between risk and return.
-                5. PWM will follow Public Gold margin spread and it will be maintained under normal political and social circumstances except for 
-                extreme market conditions, such as financial and economic crisis, social unrest, political instability, war which can cause extreme 
+                5. PWM will follow Public Gold margin spread and it will be maintained under normal political and social circumstances except for
+                extreme market conditions, such as financial and economic crisis, social unrest, political instability, war which can cause extreme
                 volatility of precious metal price in international market.
                 <br /><br />
                 Disclaimer:
                 <br /><br />
-                1. PWM – Gold Purchase Progam is neither a financial product nor a deposit but a method of purchasing gold through periodic 
+                1. PWM – Gold Purchase Progam is neither a financial product nor a deposit but a method of purchasing gold through periodic
                 accumulations for the personal needs of the customer.
                 2. Pokli Wealth Management Sdn Bhd. (Pokli) does not offer any investment advice or promises/forecasts any assured return
                 through this program while promoting the product.
@@ -331,10 +337,10 @@
             </td>
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
-            <b>    
-                I hereby agree to purchase the above 
+            <b>
+                I hereby agree to purchase the above
                 mentioned
-                item(s) and abide with the terms and 
+                item(s) and abide with the terms and
                 conditions above,
             </b>
             </pre>
@@ -348,8 +354,8 @@
         <tr style="top:10px;">
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px">
-            <b> 
-                This is a computer generated sales order, therefore no 
+            <b>
+                This is a computer generated sales order, therefore no
                 signature is required.
             </b>
             </pre>
