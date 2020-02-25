@@ -112,6 +112,27 @@
                                                 {{ $purchase->customer->email }}
                                             </span>
                                         </div>
+
+                                        <div class="row">
+                                            <span class="title">
+                                                {{ __('Bank Name') }}
+                                            </span>
+
+                                            <span class="value">
+                                                {{ $purchase->customer->bank_name }}
+                                            </span>
+                                        </div>
+
+                                        <div class="row">
+                                            <span class="title">
+                                                {{ __('Bank Number') }}
+                                            </span>
+
+                                            <span class="value">
+                                                {{ $purchase->customer->bank_no }}
+                                            </span>
+                                        </div>
+                                        
                                     </div>
                                 </div>
 
@@ -413,9 +434,9 @@
         <modal id="downloadDataGrid" :is-open="modalIds.downloadDataGrid">
             <h3 slot="header">{{ __('Purchase Attachment') }}</h3>
             <div slot="body">
-                <img src="http://127.0.0.1:8000/storage/{{$purchase->payment_attachment}}" alt="Smiley face" height="100%" width="100%" @click="showModal('downloadDataGrid')"> 
+                <img src="http://127.0.0.1:8000/storage/{{$purchase->payment_attachment}}" alt="Smiley face" height="100%" width="100%" @click="showModal('downloadDataGrid')">
             </div>
         </modal>
     @endif
-    
+
 @stop
