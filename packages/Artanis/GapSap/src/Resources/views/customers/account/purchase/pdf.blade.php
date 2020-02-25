@@ -267,7 +267,7 @@
             <pre style="font-size: 10px"><b>{{ $purchase->current_price_per_gram }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ $purchase->product_type=='gold' ?  'testgold' : 'testsilver'  }}</b></pre>
+            <pre style="font-size: 10px"><b>{{ $purchase->product_type=='gold' ?  $balanceGold : $balanceSilver  }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->quantity }}</b></pre>
@@ -277,7 +277,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" style="border: 1px solid white; border-right:1px solid black;"></td>
+            <td colspan="5" style="border: 1px solid white; border-right:1px solid black;"></td>
             <td style="border: 1px solid black;border-right:0px  white;">
             <pre style="font-size: 10px">
             <b>Grand Total :</b>

@@ -230,6 +230,20 @@ class PurchaseController extends Controller
     {
         $invoice = $this->purchaseRepository->findOrFail($id);
         $purchase = $this->purchaseRepository->findOrFail($id);
+
+        #calculate balance gold
+        $purchaseGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $buybackGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+
+        $balanceGold =  $purchaseGold-$buybackGold;
+
+        #calculate balance silver
+        $purchaseSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $buybackSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+
+        $balanceSilver = $purchaseSilver-$buybackSilver;
+
+
         $pdf = PDF::loadView('gapsap::customers.account.purchase.pdf', compact(['purchase']))->setPaper('a4');
 
         return $pdf->download('admin-' . $invoice->created_at->format('d-m-Y') . '.pdf');

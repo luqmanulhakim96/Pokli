@@ -76,7 +76,7 @@ class PurchaseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View 
+     * @return \Illuminate\View\View
     */
     public function index()
     {
@@ -87,7 +87,7 @@ class PurchaseController extends Controller
      * Show the view for the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\View\View 
+     * @return \Illuminate\View\View
      */
     public function view($id)
     {
@@ -99,7 +99,7 @@ class PurchaseController extends Controller
         // if (! $order)
         //     abort(404);
         $purchase = $this->purchaseRepository->findOrFail($id);
-            
+
         return view($this->_config['view'], compact('purchase'));
     }
 
@@ -113,11 +113,25 @@ class PurchaseController extends Controller
     {
         $invoice = $this->purchaseRepository->findOrFail($id);
         $purchase = $this->purchaseRepository->findOrFail($id);
+
+        #calculate balance gold
+        $purchaseGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $buybackGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+
+        $balanceGold =  $purchaseGold-$buybackGold;
+
+        #calculate balance silver
+        $purchaseSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $buybackSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+
+        $balanceSilver = $purchaseSilver-$buybackSilver;
+
+
         $pdf = PDF::loadView('gapsap::customers.account.purchase.pdf', compact(['purchase']))->setPaper('a4');
 
         return $pdf->download('invoice-' . $invoice->created_at->format('d-m-Y') . '.pdf');
 
-        
+
         // $path = app()->publicpath().'/assets/templates/examination_level100_certificate.pdf';
 
         // $curl_handle=curl_init();
