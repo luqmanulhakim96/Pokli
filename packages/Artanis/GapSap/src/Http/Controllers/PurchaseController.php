@@ -10,6 +10,7 @@ use Webkul\Sales\Repositories\InvoiceRepository;
 use PDF;
 use setasign\Fpdi\Fpdi;
 use setasign\Fpdi\PdfParser\StreamReader;
+use Artanis\GapSap\Models\GoldSilverHistory;
 
 /**
  * Customer controlller for the customer basically for the tasks of customers
