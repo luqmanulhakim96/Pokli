@@ -101,7 +101,7 @@ class ProductDataGrid extends DataGrid
                     return 'Null';
                 }
                 else
-                    return '<a href="http://209.97.169.247/storage/' .$value->delivery_attachment. '" download> <img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Smiley face" height="25" width="25"> </a>';
+                    return '<a href="https://pokli.com.my/storage/' .$value->delivery_attachment. '" download> <img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Smiley face" height="25" width="25"> </a>';
             }
         ]);
     }

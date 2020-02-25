@@ -171,7 +171,7 @@ class PurchaseDataGrid extends DataGrid
                 else
                     // return 'http://127.0.0.1:8000/storage/'.$value->payment_attachment;
                     // return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '"> Attachment </a>';
-                    return '<a href="http://209.97.169.247/storage/' .$value->payment_attachment. '" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Smiley face" height="25" width="25"> </a>';
+                    return '<a href="https://pokli.com.my/storage/' .$value->payment_attachment. '" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Smiley face" height="25" width="25"> </a>';
             }
         ]);
 
