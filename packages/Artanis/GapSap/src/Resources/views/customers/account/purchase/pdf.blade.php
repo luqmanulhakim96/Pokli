@@ -177,7 +177,7 @@
                 <h2>Pokli Wealth Management Sdn Bhd (1349069-M)</h2>
                 <pre style="font-size: 10px">
                 Wisma Pokli,101A- 1 Avenue,Jalan S2F2,Garden Homes, Seremban 270300 Seremban, Negeri Sembilan
-                Tel : +6066307797
+                Tel : +6019-664 5066
                 Email : admin@pokli.com
                 Website : www.pokli.com.my
                 </pre>
@@ -209,7 +209,7 @@
 
                 <br/>
 
-                Ordered By:
+                Ordered By: {{ auth()->guard('admin')->user()->name }}
                 Payment By: {{ $purchase->payment_method_label }}
 
 
@@ -333,7 +333,7 @@
         <tr style="border-top: 1px solid black;">
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
-                Prepared By: Website
+                Prepared By: {{ auth()->guard('admin')->user()->name }}
             </pre>
             </td>
             <td align="left" style="width: 50%;">
