@@ -245,7 +245,7 @@ class PurchaseController extends Controller
         $balanceSilver = $purchaseSilver-$buybackSilver;
 
 
-        $pdf = PDF::loadView('gapsap::customers.account.purchase.pdf', compact(['purchase']))->setPaper('a4');
+        $pdf = PDF::loadView('gapsap::customers.account.purchase.pdf', compact(['purchase','balanceGold','balanceSilver']))->setPaper('a4');
 
         return $pdf->download('admin-' . $invoice->created_at->format('d-m-Y') . '.pdf');
     }
