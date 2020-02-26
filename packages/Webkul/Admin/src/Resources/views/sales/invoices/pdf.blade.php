@@ -264,7 +264,7 @@
             <td align="center" style="width: 30%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $item->qty }}</b></pre>
             </td>
-            <td align="center" style="width: 30%;border: 1px solid black;">
+            <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{$item->base_total }}</b></pre>
             </td>
         </tr>
@@ -272,14 +272,14 @@
         <tr>
             <td colspan="3" style="border: 1px solid white; border-right:1px solid black;"></td>
             <td style="border: 1px solid black;border-right:0px  white;">
-            <pre style="font-size: 10px">
-            <b>Grand Total :</b>
-            </pre>
+              <pre style="font-size: 10px">
+              <b>Grand Total :</b>
+              </pre>
             </td>
             <td style="border: 1px solid black;border-left:0px  white;">
-            <pre style="font-size: 10px">
-            <b>RM {{ $item->base_total + $item->base_tax_amount }}</b>
-            </pre>
+              <pre style="font-size: 10px">
+              <b>RM {{ $item->base_total + $item->base_tax_amount }}</b>
+              </pre>
             </td>
         </tr>
     </table>
