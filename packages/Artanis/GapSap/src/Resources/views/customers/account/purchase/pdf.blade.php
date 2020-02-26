@@ -210,7 +210,6 @@
                 <br/>
 
                 Ordered By: {{ auth()->guard('admin')->user()->name }}
-                Payment By: {{ $purchase->payment_method_label }}
 
 
                 </pre>
@@ -223,7 +222,7 @@
 <div class="information">
     <table width="100%" class="" style="margin-left:30px;">
         <tr style="width: 5%;border: 1px solid white;">
-            <td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'MY Uncang Perak (Au 999.9)' }}</b></td>
+            <td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'PWM – MY Uncang Perak (Au 999.9)' }}</b></td>
         </tr>
         <tr style="width: 5%;border: 1px solid white;">
             <td colspan="6">#Remark:</td>
