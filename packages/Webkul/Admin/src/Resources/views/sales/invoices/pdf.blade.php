@@ -201,7 +201,7 @@
                 {{ $invoice->order->customer->ic }}
                 {{ $invoice->order->customer->phone }}
                 {{ $invoice->order->customer->email }}
-                <br /><br />
+
                 {{ $invoice->order->billing_address->address1 }}
                 {{ $invoice->order->billing_address->city }}, {{ $invoice->order->billing_address->state }}
                 </pre>
@@ -223,14 +223,14 @@
 </div>
 
 <div class="information">
-    <table width="100%" class="" style="margin-left:30px;">
+    <!-- <table width="100%" class="" style="margin-left:30px;">
         <tr style="width: 5%;border: 1px solid white;">
 
         </tr>
         <tr style="width: 5%;border: 1px solid white;">
-            <!-- <td colspan="6">#Remark:</td> -->
+            <td colspan="6">#Remark:</td>
         </tr>
-    </table>
+    </table> -->
     <table width="100%" class="table-custom">
         <tr>
             <td align="center" style="width: 10%;border: 1px solid black;">
@@ -246,7 +246,7 @@
                 Quantity
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-                Total Amout
+                Total Amout (RM)
             </td>
         </tr>
         @foreach ($invoice->items as $item)
@@ -258,13 +258,13 @@
             <pre style="font-size: 10px"><b> {{ $item->name }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b> </b></pre>
+            <pre style="font-size: 10px"><b></b></pre>
             </td>
             <td align="center" style="width: 30%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $item->qty }}</b></pre>
             </td>
             <td align="center" style="width: 30%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ core()->formatBasePrice($item->base_total) }}</b></pre>
+            <pre style="font-size: 10px"><b>{{$item->base_total }}</b></pre>
             </td>
         </tr>
         @endforeach
@@ -277,7 +277,7 @@
             </td>
             <td style="border: 1px solid black;border-left:0px  white;">
             <pre style="font-size: 10px">
-            <b>{{ core()->formatBasePrice($item->base_total + $item->base_tax_amount) }}</b>
+            <b>{{ $item->base_total + $item->base_tax_amount }}</b>
             </pre>
             </td>
         </tr>
