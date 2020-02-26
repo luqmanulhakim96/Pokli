@@ -108,7 +108,7 @@ class BuybackController extends Controller
      */
     public function edit()
     {
-        
+
     }
 
     /**
@@ -155,14 +155,14 @@ class BuybackController extends Controller
         $silver_price = 274;
 
         $input = $request->all();
-        
+
         return view($this->_config['view'], compact(['customer', 'input','gold_price','silver_price']));
     }
 
     public function formSubmit(Request $request)
     {
 
-        
+
         $input = $request->all();
         // dd($input);
         date_default_timezone_set("Asia/Kuala_Lumpur");
@@ -215,7 +215,21 @@ class BuybackController extends Controller
     {
         $invoice = $this->purchaseRepository->findOrFail($id);
         $purchase = $this->purchaseRepository->findOrFail($id);
-        $pdf = PDF::loadView('gapsap::customers.account.buyback.pdf', compact(['purchase']))->setPaper('a4');
+
+        #calculate balance gold
+        $purchaseGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $buybackGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+
+        $balanceGold =  $purchaseGold-$buybackGold;
+
+        #calculate balance silver
+        $purchaseSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $buybackSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+
+        $balanceSilver = $purchaseSilver-$buybackSilver;
+
+
+        $pdf = PDF::loadView('gapsap::customers.account.buyback.pdf', compact(['purchase','balanceGold','balanceSilver']))->setPaper('a4');
 
         return $pdf->download('invoice-' . $invoice->created_at->format('d-m-Y') . '.pdf');
 
