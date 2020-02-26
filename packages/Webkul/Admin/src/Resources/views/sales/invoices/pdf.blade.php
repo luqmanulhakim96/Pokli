@@ -240,7 +240,7 @@
                 Description
             </td>
             <td align="center" style="width: 10%;border: 1px solid black;">
-                Price
+                Premium
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
                 Quantity
@@ -258,13 +258,13 @@
             <pre style="font-size: 10px"><b> {{ $item->name }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ core()->formatBasePrice($item->base_price) }}</b></pre>
+            <pre style="font-size: 10px"><b>  </b></pre>
             </td>
             <td align="center" style="width: 30%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $item->qty }}</b></pre>
             </td>
             <td align="center" style="width: 30%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ core()->$item->base_total }}</b></pre>
+            <pre style="font-size: 10px"><b>{{ $item->base_total }}</b></pre>
             </td>
         </tr>
         @endforeach
@@ -277,7 +277,7 @@
             </td>
             <td style="border: 1px solid black;border-left:0px  white;">
             <pre style="font-size: 10px">
-            <b>RM {{ core()->$item->base_total + $item->base_tax_amount }}</b>
+            <b>RM{{ $item->base_total + $item->base_tax_amount }}</b>
             </pre>
             </td>
         </tr>
