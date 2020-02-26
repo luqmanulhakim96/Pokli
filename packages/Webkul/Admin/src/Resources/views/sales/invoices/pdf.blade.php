@@ -205,8 +205,6 @@
                 {{ $invoice->order->billing_address->address1 }}
                 {{ $invoice->order->billing_address->city }}
                 {{ $invoice->order->billing_address->state }}
-
-                {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'MY Uncang Perak (Au 999.9)' }}</h3> --}}
                 </pre>
             </td>
             <td align="left" style="width: 40%;">
@@ -228,7 +226,7 @@
 <div class="information">
     <table width="100%" class="" style="margin-left:30px;">
         <tr style="width: 5%;border: 1px solid white;">
-            {{--<td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'PWM – MY Uncang Perak (Au 999.9)' }}</b></td>--}}
+
         </tr>
         <tr style="width: 5%;border: 1px solid white;">
             <td colspan="6">#Remark:</td>
