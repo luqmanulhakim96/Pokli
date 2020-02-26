@@ -200,7 +200,9 @@
                 {{ $purchase->customer->ic }}
                 {{ $purchase->customer->phone }}
                 Email: {{ $purchase->customer->email }}
-
+                <br /><br />
+                Akaun: {{ $purchase->customer->bank_no }}
+                Bank: {{ $purchase->customer->bank_name }}
                 {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
                 </pre>
             </td>
@@ -223,7 +225,7 @@
 <div class="information">
     <table width="100%" class="" style="margin-left:30px;">
         <tr style="width: 5%;border: 1px solid white;">
-            <td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</b></td>
+            <td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'MY Uncang Perak (Au 999.9)' }}</b></td>
         </tr>
         <tr style="width: 5%;border: 1px solid white;">
             <td colspan="6">#Remark:</td>
