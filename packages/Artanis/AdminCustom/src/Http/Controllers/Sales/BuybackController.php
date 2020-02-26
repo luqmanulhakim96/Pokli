@@ -7,7 +7,7 @@ use Artanis\GapSap\Repositories\BuybackRepository;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\OrderItemRepository;
 use Webkul\Sales\Repositories\RefundRepository;
-
+use Artanis\GapSap\Models\GoldSilverHistory;
 /**
  * Sales Refund controller
  *
