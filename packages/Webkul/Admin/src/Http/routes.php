@@ -259,7 +259,7 @@ Route::group(['middleware' => ['web']], function () {
 
                 Route::get('/buyback/print/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\BuybackController@print')->defaults('_config', [
                     'view' => 'admincustom::sales.buyback.invoice.pdf'
-                ])->name('admincustom.sales.purchase.print');
+                ])->name('admincustom.sales.buyback.print');
 
                 // Route::get('/refunds/create/{order_id}', 'Webkul\Admin\Http\Controllers\Sales\RefundController@create')->defaults('_config', [
                 //     'view' => 'admin::sales.refunds.create'
