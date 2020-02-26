@@ -105,7 +105,7 @@
             </td>
             <td align="center" style="width: 5%;"></td>
         </tr>
-        
+
     </table>
 </div>
 
@@ -115,18 +115,18 @@
             <td align="left" style="width: 60%;">
             <pre style="font-size: 10px; margin-left:-20px; margin-top:0px; margin-bottom:0px;">
             BUYBACK FROM: {{ $purchase->customer_full_name }}
-            IC:
+            IC: {{ $purchase->customer->ic }}
             <br/><br/>
-            Akaun:
-            Bank: 
+            Akaun: {{ $purchase->customer->bank_no }}
+            Bank: {{ $purchase->customer->bank_name }}
             <br/><br/>
-            Tel: 012-3969746
-            Fax: 012-3969746
+            Tel: {{ $purchase->customer->phone }}
+            Fax: {{ $purchase->customer->phone }}
             </pre>
             </td>
             <td align="right" style="width: 40%;padding-right:20px;">
             <pre style="font-size: 10px;margin-bottom:0px;">
-            
+
             <br/><br/><br/>
 
             <br/><br/><br/>
@@ -177,14 +177,15 @@
         <tr>
             <td align="left" style="width: 20%;border-right:1px solid black">
             <pre style="font-size: 10px;margin-left:-30px; margin-top: 0px;">
-            Sold By: 
-            {{ $purchase->customer_full_name }}
+            Sold By:
+            {{ auth()->guard('admin')->user()->name }}
+            <!-- {{ $purchase->customer_full_name }} -->
             IC:
             </pre>
             </td>
             <td align="left" style="width: 40%;">
             <pre style="font-size: 10px;margin-left:-30px; margin-top: 0px;">
-            Buyback From: 
+            Buyback From:
             {{ $purchase->customer_full_name }}
             IC:
             </pre>
@@ -195,7 +196,7 @@
             </pre>
             </td>
         </tr>
-        
+
     </table>
 </div>
 

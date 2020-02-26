@@ -132,14 +132,14 @@
                                                 {{ $purchase->customer->bank_no }}
                                             </span>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
 
                             </div>
                         </accordian>
 
-                        <accordian :title="'{{ __('GAP/SAP Information') }}'" :active="true">
+                        <accordian :title="'{{ __('MYUncang Emas/Perak Information') }}'" :active="true">
                             <div slot="body">
 
                                 <div class="sale-section">
@@ -290,6 +290,45 @@
                             </div>
                         </accordian>
 
+                    </div>
+                </tab>
+
+                <tab name="{{ __('shop::app.customer.account.order.view.invoices') }}">
+                    <div class="table" style="padding: 20px 0">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>{{ __('No') }}</th>
+                                    <th>{{ __('Invoice') }}</th>
+                                    <th>{{ __('Date') }}</th>
+                                    <th>{{ __('Customer Name') }}</th>
+                                    <th>{{ __('Status') }}</th>
+                                    <th>{{ __('Amount') }}</th>
+                                    <th>{{ __('admin::app.sales.invoices.action') }}</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (! $purchase->invoice_id)
+                                    <tr>
+                                        <td class="empty" colspan="7">{{ __('admin::app.common.no-result-found') }}</td>
+                                    <tr>
+                                @else
+                                    <tr>
+                                        <td>#{{ $purchase->increment_id }}</td>
+                                        <td>#{{ $purchase->invoice_id }}</td>
+                                        <td>{{ $purchase->created_at }}</td>
+                                        <td>{{ $purchase->customer_full_name }}</td>
+                                        <td>{{ ucfirst($purchase->status) }}</td>
+                                        <td>RM {{ $purchase->amount }}</td>
+                                        <td class="action">
+                                            <a href="{{ route('admincustom.sales.buyback.print', $purchase->id) }}">
+                                                <i class="icon eye-icon"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endif
+                        </table>
                     </div>
                 </tab>
 
