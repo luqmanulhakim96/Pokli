@@ -228,8 +228,8 @@ class BuybackController extends Controller
 
     public function print($id)
     {
-        $invoice = $this->purchaseRepository->findOrFail($id);
-        $purchase = $this->purchaseRepository->findOrFail($id);
+        $invoice = $this->buybackRepository->findOrFail($id);
+        $purchase = $this->buybackRepository->findOrFail($id);
 
         #calculate balance gold
         $purchaseGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
