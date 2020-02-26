@@ -196,13 +196,13 @@
                 Order Number: {{ $purchase->invoice_id }}
                 <br /><br />
                 Date: {{ date('d/m/Y', strtotime($purchase->created_at)) }}
-                Customer: {{ $purchase->customer_full_name }}
+                {{ $purchase->customer_full_name }}
                 {{ $purchase->customer->ic }}
                 {{ $purchase->customer->phone }}
-                Email: {{ $purchase->customer->email }}
+                {{ $purchase->customer->email }}
                 <br /><br />
-                Akaun: {{ $purchase->customer->bank_no }}
                 Bank: {{ $purchase->customer->bank_name }}
+                Account Num: {{ $purchase->customer->bank_no }}
                 {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
                 </pre>
             </td>

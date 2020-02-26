@@ -196,10 +196,10 @@
                 Order Number: {{ $purchase->invoice_id }}
                 <br /><br />
                 Date: {{ date('d/m/Y', strtotime($purchase->created_at)) }}
-                Customer: {{ $purchase->customer_full_name }}
+                {{ $purchase->customer_full_name }}
                 {{ $purchase->customer->ic }}
                 {{ $purchase->customer->phone }}
-                Email: {{ $purchase->customer->email }}
+                {{ $purchase->customer->email }}
 
                 {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'MY Uncang Perak (Au 999.9)' }}</h3> --}}
                 </pre>
@@ -210,6 +210,7 @@
                 <br/>
 
                 Ordered By: {{ auth()->guard('admin')->user()->name }}
+                Payment By: {{ $purchase->payment_method_label }}
 
 
                 </pre>
