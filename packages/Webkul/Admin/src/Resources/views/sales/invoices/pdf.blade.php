@@ -201,7 +201,8 @@
                 {{ $invoice->order->customer->ic }}
                 {{ $invoice->order->customer->phone }}
                 {{ $invoice->order->customer->email }}
-
+                <br /><br />
+                Address:
                 {{ $invoice->order->billing_address->address1 }}
                 {{ $invoice->order->billing_address->city }}, {{ $invoice->order->billing_address->state }}
                 </pre>
@@ -277,7 +278,7 @@
             </td>
             <td style="border: 1px solid black;border-left:0px  white;">
             <pre style="font-size: 10px">
-            <b>{{ $item->base_total + $item->base_tax_amount }}</b>
+            <b>RM {{ $item->base_total + $item->base_tax_amount }}</b>
             </pre>
             </td>
         </tr>
