@@ -252,25 +252,25 @@
         </tr>
         @foreach ($invoice->items as $item)
         <tr>
-            <td align="center" style="width: 10%;border: 1px solid black;">
+            <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $item->getTypeInstance()->getOrderedItem($item)->sku }}</b></pre>
             </td>
-            <td align="center" style="width: 40%;border: 1px solid black;">
+            <td align="center" style="width: 50%;border: 1px solid black;">
             <pre style="font-size: 10px"><b> {{ $item->name }}</b></pre>
             </td>
-            <td align="center" style="width: 10%;border: 1px solid black;">
+            <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ core()->formatBasePrice($item->base_price) }}</b></pre>
             </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
+            <td align="center" style="width: 30%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $item->qty }}</b></pre>
             </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
+            <td align="center" style="width: 30%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ core()->formatBasePrice($item->base_total) }}</b></pre>
             </td>
         </tr>
         @endforeach
         <tr>
-            <td colspan="5" style="border: 1px solid white; border-right:1px solid black;"></td>
+            <td colspan="3" style="border: 1px solid white; border-right:1px solid black;"></td>
             <td style="border: 1px solid black;border-right:0px  white;">
             <pre style="font-size: 10px">
             <b>Grand Total :</b>
@@ -308,11 +308,9 @@
                 <br /><br />
                 Disclaimer:
                 <br /><br />
-                1. PWM – Gold Purchase Progam is neither a financial product nor a deposit but a method of purchasing gold through periodic
-                accumulations for the personal needs of the customer.
-                2. Pokli Wealth Management Sdn Bhd. (Pokli) does not offer any investment advice or promises/forecasts any assured return
+                1. Pokli Wealth Management Sdn Bhd. (Pokli) does not offer any investment advice or promises/forecasts any assured return
                 through this program while promoting the product.
-                3. Pokli management reserves the right to amend the terms and conditions without prior notice.
+                2. Pokli management reserves the right to amend the terms and conditions without prior notice.
                 </pre>
             </td>
         </tr>
