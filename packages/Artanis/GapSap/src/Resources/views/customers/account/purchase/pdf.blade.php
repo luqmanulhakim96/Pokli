@@ -201,7 +201,7 @@
                 {{ $purchase->customer->phone }}
                 Email: {{ $purchase->customer->email }}
 
-                {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
+                {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'MY Uncang Perak (Au 999.9)' }}</h3> --}}
                 </pre>
             </td>
             <td align="left" style="width: 40%;">
