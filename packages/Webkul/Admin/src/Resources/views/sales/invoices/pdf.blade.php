@@ -255,7 +255,7 @@
             <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $item->getTypeInstance()->getOrderedItem($item)->sku }}</b></pre>
             </td>
-            <td align="center" style="width: 50%;border: 1px solid black;">
+            <td align="center" style="width: 40%;border: 1px solid black;">
             <pre style="font-size: 10px"><b> {{ $item->name }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
