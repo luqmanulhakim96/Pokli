@@ -212,7 +212,6 @@
                 <br/>
 
                 Ordered By: {{ auth()->guard('admin')->user()->name }}
-                Payment By: {{ $purchase->payment_method_label }}
 
 
                 </pre>
