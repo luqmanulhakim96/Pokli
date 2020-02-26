@@ -201,10 +201,9 @@
                 {{ $invoice->order->customer->ic }}
                 {{ $invoice->order->customer->phone }}
                 {{ $invoice->order->customer->email }}
-
+                <br /><br />
                 {{ $invoice->order->billing_address->address1 }}
-                {{ $invoice->order->billing_address->city }}
-                {{ $invoice->order->billing_address->state }}
+                {{ $invoice->order->billing_address->city }}, {{ $invoice->order->billing_address->state }}
                 </pre>
             </td>
             <td align="left" style="width: 40%;">
@@ -229,7 +228,7 @@
 
         </tr>
         <tr style="width: 5%;border: 1px solid white;">
-            <td colspan="6">#Remark:</td>
+            <!-- <td colspan="6">#Remark:</td> -->
         </tr>
     </table>
     <table width="100%" class="table-custom">
@@ -265,7 +264,7 @@
             <pre style="font-size: 10px"><b>{{ $item->qty }}</b></pre>
             </td>
             <td align="center" style="width: 30%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ core()->formatBasePrice($item->base_total) }}</b></pre>
+            <pre style="font-size: 10px"><b>{{ core()->$item->base_total }}</b></pre>
             </td>
         </tr>
         @endforeach
@@ -278,7 +277,7 @@
             </td>
             <td style="border: 1px solid black;border-left:0px  white;">
             <pre style="font-size: 10px">
-            <b>RM {{ core()->formatBasePrice($item->base_total + $item->base_tax_amount) }}</b>
+            <b>RM {{ core()->$item->base_total + $item->base_tax_amount }}</b>
             </pre>
             </td>
         </tr>
