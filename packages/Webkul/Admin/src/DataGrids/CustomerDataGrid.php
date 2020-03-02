@@ -134,7 +134,7 @@ class CustomerDataGrid extends DataGrid
         $this->addColumn([
             'index' => 'status',
             'label' => trans('admin::app.datagrid.status'),
-            'type' => 'boolean',
+            'type' => 'string',
             'searchable' => false,
             'sortable' => true,
             'filterable' => true,
