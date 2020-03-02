@@ -109,7 +109,7 @@ class ProductSerialNumberController extends Controller
 
         $categories = $this->categoryRepository->getCategoryTree();
 
-        $inventorySources = $this->inventorySourceRepository->findOrFail($id);
+        // $inventorySources = $this->inventorySourceRepository->findOrFail($id);
         $product_id = $id;
         $inventory = DB::table('product_inventories')->where('product_id', $id)->sum('qty');
         $existing_serial = DB::table('product_serial_number')->where('product_id', $id)->count('status');
