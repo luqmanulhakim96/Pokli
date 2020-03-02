@@ -47,7 +47,7 @@ class CustomerDataGrid extends DataGrid
         //         ->get();
         // dd(DB::getQueryLog());
         // dd($gold);
-        
+
 
         $queryBuilder = DB::table('customers')
                 ->leftJoin('customer_groups', 'customers.customer_group_id', '=', 'customer_groups.id')
@@ -140,9 +140,9 @@ class CustomerDataGrid extends DataGrid
             'filterable' => true,
             'wrapper' => function ($row) {
                 if ($row->status == 1) {
-                    return 'Activated';
+                    return '<span class="badge badge-md badge-success">Activated</span>';
                 } else {
-                    return 'Blocked';
+                    return '<span class="badge badge-md badge-danger">Deactivate</span>';
                 }
             }
         ]);

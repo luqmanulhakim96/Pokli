@@ -14,7 +14,7 @@ return [
         'title' => 'Money Transfer',
         'description' => 'shop::app.checkout.onepage.money-desc',
         'class' => 'Webkul\Payment\Payment\MoneyTransfer',
-        'active' => true,
+        'active' => false,
         'sort' => 2
     ],
 
@@ -42,7 +42,7 @@ return [
     'easy_payment_purchase_four_months' => [
         'code' => 'easy_payment_purchase_four_months',
         'title' => 'Easy Payment Purchase',
-        'description' => 'EPP - 4 months',
+        'description' => 'EPP - 4 Months',
         'class' => 'Artanis\BillPlz\Payment\EasyPaymentPurchaseFourMonths',
         'active' => true,
         'sort' => 5
@@ -51,7 +51,7 @@ return [
     'easy_payment_purchase_ten_months' => [
         'code' => 'easy_payment_purchase_ten_months',
         'title' => 'Easy Payment Purchase',
-        'description' => 'EPP - 10 months',
+        'description' => 'EPP - 10 Months',
         'class' => 'Artanis\BillPlz\Payment\EasyPaymentPurchaseTenMonths',
         'active' => true,
         'sort' => 6
