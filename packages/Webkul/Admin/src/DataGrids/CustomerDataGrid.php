@@ -137,6 +137,7 @@ class CustomerDataGrid extends DataGrid
             'type' => 'string',
             'searchable' => false,
             'sortable' => true,
+            'closure' => true,
             'filterable' => true,
             'wrapper' => function ($row) {
                 if ($row->status == 1) {
