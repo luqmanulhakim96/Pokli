@@ -251,7 +251,7 @@
                 Total Weight (Gram)
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-                Total Amout (RM)
+                Total Amount (RM)
             </td>
         </tr>
         <tr>

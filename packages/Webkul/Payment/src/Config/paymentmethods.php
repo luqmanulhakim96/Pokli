@@ -37,6 +37,24 @@ return [
         'sandbox' => true,
         'active' => true,
         'sort' => 4
+    ],
+
+    'easy_payment_purchase_four_months' => [
+        'code' => 'easy_payment_purchase_four_months',
+        'title' => 'Easy Payment Purchase',
+        'description' => 'EPP - 4 months',
+        'class' => 'Artanis\BillPlz\Payment\EasyPaymentPurchaseFourMonths',
+        'active' => true,
+        'sort' => 5
+    ],
+
+    'easy_payment_purchase_ten_months' => [
+        'code' => 'easy_payment_purchase_ten_months',
+        'title' => 'Easy Payment Purchase',
+        'description' => 'EPP - 10 months',
+        'class' => 'Artanis\BillPlz\Payment\EasyPaymentPurchaseTenMonths',
+        'active' => true,
+        'sort' => 6
     ]
 
 ];

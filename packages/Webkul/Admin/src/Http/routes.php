@@ -305,6 +305,25 @@ Route::group(['middleware' => ['web']], function () {
 
                 Route::post('/delivery-order/delete/{id}', 'Artanis\AdminCustom2\Http\Controllers\AdminCustom2Controller@destroy')->name('admincustom2.catalog.products.delete');
 
+                //Product Serial Number Routes
+                Route::get('/serial-number/{id}', 'Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController@index')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.serial.index'
+                ])->name('admincustom2.catalog.serial.index');
+
+                Route::get('/serial-number/create/{id}', 'Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController@create')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.serial.create'
+                ])->name('admincustom2.catalog.serial.create');
+
+                Route::get('/serial-number/edit/{id}', 'Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController@edit')->defaults('_config', [
+                    'view' => 'admadmincustom2in::catalog.serial.edit'
+                ])->name('admincustom2.catalog.serial.edit');
+
+                Route::post('/serial-number/form-submit', 'Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController@formSubmit')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.serial.form.submit'
+                ])->name('admincustom2.catalog.serial.form-submit');
+
+                Route::post('/serial-number/delete/{id}', 'Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController@destroy')->name('admincustom2.catalog.serial.delete');
+                
                 // Catalog Product Routes
                 Route::get('/products', 'Webkul\Product\Http\Controllers\ProductController@index')->defaults('_config', [
                     'view' => 'admin::catalog.products.index'

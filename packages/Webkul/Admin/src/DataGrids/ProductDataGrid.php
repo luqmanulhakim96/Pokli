@@ -17,7 +17,7 @@ class ProductDataGrid extends DataGrid
 
     protected $index = 'product_id';
 
-    protected $itemsPerPage = 20;
+    protected $itemsPerPage = 10;
 
     public function prepareQueryBuilder()
     {
@@ -25,7 +25,7 @@ class ProductDataGrid extends DataGrid
         ->leftJoin('products', 'product_flat.product_id', '=', 'products.id')
         ->leftJoin('attribute_families', 'products.attribute_family_id', '=', 'attribute_families.id')
         ->leftJoin('product_inventories', 'product_flat.product_id', '=', 'product_inventories.product_id')
-        ->select('product_flat.product_id as product_id', 'product_flat.sku as product_sku', 'product_flat.name as product_name', 'products.type as product_type', 'product_flat.status', 'product_flat.price', 'attribute_families.name as attribute_family', DB::raw('SUM(product_inventories.qty) as quantity'))
+        ->select('product_flat.product_id as product_id', 'product_flat.sku as product_sku', 'product_flat.name as product_name', 'products.type as product_type', 'product_flat.status', 'product_flat.price', 'attribute_families.name as attribute_family', DB::raw('SUM(' . DB::getTablePrefix() . 'product_inventories.qty) as quantity'))
         ->where('channel', core()->getCurrentChannelCode())
         ->where('locale', app()->getLocale())
         ->groupBy('product_flat.product_id');
@@ -34,8 +34,8 @@ class ProductDataGrid extends DataGrid
         $this->addFilter('product_name', 'product_flat.name');
         $this->addFilter('product_sku', 'product_flat.sku');
         $this->addFilter('status', 'product_flat.status');
-        $this->addFilter('product_type', 'products.type');
-        $this->addFilter('attribute_family', 'attribute_families.name');
+        // $this->addFilter('product_type', 'products.type');
+        // $this->addFilter('attribute_family', 'attribute_families.name');
 
         $this->setQueryBuilder($queryBuilder);
     }
@@ -69,23 +69,23 @@ class ProductDataGrid extends DataGrid
             'filterable' => true
         ]);
 
-        $this->addColumn([
-            'index' => 'attribute_family',
-            'label' => trans('admin::app.datagrid.attribute-family'),
-            'type' => 'string',
-            'searchable' => true,
-            'sortable' => true,
-            'filterable' => true
-        ]);
+        // $this->addColumn([
+        //     'index' => 'attribute_family',
+        //     'label' => trans('admin::app.datagrid.attribute-family'),
+        //     'type' => 'string',
+        //     'searchable' => true,
+        //     'sortable' => true,
+        //     'filterable' => true
+        // ]);
 
-        $this->addColumn([
-            'index' => 'product_type',
-            'label' => trans('admin::app.datagrid.type'),
-            'type' => 'string',
-            'sortable' => true,
-            'searchable' => true,
-            'filterable' => true
-        ]);
+        // $this->addColumn([
+        //     'index' => 'product_type',
+        //     'label' => trans('admin::app.datagrid.type'),
+        //     'type' => 'string',
+        //     'sortable' => true,
+        //     'searchable' => true,
+        //     'filterable' => true
+        // ]);
 
         $this->addColumn([
             'index' => 'status',
@@ -129,6 +129,16 @@ class ProductDataGrid extends DataGrid
 
     public function prepareActions() {
         $this->addAction([
+            'title' => 'Serial Number',
+            'condition' => function() {
+                return true;
+            },
+            'method' => 'GET', // use GET request only for redirect purposes
+            'route' => 'admincustom2.catalog.serial.index',
+            'icon' => 'icon eye-icon'
+        ]);
+
+        $this->addAction([
             'title' => 'Edit Product',
             'condition' => function() {
                 return true;
@@ -152,7 +162,7 @@ class ProductDataGrid extends DataGrid
     public function prepareMassActions() {
         $this->addMassAction([
             'type' => 'delete',
-            'label' => 'Delete',            
+            'label' => 'Delete',
             'action' => route('admin.catalog.products.massdelete'),
             'method' => 'DELETE'
         ]);
