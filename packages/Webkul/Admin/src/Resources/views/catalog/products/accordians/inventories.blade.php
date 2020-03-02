@@ -19,19 +19,40 @@
                 $qty = old('inventories[' . $inventorySource->id . ']') ?: $qty;
 
             ?>
-            <div class="control-group" :class="[errors.has('inventories[{{ $inventorySource->id }}]') ? 'has-error' : '']">
-                <label>{{ $inventorySource->name }}</label>
-
-                <input type="text" v-validate="'numeric|min:0'" name="inventories[{{ $inventorySource->id }}]" class="control" value="{{ $qty }}" data-vv-as="&quot;{{ $inventorySource->name }}&quot;"/>
-                
-                <span class="control-error" v-if="errors.has('inventories[{{ $inventorySource->id }}]')">@{{ errors.first('inventories[{!! $inventorySource->id !!}]') }}</span>
+            <div class="control-group">
+                <label>Current Stocks</label>
+                <input id="inventory1" type="number" name="inventories1[{{ $inventorySource->id }}]" class="control" value="{{ $qty }}" data-vv-as="&quot;{{ $inventorySource->name }}&quot;" readonly/>
             </div>
-        
+
+            <div class="control-group" :class="[errors.has('inventories2[{{ $inventorySource->id }}]') ? 'has-error' : '']">
+                <label>Add New Stocks</label>
+
+                <input id="inventory2" type="number" v-validate="'numeric|min:0'" name="inventories2[{{ $inventorySource->id }}]" class="control" value="" data-vv-as="&quot;New Stock&quot;" onchange="add()"/>
+
+                <span class="control-error" v-if="errors.has('inventories2[{{ $inventorySource->id }}]')">Negative value is not acceptable</span>
+            </div>
+
+            <div class="control-group">
+                <label>Updated Stocks</label>
+                <input id="inventory3" type="number" name="inventories[{{ $inventorySource->id }}]" class="control" value="" data-vv-as="&quot;{{ $inventorySource->name }}&quot;" readonly/>
+            </div>
+
         @endforeach
 
         {!! view_render_event('bagisto.admin.catalog.product.edit_form_accordian.inventories.controls.after', ['product' => $product]) !!}
 
     </div>
+
+    <script>
+      function add() {
+        var a,b,c;
+        a=Number(document.getElementById("inventory1").value);
+        b=Number(document.getElementById("inventory2").value);
+        c= a + b;
+        document.getElementById("inventory3").value= c;
+      }
+    </script>
+    
 </accordian>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit_form_accordian.inventories.after', ['product' => $product]) !!}
