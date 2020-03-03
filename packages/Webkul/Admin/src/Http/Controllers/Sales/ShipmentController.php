@@ -216,7 +216,16 @@ class ShipmentController extends Controller
     public function view($id)
     {
         $shipment = $this->shipmentRepository->findOrFail($id);
+        $order = $shipment['order_id'];
+        // dd($order);
+        // dd($shipment);
+        // foreach ($order->items as $item){
+        //   $product=$item->product_id;
+          $where = ['order_id' => $order];
+          $serial_number= DB::table('product_serial_number')->where($where)->get();
+          // dd($serial_number);
+        // }
 
-        return view($this->_config['view'], compact('shipment'));
+        return view($this->_config['view'], compact('shipment','serial_number'));
     }
 }

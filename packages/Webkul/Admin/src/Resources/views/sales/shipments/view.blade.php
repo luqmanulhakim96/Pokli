@@ -241,6 +241,7 @@
                                         <th>{{ __('admin::app.sales.orders.SKU') }}</th>
                                         <th>{{ __('admin::app.sales.orders.product-name') }}</th>
                                         <th>{{ __('admin::app.sales.orders.qty') }}</th>
+                                        <th>Serial Number</th>
                                     </tr>
                                 </thead>
 
@@ -254,7 +255,7 @@
 
                                                 @if (isset($item->additional['attributes']))
                                                     <div class="item-options">
-                                                        
+
                                                         @foreach ($item->additional['attributes'] as $attribute)
                                                             <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
                                                         @endforeach
@@ -263,6 +264,28 @@
                                                 @endif
                                             </td>
                                             <td>{{ $item->qty }}</td>
+                                            <td>
+                                              <table>
+                                                  <thead>
+                                                      <tr>
+                                                          <th>Item</th>
+                                                          <th>Date Out</th>
+                                                      </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    @foreach($serial_number as $key => $data)
+                                                      <tr>
+                                                        <td>
+                                                          {{ $data->serial_number }}
+                                                        </td>
+                                                        <td>
+                                                          {{ $data->created_at }}
+                                                        </td>
+                                                      </tr>
+                                                    @endforeach
+                                                  </tbody>
+                                              </table>
+                                            </td>
                                         </tr>
                                     @endforeach
 

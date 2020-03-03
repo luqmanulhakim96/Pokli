@@ -290,7 +290,7 @@
                                 <td>{{ $item->qty_ordered }}</td>
                                 <td>{{ $item->qty_to_ship }}</td>
                                 <td>
-                                  <table>
+                                <table>
                                       <thead>
                                           <tr>
                                               <th>Item Serial Number</th>
