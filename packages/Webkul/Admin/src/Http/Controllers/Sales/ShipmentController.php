@@ -88,13 +88,22 @@ class ShipmentController extends Controller
     {
         $order = $this->orderRepository->findOrFail($orderId);
 
+        // start here luqman
+        foreach ($order->items as $item){
+          $product=$item->product_id;
+          $where = ['product_id' => $product, 'status' => 'Available'];
+          $serial_number= DB::table('product_serial_number')->where($where)->get();
+        }
+        // dd($serial_number);
+        // end here luqman
+
         if (! $order->channel || !$order->canShip()) {
             session()->flash('error', trans('admin::app.sales.shipments.creation-error'));
 
             return redirect()->back();
         }
 
-        return view($this->_config['view'], compact('order'));
+        return view($this->_config['view'], compact('order','serial_number'));
     }
 
     /**
@@ -121,6 +130,15 @@ class ShipmentController extends Controller
         ]);
 
         $data = request()->all();
+
+        for ($i=0; $i < $data['quantity_shipped'] ; $i++) {
+          $serial_number = $data['serial_number'.$i];
+          $update_order_id = DB::table('product_serial_number')->where('id', '=',$serial_number)->update(['order_id' => $orderId, 'status'=>"Sold"]);
+          // dd($update_order_id);
+          // $serial_number = request()->serial_number.$i;
+          // dd($data['serial_number'.$i]);
+          // dd($orderId);
+        }
 
         if (! $this->isInventoryValidate($data)) {
             session()->flash('error', trans('admin::app.sales.shipments.quantity-invalid'));

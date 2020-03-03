@@ -279,7 +279,7 @@
 
                                     @if (isset($item->additional['attributes']))
                                         <div class="item-options">
-                                            
+
                                             @foreach ($item->additional['attributes'] as $attribute)
                                                 <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
                                             @endforeach
@@ -290,7 +290,37 @@
                                 <td>{{ $item->qty_ordered }}</td>
                                 <td>{{ $item->qty_to_ship }}</td>
                                 <td>
+                                  <table>
+                                      <thead>
+                                          <tr>
+                                              <th>Item Serial Number</th>
+                                          </tr>
+                                      </thead>
 
+                                      <tbody>
+                                        @for($i=0; $i < $item->qty_ordered; $i++)
+                                        <!-- $item->qty_ordered -->
+                                          <tr>
+                                            <td>
+                                              <input type="hidden" value="{{$item->qty_ordered}}" name="quantity_shipped"/>
+                                              <div class="control-group" :class="[errors.has('serial_number{{$i}}') ? 'has-error' : '']">
+                                                  <!-- <label for="serial_number" class="required">Product Serial Number</label> -->
+                                                  <select class="control" v-validate="'required'" id="type" name="serial_number{{$i}}" data-vv-as="&quot; serial_number &quot;" :disabled="source != '{{ $inventorySource->id }}'">
+
+                                                      @foreach($serial_number as $key => $data)
+                                                          <option value="{{ $data->id }}" {{ request()->input('id') == $key ? 'selected' : '' }}>
+                                                              {{ $data->serial_number }}
+                                                          </option>
+                                                      @endforeach
+
+                                                  </select>
+                                                  <span class="control-error" v-if="errors.has('serial_number{{$i}}')">Please choose a product</span>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                        @endfor
+                                      </tbody>
+                                  </table>
                                     <table>
                                         <thead>
                                             <tr>
@@ -324,7 +354,7 @@
 
                                                         <div class="control-group" :class="[errors.has('{{ $inputName }}') ? 'has-error' : '']">
 
-                                                            <input type="text" v-validate="'required|numeric|min_value:0|max_value:{{$sourceQty}}'" class="control" id="{{ $inputName }}" name="{{ $inputName }}" value="0" data-vv-as="&quot;{{ __('admin::app.sales.shipments.qty-to-ship') }}&quot;" :disabled="source != '{{ $inventorySource->id }}'"/>
+                                                            <input type="number" v-validate="'required|numeric|min_value:0|max_value:{{$sourceQty}}'" class="control" id="{{ $inputName }}" name="{{ $inputName }}" value="{{ $sourceQty }}" data-vv-as="&quot;{{ __('admin::app.sales.shipments.qty-to-ship') }}&quot;" :disabled="source != '{{ $inventorySource->id }}'"/>
 
                                                             <span class="control-error" v-if="errors.has('{{ $inputName }}')">
                                                                 @verbatim
