@@ -27,14 +27,14 @@
             <div class="control-group" :class="[errors.has('inventories2[{{ $inventorySource->id }}]') ? 'has-error' : '']">
                 <label>Add New Stocks</label>
 
-                <input id="inventory2" type="number" v-validate="'numeric|min:0'" name="inventories2[{{ $inventorySource->id }}]" class="control" value="" data-vv-as="&quot;New Stock&quot;" onchange="add()"/>
+                <input id="inventory2" type="number" v-validate="'numeric|min:0'" name="inventories2[{{ $inventorySource->id }}]" class="control" value="0" data-vv-as="&quot;New Stock&quot;" onchange="add()"/>
 
                 <span class="control-error" v-if="errors.has('inventories2[{{ $inventorySource->id }}]')">Negative value is not acceptable</span>
             </div>
 
             <div class="control-group">
                 <label>Updated Stocks</label>
-                <input id="inventory3" type="number" name="inventories[{{ $inventorySource->id }}]" class="control" value="" data-vv-as="&quot;{{ $inventorySource->name }}&quot;" readonly/>
+                <input id="inventory3" type="number" name="inventories[{{ $inventorySource->id }}]" class="control" value="0" data-vv-as="&quot;{{ $inventorySource->name }}&quot;" readonly/>
             </div>
 
         @endforeach
@@ -52,7 +52,7 @@
         document.getElementById("inventory3").value= c;
       }
     </script>
-    
+
 </accordian>
 
 {!! view_render_event('bagisto.admin.catalog.product.edit_form_accordian.inventories.after', ['product' => $product]) !!}

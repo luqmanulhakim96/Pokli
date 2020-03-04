@@ -3,6 +3,8 @@
 namespace Artanis\AdminCustom2\DataGrids;
 use Artanis\AdminCustom2\Models\ProductSerialNumber;
 use Webkul\Ui\DataGrid\DataGrid;
+use Illuminate\Database\Eloquent\Model;
+use \stdClass;
 // use Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController;
 use DB;
 
@@ -18,6 +20,12 @@ class ProductSerialNumberDataGrid extends DataGrid
     public function prepareQueryBuilder()
     {
         // $product_id = ProductSerialNumberController::getID();
+        // ->leftJoin('products', function($leftJoin) {
+        //     $leftJoin->on('products.id', '=', 'product_serial_number.product_id');
+        // })
+        // ->leftJoin('product_flat', function($leftJoin2) {
+        //     $leftJoin2->on('product_flat.product_id', '=', 'product_serial_number.product_id');
+        // })
         $queryBuilder = DB::table('product_serial_number')
                 ->leftJoin('products', function($leftJoin) {
                     $leftJoin->on('products.id', '=', 'product_serial_number.product_id');
@@ -25,9 +33,15 @@ class ProductSerialNumberDataGrid extends DataGrid
                 ->leftJoin('product_flat', function($leftJoin2) {
                     $leftJoin2->on('product_flat.product_id', '=', 'product_serial_number.product_id');
                 })
+                ->leftJoin('orders', function($leftJoin3) {
+                    $leftJoin3->on('product_serial_number.order_id', '=', 'orders.id');
+                })
+                ->leftJoin('shipments', function($leftJoin4) {
+                    $leftJoin4->on('product_serial_number.order_id', '=', 'shipments.order_id');
+                })
                 ->addSelect('product_flat.id as product_id' , 'product_flat.sku as product_sku', 'product_flat.name as product_name',
                             'product_serial_number.serial_number as serial_number', 'product_serial_number.status as status', 'product_serial_number.id as id',
-                            'product_serial_number.created_at as created_at');
+                            'product_serial_number.created_at as created_at', 'shipments.created_at as item_out');
                 // ->where('product_flat.id', $product_id);
 
         // $this->addFilter('product_sku', 'product_flat.product_sku');
@@ -85,12 +99,28 @@ class ProductSerialNumberDataGrid extends DataGrid
             'type' => 'string',
             'searchable' => true,
             'sortable' => true,
-            'filterable' => true
+            'closure' => true,
+            'filterable' => true,
+            'wrapper' => function ($value) {
+                if ($value->status == 'Available')
+                    return '<span class="badge badge-md badge-success">Available</span>';
+                else
+                    return '<span class="badge badge-md badge-danger">Sold</span>';
+            }
         ]);
 
         $this->addColumn([
             'index' => 'created_at',
-            'label' => 'Date Created',
+            'label' => 'Date Item In',
+            'type' => 'string',
+            'searchable' => false,
+            'sortable' => true,
+            'filterable' => true
+        ]);
+
+        $this->addColumn([
+            'index' => 'item_out',
+            'label' => 'Date Item Out',
             'type' => 'string',
             'searchable' => false,
             'sortable' => true,
