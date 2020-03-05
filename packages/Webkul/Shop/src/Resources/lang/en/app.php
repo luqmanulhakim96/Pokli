@@ -208,8 +208,8 @@ return [
                 'password' => 'Password',
                 'cpassword' => 'Confirm Password',
                 'submit' => 'Update Profile',
-                'upline-name' => 'Upline Name',
-                'upline-email' => 'Upline Email',
+                'upline-name' => 'Introducer Name',
+                'upline-email' => 'Introducer Email',
                 'referral' => 'Referral',
 
                 'edit-profile' => [
