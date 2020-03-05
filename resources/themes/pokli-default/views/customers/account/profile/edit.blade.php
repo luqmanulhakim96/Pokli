@@ -62,7 +62,7 @@
 
                     <div class="control-group" :class="[errors.has('job_description') ? 'has-error' : '']">
                         <label for="phone" class="">{{ __('shop::app.customer.account.profile.phone') }}</label>
-                        <input type="text" class="control" name="phone_no" v-validate="'numeric'" value="{{ old('phone') ?? $customer->phone_no }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.phone') }}&quot;">
+                        <input type="text" class="control" name="phone_no" v-validate="'numeric'" value="{{ old('phone') ?? $customer->phone }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.phone') }}&quot;">
                         <span class="control-error" v-if="errors.has('phone')">@{{ errors.first('phone') }}</span>
                     </div>
 
