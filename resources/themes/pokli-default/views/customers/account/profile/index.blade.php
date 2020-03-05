@@ -27,86 +27,86 @@
 
          {!! view_render_event('bagisto.shop.customers.account.profile.view.before', ['customer' => $customer]) !!}
 
-        <div class="account-table-content" style="width: 50%;">
+        <div class="account-table-content">
             <table style="color: #5E5E5E;">
                 <tbody>
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.fname') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.fname') }}</td></b>
                         <td>{{ $customer->first_name ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.lname') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.lname') }}</td></b>
                         <td>{{ $customer->last_name ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.gender') }}</td>
+                      <b>  <td>{{ __('shop::app.customer.account.profile.gender') }}</td></b>
                         <td>{{ $customer->gender ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.dob') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.dob') }}</td></b>
                         <td>{{ $customer->date_of_birth ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.email') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.email') }}</td></b>
                         <td>{{ $customer->email ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.phone') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.phone') }}</td></b>
                         <td>{{ $customer->phone ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.ic') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.ic') }}</td></b>
                         <td>{{ $customer->ic ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.bank-name') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.bank-name') }}</td></b>
                         <td>{{ $customer->bank_name ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.bank-no') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.bank-no') }}</td></b>
                         <td>{{ $customer->bank_no ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.job-description') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.job-description') }}</td></b>
                         <td>{{ $customer->job_description ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.heir-name') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.heir-name') }}</td></b>
                         <td>{{ $customer->heir_name ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.heir-relation') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.heir-relation') }}</td></b>
                         <td>{{ $customer->heir_relation ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.heir-phone-no') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.heir-phone-no') }}</td></b>
                         <td>{{ $customer->heir_phone_no ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.referral') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.referral') }}</td></b>
                         <td>{{ $countReferral ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.upline-name') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.upline-name') }}</td></b>
                         <td>{{ $uplineDetails->first_name ?? '' }} {{ $uplineDetails->last_name ?? '' }}</td>
                     </tr>
 
                     <tr>
-                        <td>{{ __('shop::app.customer.account.profile.upline-email') }}</td>
+                        <b><td>{{ __('shop::app.customer.account.profile.upline-email') }}</td></b>
                         <td>{{ $uplineDetails->email ?? '' }}</td>
                     </tr>
 
