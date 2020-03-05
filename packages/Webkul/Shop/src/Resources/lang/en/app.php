@@ -526,7 +526,7 @@ return [
             'order-summary' => 'Order Summary',
             'sub-total' => 'Item(s)',
             'grand-total' => 'Grand Total',
-            'delivery-charges' => 'Premium Charges',
+            'delivery-charges' => 'Premium',
             'tax' => 'SST',
             'discount' => 'Discount',
             'price' => 'price',
