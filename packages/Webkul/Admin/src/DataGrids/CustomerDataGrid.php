@@ -189,13 +189,13 @@ class CustomerDataGrid extends DataGrid
             'title' => trans('admin::app.customers.customers.delete-help-title')
         ]);
 
-        $this->addAction([
-            'type' => 'Edit',
-            'method' => 'GET', //use post only for redirects only
-            'route' => 'admin.customer.addresses.index',
-            'icon' => 'icon note-icon',
-            'title' => trans('admin::app.customers.customers.addresses')
-        ]);
+        // $this->addAction([
+        //     'type' => 'Edit',
+        //     'method' => 'GET', //use post only for redirects only
+        //     'route' => 'admin.customer.addresses.index',
+        //     'icon' => 'icon note-icon',
+        //     'title' => trans('admin::app.customers.customers.addresses')
+        // ]);
         // $this->addAction([
         //     'method' => 'GET',
         //     'route' => 'admin.customer.note.create',
