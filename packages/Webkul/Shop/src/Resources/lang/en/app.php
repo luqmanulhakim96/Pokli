@@ -524,10 +524,10 @@ return [
 
         'total' => [
             'order-summary' => 'Order Summary',
-            'sub-total' => 'Items',
+            'sub-total' => 'Item(s)',
             'grand-total' => 'Grand Total',
-            'delivery-charges' => 'Delivery Charges',
-            'tax' => 'Tax',
+            'delivery-charges' => 'Premium Charges',
+            'tax' => 'SST',
             'discount' => 'Discount',
             'price' => 'price',
             'disc-amount' => 'Amount discounted',
