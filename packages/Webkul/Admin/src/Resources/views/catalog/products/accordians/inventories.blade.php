@@ -34,7 +34,7 @@
 
             <div class="control-group">
                 <label>Updated Stocks</label>
-                <input id="inventory3" type="number" name="inventories[{{ $inventorySource->id }}]" class="control" value="0" data-vv-as="&quot;{{ $inventorySource->name }}&quot;" readonly/>
+                <input id="inventory3" type="number" name="inventories[{{ $inventorySource->id }}]" class="control" value="{{ $qty }}" data-vv-as="&quot;{{ $inventorySource->name }}&quot;" readonly/>
             </div>
 
         @endforeach
