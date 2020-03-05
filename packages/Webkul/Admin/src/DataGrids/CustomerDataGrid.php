@@ -47,8 +47,6 @@ class CustomerDataGrid extends DataGrid
         //         ->get();
         // dd(DB::getQueryLog());
         // dd($gold);
-
-
         $queryBuilder = DB::table('customers')
                 ->leftJoin('customer_groups', 'customers.customer_group_id', '=', 'customer_groups.id')
                 ->leftJoin('gold_silver_history as gold_history', function($leftJoin) {
@@ -59,7 +57,7 @@ class CustomerDataGrid extends DataGrid
                     $leftJoin->on('silver_history.customer_id', '=', 'customers.id')
                              ->distinct('silver_history.customer_id');
                 })
-                ->addSelect('customers.id as customer_id', 'customers.email', 'customer_groups.name', 'customers.status', 'gold_history.quantity', 'silver_history.quantity')
+                ->addSelect('customers.id as customer_id', 'customers.email', 'customers.phone as phone_num', 'customers.bank_no', 'customers.bank_name', 'customers.status', 'gold_history.quantity', 'silver_history.quantity')
                 ->addSelect(DB::raw('CONCAT(customers.first_name, " ", customers.last_name) as full_name'))->groupBy('customers.id');
 
         $this->addFilter('customer_id', 'customers.id');
@@ -99,6 +97,33 @@ class CustomerDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
+            'index' => 'phone_num',
+            'label' => 'Phone Number',
+            'type' => 'string',
+            'searchable' => true,
+            'sortable' => true,
+            'filterable' => true
+        ]);
+
+        $this->addColumn([
+            'index' => 'bank_name',
+            'label' => 'Bank',
+            'type' => 'string',
+            'searchable' => true,
+            'sortable' => true,
+            'filterable' => true
+        ]);
+
+        $this->addColumn([
+            'index' => 'bank_no',
+            'label' => 'Account Number',
+            'type' => 'string',
+            'searchable' => true,
+            'sortable' => true,
+            'filterable' => true
+        ]);
+
+        $this->addColumn([
             'index' => 'gold_history.quantity',
             'label' => 'Gold',
             'type' => 'string',
@@ -122,14 +147,14 @@ class CustomerDataGrid extends DataGrid
             }
         ]);
 
-        $this->addColumn([
-            'index' => 'name',
-            'label' => trans('admin::app.datagrid.group'),
-            'type' => 'string',
-            'searchable' => false,
-            'sortable' => true,
-            'filterable' => true
-        ]);
+        // $this->addColumn([
+        //     'index' => 'name',
+        //     'label' => trans('admin::app.datagrid.group'),
+        //     'type' => 'string',
+        //     'searchable' => false,
+        //     'sortable' => true,
+        //     'filterable' => true
+        // ]);
 
         $this->addColumn([
             'index' => 'status',
@@ -165,11 +190,18 @@ class CustomerDataGrid extends DataGrid
         ]);
 
         $this->addAction([
-            'method' => 'GET',
-            'route' => 'admin.customer.note.create',
-            'icon' => 'icon note-icon',
-            'title' => trans('admin::app.customers.note.help-title')
+            'type' => 'Edit',
+            'method' => 'GET', //use post only for redirects only
+            'route' => 'admin.customer.addresses.index',
+            'icon' => 'icon list-icon',
+            'title' => trans('admin::app.customers.customers.addresses')
         ]);
+        // $this->addAction([
+        //     'method' => 'GET',
+        //     'route' => 'admin.customer.note.create',
+        //     'icon' => 'icon note-icon',
+        //     'title' => trans('admin::app.customers.note.help-title')
+        // ]);
     }
 
     /**
