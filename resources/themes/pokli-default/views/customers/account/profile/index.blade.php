@@ -32,81 +32,97 @@
                 <tbody>
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.fname') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->first_name ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.lname') }}<b></td>
+                        <td><b>:<b></td>
                         <td>{{ $customer->last_name ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.gender') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->gender ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.dob') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->date_of_birth ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.email') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->email ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.phone') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->phone ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.ic') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->ic ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.bank-name') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->bank_name ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.bank-no') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->bank_no ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.job-description') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->job_description ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.heir-name') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->heir_name ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.heir-relation') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->heir_relation ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.heir-phone-no') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $customer->heir_phone_no ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.referral') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $countReferral ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.upline-name') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $uplineDetails->first_name ?? '' }} {{ $uplineDetails->last_name ?? '' }}</td>
                     </tr>
 
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.upline-email') }}<b></td>
+                          <td><b>:<b></td>
                         <td>{{ $uplineDetails->email ?? '' }}</td>
                     </tr>
 
