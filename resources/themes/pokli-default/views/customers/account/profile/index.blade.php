@@ -56,6 +56,11 @@
                     </tr>
 
                     <tr>
+                        <td>{{ __('shop::app.customer.account.profile.phone') }}</td>
+                        <td>{{ $customer->phone ?? '' }}</td>
+                    </tr>
+
+                    <tr>
                         <td>{{ __('shop::app.customer.account.profile.ic') }}</td>
                         <td>{{ $customer->ic ?? '' }}</td>
                     </tr>
@@ -132,9 +137,9 @@
             <div slot="body">
                 <div class="account-items-list">
                     <div class="account-table-content">
-    
+
                         {!! app('Webkul\Shop\DataGrids\ReferralDataGrid')->render() !!}
-                        
+
                     </div>
                 </div>
             </div>
@@ -143,7 +148,7 @@
             <div slot="body">
                     <div class="account-items-list">
                         <div class="account-table-content">
-        
+
                             <div class="row mb-20">
                                 <div class="account-balance-left ">
                                     &nbsp;<br>
@@ -168,7 +173,7 @@
                             <div class="row ">
                                 {!! app('Webkul\Shop\DataGrids\GapSapBalanceDataGrid')->render() !!}
                             </div>
-                            
+
                         </div>
                     </div>
             </div>
@@ -178,7 +183,7 @@
             <div slot="body">
                     <div class="account-items-list">
                         <div class="account-table-content">
-        
+
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     &nbsp;<br>
@@ -190,7 +195,7 @@
                                     0.0000</span>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
             </div>
@@ -200,7 +205,7 @@
             <div slot="body">
                     <div class="account-items-list">
                         <div class="account-table-content">
-                            
+
                         </div>
                     </div>
             </div>
