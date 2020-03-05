@@ -47,7 +47,7 @@
     <div @if (! request()->is('checkout/cart')) v-if="parseInt(discount)" @endif>
         @if (! request()->is('checkout/cart'))
             @if (! $cart->coupon_code)
-                <div class="discount">
+                <!-- <div class="discount">
                     <div class="discount-group">
                         <form class="coupon-form" method="post" @submit.prevent="onSubmit">
                             <div class="control-group mt-20" :class="[errors.has('code') ? 'has-error' : '']" style="margin-bottom: 10px">
@@ -59,9 +59,9 @@
                             <button class="btn btn-lg btn-black" :disabled="couponChanged">{{ __('shop::app.checkout.onepage.apply-coupon') }}</button>
                         </form>
                     </div>
-                </div>
+                </div> -->
             @else
-                <div class="discount-details-group">
+                <!-- <div class="discount-details-group">
                     <div class="item-detail">
                         <label>{{ __('shop::app.checkout.total.coupon-applied') }}</label>
 
@@ -71,7 +71,7 @@
                             <span class="icon cross-icon" title="{{ __('shop::app.checkout.total.remove-coupon') }}" v-on:click="removeCoupon"></span>
                         </label>
                     </div>
-                </div>
+                </div> -->
             @endif
         @endif
     </div>
