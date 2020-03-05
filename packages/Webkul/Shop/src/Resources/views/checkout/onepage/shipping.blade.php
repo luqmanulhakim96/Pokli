@@ -28,7 +28,7 @@
 
                             <div class="line-two mt-5">
                                 <div class="method-summary">
-                                  {{ __($rate->method_description) }}
+                                    {{ __($rate->method_description) }}
                                 </div>
                             </div>
                         </div>
