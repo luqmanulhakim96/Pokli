@@ -43,7 +43,7 @@
                     <label for="product_type" class="required">Product Type</label>
                     <div class="col-md-3">
                         <div id="gap-control" class="" style="padding:10px;">
-                            <input name="product_type" id="gap-select" type="radio" value="gold" v-validate="'required'" data-vv-as="&quot;Product Type&quot;"> <strong>Gold - GAP</strong> (Au 999.9)<br><br>
+                            <input name="product_type" id="gap-select" type="radio" value="gold" v-validate="'required'" data-vv-as="&quot;Product Type&quot;"> <strong>Gold - My Uncang Emas</strong> (Au 999.9)<br><br>
                             <input id="gold_price" name="gold_price" type="hidden" value="{{ $gold_price }}">
                             <span>MYR 100 = {{ round(100/$gold_price,4) }} gm</span>
                             <br>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="col-md-3">
                         <div id="sap-control" class="" style="padding:10px;">
-                                <input name="product_type" id="sap-select" type="radio" value="silver" v-validate="'required'" data-vv-as="&quot;Product Type&quot;"> <strong>Silver - SAP</strong> (Ag 999)<br><br>
+                                <input name="product_type" id="sap-select" type="radio" value="silver" v-validate="'required'" data-vv-as="&quot;Product Type&quot;"> <strong>Silver - My Uncang Perak</strong> (Ag 999)<br><br>
                             <input id="silver_price" name="silver_price" type="hidden" value="{{ $silver_price }}">
                             <span>MYR 100 = {{ round(10000/$silver_price, 4) }} gm</span>
                             {{-- <span>MYR 100 = 36.4964 gm</span> --}}
