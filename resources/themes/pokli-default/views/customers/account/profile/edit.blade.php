@@ -43,11 +43,11 @@
                     </div>
 
                     <div class="control-group" :class="[errors.has('gender') ? 'has-error' : '']">
-                        <label for="email" class="required">{{ __('shop::app.customer.account.profile.gender') }}</label>
+                        <label for="gender" class="required">{{ __('shop::app.customer.account.profile.gender') }}</label>
 
                         <select name="gender" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.gender') }}&quot;">
                             <option value=""  @if ($customer->gender == "") selected @endif></option>
-                            <option value="Other"  @if ($customer->gender == "Other") selected @endif>Other</option>
+                          {{-- <option value="Other"  @if ($customer->gender == "Other") selected @endif>Other</option> --}}
                             <option value="Male"  @if ($customer->gender == "Male") selected @endif>Male</option>
                             <option value="Female" @if ($customer->gender == "Female") selected @endif>Female</option>
                         </select>
@@ -58,6 +58,12 @@
                         <label for="date_of_birth">{{ __('shop::app.customer.account.profile.dob') }}</label>
                         <input type="date" class="control" name="date_of_birth" value="{{ old('date_of_birth') ?? $customer->date_of_birth }}" v-validate="" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.dob') }}&quot;">
                         <span class="control-error" v-if="errors.has('date_of_birth')">@{{ errors.first('date_of_birth') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('job_description') ? 'has-error' : '']">
+                        <label for="phone" class="">{{ __('shop::app.customer.account.profile.phone') }}</label>
+                        <input type="text" class="control" name="phone_no" v-validate="'numeric'" value="{{ old('phone') ?? $customer->phone_no }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.phone') }}&quot;">
+                        <span class="control-error" v-if="errors.has('phone')">@{{ errors.first('phone') }}</span>
                     </div>
 
                     <div class="control-group" :class="[errors.has('ic') ? 'has-error' : '']">
