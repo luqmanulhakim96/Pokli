@@ -335,9 +335,9 @@
                                             <div class="info">
                                                 {{ __('admin::app.dashboard.order-count', ['count' => $item->total_orders]) }}
                                                     &nbsp;.&nbsp;
-                                                {{ __('admin::app.dashboard.revenue', [
-                                                    'total' => core()->formatBasePrice($item->total_base_grand_total_invoiced)
-                                                    ])
+                                                    {{ __('admin::app.dashboard.revenue', [
+                                                        'total' => core()->formatBasePrice($item->total_base_grand_total)
+                                                        ])
                                                 }}
                                             </div>
                                         </div>
