@@ -166,7 +166,7 @@ class PurchaseDataGrid extends DataGrid
             'filterable' => true,
             'wrapper' => function ($value) {
                 if (!$value->payment_attachment) {
-                    return 'Null';
+                    return '-';
                 }
                 else
                     // return 'http://127.0.0.1:8000/storage/'.$value->payment_attachment;
