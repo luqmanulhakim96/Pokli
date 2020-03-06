@@ -144,6 +144,7 @@ class BuybackController extends Controller
         $history->payment_on = $input['buyback_datetime'];
         $history->customer_id = $customer->id;
         $history->save();
+        session()->flash('success', 'Buyback Success.');
         return redirect()->route('gapsap.buyback.index');
     }
 
