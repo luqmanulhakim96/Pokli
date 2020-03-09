@@ -4,6 +4,7 @@ namespace Webkul\Admin\Http\Controllers\Sales;
 
 use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Sales\Repositories\OrderRepository;
+use DB;
 
 /**
  * Sales Order controller
@@ -63,7 +64,21 @@ class OrderController extends Controller
     {
         $order = $this->orderRepository->findOrFail($id);
 
-        return view($this->_config['view'], compact('order'));
+        // dd($order);
+        $serial_number = $order['id'];
+        // dd($serial_number);
+        // dd($shipment);
+        // foreach ($order->items as $item){
+        //   $product=$item->product_id;
+          $where = ['order_id' => $serial_number];
+          $serial_number= DB::table('product_serial_number')->where($where)->get();
+          // dd($serial_number);
+        // }
+        //
+        // return view($this->_config['view'], compact('shipment','serial_number'));
+
+        // return view($this->_config['view'], compact('order'));
+        return view($this->_config['view'], compact('order','serial_number'));
     }
 
     /**
