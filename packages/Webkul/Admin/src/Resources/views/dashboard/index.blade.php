@@ -168,6 +168,10 @@
                     </div>
                 </div>
 
+            </div>
+
+            <div class="dashboard-stats" style="margin-top:15px;">
+
                 <div class="dashboard-card">
                     <div class="title">
                         {{ __('MYUncang Emas/gram') }}

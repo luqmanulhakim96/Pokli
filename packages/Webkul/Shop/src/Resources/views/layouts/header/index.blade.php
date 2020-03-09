@@ -7,7 +7,7 @@
                         @if ($logo = core()->getCurrentChannel()->logo_url)
                             <img class="logo" src="{{ $logo }}" />
                         @else
-                            <img class="logo" src="{{ bagisto_asset('images/logo.svg') }}" />
+                            <img class="logo" src="{{ asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png') }}" />
                         @endif
                     </a>
                 </li>
@@ -183,7 +183,7 @@
             var li = document.createElement("li");
             var a = document.createElement("a");
             a.setAttribute("href", "/purchase");
-            a.appendChild(document.createTextNode('GAP/SAP'));
+            a.appendChild(document.createTextNode('My Uncang'));
 
             li.appendChild(a);
             ul.appendChild(li);

@@ -11,7 +11,7 @@
         @if (core()->getConfigData('general.design.admin_logo.logo_image'))
             <link rel="icon" sizes="16x16" href="{{ \Illuminate\Support\Facades\Storage::url(core()->getConfigData('general.design.admin_logo.logo_image')) }}" />
         @else
-            <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/logo-full.jpg') }}" />
+            <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png') }}" />
         @endif
 
         <link rel="stylesheet" href="{{ asset('vendor/webkul/ui/assets/css/ui.css') }}">
