@@ -172,7 +172,7 @@
                 <img src="{{ public_path('themes/pokli-default/assets/images/pokli-logo-gold-big.png') }}" height="86.4px" width="238.08px"/>
             </td>
         </tr>
-        <tr style="top:10px;">
+        <tr style="top:5px;">
             <td align="center">
                 <h2>Pokli Wealth Management Sdn Bhd (1349069-M)</h2>
                 <pre style="font-size: 10px">
@@ -190,7 +190,7 @@
 
 <div class="information">
     <table width="100%">
-        <tr style="top:10px;">
+        <tr style="top:5px;">
             <td align="left" style="width: 60%;">
                 <pre style="font-size: 10px">
 
@@ -209,89 +209,72 @@
             </td>
             <td align="left" style="width: 40%;">
                 <pre style="font-size: 10px">
-
                 <br/>
-
                 @if ($invoice->order->shipping_address)
                     Payment By: {{ core()->getConfigData('sales.paymentmethods.' . $invoice->order->payment->method . '.title') }}
                 @endif
-
                 </pre>
             </td>
         </tr>
-
     </table>
 </div>
 
 <div class="information">
-    <!-- <table width="100%" class="" style="margin-left:30px;">
-        <tr style="width: 5%;border: 1px solid white;">
-
-        </tr>
-        <tr style="width: 5%;border: 1px solid white;">
-            <td colspan="6">#Remark:</td>
-        </tr>
-    </table> -->
     <table width="100%" class="table-custom">
         <tr>
-            <td align="center" style="width: 10%;border: 1px solid black;">
-                Item Code
+            <td align="center" style="width: 20%;border: 1px solid black;">
+                <b>Serial Number</b>
             </td>
             <td align="center" style="width: 40%;border: 1px solid black;">
-                Description
-            </td>
-            <td align="center" style="width: 10%;border: 1px solid black;">
-                Premium
+                <b>Description</b>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-                Quantity
+                <b>Quantity</b>
             </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
-                Total Amout (RM)
+            <td align="center" style="width: 30%;border: 1px solid black;">
+                <b>Total Amout (RM)</b>
             </td>
         </tr>
         @foreach ($invoice->items as $item)
         <tr>
             <td align="center" style="width: 20%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ $item->getTypeInstance()->getOrderedItem($item)->sku }}</b></pre>
+            <pre style="font-size: 10px">@foreach($serial_number as $key => $data){{ $data->serial_number }}<br>@endforeach</pre>
             </td>
             <td align="center" style="width: 40%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b> {{ $item->name }}</b></pre>
+            <pre style="font-size: 10px"> {{ $item->name }}</pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b></b></pre>
+            <pre style="font-size: 10px">{{ $item->qty }}</pre>
             </td>
             <td align="center" style="width: 30%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{ $item->qty }}</b></pre>
-            </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b>{{$item->base_total }}</b></pre>
+            <pre style="font-size: 10px">{{$item->base_total + $item->base_tax_amount }}</pre>
             </td>
         </tr>
         @endforeach
         <tr>
-            <td colspan="3" style="border: 1px solid white; border-right:1px solid black;"></td>
-            <td style="border: 1px solid black;border-right:0px  white;">
+            <td colspan="2" style="border: 1px solid white; border-right:1px solid black;"></td>
+            <td style="border: 1px solid black;border-right:0px  white;" align="left">
               <pre style="font-size: 10px">
+              <b>Premium :</b><br>
               <b>Grand Total :</b>
               </pre>
             </td>
-            <td style="border: 1px solid black;border-left:0px  white;">
+            <td style="border: 1px solid black;border-left:0px  white;" align="center">
               <pre style="font-size: 10px">
-              <b>RM {{ $item->base_total + $item->base_tax_amount }}</b>
+              <b>{{ core()->formatBasePrice($invoice->base_shipping_amount) }}</b><br>
+              <b>{{ core()->formatBasePrice($invoice->base_grand_total) }}</b>
               </pre>
             </td>
         </tr>
     </table>
 </div>
-
 <div class="information">
     <table width="100%">
-        <tr style="top:10px;">
+        <tr style="top:1px;">
             <td align="left" style="width: 60%;">
-                <pre style="font-size: 10px">
+                <pre style="font-size: 9px">
                 <b>Risk Disclosure:</b>
-                <br /><br />
+                <br />
                 You are considering dealing with Pokli Wealth Management Sdn Bhd, trading in bullion involves the potential for profit as
                 well as the risk of loss. Movements in the price of bullion rates are influenced by a variety of factors of global origin which are
                 unpredictable. Violent movement in the price of bullion rates may result in action by the market as a result of which you may be
@@ -306,8 +289,8 @@
                 extreme market conditions, such as financial and economic crisis, social unrest, political instability, war which can cause extreme
                 volatility of precious metal price in international market.
                 <br /><br />
-                Disclaimer:
-                <br /><br />
+                <b>Disclaimer:</b>
+                <br />
                 1. Pokli Wealth Management Sdn Bhd. (Pokli) does not offer any investment advice or promises/forecasts any assured return
                 through this program while promoting the product.
                 2. Pokli management reserves the right to amend the terms and conditions without prior notice.
