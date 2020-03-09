@@ -123,9 +123,7 @@
               </tr>
               @foreach ($invoice->items as $item)
               <tr>
-                  <!-- <td align="center" style="width: 20%;border: 1px solid black;">
-                  <pre style="font-size: 10px">@foreach($serial_number as $key => $data){{ $data->serial_number }}<br>@endforeach</pre>
-                  </td> -->
+                <!-- serial number here -->
                   <td align="center" style="width: 20%;border: 1px solid black;">
                   <pre style="font-size: 10px"><br></pre>
                   </td>
