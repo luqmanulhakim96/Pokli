@@ -1,4 +1,51 @@
 @component('shop::emails.layouts.master')
+    <style type="text/css">
+        @page {
+            margin: 0px;
+        }
+        body {
+            margin: 0px;
+        }
+        * {
+            font-family: Verdana, Arial, sans-serif;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        table {
+            font-size: x-small;
+        }
+        tfoot tr td {
+            font-weight: bold;
+            font-size: x-small;
+        }
+        .invoice table {
+            margin: 15px;
+        }
+        .invoice h3 {
+            margin-left: 15px;
+        }
+        .information {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .information .logo {
+            margin: 5px;
+        }
+        .information table {
+            padding: 10px;
+        }
+        hr.blackSolid {
+            border-top: 1px solid black;
+        }
+        .table-custom {
+            margin-left: 30px;
+            margin-right: 50px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
     <div style="text-align: center;">
         <a href="{{ config('app.url') }}">
             @include ('shop::emails.layouts.logo')
@@ -11,13 +58,6 @@
 
       <div class="information">
           <table width="100%">
-              <tr>
-                  <td align="center">
-                      {{-- <img src="{{asset('themes/pokli-default/assets/images/pokli-logo-gold-big.png')}}" alt="Logo" width="64" class="logo"/> --}}
-                      {{-- <img src="{{ public_path('themes/pokli-default/assets/images/pokli-logo-gold-big.png') }}" alt="Logo" height="86.4px" width="238.08px" class=""/> --}}
-                      <img src="{{ public_path('themes/pokli-default/assets/images/pokli-logo-gold-big.png') }}" height="86.4px" width="238.08px"/>
-                  </td>
-              </tr>
               <tr style="top:5px;">
                   <td align="center">
                       <h2>Pokli Wealth Management Sdn Bhd (1349069-M)</h2>
@@ -83,6 +123,12 @@
               </tr>
               @foreach ($invoice->items as $item)
               <tr>
+                  <!-- <td align="center" style="width: 20%;border: 1px solid black;">
+                  <pre style="font-size: 10px">@foreach($serial_number as $key => $data){{ $data->serial_number }}<br>@endforeach</pre>
+                  </td> -->
+                  <td align="center" style="width: 20%;border: 1px solid black;">
+                  <pre style="font-size: 10px"><br></pre>
+                  </td>
                   <td align="center" style="width: 40%;border: 1px solid black;">
                   <pre style="font-size: 10px"> {{ $item->name }}</pre>
                   </td>
