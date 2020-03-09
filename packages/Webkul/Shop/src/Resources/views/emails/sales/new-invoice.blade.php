@@ -54,7 +54,7 @@
 
     <?php $order = $invoice->order; ?>
 
-    <div style="padding: 30px;">
+    <!-- <div style="padding: 30px;"> -->
 
       <div class="information">
           <table width="100%">
@@ -233,5 +233,5 @@
               </tr>
           </table>
       </div>
-    </div>
+    <!-- </div> -->
 @endcomponent
