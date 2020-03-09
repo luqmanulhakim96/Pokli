@@ -69,8 +69,6 @@
                       </pre>
                   </td>
               </tr>
-
-
           </table>
       </div>
 
@@ -118,7 +116,7 @@
                       <b>Quantity</b>
                   </td>
                   <td align="center" style="width: 30%;border: 1px solid black;">
-                      <b>Total Amout (RM)</b>
+                      <b>Total Amount (RM)</b>
                   </td>
               </tr>
               @foreach ($invoice->items as $item)
@@ -188,50 +186,5 @@
       </div>
 
       <hr class="blackSolid" width="85%" style="margin-top:0px;margin-bottom:0px;">
-
-      <div class="information" style="margin-left:5px; margin-right:5px;">
-          <table width="100%" style="padding-top:0px;">
-              <tr style="border-top: 1px solid black;">
-                  <td align="left" style="width: 50%;">
-                  <pre style="font-size: 10px; margin-top:0px;">
-                      Prepared By: {{ auth()->guard('admin')->user()->name }}
-                  </pre>
-                  </td>
-                  <td align="left" style="width: 50%;">
-                  <pre style="font-size: 10px; margin-top:0px;">
-                  <b>
-                      I hereby agree to purchase the above
-                      mentioned
-                      item(s) and abide with the terms and
-                      conditions above,
-                  </b>
-                  </pre>
-                  </td>
-              </tr>
-          </table>
-      </div>
-
-      <div class="information" style="margin-top:-10px">
-          <table width="100%">
-              <tr style="top:10px;">
-                  <td align="left" style="width: 50%;">
-                  <pre style="font-size: 10px">
-                  <b>
-                      This is a computer generated sales order, therefore no
-                      signature is required.
-                  </b>
-                  </pre>
-                  </td>
-                  <td align="left" style="width: 50%;">
-                  <pre style="font-size: 10px">
-                      <hr align="left" class="blackSolid" style="margin-left:40px;" width="75%">
-                      Name:
-                      IC No:
-                      Date:
-                  </pre>
-                  </td>
-              </tr>
-          </table>
-      </div>
     <!-- </div> -->
 @endcomponent
