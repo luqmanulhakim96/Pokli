@@ -62,28 +62,7 @@
             </div>
 
             <div style="line-height: 25px;">
-                {{-- <div style="font-weight: bold;font-size: 16px;color: #242424;">
-                    {{ __('shop::app.mail.order.cancel.billing-address') }}
-                </div>
-
-                <div>
-                    {{ $order->billing_address->name }}
-                </div>
-
-                <div>
-                    {{ $order->billing_address->address1 }}, {{ $order->billing_address->state }}
-                </div>
-
-                <div>
-                    {{ core()->country_name($order->billing_address->country) }} {{ $order->billing_address->postcode }}
-                </div>
-
-                <div>---</div>
-
-                <div style="margin-bottom: 40px;">
-                    {{ __('shop::app.mail.order.cancel.contact') }} : {{ $order->billing_address->phone }}
-                </div> --}}
-
+                
                 <div style="font-size: 16px; color: #242424; font-weight: bold">
                     {{ __('shop::app.mail.order.cancel.payment') }}
                 </div>
