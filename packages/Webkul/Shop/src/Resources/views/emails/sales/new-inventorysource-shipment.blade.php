@@ -73,7 +73,7 @@
             </div>
 
             <div style="line-height: 25px;">
-                <div style="font-weight: bold;font-size: 16px;color: #242424;">
+                {{-- <div style="font-weight: bold;font-size: 16px;color: #242424;">
                     {{ __('shop::app.mail.order.billing-address') }}
                 </div>
 
@@ -93,7 +93,7 @@
 
                 <div style="margin-bottom: 40px;">
                     {{ __('shop::app.mail.order.contact') }} : {{ $order->billing_address->phone }}
-                </div>
+                </div> --}}
 
                 <div style="font-weight: bold;font-size: 16px; color: #242424;">
                     {{ __('shop::app.mail.order.payment') }}
@@ -125,10 +125,10 @@
 
                                 <td data-value="{{ __('shop::app.customer.account.order.view.product-name') }}" style="text-align: left;padding: 8px">
                                     {{ $item->name }}
-                                    
+
                                     @if (isset($item->additional['attributes']))
                                         <div class="item-options">
-                                            
+
                                             @foreach ($item->additional['attributes'] as $attribute)
                                                 <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
                                             @endforeach

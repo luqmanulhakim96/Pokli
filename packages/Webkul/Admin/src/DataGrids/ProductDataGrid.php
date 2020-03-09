@@ -91,14 +91,15 @@ class ProductDataGrid extends DataGrid
             'index' => 'status',
             'label' => trans('admin::app.datagrid.status'),
             'type' => 'boolean',
-            'sortable' => true,
             'searchable' => false,
+            'sortable' => true,
+            'closure' => true,
             'filterable' => true,
             'wrapper' => function($value) {
                 if ($value->status == 1)
-                    return 'Active';
+                    return '<span class="badge badge-md badge-success">Active</span>';
                 else
-                    return 'Inactive';
+                    return '<span class="badge badge-md badge-danger">Inactive</span>';
             }
         ]);
 

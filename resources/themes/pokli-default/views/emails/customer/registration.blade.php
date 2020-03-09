@@ -3,7 +3,7 @@
     <div>
         <div style="text-align: center;">
             <a href="{{ config('app.url') }}">
-                <img src="{{ bagisto_asset('images/logo.svg') }}">
+                <img src="{{ asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png') }}">
             </a>
         </div>
 

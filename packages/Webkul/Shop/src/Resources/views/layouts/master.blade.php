@@ -17,7 +17,7 @@
     @if ($favicon = core()->getCurrentChannel()->favicon_url)
         <link rel="icon" sizes="16x16" href="{{ $favicon }}" />
     @else
-        <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/logo-full.jpg') }}" />
+        <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/logo.png') }}" />
         {{-- <link rel="icon" sizes="16x16" href="{{ bagisto_asset('images/favicon.ico') }}" /> --}}
     @endif
 
