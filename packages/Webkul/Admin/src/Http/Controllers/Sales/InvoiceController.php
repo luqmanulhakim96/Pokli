@@ -6,6 +6,7 @@ use Webkul\Admin\Http\Controllers\Controller;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\InvoiceRepository;
 use PDF;
+use DB;
 
 /**
  * Sales Invoice controller
@@ -134,7 +135,20 @@ class InvoiceController extends Controller
     {
         $invoice = $this->invoiceRepository->findOrFail($id);
 
-        return view($this->_config['view'], compact('invoice'));
+        // dd($invoice);
+        $serial_number = $invoice['order_id'];
+        // dd($serial_number);
+        // dd($shipment);
+        // foreach ($order->items as $item){
+        //   $product=$item->product_id;
+          $where = ['order_id' => $serial_number];
+          $serial_number= DB::table('product_serial_number')->where($where)->get();
+          // dd($serial_number);
+        // }
+        //
+        // return view($this->_config['view'], compact('shipment','serial_number'));
+
+        return view($this->_config['view'], compact('invoice','serial_number'));
     }
 
     /**

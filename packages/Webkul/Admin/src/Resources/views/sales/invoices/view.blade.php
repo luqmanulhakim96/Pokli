@@ -236,13 +236,33 @@
 
                                                 @if (isset($item->additional['attributes']))
                                                     <div class="item-options">
-                                                        
+
                                                         @foreach ($item->additional['attributes'] as $attribute)
                                                             <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
                                                         @endforeach
 
                                                     </div>
                                                 @endif
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Item</th>
+                                                            <th>Date Out</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                      @foreach($serial_number as $key => $data)
+                                                        <tr>
+                                                          <td>
+                                                            {{ $data->serial_number }}
+                                                          </td>
+                                                          <td>
+                                                            {{ $data->created_at }}
+                                                          </td>
+                                                        </tr>
+                                                      @endforeach
+                                                    </tbody>
+                                                </table>
                                             </td>
 
                                             <td>{{ core()->formatBasePrice($item->base_price) }}</td>
