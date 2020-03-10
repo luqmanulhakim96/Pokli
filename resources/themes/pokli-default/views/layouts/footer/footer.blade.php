@@ -27,7 +27,7 @@
 
             {!! DbView::make(core()->getCurrentChannel())->field('footer_content')->render() !!}
 
-            <div class="list-container">
+            <!-- <div class="list-container">
                 @if(core()->getConfigData('customer.settings.newsletter.subscription'))
                     <span class="list-heading">{{ __('shop::app.footer.subscribe-newsletter') }}</span>
                     <div class="form-container">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

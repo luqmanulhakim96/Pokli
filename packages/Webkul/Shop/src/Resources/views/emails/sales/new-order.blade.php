@@ -31,24 +31,24 @@
                   <td align="left" style="width: 60%;">
                       <pre style="font-size: 10px">
 
-                      Order Number: {{ $invoice->order->increment_id }}
+                      Order Number: {{ $order->increment_id }}
                       <br /><br />
                       Date: {{ date('d/m/Y', strtotime($invoice->created_at)) }}
-                      {{ $invoice->order->billing_address->name }}
-                      {{ $invoice->order->customer->ic }}
-                      {{ $invoice->order->customer->phone }}
-                      {{ $invoice->order->customer->email }}
+                      {{ $order->billing_address->name }}
+                      {{ $order->customer->ic }}
+                      {{ $order->customer->phone }}
+                      {{ $order->customer->email }}
                       <br /><br />
                       Address:
-                      {{ $invoice->order->billing_address->address1 }}
-                      {{ $invoice->order->billing_address->city }}, {{ $invoice->order->billing_address->state }}
+                      {{ $order->billing_address->address1 }}
+                      {{ $order->billing_address->city }}, {{ $order->billing_address->state }}
                       </pre>
                   </td>
                   <td align="left" style="width: 40%;">
                       <pre style="font-size: 10px">
                       <br/>
-                      @if ($invoice->order->shipping_address)
-                          Payment By: {{ core()->getConfigData('sales.paymentmethods.' . $invoice->order->payment->method . '.title') }}
+                      @if ($order->shipping_address)
+                          Payment By: {{ core()->getConfigData('sales.paymentmethods.' . $order->payment->method . '.title') }}
                       @endif
                       </pre>
                   </td>
