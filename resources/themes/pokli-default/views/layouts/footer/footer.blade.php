@@ -11,7 +11,7 @@
                 }
             ?>
 
-            @if (count($categories))
+            <!-- @if (count($categories))
                 <div class="list-container">
                     <span class="list-heading">Categories</span>
 
@@ -23,7 +23,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif -->
 
             {!! DbView::make(core()->getCurrentChannel())->field('footer_content')->render() !!}
 

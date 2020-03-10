@@ -327,9 +327,9 @@
                                         <a href="{{ route('admin.customer.edit', $item->customer_id) }}">
                                     @endif
 
-                                        <div class="image">
+                                        <!-- <div class="image">
                                             <span class="icon profile-pic-icon"></span>
-                                        </div>
+                                        </div> -->
 
                                         <div class="description">
                                             <div class="name">
