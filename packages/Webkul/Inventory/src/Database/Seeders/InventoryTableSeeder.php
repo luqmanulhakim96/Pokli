@@ -14,16 +14,16 @@ class InventoryTableSeeder extends Seeder
         DB::table('inventory_sources')->insert([
             'id' => 1,
             'code' => 'default',
-            'name' => 'Default',
-            'contact_name' => 'Detroit Warehouse',
-            'contact_email' => 'warehouse@example.com',
-            'contact_number' => 1234567899,
+            'name' => 'Pokli',
+            'contact_name' => 'Pokli Wealth Management Sdn Bhd',
+            'contact_email' => 'admin@pokli.com',
+            'contact_number' => '019-664 5066',
             'status' => 1,
-            'country' => 'US',
-            'state' => 'MI',
-            'street' => '12th Street',
-            'city' => 'Detroit',
-            'postcode' => '48127',
+            'country' => 'MY',
+            'state' => 'Negeri Sembilan',
+            'street' => 'Wisma Pokli, 101 Jalan S2F2, 1 Avenue, Garden Homes',
+            'city' => 'Seremban 2',
+            'postcode' => '70300',
         ]);
     }
 }

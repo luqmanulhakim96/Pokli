@@ -19,7 +19,7 @@ class CategoryTableSeeder extends Seeder
         ]);
 
         DB::table('category_translations')->insert([
-            ['id' => '1','name' => 'Root','slug' => 'root','description' => 'Root','meta_title' => '','meta_description' => '','meta_keywords' => '','category_id' => '1','locale' => 'en']
+            ['id' => '1','name' => 'Pokli','slug' => 'pokli','description' => 'Pokli','meta_title' => '','meta_description' => '','meta_keywords' => '','category_id' => '1','locale' => 'en']
         ]);
     }
 }
