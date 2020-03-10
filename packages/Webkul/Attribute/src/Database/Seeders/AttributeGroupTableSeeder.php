@@ -44,7 +44,12 @@ class AttributeGroupTableSeeder extends Seeder
             ['attribute_id' => '22','attribute_group_id' => '5','position' => '4'],
             ['attribute_id' => '23','attribute_group_id' => '1','position' => '9'],
             ['attribute_id' => '24','attribute_group_id' => '1','position' => '10'],
-            ['attribute_id' => '25','attribute_group_id' => '1','position' => '11']
+            ['attribute_id' => '25','attribute_group_id' => '1','position' => '11'],
+            ['attribute_id' => '26','attribute_group_id' => '1','position' => '14'],
+            ['attribute_id' => '27','attribute_group_id' => '1','position' => '12'],
+            ['attribute_id' => '28','attribute_group_id' => '1','position' => '13'],
+            ['attribute_id' => '29','attribute_group_id' => '1','position' => '15'],
+            ['attribute_id' => '30','attribute_group_id' => '1','position' => '16'],
         ]);
     }
 }

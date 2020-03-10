@@ -15,8 +15,9 @@ class CurrencyTableSeeder extends Seeder
 
         DB::table('currencies')->insert([
             'id' => 1,
-            'code' => 'USD',
-            'name' => 'US Dollar'
+            'code' => 'MYR',
+            'name' => 'Malaysia Ringgit',
+            'symbol' => 'RM'
         ]);
     }
 }

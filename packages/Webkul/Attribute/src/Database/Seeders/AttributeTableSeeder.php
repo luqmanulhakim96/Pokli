@@ -61,6 +61,16 @@ class AttributeTableSeeder extends Seeder
             ['id' => '24','code' => 'size','admin_name' => 'Size','type' => 'select','validation' => NULL,'position' => '24','is_required' => '0','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0','is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '0',
             'use_in_flat' => '1','created_at' => $now,'updated_at' => $now],
             ['id' => '25','code' => 'brand','admin_name' => 'Brand','type' => 'select','validation' => NULL,'position' => '25','is_required' => '0','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0','is_filterable' => '1','is_configurable' => '0','is_user_defined' => '0','is_visible_on_front' => '1',
+            'use_in_flat' => '1','created_at' => $now,'updated_at' => $now],
+            ['id' => '26','code' => 'Premium','admin_name' => 'Premium','type' => 'price','validation' => 'decimal','position' => '26','is_required' => '1','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0','is_filterable' => '1','is_configurable' => '0','is_user_defined' => '0','is_visible_on_front' => '1',
+            'use_in_flat' => '1','created_at' => $now,'updated_at' => $now],
+            ['id' => '27','code' => 'gos','admin_name' => 'Gold/Silver','type' => 'select','validation' => NULL,'position' => '27','is_required' => '1','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0', 'is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '0',
+            'use_in_flat' => '1','created_at' => $now,'updated_at' => $now],
+            ['id' => '28','code' => 'category','admin_name' => 'Category','type' => 'select','validation' => NULL,'position' => '28','is_required' => '1','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0', 'is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '1',
+            'use_in_flat' => '1','created_at' => $now,'updated_at' => $now],
+            ['id' => '29','code' => 'desc','admin_name' => 'Description','type' => 'select','validation' => NULL,'position' => '29','is_required' => '0','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0', 'is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '0',
+            'use_in_flat' => '0','created_at' => $now,'updated_at' => $now],
+            ['id' => '30','code' => 'weight_gram','admin_name' => 'Weight','type' => 'select','validation' => NULL,'position' => '39','is_required' => '1','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0', 'is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '1',
             'use_in_flat' => '1','created_at' => $now,'updated_at' => $now]
         ]);
 
@@ -90,7 +100,12 @@ class AttributeTableSeeder extends Seeder
            ['id' => '22','locale' => 'en','name' => 'Weight','attribute_id' => '22'],
            ['id' => '23','locale' => 'en','name' => 'Color','attribute_id' => '23'],
            ['id' => '24','locale' => 'en','name' => 'Size','attribute_id' => '24'],
-           ['id' => '25','locale' => 'en','name' => 'Brand','attribute_id' => '25']
+           ['id' => '25','locale' => 'en','name' => 'Brand','attribute_id' => '25'],
+           ['id' => '26','locale' => 'en','name' => 'Premium','attribute_id' => '26'],
+           ['id' => '27','locale' => 'en','name' => 'Gold/Silver','attribute_id' => '27'],
+           ['id' => '28','locale' => 'en','name' => 'Category','attribute_id' => '28'],
+           ['id' => '29','locale' => 'en','name' => 'Description','attribute_id' => '29'],
+           ['id' => '30','locale' => 'en','name' => 'Weight','attribute_id' => '30']
         ]);
     }
 }
