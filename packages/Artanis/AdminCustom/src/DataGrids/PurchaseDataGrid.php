@@ -200,7 +200,7 @@ class PurchaseDataGrid extends DataGrid
             'filterable' => true,
             'wrapper' => function ($value) {
                 if ($value->status == 'processing')
-                    return '<span class="badge badge-md badge-success">Processing</span>';
+                    return '<span class="badge badge-md badge-warning">Processing</span>';
                 else if ($value->status == 'completed')
                     return '<span class="badge badge-md badge-success">Completed</span>';
                 else if ($value->status == "canceled")

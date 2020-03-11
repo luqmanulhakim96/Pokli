@@ -219,14 +219,14 @@
                                             </span>
                                         </div>
 
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <span class="title">
                                                 {{ __('Payment Attachement') }}
                                             </span>
 
                                             <span class="value">
                                                 {{-- <a href="http://127.0.0.1:8000/storage/{{$purchase->payment_attachment}}" target="_blank">  --}}
-                                                    {{-- <img src="http://127.0.0.1:8000/storage/{{$purchase->payment_attachment}}" style="cursor: pointer" alt="Smiley face" height="50" width="50" @click="showModal('downloadDataGrid')">  --}}
+                                                    {{-- <img src="http://127.0.0.1:8000/storage/{{$purchase->payment_attachment}}" style="cursor: pointer" alt="Attachment" height="50" width="50" @click="showModal('downloadDataGrid')">  --}}
                                                 {{-- </a> --}}
                                                 @if(!$purchase->payment_attachment==null)
                                                     <a style="cursor: pointer; color:red" @click="showModal('downloadDataGrid')">Available</a>
@@ -234,7 +234,7 @@
                                                     Not Available
                                                 @endif
                                             </span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 

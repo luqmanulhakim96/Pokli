@@ -86,7 +86,7 @@ class BuyBackDataGrid extends DataGrid
                     return ucfirst($value->product_type);
             }
         ]);
-        
+
         // $this->addColumn([
         //     'index' => 'customer_full_name',
         //     'label' => 'Customer Name',
@@ -157,7 +157,7 @@ class BuyBackDataGrid extends DataGrid
         //         if (!$value->payment_attachment) {
         //             return 'Null';
         //         }
-        //         else 
+        //         else
         //             return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '" target="_blank"> <img src="http://127.0.0.1:8000/storage/'.$value->payment_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
         //     }
         // ]);

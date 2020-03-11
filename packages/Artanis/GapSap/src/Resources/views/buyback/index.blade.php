@@ -108,8 +108,8 @@
 
     <script type="text/javascript">
         $(function () {
-            var maxGold = $("#maxGold").val();
-            var maxSilver = $("#maxSilver").val();
+            var maxGold = $("#maxGold").val()-1;
+            var maxSilver = $("#maxSilver").val()-1;
 
             $("#amount").on( "input", function() {
                 var amount = $("#amount").val();
