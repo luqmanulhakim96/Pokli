@@ -74,7 +74,7 @@ class GapSapController extends Controller
     public function index()
     {
         $customer = $this->customerRepository->find(auth()->guard('customer')->user()->id);
-        
+
         return view($this->_config['view'], compact(['customer']));
     }
 
@@ -85,7 +85,7 @@ class GapSapController extends Controller
      */
     public function edit()
     {
-        
+
     }
 
     public function form(Request $request)
@@ -105,14 +105,14 @@ class GapSapController extends Controller
         // dd($input);
 
         // return redirect()->route('gapsap.index');
-        
+
         return view($this->_config['view'], compact(['customer', 'input','gold_price','silver_price', 'gold_datetime', 'silver_datetime']));
     }
 
     public function formSubmit(Request $request)
     {
 
-        
+
         $input = $request->all();
         // dd($input);
         date_default_timezone_set("Asia/Kuala_Lumpur");
@@ -149,10 +149,11 @@ class GapSapController extends Controller
         // dd($history->payment_attachment->store('uploads', 'public'));
         $history->save();
 
-        if($history->payment_method=='fpx'){
+        if($history->payment_method == 'fpx'){
             return view('gapsap::redirect', compact(['input']));
         }
         else if($history->payment_method=='bankin'){
+            session()->flash('success', 'MYUncang Success.');
             return redirect()->route('gapsap.index');
         }
     }

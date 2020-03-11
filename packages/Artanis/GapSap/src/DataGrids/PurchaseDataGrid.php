@@ -98,7 +98,7 @@ class PurchaseDataGrid extends DataGrid
                     return 'Silver';
             }
         ]);
-        
+
         // $this->addColumn([
         //     'index' => 'customer_full_name',
         //     'label' => 'Customer Name',
@@ -169,7 +169,7 @@ class PurchaseDataGrid extends DataGrid
         //         if (!$value->payment_attachment) {
         //             return 'Null';
         //         }
-        //         else 
+        //         else
         //             return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '" target="_blank"> <img src="http://127.0.0.1:8000/storage/'.$value->payment_attachment.'" alt="Smiley face" height="50" width="50"> </a>';
         //     }
         // ]);
@@ -199,7 +199,7 @@ class PurchaseDataGrid extends DataGrid
             'filterable' => true,
             'wrapper' => function ($value) {
                 if ($value->status == 'processing')
-                    return '<span class="badge badge-md badge-success">Processing</span>';
+                    return '<span class="badge badge-md badge-warning">Processing</span>';
                 else if ($value->status == 'completed')
                     return '<span class="badge badge-md badge-success">Completed</span>';
                 else if ($value->status == "canceled")

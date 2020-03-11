@@ -24,7 +24,7 @@ return [
         'description' => 'shop::app.checkout.onepage.paypal-desc',
         'class' => 'Webkul\Paypal\Payment\Standard',
         'sandbox' => true,
-        'active' => true,
+        'active' => false,
         'business_account' => 'test@webkul.com',
         'sort' => 3
     ],
@@ -34,7 +34,7 @@ return [
         'title' => 'FPX',
         'description' => 'Bank Transfer',
         'class' => 'Artanis\BillPlz\Payment\BillPlz',
-        'sandbox' => true,
+        'sandbox' => false,
         'active' => true,
         'sort' => 4
     ],

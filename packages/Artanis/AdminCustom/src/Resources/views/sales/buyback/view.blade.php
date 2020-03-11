@@ -239,7 +239,7 @@
                                             </span>
                                         </div>
 
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <span class="title">
                                                 {{ __('Payment Attachement') }}
                                             </span>
@@ -254,7 +254,7 @@
                                                     Not Available
                                                 @endif
                                             </span>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 

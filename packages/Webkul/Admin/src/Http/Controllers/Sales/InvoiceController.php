@@ -161,7 +161,15 @@ class InvoiceController extends Controller
     {
         $invoice = $this->invoiceRepository->findOrFail($id);
 
-        $pdf = PDF::loadView('admin::sales.invoices.pdf', compact('invoice'))->setPaper('a4');
+        $serial_number = $invoice['order_id'];
+        // dd($serial_number);
+        // dd($shipment);
+        // foreach ($order->items as $item){
+        //   $product=$item->product_id;
+        $where = ['order_id' => $serial_number];
+        $serial_number= DB::table('product_serial_number')->where($where)->get();
+
+        $pdf = PDF::loadView('admin::sales.invoices.pdf', compact('invoice','serial_number'))->setPaper('a4');
 
         return $pdf->download('invoice-' . $invoice->created_at->format('d-m-Y') . '.pdf');
     }

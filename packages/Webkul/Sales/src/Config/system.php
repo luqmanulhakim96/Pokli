@@ -14,6 +14,7 @@ return [
                 'name' => 'order_number_prefix',
                 'title' => 'admin::app.admin.system.order-number-prefix',
                 'type' => 'text',
+                // 'value' => 'PWM',
                 'validation' => false,
                 'channel_based' => true,
                 'locale_based' => true
@@ -22,6 +23,7 @@ return [
                 'name' => 'order_number_length',
                 'title' => 'admin::app.admin.system.order-number-length',
                 'type' => 'text',
+                // 'value' => '1',
                 'validation' => 'numeric',
                 'channel_based' => true,
                 'locale_based' => true
