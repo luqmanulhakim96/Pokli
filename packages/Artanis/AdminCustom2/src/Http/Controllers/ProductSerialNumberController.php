@@ -112,9 +112,9 @@ class ProductSerialNumberController extends Controller
         // $inventorySources = $this->inventorySourceRepository->findOrFail($id);
         $product_id = $id;
         $inventory = DB::table('product_inventories')->where('product_id', $id)->sum('qty');
-        $existing_serial = DB::table('product_serial_number')->where('product_id', $id)->count('status');
+        $existing_serial = DB::table('product_serial_number')->where([['product_id','=', $id],['status','=','Available']])->count('status');
         $inventory = $inventory - $existing_serial;
-        // dd($inventory);
+        // dd($existing_serial);
         // return view($this->_config['view'], ['product'=>$product], ['inventorySources'=>$inventorySources]);
 
         return view($this->_config['view'], compact('product','categories', 'inventory', 'product_id'));
