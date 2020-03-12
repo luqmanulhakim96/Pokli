@@ -209,7 +209,6 @@
 
                 <br/>
 
-                Ordered By: {{ auth()->guard('admin')->user()->name }}
                 Payment By: {{ $purchase->payment_method_label }}
 
 
@@ -333,7 +332,7 @@
         <tr style="border-top: 1px solid black;">
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
-                Prepared By: {{ auth()->guard('admin')->user()->name }}
+                Prepared By: 
             </pre>
             </td>
             <td align="left" style="width: 50%;">
