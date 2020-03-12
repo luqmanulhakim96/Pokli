@@ -174,17 +174,17 @@
         </tr>
         <tr style="top:10px;">
             <td align="center">
-                <h2>Pokli Wealth Management Sdn Bhd (1061529-V)</h2>
+                <h2>Pokli Wealth Management Sdn Bhd (1349069-M)</h2>
                 <pre style="font-size: 10px">
                 Wisma Pokli,101A- 1 Avenue,Jalan S2F2,Garden Homes, Seremban 270300 Seremban, Negeri Sembilan
-                Tel : +6066307797
+                Tel :  +6019-664 5066
                 Email : admin@pokli.com
-                Website : www.pokli.com
+                Website : www.pokli.com.my
                 </pre>
             </td>
         </tr>
-        
-        
+
+
     </table>
 </div>
 
@@ -198,30 +198,31 @@
         <tr style="top:10px;">
             <td align="left" style="width: 60%;">
             <pre style="font-size: 12px; margin-top:0px; margin-bottom:0px;">
-            Order Number: 
+            Order Number: {{ $invoice->order->increment_id }}
             Date: {{ core()->formatDate($invoice->order->created_at, 'd/m/Y') }}
             Customer: {{ $invoice->order->billing_address->name }}
-            780801-01-6353
-            Tel: 012-3969746
-            Fax:
-            Email: 
+            {{$invoice->order->customer->ic}}
+            Tel: {{$invoice->order->customer->phone}}
+            Email: {{ $invoice->order->customer->email }}
 
             {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
             </pre>
             </td>
             <td align="left" style="width: 40%;">
                 <pre style="font-size: 12px; margin-top:0px; margin-bottom:0px;">
-                
+
                 <br/>
-                
-                Ordered By:
-                Payment By: 
-                
+
+                <!-- Ordered By: -->
+                @if ($invoice->order->shipping_address)
+                    Payment By: {{ core()->getConfigData('sales.paymentmethods.' . $invoice->order->payment->method . '.title') }}
+                @endif
+
 
                 </pre>
             </td>
         </tr>
-        
+
     </table>
 </div>
 
@@ -363,10 +364,10 @@
             </td>
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
-            <b>    
-                I hereby agree to purchase the above 
+            <b>
+                I hereby agree to purchase the above
                 mentioned
-                item(s) and abide with the terms and 
+                item(s) and abide with the terms and
                 conditions above,
             </b>
             </pre>
@@ -380,8 +381,8 @@
         <tr style="top:10px;">
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px">
-            <b> 
-                This is a computer generated sales order, therefore no 
+            <b>
+                This is a computer generated sales order, therefore no
                 signature is required.
             </b>
             </pre>

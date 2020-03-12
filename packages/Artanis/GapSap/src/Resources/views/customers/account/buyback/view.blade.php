@@ -84,13 +84,13 @@
                                                     {{-- <td data-value="{{ __('shop::app.customer.account.order.view.SKU') }}">
                                                         {{ $item->getTypeInstance()->getOrderedItem($item)->sku }}
                                                     </td> --}}
-                                                    
+
                                                     <td data-value="{{ __('Name') }}">
                                                         {{ $purchase->product_type_label }}
-                                    
+
                                                         {{-- @if (isset($item->additional['attributes']))
                                                             <div class="item-options">
-                                                                
+
                                                                 @foreach ($item->additional['attributes'] as $attribute)
                                                                     <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
                                                                 @endforeach
@@ -193,7 +193,7 @@
                     @if ($purchase->invoice_id)
                         <tab name="{{ __('shop::app.customer.account.order.view.invoices') }}">
 
-                            
+
 
                                 <div class="sale-section">
                                     <div class="secton-title">
@@ -521,7 +521,7 @@
                                 </div>
                             </div>
 
-                            <div class="box">
+                            <!-- <div class="box">
                                 <div class="box-title">
                                     {{ __('Payment Attachement') }}
                                 </div>
@@ -533,7 +533,7 @@
                                         Not Available
                                     @endif
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -550,7 +550,7 @@
         <modal id="downloadDataGrid" :is-open="modalIds.downloadDataGrid" style="overflow-y: hidden">
             <h3 slot="header">{{ __('Purchase Attachment') }}</h3>
             <div slot="body">
-                <img src="http://127.0.0.1:8000/storage/{{$purchase->payment_attachment}}" alt="Smiley face" height="100%" width="100%" @click="showModal('downloadDataGrid')"> 
+                <img src="http://127.0.0.1:8000/storage/{{$purchase->payment_attachment}}" alt="Smiley face" height="100%" width="100%" @click="showModal('downloadDataGrid')">
             </div>
         </modal>
     @endif
