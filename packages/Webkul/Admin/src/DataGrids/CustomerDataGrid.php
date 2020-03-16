@@ -57,7 +57,7 @@ class CustomerDataGrid extends DataGrid
                     $leftJoin->on('silver_history.customer_id', '=', 'customers.id')
                              ->distinct('silver_history.customer_id');
                 })
-                ->addSelect('customers.id as customer_id', 'customers.email', 'customers.phone as phone_num', 'customers.bank_no', 'customers.bank_name', 'customers.status', 'gold_history.quantity', 'silver_history.quantity')
+                ->addSelect('customers.id as customer_id', 'customers.ic', 'customers.email', 'customers.phone', 'customers.bank_no', 'customers.bank_name', 'customers.status', 'gold_history.quantity', 'silver_history.quantity')
                 ->addSelect(DB::raw('CONCAT(customers.first_name, " ", customers.last_name) as full_name'))->groupBy('customers.id');
 
         $this->addFilter('customer_id', 'customers.id');
@@ -88,6 +88,15 @@ class CustomerDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
+            'index' => 'ic',
+            'label' => trans('IC Number'),
+            'type' => 'string',
+            'searchable' => true,
+            'sortable' => true,
+            'filterable' => true
+        ]);
+
+        $this->addColumn([
             'index' => 'email',
             'label' => trans('admin::app.datagrid.email'),
             'type' => 'string',
@@ -97,7 +106,7 @@ class CustomerDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index' => 'phone_num',
+            'index' => 'phone',
             'label' => 'Phone Number',
             'type' => 'string',
             'searchable' => true,
@@ -127,9 +136,9 @@ class CustomerDataGrid extends DataGrid
             'index' => 'gold_history.quantity',
             'label' => 'Gold',
             'type' => 'string',
-            // 'searchable' => true,
+            'searchable' => false,
             'sortable' => true,
-            // 'filterable' => true,
+            'filterable' => false,
             'wrapper' => function ($value) {
                 return $gold = $this->goldTotal($value->customer_id);
             }
@@ -139,9 +148,9 @@ class CustomerDataGrid extends DataGrid
             'index' => 'silver_history.quantity',
             'label' => 'Silver',
             'type' => 'string',
-            // 'searchable' => true,
+            'searchable' => false,
             'sortable' => true,
-            // 'filterable' => true,
+            'filterable' => false,
             'wrapper' => function ($value) {
                 return $silver = $this->silverTotal($value->customer_id);
             }

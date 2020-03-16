@@ -113,27 +113,18 @@ class OrderDataGrid extends DataGrid
             }
         ]);
 
-        // $this->addColumn([
-        //     'index' => 'billed_to',
-        //     'label' => trans('admin::app.datagrid.billed-to'),
-        //     'type' => 'string',
-        //     'searchable' => true,
-        //     'sortable' => true,
-        //     'filterable' => true
-        // ]);
-
-        // $this->addColumn([
-        //     'index' => 'shipped_to',
-        //     'label' => trans('admin::app.datagrid.shipped-to'),
-        //     'type' => 'string',
-        //     'searchable' => true,
-        //     'sortable' => true,
-        //     'filterable' => true
-        // ]);
+        $this->addColumn([
+            'index' => 'billed_to',
+            'label' => trans('admin::app.datagrid.billed-to'),
+            'type' => 'string',
+            'searchable' => true,
+            'sortable' => true,
+            'filterable' => true
+        ]);
 
         $this->addColumn([
             'index' => 'shipped_to',
-            'label' => trans('Customer'),
+            'label' => trans('admin::app.datagrid.shipped-to'),
             'type' => 'string',
             'searchable' => true,
             'sortable' => true,

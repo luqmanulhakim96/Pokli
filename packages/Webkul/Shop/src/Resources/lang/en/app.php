@@ -69,7 +69,7 @@ return [
 
     'search' => [
         'no-results' => 'No Results Found',
-        'page-title' => 'Bagisto - Search',
+        'page-title' => 'Pokli - Search',
         'found-results' => 'Search Results Found',
         'found-result' => 'Search Result Found'
     ],
@@ -187,10 +187,10 @@ return [
                     'title' => 'Profile',
                     'edit' => 'Edit',
                     'gap' => [
-                        'title' => 'GAP',
+                        'title' => 'MY Uncang Emas',
                     ],
                     'sap' => [
-                        'title' => 'SAP',
+                        'title' => 'MY Uncang Perak',
                     ],
                 ],
 
@@ -220,9 +220,9 @@ return [
                 'bank-name' => 'Bank Name',
                 'bank-no' => 'Bank Account No.',
                 'job-description' => 'Job Description',
-                'heir-name' => 'Heir\'s Name',
-                'heir-relation' => 'Heir\'s Relation',
-                'heir-phone-no' => 'Heir\'s Phone No.',
+                'heir-name' => 'Beneficiary\'s Name',
+                'heir-relation' => 'Beneficiary\'s Relation',
+                'heir-phone-no' => 'Beneficiary\'s Phone No.',
             ],
 
             'address' => [
@@ -299,11 +299,11 @@ return [
                     'price' => 'Price',
                     'total' => 'Total',
                     'subtotal' => 'Subtotal',
-                    'shipping-handling' => 'Shipping & Handling',
-                    'tax' => 'Tax',
+                    'shipping-handling' => 'Premium',
+                    'tax' => 'SST',
                     'discount' => 'Discount',
-                    'tax-percent' => 'Tax Percent',
-                    'tax-amount' => 'Tax Amount',
+                    'tax-percent' => 'SST Percent',
+                    'tax-amount' => 'SST Amount',
                     'discount-amount' => 'Discount Amount',
                     'grand-total' => 'Grand Total',
                     'total-paid' => 'Total Paid',
@@ -496,7 +496,7 @@ return [
             'shipping-address' => 'Shipping Address',
             'use_for_shipping' => 'Ship to this address',
             'continue' => 'Continue',
-            'shipping-method' => 'Select Shipping Method',
+            'shipping-method' => 'Product Premium',
             'payment-methods' => 'Select Payment Method',
             'payment-method' => 'Payment Method',
             'summary' => 'Order Summary',

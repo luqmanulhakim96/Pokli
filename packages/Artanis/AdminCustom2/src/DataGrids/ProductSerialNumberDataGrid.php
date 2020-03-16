@@ -41,7 +41,7 @@ class ProductSerialNumberDataGrid extends DataGrid
                 })
                 ->addSelect('product_flat.id as product_id' , 'product_flat.sku as product_sku', 'product_flat.name as product_name',
                             'product_serial_number.serial_number as serial_number', 'product_serial_number.status as status', 'product_serial_number.id as id',
-                            'product_serial_number.created_at as created_at', 'shipments.created_at as item_out');
+                            'product_serial_number.created_at as created_at', 'shipments.created_at as item_out', 'orders.increment_id');
                 // ->where('product_flat.id', $product_id);
 
         // $this->addFilter('product_sku', 'product_flat.product_sku');
@@ -114,6 +114,15 @@ class ProductSerialNumberDataGrid extends DataGrid
             'label' => 'Date Item In',
             'type' => 'string',
             'searchable' => false,
+            'sortable' => true,
+            'filterable' => true
+        ]);
+
+        $this->addColumn([
+            'index' => 'increment_id',
+            'label' => 'Order ID',
+            'type' => 'string',
+            'searchable' => true,
             'sortable' => true,
             'filterable' => true
         ]);
