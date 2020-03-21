@@ -8,7 +8,7 @@ class GoldSilverHistory extends Model
 {
     protected $table = 'gold_silver_history';
 
-    protected $fillable = ['product_type', 'current_price_per_gram', 'amount', 'quantity', 'customer_id'];
+    protected $fillable = ['product_type', 'current_price_per_gram', 'amount', 'quantity', 'customer_id', 'transcation_id'];
 
     protected $dates = ['created_at', 'updated_at', 'current_price_datetime', 'payment_on'];
 

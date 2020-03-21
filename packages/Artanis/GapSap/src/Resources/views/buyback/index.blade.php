@@ -67,7 +67,7 @@
                     <div class="input-group">
                         <div class="input-group-icon">RM</div>
                         <div class="input-group-area">
-                            <input id="amount" type="number" step="any" min="1" v-validate="'decimal:2|min_value:1|required'" name="amount" class="" value="" data-vv-as="&quot;Purchase Amount&quot;"/>
+                            <input id="amount" type="number" step="any" min="0.1" v-validate="'decimal:2|min_value:1|required'" name="amount" class="" value="" data-vv-as="&quot;Purchase Amount&quot;"/>
                         </div>
                     </div>
                     <span class="control-error" v-if="errors.has('amount')">@{{ errors.first('amount') }}</span>
@@ -80,7 +80,7 @@
 
                     <div class="input-group">
                         <div class="input-group-area">
-                        <input id="quantity" type="number" step="any" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="" max="" value=""
+                        <input id="quantity" type="number" step="0.001" v-validate="'decimal:4|min_value:0|required'" name="quantity" class="" max="" value=""
                             data-vv-as="&quot;Purchase Quantity&quot;"/>
                         </div>
                         <div class="input-group-icon">gm</div>
@@ -148,6 +148,7 @@
                 $('#sap-control').removeAttr('class','sap-container');
                 $("#sap-select").prop("checked",false);
                 $("#amount").val('');
+                // $("#amount").attr("max",totalGold);
                 $("#quantity").val('');
                 $("#quantity").attr("max",maxGold);
                 $("#current_price_per_gram").val($("#gold_price").val());
@@ -160,6 +161,7 @@
                 $('#gap-control').removeAttr('class','gap-container');
                 $("#gap-select").prop("checked",false);
                 $("#amount").val('');
+                // $("#amount").attr("max",totalSilver);
                 $("#quantity").val('');
                 $("#quantity").attr("max",maxSilver);
                 $("#current_price_per_gram").val($("#silver_price").val()/100);

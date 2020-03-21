@@ -80,7 +80,6 @@
                     <div class="control-group" :class="[errors.has('bank_name') ? 'has-error' : '']">
                         <label for="bank_name" class="">{{ __('shop::app.customer.account.profile.bank-name') }}</label>
                         <select name="bank_name" class="control" v-validate="''" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.bank-name') }}&quot;">
-                            <option value="">-</option>
                             <option value="Affin Bank" @if ($customer->bank_name == "Affin Bank") selected @endif>Affin Bank</option>
                             <option value="Agrobank" @if ($customer->bank_name == "Agrobank") selected @endif>Agrobank</option>
                             <option value="Alliance Bank Malaysia" @if ($customer->bank_name == "Alliance Bank Malaysia") selected @endif>Alliance Bank Malaysia</option>
@@ -105,6 +104,14 @@
                         <span class="control-error" v-if="errors.has('bank_no')">@{{ errors.first('bank_no') }}</span>
                     </div>
 
+                    <div class="control-group" :class="[errors.has('branch') ? 'has-error' : '']">
+                        <label for="branch" class="">{{ __('shop::app.customer.account.profile.branch-name') }}</label>
+                        <select name="branch" class="control" v-validate="''" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.branch-name') }}&quot;">
+                            <option value="seremban" @if ($customer->branch == "seremban") selected @endif>Seremban</option>
+                        </select>
+                        <span class="control-error" v-if="errors.has('bank_name')">@{{ errors.first('bank_name') }}</span>
+                    </div>
+
                     <div class="control-group" :class="[errors.has('job_description') ? 'has-error' : '']">
                         <label for="job_description" class="">{{ __('shop::app.customer.account.profile.job-description') }}</label>
                         <input type="text" class="control" name="job_description" v-validate="''" value="{{ old('job_description') ?? $customer->job_description }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.job-description') }}&quot;">
@@ -115,6 +122,12 @@
                         <label for="heir_name" class="">{{ __('shop::app.customer.account.profile.heir-name') }}</label>
                         <input type="text" class="control" name="heir_name" v-validate="''" value="{{ old('heir_name') ?? $customer->heir_name }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-name') }}&quot;">
                         <span class="control-error" v-if="errors.has('heir_name')">@{{ errors.first('heir_name') }}</span>
+                    </div>
+
+                    <div class="control-group" :class="[errors.has('heir_ic') ? 'has-error' : '']">
+                        <label for="heir_ic" class="">{{ __('shop::app.customer.account.profile.heir-ic') }}</label>
+                        <input type="text" class="control" name="heir_ic" v-validate="''" value="{{ old('heir_name') ?? $customer->heir_ic }}" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-ic') }}&quot;">
+                        <span class="control-error" v-if="errors.has('heir_ic')">@{{ errors.first('heir_ic') }}</span>
                     </div>
 
                     <div class="control-group" :class="[errors.has('heir_relation') ? 'has-error' : '']">

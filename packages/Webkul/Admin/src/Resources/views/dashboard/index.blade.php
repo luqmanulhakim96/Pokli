@@ -272,7 +272,7 @@
                             @foreach ($statistics['top_selling_products'] as $item)
 
                                 <li>
-                                    <a href="{{ route('admin.catalog.products.edit', $item->product_id) }}">
+                                    <!-- <a href="{{ route('admin.catalog.products.edit', $item->product_id) }}"> -->
                                         <div class="product image">
                                             <?php $productBaseImage = $productImageHelper->getProductBaseImage($item->product); ?>
 
@@ -292,7 +292,7 @@
                                         </div>
 
                                         <span class="icon angle-right-icon"></span>
-                                    </a>
+                                    <!-- </a>  -->
                                 </li>
 
                             @endforeach
@@ -324,7 +324,7 @@
 
                                 <li>
                                     @if ($item->customer_id)
-                                        <a href="{{ route('admin.customer.edit', $item->customer_id) }}">
+                                        <!-- <a href="{{ route('admin.customer.edit', $item->customer_id) }}"> -->
                                     @endif
 
                                         <!-- <div class="image">
@@ -349,7 +349,7 @@
                                         <span class="icon angle-right-icon"></span>
 
                                     @if ($item->customer_id)
-                                        </a>
+                                        <!-- </a> -->
                                     @endif
                                 </li>
 

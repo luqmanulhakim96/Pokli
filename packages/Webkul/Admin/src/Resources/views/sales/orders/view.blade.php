@@ -176,6 +176,22 @@
                                     </div>
 
                                     <div class="section-content">
+                                        @if($order->payment->method=='billplz')
+                                        <div class="row">
+                                            <span class="title">
+                                                {{ __('Transaction ID') }}
+                                            </span>
+                                            @if($order->payment->transaction_id)
+                                            <span class="value">
+                                              {{ $order->payment->transaction_id }}
+                                            </span>
+                                            @else
+                                            <span class="value">
+                                              Unavailable
+                                            </span>
+                                            @endif
+                                        </div>
+                                        @endif
                                         <div class="row">
                                             <span class="title">
                                                 {{ __('admin::app.sales.orders.payment-method') }}

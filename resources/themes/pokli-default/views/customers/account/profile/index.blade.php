@@ -76,6 +76,11 @@
                     </tr>
 
                     <tr>
+                      <td><b>{{ __('shop::app.customer.account.profile.branch-name') }}<b></td>
+                      <td>{{ $customer->branch ?? '' }}</td>
+                    </tr>
+
+                    <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.job-description') }}<b></td>
                         <td>{{ $customer->job_description ?? '' }}</td>
                     </tr>
@@ -83,6 +88,11 @@
                     <tr>
                         <td><b>{{ __('shop::app.customer.account.profile.heir-name') }}<b></td>
                         <td>{{ $customer->heir_name ?? '' }}</td>
+                    </tr>
+
+                    <tr>
+                      <td><b>{{ __('shop::app.customer.account.profile.heir-ic') }}<b></td>
+                      <td>{{ $customer->heir_ic ?? '' }}</td>
                     </tr>
 
                     <tr>
