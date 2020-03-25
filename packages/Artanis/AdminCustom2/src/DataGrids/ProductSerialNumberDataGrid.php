@@ -5,7 +5,7 @@ use Artanis\AdminCustom2\Models\ProductSerialNumber;
 use Webkul\Ui\DataGrid\DataGrid;
 use Illuminate\Database\Eloquent\Model;
 use \stdClass;
-// use Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController;
+use Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController;
 use DB;
 
 
@@ -19,7 +19,8 @@ class ProductSerialNumberDataGrid extends DataGrid
 
     public function prepareQueryBuilder()
     {
-        // $product_id = ProductSerialNumberController::getID();
+        $product_id = request()->route('id');
+        // dd($product_id);
         // ->leftJoin('products', function($leftJoin) {
         //     $leftJoin->on('products.id', '=', 'product_serial_number.product_id');
         // })
@@ -41,8 +42,9 @@ class ProductSerialNumberDataGrid extends DataGrid
                 })
                 ->addSelect('product_flat.id as product_id' , 'product_flat.sku as product_sku', 'product_flat.name as product_name',
                             'product_serial_number.serial_number as serial_number', 'product_serial_number.status as status', 'product_serial_number.id as id',
-                            'product_serial_number.created_at as created_at', 'shipments.created_at as item_out', 'orders.increment_id');
-                // ->where('product_flat.id', $product_id);
+                            'product_serial_number.created_at as created_at', 'shipments.created_at as item_out', 'orders.increment_id', 'orders.id as orders_id');
+
+        $queryBuilder->where('product_serial_number.product_id', $product_id);
 
         // $this->addFilter('product_sku', 'product_flat.product_sku');
         // $this->addFilter('product_name', 'product_flat.name');
@@ -58,7 +60,7 @@ class ProductSerialNumberDataGrid extends DataGrid
 
         // $this->addColumn([
         //     'index' => 'id',
-        //     'label' => 'ID',
+        //     'label' => 'Bil',
         //     'type' => 'number',
         //     'searchable' => false,
         //     'sortable' => true,
@@ -74,14 +76,14 @@ class ProductSerialNumberDataGrid extends DataGrid
         //     'filterable' => true
         // ]);
 
-        $this->addColumn([
-            'index' => 'product_name',
-            'label' => trans('admin::app.datagrid.name'),
-            'type' => 'string',
-            'searchable' => false,
-            'sortable' => true,
-            'filterable' => true
-        ]);
+        // $this->addColumn([
+        //     'index' => 'product_name',
+        //     'label' => trans('admin::app.datagrid.name'),
+        //     'type' => 'string',
+        //     'searchable' => false,
+        //     'sortable' => true,
+        //     'filterable' => true
+        // ]);
 
 
         $this->addColumn([
@@ -118,13 +120,31 @@ class ProductSerialNumberDataGrid extends DataGrid
             'filterable' => true
         ]);
 
+        // $this->addColumn([
+        //     'index' => 'increment_id',
+        //     'label' => 'Order ID',
+        //     'type' => 'string',
+        //     'searchable' => true,
+        //     'sortable' => true,
+        //     'filterable' => true
+        // ]);
+
         $this->addColumn([
             'index' => 'increment_id',
             'label' => 'Order ID',
             'type' => 'string',
             'searchable' => true,
             'sortable' => true,
-            'filterable' => true
+            'closure' => true,
+            'filterable' => true,
+            'wrapper' => function ($value) {
+                if ($value->increment_id == NULL)
+                    return '<span class="badge badge-md badge-warning">Unavailable</span>';
+                else{
+                    $link = route('admin.sales.orders.view', ['id' => $value->orders_id]);
+                    return '<span class="badge badge-md badge-available"><a href="'.$link.'">'.$value->increment_id.'</a></span>';
+                }
+            }
         ]);
 
         $this->addColumn([

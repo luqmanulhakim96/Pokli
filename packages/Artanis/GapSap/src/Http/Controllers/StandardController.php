@@ -76,6 +76,24 @@ class StandardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function success($data)
+    // {
+    //     // $order = $this->orderRepository->create(Cart::prepareDataForOrder());
+    //
+    //     // Cart::deActivateCart();
+    //
+    //     // session()->flash('order', $order);
+    //     $purchase = GoldSilverHistory::where('customer_id',auth()->guard('customer')->user()->id)->latest()->first();
+    //     $purchase->status = 'paid';
+    //     $purchase->payment_on = $data['paid_at']->format('Y-m-d H:i:s');
+    //     $purchase->status_datetime = $data['paid_at']->format('Y-m-d H:i:s');
+    //     $purchase->transaction_id = $data['id'];
+    //     $purchase->save();
+    //
+    //     session()->flash('success', 'FPX payment successful.');
+    //
+    //     return redirect()->route('gapsap.index');
+    // }
     public function success()
     {
         // $order = $this->orderRepository->create(Cart::prepareDataForOrder());
@@ -95,20 +113,24 @@ class StandardController extends Controller
         $bill = $billplzCreate->bill();
         $data = $bill->redirect($_GET); //catch billplz payment
         $response = $data['paid'];
+        // dd($data);
         // $date = new DateTime($data['paid_at']);
         // $datetime = date('Y-m-d h:i:s', strtotime($data['paid_at']));
         // dd($data['paid_at']->format('Y-m-d H:i:s'));
-        if ($response == 'true')
+        if ($response == true)
         {
             $purchase = GoldSilverHistory::where('customer_id',auth()->guard('customer')->user()->id)->latest()->first();
             $purchase->status = 'paid';
             $purchase->payment_on = $data['paid_at']->format('Y-m-d H:i:s');
             $purchase->status_datetime = $data['paid_at']->format('Y-m-d H:i:s');
+            $purchase->transaction_id = $data['id'];
             $purchase->save();
             // dd($purchase);
+            // $data = json_encode($data);
+            // return redirect()->route('gapsap.success',['data'=>$data]);
             return redirect()->route('gapsap.success');
         }
-        else if ($response == 'false')
+        else if ($response == false)
           return redirect()->route('gapsap.cancel');
     }
 

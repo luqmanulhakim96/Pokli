@@ -91,6 +91,14 @@
                 <span class="control-error" v-if="errors.has('bank_no')">@{{ errors.first('bank_no') }}</span>
             </div>
 
+            <div class="control-group" :class="[errors.has('branch') ? 'has-error' : '']">
+                <label for="branch" class="required">{{ __('shop::app.customer.signup-form.branch') }}</label>
+                <select name="branch" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.branch') }}&quot;">
+                  <option value="seremban" >Seremban</option>
+                </select>
+                <span class="control-error" v-if="errors.has('branch')">@{{ errors.first('branch') }}</span>
+            </div>
+
             {{-- <div class="signup-confirm" :class="[errors.has('agreement') ? 'has-error' : '']">
                 <span class="checkbox">
                     <input type="checkbox" id="checkbox2" name="agreement" v-validate="'required'">

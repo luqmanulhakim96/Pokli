@@ -96,9 +96,9 @@ class ProductSerialNumberController extends Controller
     public function index($id)
     {
       $product = $this->productRepository->with(['variants', 'variants.inventories'])->findOrFail($id);
-
       $inventory = DB::table('product_inventories')->where('product_id', $id)->sum('qty');
-      $existing_serial = DB::table('product_serial_number')->where('product_id', $id)->count('status');
+      // $existing_serial = DB::table('product_serial_number')->where('product_id', $id)->count('status');
+      $existing_serial = DB::table('product_serial_number')->where([['product_id','=', $id],['status','=','Available']])->count('status');
       $inventory = $inventory - $existing_serial;
       return view($this->_config['view'], ['product'=>$product, 'inventory'=>$inventory , 'product_id'=>$id]);
     }
@@ -173,6 +173,11 @@ class ProductSerialNumberController extends Controller
         }
 
         return response()->json(['message' => false], 400);
+    }
+
+    public static function getID()
+    {
+      // return $id;
     }
 
 }

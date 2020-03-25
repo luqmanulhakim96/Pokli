@@ -199,6 +199,22 @@
                                     </div>
 
                                     <div class="section-content">
+                                        @if($purchase->payment_method=='fpx')
+                                        <div class="row">
+                                            <span class="title">
+                                                {{ __('Transaction ID') }}
+                                            </span>
+                                            @if($purchase->transaction_id)
+                                            <span class="value">
+                                              {{ $purchase->transaction_id }}
+                                            </span>
+                                            @else
+                                            <span class="value">
+                                              Unavailable
+                                            </span>
+                                            @endif
+                                        </div>
+                                        @endif
                                         <div class="row">
                                             <span class="title">
                                                 {{ __('admin::app.sales.orders.payment-method') }}

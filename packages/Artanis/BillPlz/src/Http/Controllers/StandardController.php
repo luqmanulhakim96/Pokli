@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Config;
 use Webkul\Payment\Payment\Payment;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
+use DB;
 
 class StandardController extends Controller
 {
@@ -106,10 +107,17 @@ class StandardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function success()
+    public function success($transaction_id)
     {
-        $order = $this->orderRepository->create(Cart::prepareDataForOrder());
+        // enable the query log
+        // DB::enableQueryLog();
 
+        $order = $this->orderRepository->create(Cart::prepareDataForOrder());
+        // dd($order->id);
+        $add_transaction_id = DB::table('order_payment')->where('order_id', $order->id)->update(['transaction_id'=>$transaction_id]);
+        // dd($add_transaction_id);
+        // view the query log
+        // dd(DB::getQueryLog());
         Cart::deActivateCart();
 
         session()->flash('order', $order);
@@ -124,9 +132,10 @@ class StandardController extends Controller
         $bill = $billplzCreate->bill();
         $data = $bill->redirect($_GET); //catch billplz payment
         $response = $data['paid'];
-        if ($response == 'true')
-          return redirect()->route('billplz.success');
-        else if ($response == 'false')
+        $transaction_id = $data['id'];
+        if ($response == true)
+          return redirect()->route('billplz.success',['transaction_id'=>$transaction_id]);
+        else if ($response == false)
           return redirect()->route('billplz.cancel');
     }
 

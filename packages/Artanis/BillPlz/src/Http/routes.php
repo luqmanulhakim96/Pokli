@@ -6,7 +6,7 @@
 
         Route::get('billplz/redirect', 'Artanis\BillPlz\Http\Controllers\StandardController@redirect')->name('billplz.redirect');
 
-        Route::get('billplz/success', 'Artanis\BillPlz\Http\Controllers\StandardController@success')->name('billplz.success');
+        Route::get('billplz/success/{transaction_id}', 'Artanis\BillPlz\Http\Controllers\StandardController@success')->name('billplz.success');
 
         Route::get('billplz/cancel', 'Artanis\BillPlz\Http\Controllers\StandardController@cancel')->name('billplz.cancel');
 

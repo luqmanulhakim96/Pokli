@@ -31,7 +31,6 @@
 
         <div class="page-content">
             @inject('products', 'Artanis\AdminCustom2\DataGrids\ProductSerialNumberDataGrid')
-            {{--$products->render() --}}
             {!! $products->render() !!}
         </div>
 

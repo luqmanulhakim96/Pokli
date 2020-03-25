@@ -18,6 +18,7 @@ class AddJobHeirDetailsIntoCustomers extends Migration
             $table->string('heir_name')->nullable();
             $table->string('heir_relation')->nullable();
             $table->string('heir_phone_no')->nullable();
+            $table->string('heir_ic')->nullable();
         });
     }
 
@@ -33,6 +34,7 @@ class AddJobHeirDetailsIntoCustomers extends Migration
             $table->dropColumn('heir_name');
             $table->dropColumn('heir_relation');
             $table->dropColumn('heir_phone_no');
+            $table->dropColumn('heir_ic');
         });
     }
 }

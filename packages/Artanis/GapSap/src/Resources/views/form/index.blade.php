@@ -117,7 +117,7 @@
                     <input type="hidden" name="payment_attachment" value="Attachment">
                     <span class="control-error" v-if="errors.has('payment_attachment')">@{{ errors.first('payment_attachment') }}</span> --}}
                     <label for="payment_attachment" class="required">Attachment</label>
-                    <input type="file" class="form-control-file mt-10" id="image" v-validate="'required|image|size:100'" name="payment_attachment" data-vv-as="&quot;Attachment Bankin&quot;">
+                    <input type="file" class="form-control-file mt-10" id="image" v-validate="'required|ext:jpeg,jpg,png,pdf,doc,docx|size:1000'" name="payment_attachment" data-vv-as="&quot;Attachment Bankin&quot;">
                     <span class="control-error" v-if="errors.has('payment_attachment')">@{{ errors.first('payment_attachment') }}</span>
                     {{-- @if ($errors->has('image'))
                         <strong>{{ $errors->first('image') }}</strong>
