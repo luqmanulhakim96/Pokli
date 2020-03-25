@@ -5,7 +5,8 @@
                 <li>
                     <a href="{{ route('shop.home.index') }}">
                         @if ($logo = core()->getCurrentChannel()->logo_url)
-                            <img class="logo" src="{{ $logo }}" />
+                            <img class="logo" src="{{asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png')}}" />
+                            <!-- <img class="logo" src="{{ $logo }}" /> -->
                         @else
                             <img class="logo" src="{{asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png')}}" />
                         @endif
@@ -168,11 +169,32 @@
 
     <div class="header-bottom" id="header-bottom">
         @include('shop::layouts.header.nav-menu.navmenu')
-        {{-- <ul class="nav">
+        @auth('customer')
+         <!-- <ul class="nav">
             <li parent="0">
                 <a href="/purchase">GAP/SAP</a>
             </li>
-        </ul> --}}
+        </ul> -->
+        <!-- <button onmouseover="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div> -->
+        <ul id="navigation" class="nav">
+          <li parent="0"><a href="#" class="inactiveLink">
+            My Uncang
+            <i class="icon dropdown-right-icon"></i></a> <i class="icon icon-arrow-down mt-15"></i>
+              <ul><li>
+                <a href="/purchase">Purchase</a>
+              </li>
+              <li>
+                <a href="/buyback">Buyback</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        @endauth
     </div>
 
     <div class="search-responsive mt-10" id="search-responsive">
@@ -190,7 +212,7 @@
 
 @push('scripts')
     @auth('customer')
-        <script>
+        <!-- <script>
             $(function () {
                 var ul = document.getElementById("navigation");
                 var li = document.createElement("li");
@@ -208,8 +230,29 @@
                 ul.appendChild(li);
                 ul.appendChild(li2);
             });
-        </script>
+        </script> -->
     @endauth
+    <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onmouseover = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
     <script>
         $(document).ready(function() {
 
