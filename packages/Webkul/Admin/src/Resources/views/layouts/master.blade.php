@@ -9,7 +9,8 @@
         {{-- <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/favicon.ico') }}" /> --}}
 
         @if (core()->getConfigData('general.design.admin_logo.logo_image'))
-            <link rel="icon" sizes="16x16" href="{{ \Illuminate\Support\Facades\Storage::url(core()->getConfigData('general.design.admin_logo.logo_image')) }}" />
+        <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/logo.png') }}" />
+            <!-- <link rel="icon" sizes="16x16" href="{{ \Illuminate\Support\Facades\Storage::url(core()->getConfigData('general.design.admin_logo.logo_image')) }}" /> -->
         @else
             <link rel="icon" sizes="16x16" href="{{ asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png') }}" />
         @endif
