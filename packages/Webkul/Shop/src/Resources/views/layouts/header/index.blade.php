@@ -5,7 +5,8 @@
                 <li>
                     <a href="{{ route('shop.home.index') }}">
                         @if ($logo = core()->getCurrentChannel()->logo_url)
-                            <img class="logo" src="{{ $logo }}" />
+                        <img class="logo" src="{{asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png')}}" />
+                            <!-- <img class="logo" src="{{ $logo }}" /> -->
                         @else
                             <img class="logo" src="{{ asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png') }}" />
                         @endif

@@ -5,7 +5,8 @@
                 <li>
                     <a href="{{ route('shop.home.index') }}">
                         @if ($logo = core()->getCurrentChannel()->logo_url)
-                            <img class="logo" src="{{ $logo }}" />
+                        <img class="logo" src="{{asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png')}}" />
+                            <!-- <img class="logo" src="{{ $logo }}" /> -->
                         @else
                             <img class="logo" src="{{ asset('vendor/webkul/ui/assets/images/output-onlinepngtools-transparent.png') }}" />
                         @endif
@@ -167,12 +168,27 @@
     </div>
 
     <div class="header-bottom" id="header-bottom">
-        @include('shop::layouts.header.nav-menu.navmenu')
-        {{-- <ul class="nav">
+        @include('gapsap::layouts.header.nav-menu.navmenu')
+        <!-- {{-- <ul class="nav">
             <li parent="3">
                 <a href="/purchase">MYUncang Emas / MYUncang Perak</a>
             </li>
-        </ul> --}}
+        </ul> --}} -->
+        @auth('customer')
+        <ul id="navigation" class="nav">
+          <li parent="0"><a href="#" class="inactiveLink">
+            My Uncang
+            <i class="icon dropdown-right-icon"></i></a> <i class="icon icon-arrow-down mt-15"></i>
+              <ul><li>
+                <a href="/purchase">Purchase</a>
+              </li>
+              <li>
+                <a href="/buyback">Buyback</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        @endauth
     </div>
 
     <div class="search-responsive mt-10" id="search-responsive">
@@ -192,21 +208,21 @@
     <script>
         // $(function () {
         window.onload = function(){
-            var ul = document.getElementById("navigation");
-            var li = document.createElement("li");
-            var a = document.createElement("a");
-            a.setAttribute("href", "/purchase");
-            a.appendChild(document.createTextNode('MYUncang Emas / MYUncang Perak'));
-
-            var li2 = document.createElement("li");
-            var b = document.createElement("a");
-            b.setAttribute("href", "/buyback");
-            b.appendChild(document.createTextNode('BuyBack'));
-
-            li.appendChild(a);
-            li2.appendChild(b);
-            ul.appendChild(li);
-            ul.appendChild(li2);
+            // var ul = document.getElementById("navigation");
+            // var li = document.createElement("li");
+            // var a = document.createElement("a");
+            // a.setAttribute("href", "/purchase");
+            // a.appendChild(document.createTextNode('MYUncang Emas / MYUncang Perak'));
+            //
+            // var li2 = document.createElement("li");
+            // var b = document.createElement("a");
+            // b.setAttribute("href", "/buyback");
+            // b.appendChild(document.createTextNode('BuyBack'));
+            //
+            // li.appendChild(a);
+            // li2.appendChild(b);
+            // ul.appendChild(li);
+            // ul.appendChild(li2);
         };
         // });
 
