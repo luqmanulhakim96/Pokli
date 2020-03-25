@@ -150,6 +150,23 @@ class CustomerController extends Controller
         return view($this->_config['view'], compact('customer', 'customerGroup', 'channelName'));
     }
 
+    /**
+    * View Customer's Information.
+    *
+    * @param  int  $id
+    * @return \Illuminate\Http\Response
+    */
+    public function view($id)
+    {
+      $customer = $this->customerRepository->findOrFail($id);
+
+      $customerGroup = $this->customerGroupRepository->findWhere([['code', '<>', 'guest']]);
+
+      $channelName = $this->channelRepository->all();
+
+      return view($this->_config['view'], compact('customer', 'customerGroup', 'channelName'));
+    }
+
      /**
      * Update the specified resource in storage.
      *

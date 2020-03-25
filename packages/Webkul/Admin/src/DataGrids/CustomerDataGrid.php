@@ -195,6 +195,13 @@ class CustomerDataGrid extends DataGrid
     public function prepareActions() {
         $this->addAction([
             'method' => 'GET', // use GET request only for redirect purposes
+            'route' => 'admin.customer.view',
+            'icon' => 'icon eye-icon',
+            'title' => trans('admin::app.customers.customers.view-help-title')
+        ]);
+
+        $this->addAction([
+            'method' => 'GET', // use GET request only for redirect purposes
             'route' => 'admin.customer.edit',
             'icon' => 'icon pencil-lg-icon',
             'title' => trans('admin::app.customers.customers.edit-help-title')

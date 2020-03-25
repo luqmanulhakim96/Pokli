@@ -878,6 +878,8 @@ return [
             'group-default' => 'Cannot delete the default group.',
             'edit-help-title' => 'Edit Customer',
             'delete-help-title' => 'Delete Customer',
+            'view-help-title' => 'View Customer',
+            'view-title' => 'Customer Information',
             'mass-destroy-success' => 'Customers deleted successfully',
             'mass-update-success' => 'Customers updated successfully',
             'status' => 'Status',
