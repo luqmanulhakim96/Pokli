@@ -324,7 +324,7 @@
 
                                 <li>
                                     @if ($item->customer_id)
-                                        <!-- <a href="{{ route('admin.customer.edit', $item->customer_id) }}"> -->
+                                        <a href="{{ route('admin.customer.view', $item->customer_id) }}">
                                     @endif
 
                                         <!-- <div class="image">
@@ -349,7 +349,7 @@
                                         <span class="icon angle-right-icon"></span>
 
                                     @if ($item->customer_id)
-                                        <!-- </a> -->
+                                        </a>
                                     @endif
                                 </li>
 

@@ -72,6 +72,10 @@ Route::group(['middleware' => ['web']], function () {
                 'redirect' => 'admin.customer.index'
             ])->name('admin.customer.update');
 
+            Route::get('customers/view/{id}', 'Webkul\Admin\Http\Controllers\Customer\CustomerController@view')->defaults('_config',[
+                'view' => 'admin::customers.view'
+            ])->name('admin.customer.view');
+
             Route::post('customers/delete/{id}', 'Webkul\Admin\Http\Controllers\Customer\CustomerController@destroy')->name('admin.customer.delete');
 
             Route::post('customers/masssdelete', 'Webkul\Admin\Http\Controllers\Customer\CustomerController@massDestroy')->name('admin.customer.mass-delete');
