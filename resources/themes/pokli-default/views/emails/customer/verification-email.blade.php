@@ -20,6 +20,11 @@
             color: #FFFFFF; text-align: center; background: #0031F0; padding: 10px 100px;text-decoration: none;">
                 {!! __('shop::app.mail.customer.verification.verify') !!}
             </a>
+            <br>
+            {!! __('shop::app.mail.customer.verification.click-here') !!}
+
+            <a href="{{ route('customer.verify', $data['token']) }}" style="font-size: 16px;</a>
+
         </div>
     </div>
 
