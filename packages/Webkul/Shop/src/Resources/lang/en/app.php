@@ -656,7 +656,7 @@ return [
                 'subject' => 'Verification Mail',
                 'verify' => 'Verify Your Account',
                 'summary' => 'This is the mail to verify that the email address you entered is yours.
-                Kindly click the Verify Your Account button below to verify your account.'
+                Kindly click the Verify Your Account button below to verify your account.',
                 'click-here' => 'Or you can click on the link below.'
             ],
 
