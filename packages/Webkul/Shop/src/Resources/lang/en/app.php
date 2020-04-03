@@ -105,7 +105,7 @@ return [
             'ic' => 'IC',
             'bank-name' => 'Bank Name',
             'bank-no' => 'Bank Account No.',
-            'branch' => 'Branch',
+            'branch' => 'Pokli Branch',
             'password' => 'Password',
             'confirm_pass' => 'Confirm Password',
             'button_title' => 'Register',
