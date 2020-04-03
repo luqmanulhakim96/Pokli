@@ -135,6 +135,7 @@
                         <label for="heir_relation" class="">{{ __('shop::app.customer.account.profile.heir-relation') }}</label>
                         <select name="heir_relation" class="control" v-validate="''" data-vv-as="&quot;{{ __('shop::app.customer.account.profile.heir-relation') }}&quot;">
                             <option value="">-</option>
+                            <option value="Spouse" @if ($customer->heir_relation == "Spouse") selected @endif>Spouse</option>
                             <option value="Grandfather/Grandmother" @if ($customer->heir_relation == "Grandfather/Grandmother") selected @endif>Grandfather/Grandmother</option>
                             <option value="Father/Mother" @if ($customer->heir_relation == "Father/Mother") selected @endif>Father/Mother</option>
                             <option value="Son/Daughter" @if ($customer->heir_relation == "Son/Daughter") selected @endif>Son/Daughter</option>
