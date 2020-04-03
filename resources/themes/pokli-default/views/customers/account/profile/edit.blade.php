@@ -92,6 +92,7 @@
                             <option value="Citibank" @if ($customer->bank_name == "Citibank") selected @endif>Citibank</option>
                             <option value="HSBC Bank" @if ($customer->bank_name == "HSBC Bank") selected @endif>HSBC Bank</option>
                             <option value="Hong Leong Bank" @if ($customer->bank_name == "Hong Leong Bank") selected @endif>Hong Leong Bank</option>
+                            <option value="Maybank" @if ($customer->bank_name == "Maybank") selected @endif>Maybank</option>
                             <option value="Public Bank" @if ($customer->bank_name == "Public Bank") selected @endif>Public Bank</option>
                             <option value="RHB Bank" @if ($customer->bank_name == "RHB Bank") selected @endif>RHB Bank</option>
                         </select>

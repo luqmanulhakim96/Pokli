@@ -135,7 +135,7 @@ return [
             'verify-failed' => 'We Cannot Verify Your Mail Account',
             'dont-have-account' => 'You Do Not Have Account With Us',
             'customer-registration' => 'Customer Registered Successfully',
-            'referral-code' => 'Referral Code'
+            'referral-code' => 'Referral Email (if required)'
         ],
 
         'login-text' => [
