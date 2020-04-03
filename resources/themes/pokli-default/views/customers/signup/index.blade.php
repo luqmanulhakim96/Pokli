@@ -79,6 +79,7 @@
                   <option value="Citibank" >Citibank</option>
                   <option value="HSBC Bank" >HSBC Bank</option>
                   <option value="Hong Leong Bank" >Hong Leong Bank</option>
+                  <option value="Maybank" >Maybank</option>
                   <option value="Public Bank" >Public Bank</option>
                   <option value="RHB Bank">RHB Bank</option>
                 </select>

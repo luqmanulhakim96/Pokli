@@ -17,7 +17,6 @@ class AddInfoIntoCustomers extends Migration
             $table->string('ic')->unique()->nullable();
             $table->string('bank_name')->nullable();
             $table->string('bank_no')->nullable();
-            $table->string('branch')->nullable();
         });
     }
 
@@ -32,7 +31,6 @@ class AddInfoIntoCustomers extends Migration
             $table->dropColumn('ic');
             $table->dropColumn('bank_name');
             $table->dropColumn('bank_no');
-            $table->dropColumn('branch');
         });
     }
 }
