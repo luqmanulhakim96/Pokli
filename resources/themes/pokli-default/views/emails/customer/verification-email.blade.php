@@ -15,7 +15,7 @@
 
         <div  style="margin-top: 40px; text-align: center">
             <a href="{{ route('customer.verify', $data['token']) }}" style="font-size: 16px;
-            color: #FFFFFF; text-align: center; background: #0031F0; padding: 10px 100px;text-decoration: none;">
+            color: #FFFFFF; text-align: center; background: #FF0000; padding: 10px 100px;text-decoration: none;">
                 {!! __('shop::app.mail.customer.verification.verify') !!}
             </a>
             <br>
