@@ -21,13 +21,12 @@
                 {!! __('shop::app.mail.customer.verification.verify') !!}
             </a>
             <br>
+            <br>
+            <br>
+            <br>
+
             {!! __('shop::app.mail.customer.verification.click-here') !!}
-
-        </div>
-
-        <div  style="margin-top: 40px; text-align: center">
-
-          <a href="{{ route('customer.verify', $data['token']) }}" style="font-size: 16px;"</a>
+            <a href="{{ route('customer.verify', $data['token']) }}" style="font-size: 16px;padding: 10px 100px;"</a>
 
         </div>
     </div>
