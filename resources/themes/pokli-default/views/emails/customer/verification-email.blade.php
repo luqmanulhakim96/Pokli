@@ -24,7 +24,7 @@
 
             {!! __('shop::app.mail.customer.verification.click-here') !!}
             <br>
-            <p style="color:#0031F0;font-size: 16px;padding: 10px 100px;">{{ route('customer.verify', $data['token']) }}</p>
+            <p style="color:#FF0000;font-size: 16px;padding: 10px 100px;">{{ route('customer.verify', $data['token']) }}</p>
 
         </div>
     </div>
