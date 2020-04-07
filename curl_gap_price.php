@@ -53,6 +53,20 @@
 
   //convert $date_and_time_substr to datetime for db compatibility
   $datetime_gold_updated = date("Y/m/d H:i:s", strtotime($date_and_time_substr));
+  $date_is_empty = False;
+
+  if(empty($datetime_gold_updated)))
+  {
+    $date_is_empty = True;
+  }
+  else if(strtotime($datetime_gold_updated)==NULL)
+  {
+    $date_is_empty = True;
+  }
+  else if(strtotime($datetime_gold_updated)==strtotime("1-January-1970 00:00:00"))
+  {
+    $date_is_empty = True;
+  }
 
   ////////////////////////////////////////////////--CURL 24K--////////////////////////////////////////////////
   // get the 24k gold current price
@@ -261,12 +275,15 @@
   }
 
   //update datetime
-  $sql_update_datetime = "UPDATE gold_live_price_gap SET last_updated ='".$datetime_gold_updated."'";
+  if(!$date_is_empty)
+  {
+    $sql_update_datetime = "UPDATE gold_live_price_gap SET last_updated ='".$datetime_gold_updated."'";
 
-  if ($conn->query($sql_update_datetime) === TRUE) {
-      echo "Date and time updated successfully <br>";
-  } else {
-      echo "Error updating record: " . $conn->error;
+    if ($conn->query($sql_update_datetime) === TRUE) {
+        echo "Date and time updated successfully <br>";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
   }
 
   $sql_update_gram_value_10g = "UPDATE gold_live_price_24k SET buy ='".$buy_10g."', sell='".$sell_10g."' WHERE gram = '10'";
