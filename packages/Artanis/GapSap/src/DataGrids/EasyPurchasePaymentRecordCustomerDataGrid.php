@@ -15,7 +15,7 @@ class EasyPurchasePaymentRecordCustomerDataGrid extends DataGrid
 {
     protected $sortOrder = 'desc'; //asc or desc
 
-    protected $index = 'order_id';
+    protected $index = 'epp_order_id';
 
     protected $itemsPerPage = 20;
 
@@ -29,7 +29,7 @@ class EasyPurchasePaymentRecordCustomerDataGrid extends DataGrid
                 ->leftJoin('customers', function($leftJoin2) {
                     $leftJoin2->on('customers.id', '=', 'easy_payment_purchase_record.customer_id');
                 })
-                ->addSelect('easy_payment_purchase_record.id as id' , 'easy_payment_purchase_record.monthly_price as monthly_price', 'easy_payment_purchase_record.date_payment as date_payment', 'easy_payment_purchase_record.payment_status as payment_status', 'orders.increment_id as order_id', 'easy_payment_purchase_record.total_purchase as total_purchase', 'easy_payment_purchase_record.created_at as created_at', 'easy_payment_purchase_record.customer_id as customer_id')
+                ->addSelect('easy_payment_purchase_record.id as id', 'easy_payment_purchase_record.order_id as epp_order_id' , 'easy_payment_purchase_record.monthly_price as monthly_price', 'easy_payment_purchase_record.date_payment as date_payment', 'easy_payment_purchase_record.payment_status as payment_status', 'orders.increment_id as order_id', 'easy_payment_purchase_record.total_purchase as total_purchase', 'easy_payment_purchase_record.created_at as created_at', 'easy_payment_purchase_record.customer_id as customer_id')
                 ->groupBy('orders.increment_id');
 
         // $this->addFilter('id', 'easy_payment_purchase_record.id');
