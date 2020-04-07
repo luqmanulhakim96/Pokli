@@ -174,12 +174,12 @@
         </tr>
         <tr style="top:10px;">
             <td align="center">
-                <h2>Pokli Wealth Management Sdn Bhd (1061529-V)</h2>
+                <h2>Pokli Wealth Management Sdn Bhd (1349069-M)</h2>
                 <pre style="font-size: 10px">
                 Wisma Pokli,101A- 1 Avenue,Jalan S2F2,Garden Homes, Seremban 270300 Seremban, Negeri Sembilan
-                Tel : +6066307797
+                Tel : +6019-664 5066
                 Email : admin@pokli.com
-                Website : www.pokli.com
+                Website : www.pokli.com.my
                 </pre>
             </td>
         </tr>
@@ -196,11 +196,13 @@
                 Order Number: {{ $purchase->invoice_id }}
                 <br /><br />
                 Date: {{ date('d/m/Y', strtotime($purchase->created_at)) }}
-                Customer: {{ $purchase->customer_full_name }}
-                780801-01-6353
-                Tel: 012-3969746
-                Email: {{ $purchase->customer->email }}
-
+                {{ $purchase->customer_full_name }}
+                {{ $purchase->customer->ic }}
+                {{ $purchase->customer->phone }}
+                {{ $purchase->customer->email }}
+                <br /><br />
+                Bank: {{ $purchase->customer->bank_name }}
+                Account Num: {{ $purchase->customer->bank_no }}
                 {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
                 </pre>
             </td>
@@ -209,10 +211,7 @@
 
                 <br/>
 
-                Ordered By:
-                Payment By: {{ $purchase->payment_method_label }}
-
-
+                <!-- Ordered By: {{ auth()->guard('admin')->user()->name }} -->
                 </pre>
             </td>
         </tr>
@@ -240,14 +239,17 @@
             <td align="center" style="width: 40%;border: 1px solid black;">
                 Description
             </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
+            <td align="center" style="width: 10%;border: 1px solid black;">
                 Price / gram
+            </td>
+            <td align="center" style="width: 20%;border: 1px solid black;">
+                Current Balance (Gram)
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
                 Total Weight (Gram)
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
-                Total Amout (RM)
+                Total Amount (RM)
             </td>
         </tr>
         <tr>
@@ -260,8 +262,11 @@
             <td align="center" style="width: 40%;border: 1px solid black;">
             <pre style="font-size: 10px"><b> {{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'PWM – MY Uncang Perak (Au 999.9)' }}</b></pre>
             </td>
-            <td align="center" style="width: 20%;border: 1px solid black;">
+            <td align="center" style="width: 10%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->current_price_per_gram }}</b></pre>
+            </td>
+            <td align="center" style="width: 20%;border: 1px solid black;">
+            <pre style="font-size: 10px"><b>{{ $purchase->product_type=='gold' ?  $balanceGold : $balanceSilver  }}</b></pre>
             </td>
             <td align="center" style="width: 20%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->quantity }}</b></pre>
@@ -271,7 +276,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="4" style="border: 1px solid white; border-right:1px solid black;"></td>
+            <td colspan="5" style="border: 1px solid white; border-right:1px solid black;"></td>
             <td style="border: 1px solid black;border-right:0px  white;">
             <pre style="font-size: 10px">
             <b>Grand Total :</b>
@@ -405,16 +410,17 @@
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
                 Prepared By: Website
+                <!-- {{ auth()->guard('admin')->user()->name }} -->
             </pre>
             </td>
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
-            <b>
+            <!-- <b>
                 I hereby agree to purchase the above
                 mentioned
                 item(s) and abide with the terms and
                 conditions above,
-            </b>
+            </b> -->
             </pre>
             </td>
         </tr>
@@ -434,10 +440,10 @@
             </td>
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px">
-                <hr align="left" class="blackSolid" style="margin-left:40px;" width="75%">
+                <!-- <hr align="left" class="blackSolid" style="margin-left:40px;" width="75%">
                 Name:
                 IC No:
-                Date:
+                Date: -->
             </pre>
             </td>
         </tr>

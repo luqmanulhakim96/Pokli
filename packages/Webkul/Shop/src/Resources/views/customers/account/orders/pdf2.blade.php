@@ -205,7 +205,7 @@
             Tel: {{$invoice->order->customer->phone}}
             Email: {{ $invoice->order->customer->email }}
 
-            {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
+            {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – My Uncang Emas (Au 999.9)' : 'PWM – My Uncang Perak (Au 999.9)' }}</h3> --}}
             </pre>
             </td>
             <td align="left" style="width: 40%;">
@@ -229,8 +229,8 @@
 <div class="information">
     <table width="100%" class="" style="margin-left:30px;">
         <tr style="width: 5%;border: 1px solid white;">
-            {{-- <td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</b></td> --}}
-            <td colspan="6"><b style="font-size:12px;text-transform: uppercase;text-decoration: underline;">PURCHASE OF GOLD PRODUCT</b></td>
+            {{-- <td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – My Uncang Emas (Au 999.9)' : 'PWM – My Uncang Perak (Au 999.9)' }}</b></td> --}}
+            <td colspan="6"><b style="font-size:12px;text-transform: uppercase;text-decoration: underline;">PURCHASE OF PRODUCT</b></td>
         </tr>
     </table>
     <table width="100%" class="table-custom">
@@ -245,7 +245,7 @@
                 Price/Item <br> (RM)
             </td>
             <td align="center" style="width: 15%;border: 1px solid black;">
-                Gold Premium <br>(RM)
+                Premium <br>(RM)
             </td>
             <td align="center" style="width: 15%;border: 1px solid black;">
                 Quantity<br> (Gram)
@@ -259,7 +259,7 @@
             <pre style="font-size: 10px">1</pre>
             </td>
             <td align="center" style="width: 35%;border: 1px solid black;">
-            <pre style="font-size: 10px"><b> {{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</b></pre>
+            <pre style="font-size: 10px"><b> {{ $purchase->product_type=='gold' ? 'PWM – My Uncang Emas (Au 999.9)' : 'PWM – My Uncang Perak (Au 999.9)' }}</b></pre>
             </td>
             <td align="center" style="width: 15%;border: 1px solid black;">
             <pre style="font-size: 10px"><b>{{ $purchase->current_price_per_gram }}</b></pre>
@@ -275,10 +275,11 @@
             </td>
         </tr> --}}
         @foreach ($invoice->items as $item)
+        <?php $i=1; ?>
             <tr>
-                <td align="center" style="width: 5%;border: 1px solid black;">
-                    <pre style="font-size: 10px">1</pre>
-                </td>
+                  <td align="center" style="width: 5%;border: 1px solid black;">
+                      <pre style="font-size: 10px">{{$i}}</pre>
+                  </td>
                 <td align="center" style="width: 35%;border: 1px solid black;">
                     <pre style="font-size: 10px"><b> {{ $item->name }}</b></pre>
                 </td>
@@ -295,6 +296,7 @@
                     <pre style="font-size: 10px"><b>{{ core()->formatPrice($invoice->grand_total, $invoice->order->order_currency_code) }}</b></pre>
                 </td>
             </tr>
+            <?php $i++; ?>
         @endforeach
         <tr>
             <td colspan="3" style="border: 1px solid white; border-right:1px solid black;"></td>
@@ -322,7 +324,7 @@
                 Bank              : Malayan Banking Berhad (Maybank)
                 Branch           : Seremban 2, NSDK
                 Acc No.          : 555171003253
-                                    :
+                                    <!-- : -->
                 (*Fast Cheque is NOT accepted.)
                 </pre>
             </td>

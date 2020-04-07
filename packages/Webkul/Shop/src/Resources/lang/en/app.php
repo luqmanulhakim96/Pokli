@@ -547,7 +547,8 @@ return [
             'title' => 'Order successfully placed',
             'thanks' => 'Thank you for your order!',
             'order-id-info' => 'Your order id is #:order_id',
-            'info' => 'We will email you, your order details and tracking information'
+            'info' => 'We will email you, your order details and tracking information',
+            'easy-purchase' => 'To view your monthly payment, go to your Profile and select Easy Purchase Payment Records.'
         ]
     ],
 
