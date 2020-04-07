@@ -68,6 +68,18 @@
     $date_is_empty = True;
   }
 
+  //update datetime
+  if($date_is_empty == False)
+  {
+    $sql_update_datetime = "UPDATE gold_live_price_gap SET last_updated ='".$datetime_gold_updated."'";
+
+    if ($conn->query($sql_update_datetime) === TRUE) {
+        echo "Date and time updated successfully <br>";
+    } else {
+        echo "Error updating record: " . $conn->error;
+    }
+  }
+
   ////////////////////////////////////////////////--CURL 24K--////////////////////////////////////////////////
   // get the 24k gold current price
   $get_24k_price = "//table[@id='goldbar-table-content2']";
@@ -272,18 +284,6 @@
       echo "Price per gram updated successfully <br>";
   } else {
       echo "Error updating record: " . $conn->error;
-  }
-
-  //update datetime
-  if(!$date_is_empty)
-  {
-    $sql_update_datetime = "UPDATE gold_live_price_gap SET last_updated ='".$datetime_gold_updated."'";
-
-    if ($conn->query($sql_update_datetime) === TRUE) {
-        echo "Date and time updated successfully <br>";
-    } else {
-        echo "Error updating record: " . $conn->error;
-    }
   }
 
   $sql_update_gram_value_10g = "UPDATE gold_live_price_24k SET buy ='".$buy_10g."', sell='".$sell_10g."' WHERE gram = '10'";
