@@ -55,7 +55,7 @@
   $datetime_gold_updated = date("Y/m/d H:i:s", strtotime($date_and_time_substr));
   $date_is_empty = False;
 
-  if(empty($datetime_gold_updated)))
+  if(empty($datetime_gold_updated))
   {
     $date_is_empty = True;
   }
