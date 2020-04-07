@@ -11,7 +11,7 @@ use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Discount\Helpers\Cart\CouponAbleRule as Coupon;
 use Webkul\Discount\Helpers\Cart\NonCouponAbleRule as NonCoupon;
 use Webkul\Discount\Helpers\Cart\ValidatesDiscount;
-
+use DB;
 /**
  * Chekout controller for the customer and guest for placing order
  *
@@ -172,7 +172,7 @@ class OnepageController extends Controller
     public function savePayment()
     {
         $payment = request()->get('payment');
-
+        // $input = $request->all();
         if (Cart::hasError() || ! $payment || ! Cart::savePaymentMethod($payment))
             return response()->json(['redirect_url' => route('shop.checkout.cart.index')], 403);
 
@@ -233,7 +233,9 @@ class OnepageController extends Controller
         if (! $order = session('order'))
             return redirect()->route('shop.checkout.cart.index');
 
-        return view($this->_config['view'], compact('order'));
+        $payment_method = DB::table('order_payment')->where('order_id', '=',$order->id)->select('method')->first();
+        // dd($payment_method->method);
+        return view($this->_config['view'], compact('order','payment_method'));
     }
 
     /**

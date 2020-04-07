@@ -31,6 +31,7 @@ class EasyPaymentPurchaseTenMonths extends Payment
     public function getRedirectUrl()
     {
         // return route('billplz.redirect');
+        return route('epptenmonths.calculatePriceTenMonths');
     }
 
     public function getFormFields()

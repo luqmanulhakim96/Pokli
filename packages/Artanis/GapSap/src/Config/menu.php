@@ -12,6 +12,11 @@ return [
         'name' => 'Buyback',
         'route' =>'gapsap.account.buyback.index',
         'sort' => 7
+    ],
+    [
+        'key' => 'account.easy_purchase_payment',
+        'name' => 'Easy Purchase Payment Records',
+        'route' =>'billplz.account.easy_purchase_payment.index',
+        'sort' => 8
     ]
 ];
-

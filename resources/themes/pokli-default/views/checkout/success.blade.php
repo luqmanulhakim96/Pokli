@@ -13,6 +13,10 @@
 
         <p>{{ __('shop::app.checkout.success.info') }}</p>
 
+        @if($payment_method->method == "easy_payment_purchase_ten_months" || $payment_method->method == "easy_payment_purchase_four_months")
+        <p>{{ __('shop::app.checkout.success.easy-purchase') }}</p>
+        @endif
+
         {{ view_render_event('bagisto.shop.checkout.continue-shopping.before', ['order' => $order]) }}
 
         <div class="misc-controls">
@@ -20,8 +24,8 @@
                 {{ __('shop::app.checkout.cart.continue-shopping') }}
             </a>
         </div>
-        
+
         {{ view_render_event('bagisto.shop.checkout.continue-shopping.after', ['order' => $order]) }}
-        
+
     </div>
 @endsection

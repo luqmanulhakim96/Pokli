@@ -310,6 +310,18 @@ Route::group(['middleware' => ['web']], function () {
                 // Route::get('/refunds/view/{id}', 'Webkul\Admin\Http\Controllers\Sales\RefundController@view')->defaults('_config', [
                 //     'view' => 'admin::sales.refunds.view'
                 // ])->name('admin.sales.refunds.view');
+
+                //Easy Purchase Payment Record Routes
+                Route::get('/easy-purchase-payment-record', 'Artanis\AdminCustom2\Http\Controllers\EasyPurchasePaymentRecordController@index')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.easy_purchase_payment.index'
+                ])->name('admincustom2.catalog.easy_purchase_payment.index');
+
+                Route::get('/easy-purchase-payment-record/{id}', 'Artanis\AdminCustom2\Http\Controllers\EasyPurchasePaymentRecordController@viewRecord')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.easy_purchase_payment.records.index'
+                ])->name('admincustom2.catalog.easy_purchase_payment.records.index');
+
+                Route::post('/easy-purchase-payment-record/update-payment/{id}', 'Artanis\AdminCustom2\Http\Controllers\EasyPurchasePaymentRecordController@updateStatus')->name('admincustom2.catalog.easy_purchase_payment.update_status');
+
             });
 
             // Catalog Routes

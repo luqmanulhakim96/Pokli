@@ -280,7 +280,7 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
                 //     $response->header('Content-Type', 'application/pdf');
                 //     $response->header('Content-Disposition', 'inline; filename="output.pdf"');
                 //     $response->header('Cache-Control:', 'private, max-age=0, must-revalidate');
-                
+
                 // })->name('gapsap.purchase.print');
 
                 Route::get('purchase/print/{id}', 'Artanis\GapSap\Http\Controllers\PurchaseController@print')->defaults('_config', [
@@ -339,6 +339,17 @@ Route::group(['middleware' => ['web', 'locale', 'theme', 'currency']], function 
                 Route::get('reviews/all-delete', 'Webkul\Shop\Http\Controllers\ReviewController@deleteAll')->defaults('_config', [
                     'redirect' => 'customer.reviews.index'
                 ])->name('customer.review.deleteall');
+
+                // Easy Purchase Payment Route
+                Route::get('easy-purchase-payment-records', 'Artanis\BillPlz\Http\Controllers\EasyPurchasePaymentRecordController@index')->defaults('_config', [
+                    'view' => 'billplz::customers.account.easy_purchase_payment.index'
+                ])->name('billplz.account.easy_purchase_payment.index');
+
+                Route::get('easy-purchase-payment-records/view/{id}', 'Artanis\BillPlz\Http\Controllers\EasyPurchasePaymentRecordController@viewRecord')->defaults('_config', [
+                    'view' => 'billplz::customers.account.easy_purchase_payment.view'
+                ])->name('billplz.account.easy_purchase_payment.view');
+
+
             });
         });
     });

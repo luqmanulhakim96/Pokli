@@ -30,7 +30,7 @@ class EasyPaymentPurchaseFourMonths extends Payment
 
     public function getRedirectUrl()
     {
-        // return route('billplz.redirect');
+        return route('eppfourmonths.calculatePriceFourMonths');
     }
 
     public function getFormFields()
