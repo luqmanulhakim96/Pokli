@@ -58,16 +58,7 @@ class EasyPurchasePaymentRecordCustomerDataGrid extends DataGrid
             'type' => 'string',
             'searchable' => false,
             'sortable' => true,
-            'closure' => true,
             'filterable' => true,
-            'wrapper' => function ($value) {
-                if ($value->order_id == NULL)
-                    return '<span class="badge badge-md badge-warning">Unavailable</span>';
-                else{
-                    $link = route('admin.sales.orders.view', ['id' => $value->order_id]);
-                    return '<span class="badge badge-md badge-available"><a href="'.$link.'">'.$value->order_id.'</a></span>';
-                }
-            }
         ]);
 
         $this->addColumn([

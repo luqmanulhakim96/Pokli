@@ -123,6 +123,36 @@
                         <strong>{{ $errors->first('image') }}</strong>
                     @endif --}}
                 </div>
+                <div class="login-form" style="font-size:14px;">
+                  Kindly remit the payment to ONE of our bank accounts as below:
+                  <br>
+                  <br>
+                  <table style="font-size:12px;">
+                    <tr>
+                      <td>Account Name</td>
+                      <td>:</td>
+                      <td>Pokli Wealth Management</td>
+                    </tr>
+                    <tr>
+                      <td>Bank</td>
+                      <td>:</td>
+                      <td>Malayan Banking Berhad (Maybank)</td>
+                    </tr>
+                    <tr>
+                      <td>Branch</td>
+                      <td>:</td>
+                      <td>Seremban 2, Negeri Sembilan</td>
+                    </tr>
+                    <tr>
+                      <td>Acc Number</td>
+                      <td>:</td>
+                      <td>555171003253</td>
+
+                    </tr>
+                  </table>
+                  <br>
+                  (*Fast Cheque is NOT accepted.)
+                </div>
                 @endif
 
                 <div class="row">
