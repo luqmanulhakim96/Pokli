@@ -212,25 +212,25 @@
 
 @push('scripts')
     @auth('customer')
-        <!-- <script>
-            $(function () {
-                var ul = document.getElementById("navigation");
-                var li = document.createElement("li");
-                var a = document.createElement("a");
-                a.setAttribute("href", "/purchase");
-                a.appendChild(document.createTextNode('MYUncang Emas / MYUncang Perak'));
-
-                var li2 = document.createElement("li");
-                var b = document.createElement("a");
-                b.setAttribute("href", "/buyback");
-                b.appendChild(document.createTextNode('BuyBack'));
-
-                li.appendChild(a);
-                li2.appendChild(b);
-                ul.appendChild(li);
-                ul.appendChild(li2);
-            });
-        </script> -->
+        <script>
+            // $(function () {
+            //     var ul = document.getElementById("navigation");
+            //     var li = document.createElement("li");
+            //     var a = document.createElement("a");
+            //     a.setAttribute("href", "/purchase");
+            //     a.appendChild(document.createTextNode('MYUncang Emas / MYUncang Perak'));
+            //
+            //     var li2 = document.createElement("li");
+            //     var b = document.createElement("a");
+            //     b.setAttribute("href", "/buyback");
+            //     b.appendChild(document.createTextNode('BuyBack'));
+            //
+            //     li.appendChild(a);
+            //     li2.appendChild(b);
+            //     ul.appendChild(li);
+            //     ul.appendChild(li2);
+            // });
+        </script>
     @endauth
     <script>
     /* When the user clicks on the button,
