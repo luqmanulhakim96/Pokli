@@ -29,20 +29,7 @@
 
                         <div class="line-two mt-5">
                             <span class="method-summary">{{ __($payment['description']) }}</span>
-                            <!-- <br> -->
-                            @if($payment['method_title'] == "Cash On Delivery")
-                            <div class="control-group" :class="[errors.has('cod_branch') ? 'has-error' : '']">
-                                <!-- <label for="cod_branch" class="required">{{ __('shop::app.checkout.onepage.cod-branch') }}</label> -->
-                                <select id="cod_branch" name="cod_branch" class="control" data-vv-as="&quot;{{ __('shop::app.checkout.onepage.cod-branch') }}&quot;">
-                                    <!-- <option value="">Please Select Branch for Pickup</option> -->
-                                    <option value="seremban">Seremban</option>
-                                </select>
-                                <span class="control-error" v-if="errors.has('cod_branch')">@{{ errors.first('cod_branch') }}</span>
-                            </div>
-                            @endif
-
                         </div>
-
                     </div>
 
                     {!! view_render_event('bagisto.shop.checkout.payment-method.after', ['payment' => $payment]) !!}
