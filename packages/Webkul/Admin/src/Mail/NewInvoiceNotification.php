@@ -44,7 +44,7 @@ class NewInvoiceNotification extends Mailable
     {
         $order = $this->invoice->order;
         $invoice = $this->invoice;
-        // dd($invoice);
+        dd($invoice);
 
         return $this->to($order->customer_email, $order->customer_full_name)
                 ->from(env('SHOP_MAIL_FROM'))
