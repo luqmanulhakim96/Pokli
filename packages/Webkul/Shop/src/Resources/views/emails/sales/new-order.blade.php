@@ -1,203 +1,405 @@
-@component('shop::emails.layouts.master')
-    <div style="text-align: center;">
-        <a href="{{ config('app.url') }}">
-            @include ('shop::emails.layouts.logo')
-        </a>
-    </div>
+{{-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Cache-control" content="no-cache">
 
-    <div style="padding: 30px;">
-        <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
-            <span style="font-weight: bold;">
-                {{ __('shop::app.mail.order.heading') }}
-            </span> <br>
+        <style type="text/css">
+            body, th, td, h5 {
+                font-size: 12px;
+                color: #000;
+            }
 
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {{ __('shop::app.mail.order.dear', ['customer_name' => $order->customer_full_name]) }},
-            </p>
+            .container {
+                padding: 20px;
+                display: block;
+            }
 
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {!! __('shop::app.mail.order.greeting', [
-                    'order_id' => '<a href="' . route('customer.orders.view', $order->id) . '" style="color: #0041FF; font-weight: bold;">#' . $order->increment_id . '</a>',
-                    'created_at' => $order->created_at
-                    ])
-                !!}
-            </p>
-        </div>
+            .invoice-summary {
+                margin-bottom: 20px;
+            }
 
-        <div style="font-weight: bold;font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 20px !important;">
-            {{ __('shop::app.mail.order.summary') }}
-        </div>
+            .table {
+                margin-top: 20px;
+            }
 
-        <div style="display: flex;flex-direction: row;margin-top: 20px;justify-content: space-between;margin-bottom: 40px;">
-            @if ($order->shipping_address)
-                <div style="line-height: 25px;">
-                    <div style="font-weight: bold;font-size: 16px;color: #242424;">
-                        {{ __('shop::app.mail.order.shipping-address') }}
-                    </div>
+            .table table {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+            }
 
-                    <div>
-                        {{ $order->shipping_address->name }}
-                    </div>
+            .table thead th {
+                font-weight: 700;
+                border-top: solid 1px #d3d3d3;
+                border-bottom: solid 1px #d3d3d3;
+                border-left: solid 1px #d3d3d3;
+                padding: 5px 10px;
+                background: #F4F4F4;
+            }
 
-                    <div>
-                        {{ $order->shipping_address->address1 }}, {{ $order->shipping_address->state }}
-                    </div>
+            .table thead th:last-child {
+                border-right: solid 1px #d3d3d3;
+            }
 
-                    <div>
-                        {{ core()->country_name($order->shipping_address->country) }} {{ $order->shipping_address->postcode }}
-                    </div>
+            .table tbody td {
+                padding: 5px 10px;
+                border-bottom: solid 1px #d3d3d3;
+                border-left: solid 1px #d3d3d3;
+                color: $font-color;
+                vertical-align: middle;
+                font-family: DejaVu Sans; sans-serif;
+            }
 
-                    <div>---</div>
+            .table tbody td p {
+                margin: 0;
+            }
 
-                    <div style="margin-bottom: 40px;">
-                        {{ __('shop::app.mail.order.contact') }} : {{ $order->shipping_address->phone }}
-                    </div>
+            .table tbody td:last-child {
+                border-right: solid 1px #d3d3d3;
+            }
 
-                    <div style="font-size: 16px;color: #242424;">
-                        {{ __('shop::app.mail.order.shipping') }}
-                    </div>
+           .sale-summary {
+                margin-top: 40px;
+                float: right;
+            }
 
-                    <div style="font-weight: bold;font-size: 16px;color: #242424;">
-                        {{ $order->shipping_title }}
-                    </div>
+            .sale-summary tr td {
+                padding: 3px 5px;
+                font-family: DejaVu Sans; sans-serif;
+            }
+
+            .sale-summary tr.bold {
+                font-weight: 600;
+            }
+
+            .label {
+                color: #000;
+                font-weight: 600;
+            }
+
+        </style>
+    </head>
+
+    <body style="background-image: none;background-color: #fff;">
+        <div class="container">
+
+            <div class="invoice-summary">
+
+                <div class="row">
+                    <span class="label">{{ __('shop::app.customer.account.order.view.invoice-id') }} -</span>
+                    <span class="value">#{{ $invoice->id }}</span>
                 </div>
-            @endif
 
-            <div style="line-height: 25px;">
-                <div style="font-weight: bold;font-size: 16px;color: #242424;">
-                    {{ __('shop::app.mail.order.billing-address') }}
+                <div class="row">
+                    <span class="label">{{ __('shop::app.customer.account.order.view.order-id') }} -</span>
+                    <span class="value">#{{ $invoice->increment_id }}</span>
                 </div>
 
-                <div>
-                    {{ $order->billing_address->name }}
+                <div class="row">
+                    <span class="label">{{ __('shop::app.customer.account.order.view.order-date') }} -</span>
+                    <span class="value">{{ core()->formatDate($invoice->created_at, 'd M Y') }}</span>
                 </div>
 
-                <div>
-                    {{ $order->billing_address->address1 }}, {{ $order->billing_address->state }}
-                </div>
-
-                <div>
-                    {{ core()->country_name($order->billing_address->country) }} {{ $order->billing_address->postcode }}
-                </div>
-
-                <div>---</div>
-
-                <div style="margin-bottom: 40px;">
-                    {{ __('shop::app.mail.order.contact') }} : {{ $order->billing_address->phone }}
-                </div>
-
-                <div style="font-size: 16px; color: #242424;">
-                    {{ __('shop::app.mail.order.payment') }}
-                </div>
-
-                <div style="font-weight: bold;font-size: 16px; color: #242424;">
-                    {{ core()->getConfigData('sales.paymentmethods.' . $order->payment->method . '.title') }}
-                </div>
-            </div>
-        </div>
-
-        <div class="section-content">
-            <div class="table mb-20">
-                <table style="overflow-x: auto; border-collapse: collapse;
-                border-spacing: 0;width: 100%">
-                    <thead>
-                        <tr style="background-color: #f2f2f2">
-                            <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.SKU') }}</th>
-                            <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.product-name') }}</th>
-                            <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.price') }}</th>
-                            <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.qty') }}</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach ($order->items as $item)
-                            <tr>
-                                <td data-value="{{ __('shop::app.customer.account.order.view.SKU') }}" style="text-align: left;padding: 8px">{{ $item->getTypeInstance()->getOrderedItem($item)->sku }}</td>
-
-                                <td data-value="{{ __('shop::app.customer.account.order.view.product-name') }}" style="text-align: left;padding: 8px">
-                                    {{ $item->name }}
-
-                                    @if (isset($item->additional['attributes']))
-                                        <div class="item-options">
-
-                                            @foreach ($item->additional['attributes'] as $attribute)
-                                                <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
-                                            @endforeach
-
-                                        </div>
-                                    @endif
-                                </td>
-
-                                <td data-value="{{ __('shop::app.customer.account.order.view.price') }}" style="text-align: left;padding: 8px">{{ core()->formatPrice($item->price, $order->order_currency_code) }}
-                                </td>
-
-                                <td data-value="{{ __('shop::app.customer.account.order.view.qty') }}" style="text-align: left;padding: 8px">{{ $item->qty_ordered }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div style="font-size: 16px;color: #242424;line-height: 30px;float: right;width: 40%;margin-top: 20px;">
-            <div>
-                <span>{{ __('shop::app.mail.order.subtotal') }}</span>
-                <span style="float: right;">
-                    {{ core()->formatPrice($order->sub_total, $order->order_currency_code) }}
-                </span>
             </div>
 
-            @if ($order->shipping_address)
-                <div>
-                    <span>{{ __('shop::app.mail.order.shipping-handling') }}</span>
-                    <span style="float: right;">
-                        {{ core()->formatPrice($order->shipping_amount, $order->order_currency_code) }}
-                    </span>
-                </div>
-            @endif
-
-            @foreach (Webkul\Tax\Helpers\Tax::getTaxRatesWithAmount($order, false) as $taxRate => $taxAmount )
-            <div>
-                <span id="taxrate-{{ core()->taxRateAsIdentifier($taxRate) }}">{{ __('shop::app.mail.order.tax') }} {{ $taxRate }} %</span>
-                <span id="taxamount-{{ core()->taxRateAsIdentifier($taxRate) }}" style="float: right;">
-                    {{ core()->formatPrice($taxAmount, $order->order_currency_code) }}
-                </span>
-            </div>
-            @endforeach
-
-            @if ($order->discount_amount > 0)
-                <div>
-                    <span>{{ __('shop::app.mail.order.discount') }}</span>
-                    <span style="float: right;">
-                        {{ core()->formatPrice($order->discount_amount, $order->order_currency_code) }}
-                    </span>
-                </div>
-            @endif
-
-            <div style="font-weight: bold">
-                <span>{{ __('shop::app.mail.order.grand-total') }}</span>
-                <span style="float: right;">
-                    {{ core()->formatPrice($order->grand_total, $order->order_currency_code) }}
-                </span>
-            </div>
         </div>
+    </body>
+</html> --}}
 
-        <div style="margin-top: 65px;font-size: 16px;color: #5E5E5E;line-height: 24px;display: inline-block">
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {{ __('shop::app.mail.order.final-summary') }}
-            </p>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice - #123</title>
 
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {!!
-                    __('shop::app.mail.order.help', [
-                        'support_email' => '<a style="color:#0041FF" href="mailto:' . config('mail.from.address') . '">' . config('mail.from.address'). '</a>'
-                        ])
-                !!}
-            </p>
+    <style type="text/css">
+        @page {
+            margin: 0px;
+        }
+        body {
+            margin: 0px;
+        }
+        * {
+            font-family: Verdana, Arial, sans-serif;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        table {
+            font-size: x-small;
+        }
+        tfoot tr td {
+            font-weight: bold;
+            font-size: x-small;
+        }
+        .invoice table {
+            margin: 15px;
+        }
+        .invoice h3 {
+            margin-left: 15px;
+        }
+        .information {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .information .logo {
+            margin: 5px;
+        }
+        .information table {
+            padding: 10px;
+        }
+        hr.blackSolid {
+            border-top: 1px solid black;
+        }
+        .table-custom {
+            margin-left: 30px;
+            margin-right: 50px;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {{ __('shop::app.mail.order.thanks') }}
-            </p>
-        </div>
-    </div>
-@endcomponent
+</head>
+<body>
+
+<div class="information">
+    <table width="100%">
+        <tr>
+            <td align="center">
+                {{-- <img src="{{asset('themes/pokli-default/assets/images/pokli-logo-gold-big.png')}}" alt="Logo" width="64" class="logo"/> --}}
+                {{-- <img src="{{ public_path('themes/pokli-default/assets/images/pokli-logo-gold-big.png') }}" alt="Logo" height="86.4px" width="238.08px" class=""/> --}}
+                <img src="{{ public_path('themes/pokli-default/assets/images/pokli-logo-gold-big.png') }}" height="86.4px" width="238.08px"/>
+            </td>
+        </tr>
+        <tr style="top:10px;">
+            <td align="center">
+                <h2>Pokli Wealth Management Sdn Bhd (1349069-M)</h2>
+                <pre style="font-size: 10px">
+                Wisma Pokli,101A- 1 Avenue,Jalan S2F2,Garden Homes, Seremban 270300 Seremban, Negeri Sembilan
+                Tel :  +6019-664 5066
+                Email : admin@pokli.com
+                Website : www.pokli.com.my
+                </pre>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" class="" style="margin-left:30px; padding-top:0px; padding-bottom:0px;">
+        <tr style="width: 5%;">
+            <td align="center" colspan="6"><b style="font-size: 14px">SALES ORDER</b></td>
+        </tr>
+    </table>
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+            <pre style="font-size: 12px; margin-top:0px; margin-bottom:0px;">
+            Order Number: {{ $invoice->order->increment_id }}
+            Date: {{ core()->formatDate($invoice->order->created_at, 'd/m/Y') }}
+            Customer: {{ $invoice->order->billing_address->name }}
+            {{$invoice->order->customer->ic}}
+            Tel: {{$invoice->order->customer->phone}}
+            Email: {{ $invoice->order->customer->email }}
+
+            {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – My Uncang Emas (Au 999.9)' : 'PWM – My Uncang Perak (Au 999.9)' }}</h3> --}}
+            </pre>
+            </td>
+            <td align="left" style="width: 40%;">
+                <pre style="font-size: 12px; margin-top:0px; margin-bottom:0px;">
+
+                <br/>
+
+                <!-- Ordered By: -->
+                @if ($invoice->order->shipping_address)
+                    Payment By: {{ core()->getConfigData('sales.paymentmethods.' . $invoice->order->payment->method . '.title') }}
+                @endif
+
+
+                </pre>
+            </td>
+        </tr>
+
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" class="" style="margin-left:30px;">
+        <tr style="width: 5%;border: 1px solid white;">
+            {{-- <td colspan="6"><b>{{ $purchase->product_type=='gold' ? 'PWM – My Uncang Emas (Au 999.9)' : 'PWM – My Uncang Perak (Au 999.9)' }}</b></td> --}}
+            <td colspan="6"><b style="font-size:12px;text-transform: uppercase;text-decoration: underline;">PURCHASE OF PRODUCT</b></td>
+        </tr>
+    </table>
+    <table width="100%" class="table-custom">
+        <tr>
+            <td align="center" style="width: 5%;border: 1px solid black;">
+                No
+            </td>
+            <td align="center" style="width: 35%;border: 1px solid black;">
+                Description
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+                Price/Item <br> (RM)
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+                Premium <br>(RM)
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+                Quantity<br> (Gram)
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+                Total Amout<br> (RM)
+            </td>
+        </tr>
+        {{-- <tr>
+            <td align="center" style="width: 5%;border: 1px solid black;">
+            <pre style="font-size: 10px">1</pre>
+            </td>
+            <td align="center" style="width: 35%;border: 1px solid black;">
+            <pre style="font-size: 10px"><b> {{ $purchase->product_type=='gold' ? 'PWM – My Uncang Emas (Au 999.9)' : 'PWM – My Uncang Perak (Au 999.9)' }}</b></pre>
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+            <pre style="font-size: 10px"><b>{{ $purchase->current_price_per_gram }}</b></pre>
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+                <pre style="font-size: 10px"><b>5</b></pre>
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+            <pre style="font-size: 10px"><b>{{ $invoice->total_qty }}</b></pre>
+            </td>
+            <td align="center" style="width: 15%;border: 1px solid black;">
+            <pre style="font-size: 10px"><b>{{ {{ core()->formatPrice($invoice->sub_total, $invoice->order->order_currency_code) }} }}</b></pre>
+            </td>
+        </tr> --}}
+        @foreach ($invoice->items as $item)
+        <?php $i=1; ?>
+            <tr>
+                  <td align="center" style="width: 5%;border: 1px solid black;">
+                      <pre style="font-size: 10px">{{$i}}</pre>
+                  </td>
+                <td align="center" style="width: 35%;border: 1px solid black;">
+                    <pre style="font-size: 10px"><b> {{ $item->name }}</b></pre>
+                </td>
+                <td align="center" style="width: 15%;border: 1px solid black;">
+                    <pre style="font-size: 10px"><b>{{ core()->formatPrice($item->price, $invoice->order->order_currency_code) }}</b></pre>
+                </td>
+                <td align="center" style="width: 15%;border: 1px solid black;">
+                    <pre style="font-size: 10px"><b>5</b></pre>
+                </td>
+                <td align="center" style="width: 15%;border: 1px solid black;">
+                    <pre style="font-size: 10px"><b>{{ $item->qty }}</b></pre>
+                </td>
+                <td align="center" style="width: 15%;border: 1px solid black;">
+                    <pre style="font-size: 10px"><b>{{ core()->formatPrice($invoice->grand_total, $invoice->order->order_currency_code) }}</b></pre>
+                </td>
+            </tr>
+            <?php $i++; ?>
+        @endforeach
+        <tr>
+            <td colspan="3" style="border: 1px solid white; border-right:1px solid black;"></td>
+            <td style="border: 1px solid black;border-right:0px  white;">
+            <pre style="font-size: 10px">
+            <b>Grand Total :</b>
+            </pre>
+            </td>
+            <td align="right" colspan="2" style="border: 1px solid black;border-left:0px solid  white;padding-right:15px;">
+            <pre style="font-size: 10px">
+            <b>{{ core()->formatPrice($invoice->grand_total, $invoice->order->order_currency_code) }}</b>
+            </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                Kindly remit the payment to ONE of our bank accounts as below:
+                Acc Name      : Pokli Wealth Management
+                Bank              : Malayan Banking Berhad (Maybank)
+                Branch           : Seremban 2, NSDK
+                Acc No.          : 555171003253
+                                    <!-- : -->
+                (*Fast Cheque is NOT accepted.)
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                <b>TERMS &amp; CONDITIONS:</b>
+                <b>PAYMENT</b>
+                i.) The payment shall be made within 24 hours after the issuance of Sales Order. Customer&#39;s trading account will be suspended if
+                failure to comply with this term &amp; condition.
+                ii.) After the payment has been made, the payment slip shall be faxed to +604-7753868, Or email to admin@pokli.com attn to Pokli
+                Wealth Management Receivable Division within 24 hours. iii.) The Order number and account Code (PWM******/ TEMP********) has to
+                be stated clearly on the payment slip. iv.) Payment via cheque, with amount RM25,000&amp; below will require 5 Malaysia&#39;s bank working
+                days to process.
+                v.) For Easy Payment Purchase (EPP), the customer is required to pay the monthly payment before the due date of each partial
+                payment date. Pokli Wealth Management reserves the right to terminate the Sales Order and take any necessary actions that deemed
+                appropriate if the customer failed to comply with the terms and conditions.
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<hr class="blackSolid" width="85%" style="margin-top:0px;margin-bottom:0px;">
+
+<div class="information" style="margin-left:5px; margin-right:5px;">
+    <table width="100%" style="padding-top:0px;">
+        <tr style="border-top: 1px solid black;">
+            <td align="left" style="width: 50%;">
+            <pre style="font-size: 10px; margin-top:0px;">
+                Prepared By: Website
+            </pre>
+            </td>
+            <td align="left" style="width: 50%;">
+            <pre style="font-size: 10px; margin-top:0px;">
+            <b>
+                I hereby agree to purchase the above
+                mentioned
+                item(s) and abide with the terms and
+                conditions above,
+            </b>
+            </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="information" style="margin-top:-10px">
+    <table width="100%">
+        <tr style="top:10px;">
+            <td align="left" style="width: 50%;">
+            <pre style="font-size: 10px">
+            <b>
+                This is a computer generated sales order, therefore no
+                signature is required.
+            </b>
+            </pre>
+            </td>
+            <td align="left" style="width: 50%;">
+            <pre style="font-size: 10px">
+                <hr align="left" class="blackSolid" style="margin-left:40px;" width="75%">
+                Name:
+                IC No:
+                Date:
+            </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
