@@ -57,10 +57,10 @@ class EasyPurchasePaymentRecordDataGrid extends DataGrid
             'closure' => true,
             'filterable' => true,
             'wrapper' => function ($value) {
-                if ($value->order_id == NULL)
+                if ($value->epp_order_id == NULL)
                     return '<span class="badge badge-md badge-warning">Unavailable</span>';
                 else{
-                    $link = route('admin.sales.orders.view', ['id' => $value->order_id]);
+                    $link = route('admin.sales.orders.view', ['id' => $value->epp_order_id]);
                     return '<span class="badge badge-md badge-available"><a href="'.$link.'">'.$value->order_id.'</a></span>';
                 }
             }
