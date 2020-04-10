@@ -620,9 +620,15 @@ return [
                                 extreme market conditions, such as financial and economic crisis, social unrest, political instability, war which can cause extreme
                                 volatility of precious metal price in international market.',
               'disclaimer' => 'Disclaimer :',
-              'disclaimer-1' => '1. Pokli Wealth Management Sdn Bhd. (Pokli) does not offer any investment advice or promises/forecasts any assured return
-              through this program while promoting the product.',
-              'disclaimer-2' => '2. Pokli management reserves the right to amend the terms and conditions without prior notice.',
+              'disclaimer-1' => '1. Pokli Wealth Management Sdn Bhd (PWMSB) – Gold Purchase (AU 999.9) is neither a financial product nor a deposit but a method of purchasing gold
+                                through periodic accumulations for the personal needs of the customer.',
+              'disclaimer-2' => '2. Pokli Wealth Management Sdn Bhd(PWMSB) does not offer any investment advice or promises/forecasts any assured return
+                                through this program while promoting the product.',
+              'disclaimer-3' => '3. Pokli Wealth Management Sdn Bhd (PWMSB) reserves the right to amend the terms and conditions without prior notice.',
+              'disclaimer-4' => 'All IPM gold and silver products are SST exempted and not permitted for manufacturing.',
+              'disclaimer-5' => 'Prepared By: Website',
+              'disclaimer-6' => 'P/S - Join PWMSB Group Sahabat Telegram https://tinyurl.com/pokliwealth',
+              'disclaimer-7' => 'www.pokli.com.my',
             ],
             'cancel' => [
                 'subject' => 'Order Cancel Confirmation',
