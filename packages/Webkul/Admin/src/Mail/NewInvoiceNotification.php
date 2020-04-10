@@ -46,6 +46,19 @@ class NewInvoiceNotification extends Mailable
         $invoice = $this->invoice;
         // dd($invoice);
 
+        $invoice = $this->invoiceRepository->findOrFail($invoice->id);
+        $filename = 'invoice/invoice-' . $invoice->created_at->format('dmY H.m.s') . '.pdf';
+        $serial_number = $invoice['order_id'];
+        // dd($serial_number);
+        // dd($shipment);
+        // foreach ($order->items as $item){
+        //   $product=$item->product_id;
+        $where = ['order_id' => $serial_number];
+        $serial_number= DB::table('product_serial_number')->where($where)->get();
+
+        $pdf = PDF::loadView('admin::sales.invoices.pdf', compact('invoice','serial_number'))->setPaper('a4');
+        Storage::put($filename, $pdf->output());
+
         return $this->to($order->customer_email, $order->customer_full_name)
                 ->from(env('SHOP_MAIL_FROM'))
                 ->subject(trans('shop::app.mail.invoice.subject', ['order_id' => $order->increment_id]))
