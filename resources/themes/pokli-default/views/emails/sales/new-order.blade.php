@@ -182,7 +182,8 @@
 
         <div style="margin-top: 65px;font-size: 16px;color: #5E5E5E;line-height: 24px;display: inline-block">
             <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {{ __('shop::app.mail.order.final-summary') }}
+                {{-- __('shop::app.mail.order.final-summary') --}}
+                {{-- __('shop::app.mail.order.terms-and-condition') --}}
             </p>
 
             <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
