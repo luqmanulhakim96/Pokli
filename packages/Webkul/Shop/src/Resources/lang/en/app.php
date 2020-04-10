@@ -580,11 +580,11 @@ return [
               'kindly-remit' => 'Kindly remit the payment to ONE of our bank accounts as below :',
               'account-name' => 'Account Name : Pokli Wealth Management',
               'bank-name' => 'Bank : Malayan Banking Berhad (Maybank)',
-              'branch-name' => 'Branch : Seremban 2, Negeri Sembilan'
+              'branch-name' => 'Branch : Seremban 2, Negeri Sembilan',
               'account-number' => 'Account Number : 555171003253',
               'fast-cheque' => '(*Fast Cheque is NOT accepted.)',
               'tnc' => 'TERMS & CONDITIONS :',
-              'payment'=> 'PAYMENT'
+              'payment'=> 'PAYMENT',
               'tnc-1' => 'i.) The payment shall be made within 24 hours after the issuance of Sales Order. Customer&#39;s trading account will be suspended if
                           failure to comply with this term &amp; condition.',
               'tnc-2' => 'ii.) After the payment has been made, the payment slip shall be faxed to +604-7753868, Or email to admin@pokli.com attn to Pokli
