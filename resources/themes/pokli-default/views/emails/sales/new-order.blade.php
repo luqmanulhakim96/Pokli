@@ -185,20 +185,19 @@
                 {{ __('shop::app.mail.order.terms-and-condition.kindly-remit') }}
                 <br>
                 <br>
-                {{ __('shop::app.mail.order.terms-and-condition.account-name') }}
-                {{ __('shop::app.mail.order.terms-and-condition.bank-name') }}
-                {{ __('shop::app.mail.order.terms-and-condition.branch-name') }}
-                {{ __('shop::app.mail.order.terms-and-condition.account-number') }}
-                <br>
+                {{ __('shop::app.mail.order.terms-and-condition.account-name') }}<br>
+                {{ __('shop::app.mail.order.terms-and-condition.bank-name') }}<br>
+                {{ __('shop::app.mail.order.terms-and-condition.branch-name') }}<br>
+                {{ __('shop::app.mail.order.terms-and-condition.account-number') }}<br>
                 <br>
                 {{ __('shop::app.mail.order.terms-and-condition.fast-cheque') }}
-                <br><br><br>
+                <br><br>
             </p>
 
             <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
               <b>{{ __('shop::app.mail.order.terms-and-condition.tnc') }}</b>
               <br>
-              {{ __('shop::app.mail.order.terms-and-condition.payment') }}
+              <b>{{ __('shop::app.mail.order.terms-and-condition.payment') }}</b>
               <br>
             </p>
 
