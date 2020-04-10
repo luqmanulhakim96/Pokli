@@ -27,7 +27,7 @@ class EasyPurchasePaymentRecordOrderDataGrid extends DataGrid
                 ->leftJoin('orders', function($leftJoin) {
                     $leftJoin->on('orders.id', '=', 'easy_payment_purchase_record.order_id');
                 })
-                ->addSelect('easy_payment_purchase_record.id as id' , 'easy_payment_purchase_record.monthly_price as monthly_price', 'easy_payment_purchase_record.date_payment as date_payment', 'easy_payment_purchase_record.payment_status as payment_status', 'orders.increment_id as order_id', 'easy_payment_purchase_record.total_purchase as total_purchase', 'easy_payment_purchase_record.created_at as created_at')
+                ->addSelect('easy_payment_purchase_record.id as id' , 'easy_payment_purchase_record.order_id as epp_order_id', 'easy_payment_purchase_record.monthly_price as monthly_price', 'easy_payment_purchase_record.date_payment as date_payment', 'easy_payment_purchase_record.payment_status as payment_status', 'orders.increment_id as order_id', 'easy_payment_purchase_record.total_purchase as total_purchase', 'easy_payment_purchase_record.created_at as created_at')
                 ->groupBy('easy_payment_purchase_record.id');
 
         $queryBuilder->where('easy_payment_purchase_record.order_id', $order_id);
@@ -60,10 +60,10 @@ class EasyPurchasePaymentRecordOrderDataGrid extends DataGrid
             'closure' => true,
             'filterable' => true,
             'wrapper' => function ($value) {
-                if ($value->order_id == NULL)
+                if ($value->epp_order_id == NULL)
                     return '<span class="badge badge-md badge-warning">Unavailable</span>';
                 else{
-                    $link = route('admin.sales.orders.view', ['id' => $value->order_id]);
+                    $link = route('admin.sales.orders.view', ['id' => $value->epp_order_id]);
                     return '<span class="badge badge-md badge-available"><a href="'.$link.'">'.$value->order_id.'</a></span>';
                 }
             }
