@@ -49,7 +49,7 @@ class NewInvoiceNotification extends Mailable
         return $this->to($order->customer_email, $order->customer_full_name)
                 ->from(env('SHOP_MAIL_FROM'))
                 ->subject(trans('shop::app.mail.invoice.subject', ['order_id' => $order->increment_id]))
-                ->view('shop::emails.sales.new-invoice', compact('invoice'));
-                ->attach('storage\app\public\invoice/invoice-' . $invoice->created_at->format('dmY H.m.s') . '.pdf';)
+                ->view('shop::emails.sales.new-invoice', compact('invoice'))
+                ->attach('storage\app\public\invoice/invoice-' . $invoice->created_at->format('dmY H.m.s') . '.pdf';);
     }
 }
