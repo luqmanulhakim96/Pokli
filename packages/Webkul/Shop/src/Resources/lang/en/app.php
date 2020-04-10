@@ -576,25 +576,27 @@ return [
             'final-summary' => 'Thanks for showing your interest in our store we will send you tracking number once it shipped',
             'help' => 'If you need any kind of help please contact us at :support_email',
             'thanks' => 'Thanks!',
-            'terms-and-condition' => 'Kindly remit the payment to ONE of our bank accounts as below:
-            Acc Name      : Pokli Wealth Management
-            Bank              : Malayan Banking Berhad (Maybank)
-            Branch           : Seremban 2, NSDK
-            Acc No.          : 555171003253
-                                <!-- : -->
-            (*Fast Cheque is NOT accepted.)
-
-            <b>TERMS &amp; CONDITIONS:</b>
-            <b>PAYMENT</b>
-            i.) The payment shall be made within 24 hours after the issuance of Sales Order. Customer&#39;s trading account will be suspended if
-            failure to comply with this term &amp; condition.
-            ii.) After the payment has been made, the payment slip shall be faxed to +604-7753868, Or email to admin@pokli.com attn to Pokli
-            Wealth Management Receivable Division within 24 hours. iii.) The Order number and account Code (PWM******/ TEMP********) has to
-            be stated clearly on the payment slip. iv.) Payment via cheque, with amount RM25,000&amp; below will require 5 Malaysia&#39;s bank working
-            days to process.
-            v.) For Easy Payment Purchase (EPP), the customer is required to pay the monthly payment before the due date of each partial
-            payment date. Pokli Wealth Management reserves the right to terminate the Sales Order and take any necessary actions that deemed
-            appropriate if the customer failed to comply with the terms and conditions.',
+            'terms-and-condition' => [
+              'kindly-remit' => 'Kindly remit the payment to ONE of our bank accounts as below :',
+              'account-name' => 'Account Name : Pokli Wealth Management',
+              'bank-name' => 'Bank : Malayan Banking Berhad (Maybank)',
+              'branch-name' => 'Branch : Seremban 2, Negeri Sembilan'
+              'account-number' => 'Account Number : 555171003253',
+              'fast-cheque' => '(*Fast Cheque is NOT accepted.)',
+              'tnc' => 'TERMS & CONDITIONS :',
+              'payment'=> 'PAYMENT'
+              'tnc-1' => 'i.) The payment shall be made within 24 hours after the issuance of Sales Order. Customer&#39;s trading account will be suspended if
+                          failure to comply with this term &amp; condition.',
+              'tnc-2' => 'ii.) After the payment has been made, the payment slip shall be faxed to +604-7753868, Or email to admin@pokli.com attn to Pokli
+                          Wealth Management Receivable Division within 24 hours.',
+              'tnc-3' => 'iii.) The Order number and account Code (PWM******/ TEMP********) has to
+                          be stated clearly on the payment slip.',
+              'tnc-4' => 'iv.) Payment via cheque, with amount RM25,000&amp; below will require 5 Malaysia&#39;s bank working
+                          days to process.',
+              'tnc-5' => 'v.) For Easy Payment Purchase (EPP), the customer is required to pay the monthly payment before the due date of each partial
+                          payment date. Pokli Wealth Management reserves the right to terminate the Sales Order and take any necessary actions that deemed
+                          appropriate if the customer failed to comply with the terms and conditions.',
+            ],
             'cancel' => [
                 'subject' => 'Order Cancel Confirmation',
                 'heading' => 'Order Cancelled',

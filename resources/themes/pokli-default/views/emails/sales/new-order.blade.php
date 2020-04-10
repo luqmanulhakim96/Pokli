@@ -181,21 +181,37 @@
         </div>
 
         <div style="margin-top: 65px;font-size: 16px;color: #5E5E5E;line-height: 24px;display: inline-block">
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {{-- __('shop::app.mail.order.final-summary') --}}
-                {{ __('shop::app.mail.order.terms-and-condition') }}
+            <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
+                {{ __('shop::app.mail.order.terms-and-condition.kindly-remit') }}
+                <br>
+                <br>
+                {{ __('shop::app.mail.order.terms-and-condition.account-name') }}
+                {{ __('shop::app.mail.order.terms-and-condition.bank-name') }}
+                {{ __('shop::app.mail.order.terms-and-condition.branch-name') }}
+                {{ __('shop::app.mail.order.terms-and-condition.account-number') }}
+                <br>
+                <br>
+                {{ __('shop::app.mail.order.terms-and-condition.fast-cheque') }}
+                <br><br><br>
             </p>
 
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {!!
-                    __('shop::app.mail.order.help', [
-                        'support_email' => '<a style="color:#0041FF" href="mailto:' . config('mail.from.address') . '">' . config('mail.from.address'). '</a>'
-                        ])
-                !!}
+            <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
+              <b>{{ __('shop::app.mail.order.terms-and-condition.tnc') }}</b>
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.payment') }}
+              <br>
             </p>
 
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {{ __('shop::app.mail.order.thanks') }}
+            <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
+              {{ __('shop::app.mail.order.terms-and-condition.tnc-1') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.tnc-2') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.tnc-3') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.tnc-4') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.tnc-5') }}
             </p>
         </div>
     </div>
