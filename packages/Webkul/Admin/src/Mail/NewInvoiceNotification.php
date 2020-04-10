@@ -7,9 +7,6 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-use Webkul\Sales\Repositories\InvoiceRepository;
-
-
 /**
  * New Invoice Mail class
  *
@@ -26,22 +23,7 @@ class NewInvoiceNotification extends Mailable
      * @var Invoice
      */
     public $invoice;
-    protected $invoiceRepository;
 
-    public function __construct(
-        OrderRepository $orderRepository,
-        InvoiceRepository $invoiceRepository
-    )
-    {
-        $this->middleware('admin');
-
-        $this->_config = request('_config');
-
-        $this->orderRepository = $orderRepository;
-
-        $this->invoiceRepository = $invoiceRepository;
-
-    }
     /**
      * Create a new message instance.
      *
