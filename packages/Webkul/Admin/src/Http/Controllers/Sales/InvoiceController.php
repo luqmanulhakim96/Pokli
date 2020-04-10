@@ -7,7 +7,6 @@ use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\InvoiceRepository;
 use PDF;
 use DB;
-use Storage;
 
 /**
  * Sales Invoice controller
@@ -161,7 +160,7 @@ class InvoiceController extends Controller
     public function print($id)
     {
         $invoice = $this->invoiceRepository->findOrFail($id);
-        $filename = 'invoice/invoice-' . $invoice->created_at->format('dmY H.m.s') . '.pdf';
+
         $serial_number = $invoice['order_id'];
         // dd($serial_number);
         // dd($shipment);
@@ -171,7 +170,7 @@ class InvoiceController extends Controller
         $serial_number= DB::table('product_serial_number')->where($where)->get();
 
         $pdf = PDF::loadView('admin::sales.invoices.pdf', compact('invoice','serial_number'))->setPaper('a4');
-        Storage::put($filename, $pdf->output());
-        return $pdf->download('invoice-' . $invoice->created_at->format('d-m-Y H:m:s') . '.pdf');
+
+        return $pdf->download('invoice-' . $invoice->created_at->format('d-m-Y') . '.pdf');
     }
 }
