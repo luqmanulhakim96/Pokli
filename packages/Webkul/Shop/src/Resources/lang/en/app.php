@@ -554,7 +554,7 @@ return [
 
     'mail' => [
         'order' => [
-            'subject' => 'New Order Confirmation',
+            'subject' => 'New Proforma Invoice [Do Not Reply]',
             'heading' => 'Proforma Invoice',
             'dear' => 'Dear :customer_name',
             'dear-admin' => 'Dear :admin_name',
@@ -576,6 +576,11 @@ return [
             'final-summary' => 'Thanks for showing your interest in our store we will send you tracking number once it shipped',
             'help' => 'If you need any kind of help please contact us at :support_email',
             'thanks' => 'Thanks!',
+            'pokli-name' => 'Pokli Wealth Management Sdn Bhd (1349069-M)',
+            'pokli-address' => 'Wisma Pokli,101A- 1 Avenue,Jalan S2F2,Garden Homes, Seremban 270300 Seremban, Negeri Sembilan',
+            'pokli-tel' => 'Tel :  +6019-664 5066',
+            'pokli-email' => 'Email : admin@pokli.com',
+            'pokli-website' => 'Website : www.pokli.com.my',
             'order-date' => 'Date :',
             'order-number' => 'Order No :',
             'customer-name' => 'Customer :',
@@ -591,12 +596,12 @@ return [
               'tnc' => 'TERMS & CONDITIONS :',
               'payment'=> 'PAYMENT',
               'tnc-1' => 'i.) The payment shall be made within 24 hours after the issuance of Sales Order. Customer trading account will be suspended if
-                          failure to comply with this term &amp; condition.',
+                          failure to comply with this term & condition.',
               'tnc-2' => 'ii.) After the payment has been made, the payment slip shall be faxed to +604-7753868, Or email to admin@pokli.com attn to Pokli
                           Wealth Management Receivable Division within 24 hours.',
               'tnc-3' => 'iii.) The Order number and account Code (PWM******/ TEMP********) has to
                           be stated clearly on the payment slip.',
-              'tnc-4' => 'iv.) Payment via cheque, with amount RM25,000 below will require 5 Malaysia bank working
+              'tnc-4' => 'iv.) Payment via cheque, with amount RM25,000 below will require 5 Malaysia Bank working
                           days to process.',
               'tnc-5' => 'v.) For Easy Payment Purchase (EPP), the customer is required to pay the monthly payment before the due date of each partial
                           payment date. Pokli Wealth Management reserves the right to terminate the Sales Order and take any necessary actions that deemed
