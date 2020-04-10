@@ -580,7 +580,7 @@ return [
               'kindly-remit' => 'Kindly remit the payment to ONE of our bank accounts as below :',
               'account-name' => 'Account Name : Pokli Wealth Management',
               'bank-name' => 'Bank : Malayan Banking Berhad (Maybank)',
-              'branch-name' => 'Branch : Seremban 2, Negeri Sembilan'
+              'branch-name' => 'Branch : Seremban 2, Negeri Sembilan',
               'account-number' => 'Account Number : 555171003253',
               'fast-cheque' => '(*Fast Cheque is NOT accepted.)',
               'tnc' => 'TERMS & CONDITIONS :',
