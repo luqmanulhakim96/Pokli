@@ -80,7 +80,7 @@
                     {{ __('shop::app.mail.order.billing-address') }}
                 </div> -->
                 <div>
-                  {{ __('shop::app.mail.order.order-number') }} {{ $order->id }}
+                  {{ __('shop::app.mail.order.order-number') }} {{ $order->increment_id }}
                 </div>
 
                 <div>
