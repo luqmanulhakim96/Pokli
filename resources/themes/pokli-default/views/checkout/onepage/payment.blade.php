@@ -35,7 +35,7 @@
                                 <!-- <label for="cod_branch" class="required">{{ __('shop::app.checkout.onepage.cod-branch') }}</label> -->
                                 <select id="cod_branch" name="cod_branch" class="control" data-vv-as="&quot;{{ __('shop::app.checkout.onepage.cod-branch') }}&quot;">
                                     <!-- <option value="">Please Select Branch for Pickup</option> -->
-                                    <option value="seremban">Seremban 2</option>
+                                    <option value="seremban">Seremban</option>
                                 </select>
                                 <span class="control-error" v-if="errors.has('cod_branch')">@{{ errors.first('cod_branch') }}</span>
                             </div>
