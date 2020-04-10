@@ -203,7 +203,7 @@
                 <br /><br />
                 Bank: {{ $purchase->customer->bank_name }}
                 Account Num: {{ $purchase->customer->bank_no }}
-                {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – Gold Purchase Program (Au 999.9)' : 'PWM – Silver Purchase Program (Au 999.9)' }}</h3> --}}
+                {{-- <h3 style="margin-left:50px;">{{ $purchase->product_type=='gold' ? 'PWM – MY Uncang Emas (Au 999.9)' : 'PWM – MY Uncang Perak (Au 999.9)' }}</h3> --}}
                 </pre>
             </td>
             <td align="left" style="width: 40%;">
@@ -335,37 +335,129 @@
             </td>
         </tr>
     </table>
-</div>
-<div class="information">
-    <table width="100%">
+</div><div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
         <tr style="top:10px;">
             <td align="left" style="width: 60%;">
                 <pre style="font-size: 10px">
+                Kindly remit the payment to ONE of our bank accounts as below:
+                Acc Name      : Pokli Wealth Management
+                Bank              : Malayan Banking Berhad (Maybank)
+                Branch           : Seremban 2, NSDK
+                Acc No.          : 555171003253
+                                    <!-- : -->
+                (*Fast Cheque is NOT accepted.)
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
 
-                CANCELLATION OF ORDER
-                <br /><br />
-                i.) The Booking Order that has been placed is not allowed to be changed or cancelled by the customer. Under unavoidable condition, a processing fee
-                will be charged as a penalty (5% of Booking Order price; Or Price discrepancy between Booking Order price and Current Gold selling price on cancellation
-                 date, whichever is higher) and the customer trading account will be suspended until the payment has been made.
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                <b>TERMS &amp; CONDITIONS:</b>
+                <b>PAYMENT</b>
+                i.)   The payment shall be made within 24 hours after the issuance of Booking Order.
+                      Customer's trading account will be suspended if failure to comply with this term & condition.
 
-                ii.) For the Easy Payment Purchase(EPP), customer has the right to sell back the stock to Pokli Wealth Management Sdn Bhd (PWMSB) before the due date of
-                final partial payment. Hence, stock will be considered as selling back to Pokli Wealth Management Sdn Bhd based on current Buying Price on the date of
-                selling back. The gain or lost will be calculated and the balance will be returned to customer.
-                <br /><br />
-                <b>IMPORTANT NOTICE:</b>
-                <br /><br />
-                The issuance of the Booking Order is subject to Pokli Wealth Management's (PWMSB) approval. PWMSB reserves the right at our discretion to nullify the
-                order if the detail provided is incomplete or if there is any order dispute / discrepancy.
+                ii.)  After the payment has been made, the payment slip shall be whatsapp to +6010-3307916, Or
+                      email to admin@pokli.com attn to Pokli Wealth Management Sdn Bhd (PWMSB) Account Receivable Division within 24 hours.
 
-                PWMSB reserves the right to amend the Terms and Conditions as above from time to time without prior notice.For more information and assistance, please
-                contact our service branch or our Customer Service Hotline at +6010-3037 916, or any of PWM service branch during business hours.
+                iii.) The Invoice number has to be stated clearly on the payment slip.
 
-                Risk Disclosure:
+                iv.)  Payment via cheque, with amount MYR25,000.00 & below will require 5 Malaysia's bank working days to process.
 
-                You are considering dealing with Pokli Wealth Management Sdn Bhd (PWMSB) ,trading in bullion involves the potential for profit as well as the risk of
-                loss.Movements in the price of bullion rates are influenced by a variety of factors of global origin which are unpredictable.Violent movement in the price
-                of bullion rates may result in action by the market as a result of which you may be incurring extra loss. However, please note that this disclosure cannot
-                and does not explain all the risks involved. Some of the risks associated with using our bullion trading facilities include:-
+                v.)   For Easy Payment Purchase (EPP), the customer is required to pay the monthly payment
+                      before the due date of each partial payment date. Pokli Wealth Management Sdn Bhd (PWM) reserves the right to terminate
+                      the Booking Order and take any necessary actions that deemed appropriate if the customer failed to comply with the terms and conditions.
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                <b>STOCK COLLECTION :</b>
+
+                i.)   Stock will only be released to customer after the full payment has been received.
+
+                ii.)  Customer is required to bring along the ORIGINAL payment slip for stock collection purpose.
+                      The Company will not release the stock without the original payment slip as proof of payment.
+                      Please contact the Bank to provide the proof of payment if you lost the original payment slip.
+                      Alternatively, you may contact any Pokli Wealth Management Sdn Bhd (PWMSB) service branch if you require any further assistance.
+
+                iii.) To facilitate the transaction process, stock collection appointment has to be made with your preferred service branch at least
+                      (3) working days prior to your visiting date.
+
+                iv.)  For those dealers who represent their customers to collect the stock on behalf of them, they are required to show the Authorization
+                      Letter which is signed and approved by the customers. The stock will only be released to the representative after the verbal confirmation
+                      from the customer via phone call verification. However, Pokli Wealth Management Sdn Bhd (PWMSB) reserves the right to reject the authorization
+                      if the document needed are incomplete or feel suspicious along the process.
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                <b>CANCELLATION OF ORDER :</b>
+
+                i.) The Booking Order that has been placed is not allowed to be changed or cancelled by the customer.
+                    Under unavoidable condition, a processing fee will be charged as a penalty (5% of Booking Order price; Or
+                    Price discrepancy between Booking Order price and Current Gold selling price on cancellation date, whichever is higher)
+                    and the customer trading account will be suspended until the payment has been made.
+
+                ii.) For the Easy Payment Purchase(EPP), customer has the right to sell back the stock to Pokli Wealth Management Sdn Bhd (PWMSB)
+                    before the due date of final partial payment. Hence, stock will be considered as selling back to Pokli Wealth Management Sdn Bhd based on
+                    current Buying Price on the date of selling back. The gain or lost will be calculated and the balance will be returned to customer.
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                <b>IMPORTANT NOTICE :</b>
+
+                The issuance of the Booking Order is subject to Pokli Wealth Management's (PWMSB) approval. PWMSB reserves the right at our discretion to
+                nullify the order if the detail provided is incomplete or if there is any order dispute / discrepancy.
+
+                PWMSB reserves the right to amend the Terms and Conditions as above from time to time without prior notice.For more information and assistance,
+                please contact our service branch or our Customer Service Hotline at +6010-3037 916, or any of PWM service branch during business hours.
+
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                <b>Risk Disclosure :</b>
+
+                You are considering dealing with Pokli Wealth Management Sdn Bhd (PWMSB) ,trading in bullion involves the potential for profit as
+                well as the risk of loss.Movements in the price of bullion rates are influenced by a variety of factors of global origin which are
+                unpredictable.Violent movement in the price of bullion rates may result in action by the market as a result of which you may be incurring extra loss.
+                However, please note that this disclosure cannot and does not explain all the risks involved. Some of the risks associated with using our bullion trading
+                facilities include:-
 
                 1. Customer should read through all the related sales literature, prospectuses or other offering documents before making purchase.
 
@@ -375,15 +467,24 @@
 
                 4. Customer should make certain that they understand the correlation between risk and return.
 
-                5. PWM will follow margin spread and it will be maintained under normal political and social circumstances except for extreme market conditions, such as
-                financial and economic crisis, social unrest, political instability, war which can cause extreme volatility of precious metal price in international market.
+                5. PWM will follow margin spread and it will be maintained under normal political and social circumstances except for extreme market conditions,
+                   such as financial and economic crisis, social unrest, political instability, war which can cause extreme volatility of precious metal price in international market.
 
-                <br></br>
-                Disclaimer:
-                <br></br>
+                </pre>
+            </td>
+        </tr>
+    </table>
+</div>
 
-                1. Pokli Wealth Management Sdn Bhd (PWMSB) – Gold Purchase (AU 999.9) is neither a financial product nor a deposit but a method of purchasing gold through
-                periodic accumulations for the personal needs of the customer.
+<div class="information">
+    <table width="100%" style="padding-top:0px; padding-bottom:0px;">
+        <tr style="top:10px;">
+            <td align="left" style="width: 60%;">
+                <pre style="font-size: 10px">
+                <b>Disclaimer :</b>
+
+                1. Pokli Wealth Management Sdn Bhd (PWMSB) – Gold Purchase (AU 999.9) is neither a financial product nor a deposit but a method of purchasing gold
+                  through periodic accumulations for the personal needs of the customer.
 
                 2. Pokli Wealth Management Sdn Bhd(PWMSB) does not offer any investment advice or promises/forecasts any assured return
                 through this program while promoting the product.
@@ -402,6 +503,7 @@
     </table>
 </div>
 
+
 <hr class="blackSolid" width="85%" style="margin-top:0px;margin-bottom:0px;">
 
 <div class="information" style="margin-left:5px; margin-right:5px;">
@@ -410,17 +512,16 @@
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
                 Prepared By: Website
-                <!-- {{ auth()->guard('admin')->user()->name }} -->
             </pre>
             </td>
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px; margin-top:0px;">
-            <!-- <b>
+            <b>
                 I hereby agree to purchase the above
                 mentioned
                 item(s) and abide with the terms and
                 conditions above,
-            </b> -->
+            </b>
             </pre>
             </td>
         </tr>
@@ -440,15 +541,14 @@
             </td>
             <td align="left" style="width: 50%;">
             <pre style="font-size: 10px">
-                <!-- <hr align="left" class="blackSolid" style="margin-left:40px;" width="75%">
+                <hr align="left" class="blackSolid" style="margin-left:40px;" width="75%">
                 Name:
                 IC No:
-                Date: -->
+                Date:
             </pre>
             </td>
         </tr>
     </table>
 </div>
-
 </body>
 </html>
