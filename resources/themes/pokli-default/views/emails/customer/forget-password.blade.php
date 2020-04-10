@@ -16,7 +16,8 @@
             </p>
 
             <p style="text-align: center;padding: 20px 0;">
-                <a href="{{ route('customer.reset-password.create', $token) }}" style="padding: 10px 20px;background: #0041FF;color: #ffffff;text-transform: uppercase;text-decoration: none; font-size: 16px">
+                <a href="{{ route('customer.reset-password.create', $token) }}" style="font-size: 16px;
+                color: #FFFFFF; text-align: center; background: #FF0000; padding: 10px 100px;text-decoration: none;">
                     {{ __('shop::app.mail.forget-password.reset-password') }}
                 </a>
             </p>
