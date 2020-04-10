@@ -8,10 +8,22 @@
     <div style="padding: 30px;">
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
-                {{ __('shop::app.mail.order.heading') }}
+              {{ __('shop::app.mail.order.pokli-name') }}
             </span> <br>
+            <div>
+              {{ __('shop::app.mail.order.pokli-address') }}
+            </div>
+            <div>
+              {{ __('shop::app.mail.order.pokli-tel') }}
+            </div>
+            <div>
+              {{ __('shop::app.mail.order.pokli-email') }}
+            </div>
+            <div>
+              {{ __('shop::app.mail.order.pokli-website') }}
+            </div>
 
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
+            <!-- <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
                 {{ __('shop::app.mail.order.dear', ['customer_name' => $order->customer_full_name]) }},
             </p>
 
@@ -21,11 +33,11 @@
                     'created_at' => $order->created_at
                     ])
                 !!}
-            </p>
+            </p> -->
         </div>
 
         <div style="font-weight: bold;font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 20px !important;">
-            {{ __('shop::app.mail.order.summary') }}
+          {{ __('shop::app.mail.order.heading') }}
         </div>
 
         <div style="display: flex;flex-direction: row;margin-top: 20px;justify-content: space-between;margin-bottom: 40px;">
