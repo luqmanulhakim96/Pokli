@@ -596,6 +596,23 @@ return [
               'tnc-5' => 'v.) For Easy Payment Purchase (EPP), the customer is required to pay the monthly payment before the due date of each partial
                           payment date. Pokli Wealth Management reserves the right to terminate the Sales Order and take any necessary actions that deemed
                           appropriate if the customer failed to comply with the terms and conditions.',
+              'risk-disclosure' => 'Risk Disclosure :',
+              'risk-desc' => 'You are considering dealing with Pokli Wealth Management Sdn Bhd, trading in bullion involves the potential for profit as
+                              well as the risk of loss. Movements in the price of bullion rates are influenced by a variety of factors of global origin which are
+                              unpredictable. Violent movement in the price of bullion rates may result in action by the market as a result of which you may be
+                              incurring extra loss. However, please note that this disclosure cannot and does not explain all the risks involved. Some of the risks
+                              associated with using our bullion trading facilities include:-',
+              'risk-desc-1' => '1. Customer should read through all the related sales literature, prospectuses or other offering documents before making purchase.',
+              'risk-desc-2' => '2. Customer should carefully consider all precious metals risks and/ or considerations contained in the documents.',
+              'risk-desc-3' => '3. There is no assurance that the acquisition of precious metals will achieve your monetary gain objectives.',
+              'risk-desc-4' => '4. Customer should make certain that they understand the correlation between risk and return.',
+              'risk-desc-5' => '5. PWM will follow Public Gold margin spread and it will be maintained under normal political and social circumstances except for
+                                extreme market conditions, such as financial and economic crisis, social unrest, political instability, war which can cause extreme
+                                volatility of precious metal price in international market.',
+              'disclaimer' => 'Disclaimer :',
+              'disclaimer-1' => '1. Pokli Wealth Management Sdn Bhd. (Pokli) does not offer any investment advice or promises/forecasts any assured return
+              through this program while promoting the product.',
+              'disclaimer-2' => '2. Pokli management reserves the right to amend the terms and conditions without prior notice.',
             ],
             'cancel' => [
                 'subject' => 'Order Cancel Confirmation',
