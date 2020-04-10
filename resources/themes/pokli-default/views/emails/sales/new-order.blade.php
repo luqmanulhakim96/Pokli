@@ -197,11 +197,11 @@
             <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
               <b>{{ __('shop::app.mail.order.terms-and-condition.tnc') }}</b>
               <br>
-              <b>{{ __('shop::app.mail.order.terms-and-condition.payment') }}</b>
-              <br>
             </p>
 
             <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
+              <b>{{ __('shop::app.mail.order.terms-and-condition.payment') }}</b>
+              <br>
               {{ __('shop::app.mail.order.terms-and-condition.tnc-1') }}
               <br>
               {{ __('shop::app.mail.order.terms-and-condition.tnc-2') }}
@@ -211,6 +211,31 @@
               {{ __('shop::app.mail.order.terms-and-condition.tnc-4') }}
               <br>
               {{ __('shop::app.mail.order.terms-and-condition.tnc-5') }}
+            </p>
+
+            <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
+              <b>{{ __('shop::app.mail.order.terms-and-condition.risk-disclosure') }}</b>
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.risk-desc') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.risk-desc-1') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.risk-desc-2') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.risk-desc-3') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.risk-desc-4') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.risk-desc-5') }}
+              <br>
+            </p>
+
+            <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
+              <b>{{ __('shop::app.mail.order.terms-and-condition.disclaimer') }}</b>
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.disclaimer-1') }}
+              <br>
+              {{ __('shop::app.mail.order.terms-and-condition.disclaimer-2') }}
             </p>
         </div>
     </div>
