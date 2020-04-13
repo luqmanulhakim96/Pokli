@@ -35,7 +35,7 @@ class NewPurchaseGAPSAPInvoiceNotification extends Mailable
        // dd($this->purchase->customer);
        return $this->to($this->purchase->customer->email, $this->purchase->customer->first_name)
                ->from(env('SHOP_MAIL_FROM'))
-               ->subject(trans('shop::app.mail.myuncang-purchase-invoice.subject'))
+               ->subject(trans('shop::app.mail.myuncang-purchase-invoice.subject', ['order_id' => $this->purchase->increment_id]))
                ->view('shop::emails.sales.new-purchase-invoice');
      }
 }

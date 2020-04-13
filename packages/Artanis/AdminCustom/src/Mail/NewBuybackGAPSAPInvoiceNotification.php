@@ -35,7 +35,7 @@ class NewBuybackGAPSAPInvoiceNotification extends Mailable
        // dd($this->buyback);
        return $this->to($this->buyback->customer->email, $this->buyback->customer->first_name)
                ->from(env('SHOP_MAIL_FROM'))
-               ->subject(trans('shop::app.mail.myuncang-buyback-invoice.subject'))
+               ->subject(trans('shop::app.mail.myuncang-buyback-invoice.subject',  ['order_id' => $this->buyback->increment_id]))
                ->view('shop::emails.sales.new-buyback-invoice');
      }
 }

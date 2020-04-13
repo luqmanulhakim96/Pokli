@@ -110,7 +110,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Invoice - #123</title>
+    <title>Invoice - BuyBack</title>
 
     <style type="text/css">
         @page {

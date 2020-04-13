@@ -556,7 +556,7 @@ return [
         'order' => [
             // 'subject' => 'New Proforma Invoice [Do Not Reply]',
             // 'heading' => 'Proforma Invoice',
-            'subject' => 'Order Received [Do Not Reply]',
+            'subject' => 'Order Received #:order_id [Do Not Reply]',
             'heading' => 'Sales Order',
             'dear' => 'Dear :customer_name',
             'dear-admin' => 'Dear :admin_name',
@@ -670,15 +670,15 @@ return [
 
         'myuncang-purchase-invoice' => [
           // 'heading' => 'My Uncang Invoice #:order_id',
-          'heading' => 'My Uncang Invoice',  
-          'subject' => 'New Proforma Invoice [Do Not Reply]',
+          'heading' => 'My Uncang Invoice',
+          'subject' => 'New Proforma Invoice #:order_id [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
           'thanks' => 'Thank you for purchasing from Pokli Wealth Management Sdn. Bhd.',
         ],
 
         'myuncang-buyback-invoice' => [
           'heading' => 'My Uncang Buyback Invoice',
-          'subject' => 'New Proforma Invoice [Do Not Reply]',
+          'subject' => 'New Proforma Invoice #:order_id [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
           'thanks' => 'Thank you.',
         ],
@@ -687,7 +687,7 @@ return [
             // 'heading' => 'Your invoice #:invoice_id for Order #:order_id',
             'heading' => 'Proforma Invoice #:order_id',
             // 'subject' => 'Invoice for your order #:order_id',
-            'subject' => 'New Proforma Invoice [Do Not Reply]',
+            'subject' => 'New Proforma Invoice #:order_id [Do Not Reply]',
             'summary' => 'Summary of Invoice',
         ],
 
