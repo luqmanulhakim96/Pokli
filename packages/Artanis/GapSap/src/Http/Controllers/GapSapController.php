@@ -14,6 +14,7 @@ use Webkul\Sales\Repositories\OrderRepository;
 use Artanis\GapSap\Repositories\PurchaseRepository;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Mail;
 /**
  * Customer controlller for the customer basically for the tasks of customers which will be
  * done after customer authentication.
@@ -148,11 +149,11 @@ class GapSapController extends Controller
         // dd($history);
         // dd($history->payment_attachment->store('uploads', 'public'));
         $history->save();
-
         if($history->payment_method == 'fpx'){
             return view('gapsap::redirect', compact(['input']));
         }
         else if($history->payment_method=='bankin'){
+            Mail::send(new Notification($history));
             session()->flash('success', 'MYUncang Success. The new balance will be updated in 24 hours.');
             return redirect()->route('gapsap.index');
         }
