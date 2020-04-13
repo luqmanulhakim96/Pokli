@@ -12,6 +12,10 @@ use setasign\Fpdi\Fpdi;
 use setasign\Fpdi\PdfParser\StreamReader;
 use Artanis\GapSap\Models\GoldSilverHistory;
 
+
+use Illuminate\Support\Facades\Mail;
+use Artanis\GapSap\Mail\NewPurchaseGAPSAPInvoiceNotification;
+
 /**
  * Customer controlller for the customer basically for the tasks of customers
  * which will be done after customer authenticastion.
@@ -100,6 +104,8 @@ class PurchaseController extends Controller
         // if (! $order)
         //     abort(404);
         $purchase = $this->purchaseRepository->findOrFail($id);
+
+        Mail::send(new NewPurchaseGAPSAPInvoiceNotification($purchase));
 
         return view($this->_config['view'], compact('purchase'));
     }

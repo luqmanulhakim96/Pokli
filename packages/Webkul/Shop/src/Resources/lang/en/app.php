@@ -655,15 +655,29 @@ return [
         ],
 
         'myuncang-purchase' => [
-          'heading' => 'My Uncang Order',
-          'subject' => 'MY Uncang Order Received [Do Not Reply]',
+          'heading' => 'My Uncang Purchase Order',
+          'subject' => 'MY Uncang Purchase Order Received [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
           'thanks' => 'Thank you for purchasing from Pokli Wealth Management Sdn. Bhd.',
         ],
 
         'myuncang-buyback' => [
-          'heading' => 'My Uncang Buyback',
-          'subject' => 'MY Uncang Buyback Received [Do Not Reply]',
+          'heading' => 'My Uncang Buyback Order',
+          'subject' => 'MY Uncang Buyback Order Received [Do Not Reply]',
+          'summary' => 'The new balance will be updated in 24 hours.',
+          'thanks' => 'Thank you.',
+        ],
+
+        'myuncang-purchase-invoice' => [
+          'heading' => 'My Uncang Invoice',
+          'subject' => 'New Proforma Invoice [Do Not Reply]',
+          'summary' => 'The new balance will be updated in 24 hours.',
+          'thanks' => 'Thank you for purchasing from Pokli Wealth Management Sdn. Bhd.',
+        ],
+
+        'myuncang-buyback-invoice' => [
+          'heading' => 'My Uncang Buyback Invoice',
+          'subject' => 'New Proforma Invoice [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
           'thanks' => 'Thank you.',
         ],
