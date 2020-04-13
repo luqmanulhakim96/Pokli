@@ -10,6 +10,8 @@ use Webkul\Sales\Repositories\OrderItemRepository;
 use Webkul\Sales\Repositories\RefundRepository;
 use Artanis\GapSap\Models\GoldSilverHistory;
 
+use Illuminate\Support\Facades\Mail;
+use Artanis\GapSap\Mail\NewPurchaseGAPSAPInvoiceNotification;
 /**
  * Sales Refund controller
  *
@@ -220,6 +222,7 @@ class PurchaseController extends Controller
         $result = $this->purchaseRepository->confirm($id);
 
         if ($result) {
+            Mail::send(new NewPurchaseGAPSAPInvoiceNotification($result));
             session()->flash('success', 'Purchase confirmation successfully.');
         } else {
             session()->flash('error', 'Purchase can not be confirm.');
