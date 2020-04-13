@@ -687,7 +687,7 @@ return [
             // 'heading' => 'Your invoice #:invoice_id for Order #:order_id',
             'heading' => 'Proforma Invoice #:order_id',
             // 'subject' => 'Invoice for your order #:order_id',
-            'subject' => 'New Proforma Invoice [Do Not Reply]',
+            'subject' => 'New Proforma Invoice #:order_id [Do Not Reply]',
             'summary' => 'Summary of Invoice',
         ],
 
