@@ -1,6 +1,6 @@
 <?php
 
-namespace Artanis\GapSap\Mail;
+namespace Artanis\AdminCustom\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
