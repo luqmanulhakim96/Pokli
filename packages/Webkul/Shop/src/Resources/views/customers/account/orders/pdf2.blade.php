@@ -191,7 +191,7 @@
 <div class="information">
     <table width="100%" class="" style="margin-left:30px; padding-top:0px; padding-bottom:0px;">
         <tr style="width: 5%;">
-            <td align="center" colspan="6"><b style="font-size: 14px">SALES ORDER</b></td>
+            <td align="center" colspan="6"><b style="font-size: 14px">Proforma Invoice</b></td>
         </tr>
     </table>
     <table width="100%" style="padding-top:0px; padding-bottom:0px;">
