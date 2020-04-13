@@ -16,12 +16,12 @@ class NewPurchaseGAPSAPInvoiceNotification extends Mailable
      *
      * @return void
      */
-     public $purchase;
+     public $result;
 
 
-     public function __construct($purchase)
+     public function __construct($result)
      {
-       $this->$purchase = $purchase;
+       $this->$result = $result;
          dd($this);
      }
 
