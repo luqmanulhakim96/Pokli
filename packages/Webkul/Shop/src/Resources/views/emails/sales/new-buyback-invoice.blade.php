@@ -27,7 +27,7 @@
         </div>
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
-                {{ __('shop::app.mail.myuncang-purchase-invoice.heading') }}
+                {{ __('shop::app.mail.myuncang-buyback-invoice.heading') }}
             </span> <br>
         </div>
 
@@ -63,7 +63,7 @@
 
         <div class="section-content">
           <div  style="margin-top: 40px; text-align: center">
-              <a href="{{ route('gapsap.purchase.print', $result->id) }}" style="font-size: 16px;
+              <a href="{{ route('gapsap.buyback.print', $result->id) }}" style="font-size: 16px;
               color: #FFFFFF; text-align: center; background: #FF0000; padding: 10px 100px;text-decoration: none;">
                   Download Invoice
               </a>
