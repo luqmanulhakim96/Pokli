@@ -35,7 +35,7 @@ class NewPurchaseGAPSAPNotification extends Mailable
        // dd($this->history->customer->email);
        return $this->to($this->history->customer->email, $this->history->customer->first_name)
                ->from(env('SHOP_MAIL_FROM'))
-               ->subject(trans('shop::app.mail.order.subject'))
+               ->subject(trans('shop::app.mail.myuncang-purchase.subject'))
                ->view('shop::emails.sales.new-purchase');
      }
 }

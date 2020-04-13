@@ -24,7 +24,10 @@
             </div>
         </div>
         <div class="section-content">
-          TEST
+          <div style="font-size: 16px;
+          color: #FFFFFF; text-align: center; background: #0031F0; padding: 10px 100px;text-decoration: none;">
+              {!! __('shop::app.mail.myuncang-purchase.summary') !!}
+          </div>
         </div>
         <div style="margin-top: 65px;font-size: 16px;color: #5E5E5E;line-height: 24px;display: inline-block">
             <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
