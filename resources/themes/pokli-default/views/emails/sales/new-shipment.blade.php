@@ -96,16 +96,30 @@
                       {{ __('shop::app.mail.order.customer-tel') }} {{ $order->customer->phone }}
                 </div>
 
-                <div style="margin-bottom: 40px;">
+                <div>
                       {{ __('shop::app.mail.order.customer-email') }} {{ $order->customer->email }}
                 </div>
 
-                <!-- <div style="font-weight: bold;font-size: 16px; color: #242424;">
-                    {{ __('shop::app.mail.order.payment') }}
-                </div> -->
+                <div style="margin-bottom: 40px;">
+                  {{ __('shop::app.mail.order.payment') }} : {{ core()->getConfigData('sales.paymentmethods.' . $order->payment->method . '.title') }}
+                </div>
 
-                <div style="font-weight: bold;font-size: 16px; color: #242424;">
-                    {{ core()->getConfigData('sales.paymentmethods.' . $order->payment->method . '.title') }}
+                <div>---</div>
+
+                <div style="font-weight: bold;font-size: 16px;color: #242424;">
+                    {{ __('shop::app.mail.order.shipping-address') }}
+                </div>
+
+                <div>
+                    {{ $order->shipping_address->name }}
+                </div>
+
+                <div>
+                    {{ $order->shipping_address->address1 }}, {{ $order->shipping_address->state }}
+                </div>
+
+                <div>
+                    {{ core()->country_name($order->shipping_address->country) }} {{ $order->shipping_address->postcode }}
                 </div>
 
                 <!-- <div style="font-weight: bold;font-size: 16px;color: #242424;">
