@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class NewPurchaseGAPNotification extends Mailable
+class NewPurchaseGAPSAPNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
