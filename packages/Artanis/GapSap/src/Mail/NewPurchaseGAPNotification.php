@@ -22,7 +22,7 @@ class NewPurchaseGAPNotification extends Mailable
      public function __construct($purchase)
      {
        $this->history = $history;
-
+       dd($this);
      }
 
      /**
