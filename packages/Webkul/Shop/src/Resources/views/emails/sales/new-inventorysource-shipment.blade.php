@@ -9,6 +9,23 @@
     <?php $inventory = $shipment->inventory_source; ?>
 
     <div style="padding: 30px;">
+      <div style="font-size: 17px;color: #242424;line-height: 30px;margin-bottom: 34px;">
+          <span style="font-weight: bold;">
+            {{ __('shop::app.mail.order.pokli-name') }}
+          </span> <br>
+          <div>
+            {{ __('shop::app.mail.order.pokli-address') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-tel') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-email') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-website') }}
+          </div>
+      </div>
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.shipment.inventory-heading', ['order_id' => $order->increment_id, 'shipment_id' => $shipment->id]) }}
@@ -73,7 +90,7 @@
             </div>
 
             <div style="line-height: 25px;">
-                
+
                 <div style="font-weight: bold;font-size: 16px; color: #242424;">
                     {{ __('shop::app.mail.order.payment') }}
                 </div>

@@ -6,6 +6,23 @@
     </div>
 
     <div style="padding: 30px;">
+      <div style="font-size: 17px;color: #242424;line-height: 30px;margin-bottom: 34px;">
+          <span style="font-weight: bold;">
+            {{ __('shop::app.mail.order.pokli-name') }}
+          </span> <br>
+          <div>
+            {{ __('shop::app.mail.order.pokli-address') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-tel') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-email') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-website') }}
+          </div>
+      </div>
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.order.cancel.heading') }}
@@ -119,7 +136,7 @@
 
                                 @if (isset($item->additional['attributes']))
                                     <div class="item-options">
-                                        
+
                                         @foreach ($item->additional['attributes'] as $attribute)
                                             <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
                                         @endforeach
