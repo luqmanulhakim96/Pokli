@@ -22,18 +22,6 @@
             <div>
               {{ __('shop::app.mail.order.pokli-website') }}
             </div>
-
-            <!-- <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {{ __('shop::app.mail.order.dear', ['customer_name' => $order->customer_full_name]) }},
-            </p>
-
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
-                {!! __('shop::app.mail.order.greeting', [
-                    'order_id' => '<a href="' . route('customer.orders.view', $order->id) . '" style="color: #0041FF; font-weight: bold;">#' . $order->increment_id . '</a>',
-                    'created_at' => $order->created_at
-                    ])
-                !!}
-            </p> -->
         </div>
         <div class="section-content">
           TEST
