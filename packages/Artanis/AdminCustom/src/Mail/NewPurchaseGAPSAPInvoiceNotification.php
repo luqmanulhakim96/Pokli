@@ -22,7 +22,7 @@ class NewPurchaseGAPSAPInvoiceNotification extends Mailable
      public function __construct($result)
      {
        $this->$result = $result;
-         // dd($this);
+       dd($this);
      }
 
      /**
