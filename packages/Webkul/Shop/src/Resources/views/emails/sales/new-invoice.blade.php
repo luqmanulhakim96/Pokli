@@ -29,18 +29,18 @@
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.invoice.heading', ['order_id' => $order->increment_id, 'invoice_id' => $invoice->id]) }}
             </span> <br>
-            <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
+            <!-- <p style="font-size: 16px;color: #5E5E5E;line-height: 24px;">
                 {!! __('shop::app.mail.order.greeting', [
                     'order_id' => '<a href="' . route('customer.orders.view', $order->id) . '" style="color: #0041FF; font-weight: bold;">#' . $order->increment_id . '</a>',
                     'created_at' => $order->created_at
                     ])
                 !!}
-            </p>
+            </p> -->
         </div>
 
-        <div style="font-weight: bold;font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 20px !important;">
+        <!-- <div style="font-weight: bold;font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 20px !important;">
             {{ __('shop::app.mail.invoice.summary') }}
-        </div>
+        </div> -->
 
         <div style="display: flex;flex-direction: row;margin-top: 20px;justify-content: space-between;margin-bottom: 40px;">
             <!-- @if ($order->shipping_address)
