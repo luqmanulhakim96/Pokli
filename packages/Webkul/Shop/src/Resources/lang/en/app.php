@@ -661,7 +661,7 @@ return [
           'thanks' => 'Thank you for purchasing from Pokli Wealth Management Sdn. Bhd.',
         ],
 
-        'myuncang-purchase' => [
+        'myuncang-buyback' => [
           'heading' => 'My Uncang Buyback',
           'subject' => 'MY Uncang Buyback Received [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
