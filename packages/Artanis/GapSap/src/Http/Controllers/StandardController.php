@@ -101,7 +101,7 @@ class StandardController extends Controller
         // Cart::deActivateCart();
 
         // session()->flash('order', $order);
-        session()->flash('success', 'FPX payment successful.');
+        session()->flash('success', 'FPX payment successful.  The new balance will be updated in 24 hours.');
 
         return redirect()->route('gapsap.index');
     }
