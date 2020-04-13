@@ -11,7 +11,7 @@ use Webkul\Sales\Repositories\RefundRepository;
 use Artanis\GapSap\Models\GoldSilverHistory;
 
 use Illuminate\Support\Facades\Mail;
-use Artanis\GapSap\Mail\NewPurchaseGAPSAPInvoiceNotification;
+use Artanis\AdminCustom\Mail\NewPurchaseGAPSAPInvoiceNotification;
 /**
  * Sales Refund controller
  *
