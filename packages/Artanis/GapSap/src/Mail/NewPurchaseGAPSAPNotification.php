@@ -22,7 +22,7 @@ class NewPurchaseGAPSAPNotification extends Mailable
      public function __construct($history)
      {
        $this->history = $history;
-       dd($this);
+         // dd($this);
      }
 
      /**
