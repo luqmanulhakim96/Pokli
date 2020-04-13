@@ -42,7 +42,7 @@
                 </div>
 
                 <div>
-                  {{ __('shop::app.mail.order.customer-name') }}  {{ $result->customer->billing_address->name }}
+                  {{ __('shop::app.mail.order.customer-name') }}  {{ $result->order->billing_address->name }}
                 </div>
 
                 <div>
