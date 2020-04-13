@@ -670,7 +670,7 @@ return [
 
         'myuncang-purchase-invoice' => [
           // 'heading' => 'My Uncang Invoice #:order_id',
-          'heading' => 'My Uncang Invoice #:order_id',
+          'heading' => 'My Uncang Invoice',  
           'subject' => 'New Proforma Invoice [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
           'thanks' => 'Thank you for purchasing from Pokli Wealth Management Sdn. Bhd.',
