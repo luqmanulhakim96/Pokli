@@ -554,8 +554,10 @@ return [
 
     'mail' => [
         'order' => [
-            'subject' => 'New Proforma Invoice [Do Not Reply]',
-            'heading' => 'Proforma Invoice',
+            // 'subject' => 'New Proforma Invoice [Do Not Reply]',
+            // 'heading' => 'Proforma Invoice',
+            'subject' => 'Order Received [Do Not Reply]',
+            'heading' => 'Sales Order',
             'dear' => 'Dear :customer_name',
             'dear-admin' => 'Dear :admin_name',
             'greeting' => 'Thanks for your Order :order_id placed on :created_at',
@@ -653,8 +655,10 @@ return [
         ],
 
         'invoice' => [
-            'heading' => 'Your invoice #:invoice_id for Order #:order_id',
-            'subject' => 'Invoice for your order #:order_id',
+            // 'heading' => 'Your invoice #:invoice_id for Order #:order_id',
+            'heading' => 'Proforma Invoice #:invoice_id',
+            // 'subject' => 'Invoice for your order #:order_id',
+            'subject' => 'New Proforma Invoice [Do Not Reply]',
             'summary' => 'Summary of Invoice',
         ],
 
