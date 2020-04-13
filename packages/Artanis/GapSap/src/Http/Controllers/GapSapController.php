@@ -153,7 +153,7 @@ class GapSapController extends Controller
             return view('gapsap::redirect', compact(['input']));
         }
         else if($history->payment_method=='bankin'){
-            session()->flash('success', 'MYUncang Success.');
+            session()->flash('success', 'MYUncang Success. The new balance will be updated in 24 hours.');
             return redirect()->route('gapsap.index');
         }
     }
