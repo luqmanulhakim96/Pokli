@@ -74,7 +74,28 @@
             </div>
 
             <div style="line-height: 25px;">
-                
+                <div style="font-weight: bold;font-size: 16px;color: #242424;">
+                    {{ __('shop::app.mail.order.billing-address') }}
+                </div>
+
+                <div>
+                    {{ $order->billing_address->name }}
+                </div>
+
+                <div>
+                    {{ $order->billing_address->address1 }}, {{ $order->billing_address->state }}
+                </div>
+
+                <div>
+                    {{ core()->country_name($order->billing_address->country) }} {{ $order->billing_address->postcode }}
+                </div>
+
+                <div>---</div>
+
+                <div style="margin-bottom: 40px;">
+                    {{ __('shop::app.mail.order.contact') }} : {{ $order->billing_address->phone }}
+                </div>
+
                 <div style="font-weight: bold;font-size: 16px; color: #242424;">
                     {{ __('shop::app.mail.order.payment') }}
                 </div>
@@ -91,7 +112,7 @@
                 border-spacing: 0;width: 100%">
                     <thead>
                         <tr style="background-color: #f2f2f2">
-                            <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.SKU') }}</th>
+                            <!-- <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.SKU') }}</th> -->
                             <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.product-name') }}</th>
                             <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.price') }}</th>
                             <th style="text-align: left;padding: 8px">{{ __('shop::app.customer.account.order.view.qty') }}</th>
@@ -101,7 +122,7 @@
                     <tbody>
                         @foreach ($shipment->items as $item)
                             <tr>
-                                <td data-value="{{ __('shop::app.customer.account.order.view.SKU') }}" style="text-align: left;padding: 8px">{{ $item->getTypeInstance()->getOrderedItem($item)->sku }}</td>
+                                <!-- <td data-value="{{ __('shop::app.customer.account.order.view.SKU') }}" style="text-align: left;padding: 8px">{{ $item->getTypeInstance()->getOrderedItem($item)->sku }}</td> -->
 
                                 <td data-value="{{ __('shop::app.customer.account.order.view.product-name') }}" style="text-align: left;padding: 8px">
                                     {{ $item->name }}

@@ -8,6 +8,23 @@
     <?php $order = $refund->order; ?>
 
     <div style="padding: 30px;">
+      <div style="font-size: 17px;color: #242424;line-height: 30px;margin-bottom: 34px;">
+          <span style="font-weight: bold;">
+            {{ __('shop::app.mail.order.pokli-name') }}
+          </span> <br>
+          <div>
+            {{ __('shop::app.mail.order.pokli-address') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-tel') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-email') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-website') }}
+          </div>
+      </div>
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.refund.heading', ['order_id' => $order->increment_id, 'refund_id' => $refund->id]) }}
@@ -115,10 +132,10 @@
                             <tr>
                                 <td data-value="{{ __('shop::app.customer.account.order.view.product-name') }}" style="text-align: left;padding: 8px">
                                     {{ $item->name }}
-                                    
+
                                     @if (isset($item->additional['attributes']))
                                         <div class="item-options">
-                                            
+
                                             @foreach ($item->additional['attributes'] as $attribute)
                                                 <b>{{ $attribute['attribute_name'] }} : </b>{{ $attribute['option_label'] }}</br>
                                             @endforeach
