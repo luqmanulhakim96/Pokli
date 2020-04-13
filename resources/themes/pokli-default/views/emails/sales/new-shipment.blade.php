@@ -8,6 +8,23 @@
     <?php $order = $shipment->order; ?>
 
     <div style="padding: 30px;">
+      <div style="font-size: 17px;color: #242424;line-height: 30px;margin-bottom: 34px;">
+          <span style="font-weight: bold;">
+            {{ __('shop::app.mail.order.pokli-name') }}
+          </span> <br>
+          <div>
+            {{ __('shop::app.mail.order.pokli-address') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-tel') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-email') }}
+          </div>
+          <div>
+            {{ __('shop::app.mail.order.pokli-website') }}
+          </div>
+      </div>
         <div style="font-size: 20px;color: #242424;line-height: 30px;margin-bottom: 34px;">
             <span style="font-weight: bold;">
                 {{ __('shop::app.mail.shipment.heading', ['order_id' => $order->increment_id, 'shipment_id' => $shipment->id]) }}
@@ -32,7 +49,7 @@
 
         <div style="display: flex;flex-direction: row;margin-top: 20px;justify-content: space-between;margin-bottom: 40px;">
             <div style="line-height: 25px;">
-                <div style="font-weight: bold;font-size: 16px;color: #242424;">
+                <!-- <div style="font-weight: bold;font-size: 16px;color: #242424;">
                     {{ __('shop::app.mail.order.shipping-address') }}
                 </div>
 
@@ -52,16 +69,53 @@
 
                 <div style="margin-bottom: 40px;">
                     {{ __('shop::app.mail.order.contact') }} : {{ $order->shipping_address->phone }}
+                </div> -->
+
+                <!-- <div style="font-weight: bold;font-size: 16px;color: #242424;">
+                    {{ __('shop::app.mail.order.billing-address') }}
+                </div> -->
+                <div>
+                  {{ __('shop::app.mail.order.order-number') }} {{ $order->increment_id }}
                 </div>
 
-                <div style="font-weight: bold;font-size: 16px;color: #242424;">
-                    {{ __('shop::app.mail.order.shipping') }}
+                <div>
+                  {{ __('shop::app.mail.order.order-date') }} {{ $order->created_at }}
                 </div>
+
+                <div>
+                  {{ __('shop::app.mail.order.customer-name') }}  {{ $order->billing_address->name }}
+                </div>
+
+                <div>
+                    {{ $order->customer->ic }}
+                </div>
+
+                <div>---</div>
+
+                <div>
+                      {{ __('shop::app.mail.order.customer-tel') }} {{ $order->customer->phone }}
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                      {{ __('shop::app.mail.order.customer-email') }} {{ $order->customer->email }}
+                </div>
+
+                <!-- <div style="font-weight: bold;font-size: 16px; color: #242424;">
+                    {{ __('shop::app.mail.order.payment') }}
+                </div> -->
+
+                <div style="font-weight: bold;font-size: 16px; color: #242424;">
+                    {{ core()->getConfigData('sales.paymentmethods.' . $order->payment->method . '.title') }}
+                </div>
+
+                <!-- <div style="font-weight: bold;font-size: 16px;color: #242424;">
+                    {{ __('shop::app.mail.order.shipping') }}
+                </div> -->
 
                 <div style="font-size: 16px;color: #242424;">
-                    <div style="font-weight: bold;">
+                    <!-- <div style="font-weight: bold;">
                         {{ $order->shipping_title }}
-                    </div>
+                    </div> -->
 
                     <div style="margin-top: 5px;">
                         <span style="font-weight: bold;">{{ __('shop::app.mail.shipment.carrier') }} : </span>{{ $shipment->carrier_title }}
@@ -73,7 +127,7 @@
                 </div>
             </div>
 
-            <div style="line-height: 25px;">
+            <!-- <div style="line-height: 25px;">
                 <div style="font-weight: bold;font-size: 16px;color: #242424;">
                     {{ __('shop::app.mail.order.billing-address') }}
                 </div>
@@ -103,7 +157,7 @@
                 <div style="font-weight: bold;font-size: 16px; color: #242424;">
                     {{ core()->getConfigData('sales.paymentmethods.' . $order->payment->method . '.title') }}
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="section-content">
