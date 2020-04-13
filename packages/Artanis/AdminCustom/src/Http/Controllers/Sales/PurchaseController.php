@@ -220,9 +220,9 @@ class PurchaseController extends Controller
     public function confirm($id)
     {
         $result = $this->purchaseRepository->confirm($id);
-        $invoice = $this->purchaseRepository->findOrFail($id);
+        $purchase = $this->purchaseRepository->findOrFail($id);
         if ($result) {
-            Mail::send(new NewPurchaseGAPSAPInvoiceNotification($invoice));
+            Mail::send(new NewPurchaseGAPSAPInvoiceNotification($purchase));
             session()->flash('success', 'Purchase confirmation successfully.');
         } else {
             session()->flash('error', 'Purchase can not be confirm.');
