@@ -17,6 +17,9 @@ use Artanis\GapSap\Repositories\GapSapBalanceRepository;
 use Illuminate\Support\Facades\DB;
 use PDF;
 
+use Illuminate\Support\Facades\Mail;
+use Artanis\GapSap\Mail\NewPurchaseGAPSAPNotification;
+
 /**
  * Customer controlller for the customer basically for the tasks of customers which will be
  * done after customer authentication.
@@ -144,6 +147,8 @@ class BuybackController extends Controller
         $history->payment_on = $input['buyback_datetime'];
         $history->customer_id = $customer->id;
         $history->save();
+
+        Mail::send(new NewBuybackGAPSAPNotification($history));
         session()->flash('success', 'Buyback Success.  The new balance will be updated in 24 hours.');
         return redirect()->route('gapsap.buyback.index');
     }
