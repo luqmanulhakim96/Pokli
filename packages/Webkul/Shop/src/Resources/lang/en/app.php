@@ -656,8 +656,9 @@ return [
 
         'myuncang-purchase' => [
           'heading' => 'My Uncang Order',
-          'subject' => 'MY Uncange Order Received [Do Not Reply]',
+          'subject' => 'MY Uncang Order Received [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
+          'thanks' => 'Thank you for purchasing from Pokli Wealth Management Sdn. Bhd.',
         ],
 
         'invoice' => [
