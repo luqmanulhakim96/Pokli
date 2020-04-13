@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
+use Illuminate\Support\Facades\Mail;
+use Artanis\GapSap\Mail\NewPurchaseGAPSAPNotification;
+
 class StandardController extends Controller
 {
     /**
@@ -128,6 +131,7 @@ class StandardController extends Controller
             // dd($purchase);
             // $data = json_encode($data);
             // return redirect()->route('gapsap.success',['data'=>$data]);
+            Mail::send(new NewPurchaseGAPSAPNotification($purchase));
             return redirect()->route('gapsap.success');
         }
         else if ($response == false)
