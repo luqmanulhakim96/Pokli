@@ -654,6 +654,12 @@ return [
             ]
         ],
 
+        'myuncang-purchase' => [
+          'heading' => 'My Uncang Order',
+          'subject' => 'MY Uncange Order Received [Do Not Reply]',
+          'summary' => 'The new balance will be updated in 24 hours.',
+        ],
+
         'invoice' => [
             // 'heading' => 'Your invoice #:invoice_id for Order #:order_id',
             'heading' => 'Proforma Invoice #:order_id',
