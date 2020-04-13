@@ -16,12 +16,12 @@ class NewBuybackGAPSAPInvoiceNotification extends Mailable
      *
      * @return void
      */
-     public $history;
+     public $buyback;
 
 
-     public function __construct($history)
+     public function __construct($buyback)
      {
-       $this->history = $history;
+       $this->buyback = $buyback;
          // dd($this);
      }
 
@@ -32,8 +32,8 @@ class NewBuybackGAPSAPInvoiceNotification extends Mailable
       */
      public function build()
      {
-       // dd($this->history->customer->email);
-       return $this->to($this->history->customer->email, $this->history->customer->first_name)
+       dd($this->buyback);
+       return $this->to($this->buyback->customer->email, $this->buyback->customer->first_name)
                ->from(env('SHOP_MAIL_FROM'))
                ->subject(trans('shop::app.mail.myuncang-buyback-invoice.subject'))
                ->view('shop::emails.sales.new-buyback-invoice');

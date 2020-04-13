@@ -10,6 +10,9 @@ use Webkul\Sales\Repositories\RefundRepository;
 use Artanis\GapSap\Models\GoldSilverHistory;
 use PDF;
 
+use Illuminate\Support\Facades\Mail;
+use Artanis\AdminCustom\Mail\NewBuybackGAPSAPInvoiceNotification;
+
 /**
  * Sales Refund controller
  *
@@ -218,8 +221,9 @@ class BuybackController extends Controller
     public function confirm($id)
     {
         $result = $this->buybackRepository->confirm($id);
-
+        $buyback = $this->buybackRepository->findOrFail($id);
         if ($result) {
+            Mail::send(new NewBuybackGAPSAPInvoiceNotification($buyback));
             session()->flash('success', 'Buyback confirmation successfully.');
         } else {
             session()->flash('error', 'Buyback can not be confirm. Insufficient balance.');
