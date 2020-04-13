@@ -22,7 +22,7 @@ class NewPurchaseGAPSAPInvoiceNotification extends Mailable
      public function __construct($result)
      {
        $this->$result = $result;
-         dd($this);
+         // dd($this);
      }
 
      /**
@@ -33,7 +33,7 @@ class NewPurchaseGAPSAPInvoiceNotification extends Mailable
      public function build()
      {
        // dd($this->history->customer->email);
-       return $this->to($this->history->customer->email, $this->history->customer->first_name)
+       return $this->to($this->$result->customer->email, $this->$result->customer->first_name)
                ->from(env('SHOP_MAIL_FROM'))
                ->subject(trans('shop::app.mail.myuncang-purchase-invoice.subject'))
                ->view('shop::emails.sales.new-purchase-invoice');
