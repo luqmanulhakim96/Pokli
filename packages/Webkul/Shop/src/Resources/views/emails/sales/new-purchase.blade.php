@@ -32,7 +32,7 @@
           </div>
         </div>
         <div style="margin-top: 65px;font-size: 16px;color: #5E5E5E;line-height: 24px;display: inline-block">
-            <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
+            <!-- <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
                 {{ __('shop::app.mail.order.terms-and-condition.kindly-remit') }}
                 <br>
                 <br>
@@ -43,7 +43,7 @@
                 <br>
                 {{ __('shop::app.mail.order.terms-and-condition.fast-cheque') }}
                 <br><br>
-            </p>
+            </p> -->
 
             <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
               <b>{{ __('shop::app.mail.order.terms-and-condition.tnc') }}</b>
