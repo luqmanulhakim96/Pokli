@@ -65,7 +65,7 @@
           <div  style="margin-top: 40px; text-align: center">
               <a href="{{ route('gapsap.purchase.print', $result->id) }}" style="font-size: 16px;
               color: #FFFFFF; text-align: center; background: #FF0000; padding: 10px 100px;text-decoration: none;">
-                  Download Invoice
+                  Click Here to Download Invoice
               </a>
           </div>
         </div>
