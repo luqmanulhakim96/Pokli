@@ -173,7 +173,7 @@ class EPPFourMonthsController extends Controller
       $billingAddress = $cart->billing_address;
       $item = $this->getCartItems();
       // $grand_total = $cart->grand_total;
-      $total_price  = $cart->sub_total + (0.5 * $cart->sub_total);
+      $total_price  = $cart->sub_total + (0.05 * $cart->sub_total);
       $total_price = $total_price + $cart->selected_shipping_rate->base_price;
       $monthly_price = round($total_price/4, 2);
       $total_price = $monthly_price * 4;

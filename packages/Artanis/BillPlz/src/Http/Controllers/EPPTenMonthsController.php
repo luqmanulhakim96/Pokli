@@ -133,7 +133,7 @@ class EPPTenMonthsController extends Controller
       // dd($data);
 
       $order = $this->orderRepository->create(Cart::prepareDataForOrder());
-      
+
       $update_grand_total_cart = DB::table('cart')->where('id',$order->cart_id)->update(['grand_total'=>$data['total_price']]);
       $update_base_grand_total_cart = DB::table('cart')->where('id',$order->cart_id)->update(['base_grand_total'=>$data['total_price']]);
 
@@ -167,7 +167,7 @@ class EPPTenMonthsController extends Controller
       $billingAddress = $cart->billing_address;
       $item = $this->getCartItems();
       // $grand_total = $cart->grand_total;
-      $total_price  = $cart->sub_total + (0.5 * $cart->sub_total);
+      $total_price  = $cart->sub_total + (0.05 * $cart->sub_total);
       $total_price = $total_price + $cart->selected_shipping_rate->base_price;
       $monthly_price = round($total_price/10, 2);
       $total_price = $monthly_price * 10;
