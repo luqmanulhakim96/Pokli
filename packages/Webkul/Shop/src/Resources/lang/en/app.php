@@ -661,11 +661,25 @@ return [
           'thanks' => 'Thank you for purchasing from Pokli Wealth Management Sdn. Bhd.',
         ],
 
+        'myuncang-purchase-admin' => [
+          'heading' => 'My Uncang Purchase Order',
+          'subject' => 'MY Uncang Purchase Order Placed [Do Not Reply]',
+          'summary' => 'New Purchase has been placed. Please go to Pokli.com.my/admin to approve.',
+          'thanks' => 'Pokli Wealth Management Sdn. Bhd.',
+        ],
+
         'myuncang-buyback' => [
           'heading' => 'My Uncang Buyback Order',
           'subject' => 'MY Uncang Buyback Order Received [Do Not Reply]',
           'summary' => 'The new balance will be updated in 24 hours.',
           'thanks' => 'Thank you.',
+        ],
+
+        'myuncang-buyback-admin' => [
+          'heading' => 'My Uncang Buyback Order',
+          'subject' => 'MY Uncang Buyback Order Placed [Do Not Reply]',
+          'summary' => 'New Buyback has been placed. Please go to Pokli.com.my/admin to approve',
+          'thanks' => 'Pokli Wealth Management Sdn. Bhd.',
         ],
 
         'myuncang-purchase-invoice' => [

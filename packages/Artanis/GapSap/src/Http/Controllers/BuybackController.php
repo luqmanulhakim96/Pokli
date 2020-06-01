@@ -149,6 +149,8 @@ class BuybackController extends Controller
         $history->save();
 
         Mail::send(new NewBuybackGAPSAPNotification($history));
+        Mail::send(new NewBuybackGAPSAPAdminNotification($history));
+
         session()->flash('success', 'Buyback Success.  The new balance will be updated in 24 hours.');
         return redirect()->route('gapsap.buyback.index');
     }
