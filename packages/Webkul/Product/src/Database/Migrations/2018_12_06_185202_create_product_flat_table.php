@@ -40,13 +40,15 @@ class CreateProductFlatTable extends Migration
             $table->integer('gos')->nullable();
             $table->string('gos_label')->nullable();
             $table->integer('type')->nullable();
-            $table->integer('type_label')->nullable();
+            $table->string('type_label')->nullable();
             $table->integer('category')->nullable();
-            $table->integer('category_label')->nullable();
+            $table->string('category_label')->nullable();
             $table->integer('weight_gram')->nullable();
             $table->string('weight_gram_label')->nullable();
             $table->integer('desc')->nullable();
-            $table->integer('desc_label')->nullable();
+            $table->string('desc_label')->nullable();
+            $table->integer('price_auto_update')->nullable();
+            $table->string('price_auto_update_label')->nullable();
 
             $table->date('created_at')->nullable();
 

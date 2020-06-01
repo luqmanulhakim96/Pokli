@@ -71,6 +71,8 @@ class AttributeTableSeeder extends Seeder
             ['id' => '29','code' => 'desc','admin_name' => 'Description','type' => 'select','validation' => NULL,'position' => '29','is_required' => '0','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0', 'is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '0',
             'use_in_flat' => '0','created_at' => $now,'updated_at' => $now],
             ['id' => '30','code' => 'weight_gram','admin_name' => 'Weight','type' => 'select','validation' => NULL,'position' => '39','is_required' => '1','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0', 'is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '1',
+            'use_in_flat' => '1','created_at' => $now,'updated_at' => $now],
+            ['id' => '31','code' => 'price_auto_update','admin_name' => 'Live Pricing','type' => 'select','validation' => NULL,'position' => '40','is_required' => '1','is_unique' => '0','value_per_locale' => '0','value_per_channel' => '0', 'is_filterable' => '1','is_configurable' => '1','is_user_defined' => '1','is_visible_on_front' => '1',
             'use_in_flat' => '1','created_at' => $now,'updated_at' => $now]
         ]);
 
@@ -105,7 +107,8 @@ class AttributeTableSeeder extends Seeder
            ['id' => '27','locale' => 'en','name' => 'Gold/Silver','attribute_id' => '27'],
            ['id' => '28','locale' => 'en','name' => 'Category','attribute_id' => '28'],
            ['id' => '29','locale' => 'en','name' => 'Description','attribute_id' => '29'],
-           ['id' => '30','locale' => 'en','name' => 'Weight','attribute_id' => '30']
+           ['id' => '30','locale' => 'en','name' => 'Weight','attribute_id' => '30'],
+           ['id' => '31','locale' => 'en','name' => 'Live Pricing','attribute_id' => '31']
         ]);
     }
 }
