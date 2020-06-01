@@ -311,7 +311,7 @@
       echo "Error updating record: " . $conn->error;
   }
 
-  $sql_update_price_value_12dinar = "UPDATE gold_live_price_small_24k SET sell='".$sell_12dinar."' WHERE gram = '2'";
+  $sql_update_price_value_12dinar = "UPDATE gold_live_price_small_24k SET sell='".$sell_12dinar."' WHERE gram = '1/2'";
 
   if ($conn->query($sql_update_price_value_12dinar) === TRUE) {
       echo "Price 1/2 dinar updated successfully <br>";
