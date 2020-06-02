@@ -175,7 +175,9 @@ class PurchaseDataGrid extends DataGrid
                     // return '<a href="https://pokli.com.my/storage/' .$value->payment_attachment. '" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"> </a>';
                     // return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"></a>';
                     // return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"></a>';
-                    return '<a href="'.$file.'" target="_blank"><img src="'.$file.'" alt="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" height="25" width="25"></a>';
+                    // return '<a href="'.$file.'" target="_blank"><img src="'.$file.'" alt="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" height="25" width="25"></a>';
+                    return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="https://image.flaticon.com/icons/svg/626/626013.svg" height="25" width="25"></a>';
+
 
             }
           }
