@@ -155,7 +155,7 @@ class StandardController extends Controller
       // dd($purchase->amount);
 
       // $billplzCreate = Client::make('155994cc-37ea-4c78-9460-1062df930f2c', 'S-b4db8m12r7Te8JmS9O79Rg')->useSandbox();
-      $billplzCreate = Client::make('cd98195a-0457-415a-8cc7-d013c86f05a5', 'S-gji-HhnXvrRpcfGB5NQvzA') ##production
+      $billplzCreate = Client::make('cd98195a-0457-415a-8cc7-d013c86f05a5', 'S-gji-HhnXvrRpcfGB5NQvzA'); ##production
       $bill = $billplzCreate->bill();
       $response = $bill->create(
           'scqd4tln', //collection id
