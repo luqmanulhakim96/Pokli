@@ -45,7 +45,7 @@
 
                                     <select name="mode_of_payment" class="control" v-validate="'required'" data-vv-as="&quot;{{ __('gapsap::app.purchase.form-mode-of-payment') }}&quot;">
                                         <option value="">Please Select Payment Method</option>
-                                        <!-- <option value="fpx">FPX</option> -->
+                                        <option value="fpx">FPX</option>
                                         <option value="bankin">Bank In</option>
                                     </select>
                                     <span class="control-error" v-if="errors.has('mode_of_payment')">@{{ errors.first('mode_of_payment') }}</span>
