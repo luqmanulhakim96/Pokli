@@ -132,7 +132,7 @@ class AttributeOptionTableSeeder extends Seeder
             ['id' => '54', 'locale' => 'en', 'label' => 'Gold Jewellery (22k) - 1 gram', 'attribute_option_id' => '54'],
             ['id' => '55', 'locale' => 'en', 'label' => 'Silver Bar (999) - 100 gram', 'attribute_option_id' => '55'],
             ['id' => '56', 'locale' => 'en', 'label' => 'Silver Bar (999) - 250 gram', 'attribute_option_id' => '56'],
-            ['id' => '57', 'locale' => 'en', 'label' => 'Silver Bar (999) - 599 gram', 'attribute_option_id' => '57'],
+            ['id' => '57', 'locale' => 'en', 'label' => 'Silver Bar (999) - 500 gram', 'attribute_option_id' => '57'],
             ['id' => '58', 'locale' => 'en', 'label' => 'Silver Bar (999) - 1000 gram', 'attribute_option_id' => '58'],
             ['id' => '59', 'locale' => 'en', 'label' => 'Silver Bar (999) - 5000 gram', 'attribute_option_id' => '59'],
             ['id' => '60', 'locale' => 'en', 'label' => 'Silver Wafer - Dirham (999) - 10 Dirham', 'attribute_option_id' => '60'],
