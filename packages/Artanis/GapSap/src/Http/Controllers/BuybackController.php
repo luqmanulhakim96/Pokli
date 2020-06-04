@@ -19,6 +19,8 @@ use PDF;
 
 use Illuminate\Support\Facades\Mail;
 use Artanis\GapSap\Mail\NewBuybackGAPSAPNotification;
+use Artanis\GapSap\Mail\NewBuybackGAPSAPAdminNotification;
+
 
 /**
  * Customer controlller for the customer basically for the tasks of customers which will be

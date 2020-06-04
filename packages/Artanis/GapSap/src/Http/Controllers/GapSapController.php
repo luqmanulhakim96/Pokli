@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Mail;
 use Artanis\GapSap\Mail\NewPurchaseGAPSAPNotification;
+use Artanis\GapSap\Mail\NewPurchaseGAPSAPAdminNotification;
+
 /**
  * Customer controlller for the customer basically for the tasks of customers which will be
  * done after customer authentication.
