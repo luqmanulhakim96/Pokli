@@ -19,9 +19,9 @@
                     </span>
                 </div>
 
-                <a href="{{ route('admin.customer.create') }}" class="btn btn-lg btn-primary">
+                <!-- <a href="{{ route('admin.customer.create') }}" class="btn btn-lg btn-primary">
                     {{ __('admin::app.customers.customers.add-title') }}
-                </a>
+                </a> -->
             </div>
         </div>
 
@@ -44,4 +44,3 @@
 @push('scripts')
     @include('admin::export.export', ['gridName' => $customerGrid])
 @endpush
-
