@@ -194,12 +194,12 @@ class DashboardController extends Controller
     }
 
     public function totalGoldPurchasePending(){
-        $goldPurchase = GoldSilverHistory::where([['status','processing'],['status','paid'],['product_type','gold'],['activity','purchase']])->count();
+        $goldPurchase = GoldSilverHistory::where([['status','processing'],['product_type','gold'],['activity','purchase']])->orWhere([['status','paid'],['product_type','gold'],['activity','purchase']])->count();
         return $goldPurchase;
     }
 
     public function totalSilverPurchasePending(){
-        $goldPurchase = GoldSilverHistory::where([['status','processing'],['status','paid'],['product_type','silver'],['activity','purchase']])->count();
+        $goldPurchase = GoldSilverHistory::where([['status','processing'],['product_type','silver'],['activity','purchase']])->orWhere([['status','paid'],['product_type','silver'],['activity','purchase']])->count();
         return $goldPurchase;
     }
 
