@@ -102,7 +102,7 @@ return [
             'firstname' => 'First Name',
             'lastname' => 'Last Name',
             'email' => 'Email',
-            'ic' => 'IC | Passport',
+            'ic' => 'IC | Passport (without "-")',
             'bank-name' => 'Bank Name',
             'bank-no' => 'Bank Account No.',
             'branch' => 'Pokli Branch',
