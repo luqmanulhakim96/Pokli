@@ -593,7 +593,7 @@ return [
               'account-name' => 'Account Name : Pokli Wealth Management',
               'bank-name' => 'Bank : Malayan Banking Berhad (Maybank)',
               'branch-name' => 'Branch : Seremban 2, Negeri Sembilan',
-              'account-number' => 'Account Number : 555171003253',
+              'account-number' => 'Account Number : 555171527846',
               'fast-cheque' => '(*Fast Cheque is NOT accepted.)',
               'tnc' => 'TERMS & CONDITIONS :',
               'payment'=> 'PAYMENT',
