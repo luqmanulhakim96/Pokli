@@ -59,7 +59,7 @@
 
             <div class="control-group" :class="[errors.has('ic') ? 'has-error' : '']">
                 <label for="ic" class="required">{{ __('shop::app.customer.signup-form.ic') }}</label>
-                <input id="ic" type="text" class="control" name="ic" v-validate="'required|numeric|min:12|max:12'" value="{{ old('ic') }}" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.ic') }}&quot;">
+                <input id="ic" type="text" class="control" name="ic" v-validate="'required|min:8|max:12'" value="{{ old('ic') }}" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.ic') }}&quot;">
                 <span class="control-error" v-if="errors.has('ic')">@{{ errors.first('ic') }}</span>
             </div>
 
