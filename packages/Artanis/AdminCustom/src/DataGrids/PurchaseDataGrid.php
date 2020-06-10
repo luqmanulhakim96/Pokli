@@ -42,7 +42,7 @@ class PurchaseDataGrid extends DataGrid
                 ->leftJoin('customers', function($leftJoin) {
                     $leftJoin->on('customers.id', '=', 'gold_silver_history.customer_id');
                 })
-                ->addSelect('gold_silver_history.increment_id', 'gold_silver_history.invoice_id' ,'gold_silver_history.id', 'gold_silver_history.product_type', 'gold_silver_history.current_price_per_gram', 'gold_silver_history.current_price_datetime', 'gold_silver_history.amount', 'gold_silver_history.quantity', 'gold_silver_history.payment_method', 'gold_silver_history.payment_on', 'gold_silver_history.status', 'gold_silver_history.payment_attachment')
+                ->addSelect('gold_silver_history.increment_id', 'gold_silver_history.invoice_id' ,'gold_silver_history.id', 'gold_silver_history.product_type', 'gold_silver_history.current_price_per_gram', 'gold_silver_history.current_price_datetime', 'gold_silver_history.amount', 'gold_silver_history.quantity', 'gold_silver_history.payment_method', 'gold_silver_history.payment_on', 'gold_silver_history.status', 'gold_silver_history.payment_attachment', 'gold_silver_history.transaction_id')
                 ->addSelect(DB::raw('CONCAT(customers.first_name, " ", customers.last_name) as customer_full_name'))
                 ->where('activity','purchase');
 
@@ -158,7 +158,7 @@ class PurchaseDataGrid extends DataGrid
 
         $this->addColumn([
             'index' => 'gold_silver_history.payment_attachment',
-            'label' => 'Attachement',
+            'label' => 'Attachment',
             'type' => 'string',
             'searchable' => true,
             'closure' => true,
@@ -181,6 +181,25 @@ class PurchaseDataGrid extends DataGrid
 
             }
           }
+        ]);
+
+        $this->addColumn([
+            'index' => 'gold_silver_history.transaction_id',
+            'label' => 'Transaction ID',
+            'type' => 'string',
+            'searchable' => true,
+            'closure' => true,
+            'sortable' => true,
+            'filterable' => true,
+            'wrapper' => function ($value) {
+                  if(!$value->transaction_id)
+                  {
+                    return '<span class="badge badge-md badge-danger">Unavailable</span>';
+                  }
+                  else{
+                    return '<span class="badge badge-md badge-success">'.$value->transaction_id.'</span>';   
+                  }
+            }
         ]);
 
         $this->addColumn([
