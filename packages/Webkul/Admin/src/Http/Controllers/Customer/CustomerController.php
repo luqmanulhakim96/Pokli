@@ -9,6 +9,8 @@ use Webkul\Core\Repositories\ChannelRepository;
 use Webkul\Admin\Mail\NewCustomerNotification;
 use Mail;
 
+use Webkul\Customer\Models\Customer;
+
 /**
  * Customer controlller
  *
@@ -158,13 +160,23 @@ class CustomerController extends Controller
     */
     public function view($id)
     {
+      // $customer = $this->customerRepository->findOrFail($id);
+      //
+      // $customerGroup = $this->customerGroupRepository->findWhere([['code', '<>', 'guest']]);
+      //
+      // $channelName = $this->channelRepository->all();
+      //
+      // return view($this->_config['view'], compact('customer', 'customerGroup', 'channelName'));
+
       $customer = $this->customerRepository->findOrFail($id);
 
-      $customerGroup = $this->customerGroupRepository->findWhere([['code', '<>', 'guest']]);
+      $countReferral = Customer::where('referral_id','=', $id)->count();
+      $uplineDetails = $this->customerRepository->find(($customer->referral_id));
+      // $customerGroup = $this->customerGroupRepository->findWhere([['code', '<>', 'guest']]);
 
       $channelName = $this->channelRepository->all();
 
-      return view($this->_config['view'], compact('customer', 'customerGroup', 'channelName'));
+      return view($this->_config['view'], compact(['customer' , 'channelName', 'countReferral','uplineDetails']));
     }
 
      /**
