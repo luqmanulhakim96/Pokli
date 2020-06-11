@@ -82,9 +82,15 @@
 
   ////////////////////////////////////////////////--CURL 24K--////////////////////////////////////////////////
   // get the 24k gold current price
-  $get_24k_price = "//table[@id='goldbar-table-content2']";
+  // $get_24k_price = "//table[@id='beardgbt2']";
+  $get_24k_price = "//div[@id='goldbar-div-table2']";
   $get_24k_price_array = $xpath->query($get_24k_price);
+
   $gold_24k_price = $get_24k_price_array->item(0)->textContent;
+
+  // echo $gold_24k_price;
+  // echo "<br>";
+
 
   $gold_24k_price = preg_replace('/\s+/', '_', $gold_24k_price);
   // echo $gold_24k_price;
