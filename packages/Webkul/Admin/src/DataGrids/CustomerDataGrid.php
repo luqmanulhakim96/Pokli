@@ -61,7 +61,7 @@ class CustomerDataGrid extends DataGrid
                     $leftJoin->on('silver_history.customer_id', '=', 'customers.id')
                              ->distinct('silver_history.customer_id');
                 })
-                ->addSelect('customers.id as customer_id', 'customers.ic', 'customers.email', 'customers.phone', 'customers.bank_no', 'customers.bank_name', 'customers.branch', 'customers.status', 'gold_history.quantity', 'silver_history.quantity')
+                ->addSelect('customers.id as customer_id', 'customers.ic', 'customers.email', 'customers.phone', 'customers.bank_no', 'customers.bank_name', 'customers.branch', 'customers.status', 'gold_history.quantity', 'silver_history.quantity', 'customers.total_gold', 'customers.total_silver')
                 ->addSelect(DB::raw('CONCAT(customers.first_name, " ", customers.last_name) as full_name'))->groupBy('customers.id');
 
         $this->addFilter('customer_id', 'customers.id');
@@ -146,7 +146,8 @@ class CustomerDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index' => 'gold_history.quantity',
+            // 'index' => 'gold_history.quantity',
+            'index' => 'customers.total_gold',
             'label' => 'Gold (gram)',
             'type' => 'number',
             'searchable' => false,
@@ -158,7 +159,8 @@ class CustomerDataGrid extends DataGrid
         ]);
 
         $this->addColumn([
-            'index' => 'silver_history.quantity',
+            // 'index' => 'silver_history.quantity',
+            'index' => 'customers.total_silver',
             'label' => 'Silver (gram)',
             'type' => 'number',
             'searchable' => false,
