@@ -148,7 +148,7 @@ class CustomerDataGrid extends DataGrid
         $this->addColumn([
             'index' => 'gold_history.quantity',
             'label' => 'Gold',
-            'type' => 'string',
+            'type' => 'decimal',
             'searchable' => false,
             'sortable' => true,
             'filterable' => false,
@@ -160,7 +160,7 @@ class CustomerDataGrid extends DataGrid
         $this->addColumn([
             'index' => 'silver_history.quantity',
             'label' => 'Silver',
-            'type' => 'string',
+            'type' => 'decimal',
             'searchable' => false,
             'sortable' => true,
             'filterable' => false,

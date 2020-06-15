@@ -19,7 +19,9 @@ use PDF;
 
 use Illuminate\Support\Facades\Mail;
 use Artanis\GapSap\Mail\NewBuybackGAPSAPNotification;
-use Artanis\GapSap\Mail\NewBuybackGAPSAPAdminNotification;
+// use Artanis\GapSap\Mail\NewBuybackGAPSAPAdminNotification;
+// use App\Mail\NewBuybackGAPSAPAdminNotification;
+
 
 
 /**
@@ -87,7 +89,11 @@ class BuybackController extends Controller
     {
         $customer = $this->customerRepository->find(auth()->guard('customer')->user()->id);
         $gold_balance = $this->gapSapBalanceRepository->goldBalance($customer->id);
+        $purchase_gold = Customer::where('id', $customer->id)->sum('total_gold');
+        $gold_balance = $gold_balance + $purchase_gold;
         $silver_balance = $this->gapSapBalanceRepository->silverBalance($customer->id);
+        $purchase_silver = Customer::where('id', $customer->id)->sum('total_silver');
+        $silver_balance = $silver_balance + $purchase_silver;
         // dd($gold_balance);
         // $gold = DB::connection('mysql2')->select('gold_live_price_gap');
         $gold_price = 191;
@@ -229,15 +235,18 @@ class BuybackController extends Controller
         #calculate balance gold
         $purchaseGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
         $buybackGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $purchase_gold = Customer::where('id', $purchase->customer->id)->sum('total_gold');
 
         $balanceGold =  $purchaseGold-$buybackGold;
+        $balanceGold = $balanceGold + $purchase_gold;
 
         #calculate balance silver
         $purchaseSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
         $buybackSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $purchase_silver = Customer::where('id', $purchase->customer->id)->sum('total_silver');
 
         $balanceSilver = $purchaseSilver-$buybackSilver;
-
+        $balanceSilver = $balanceSilver + $purchase_silver;
 
         $pdf = PDF::loadView('gapsap::customers.account.buyback.pdf', compact(['purchase','balanceGold','balanceSilver']))->setPaper('a4');
 

@@ -9,6 +9,7 @@ use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Sales\Repositories\OrderItemRepository;
 use Webkul\Customer\Repositories\CustomerRepository;
 use Webkul\Product\Repositories\ProductInventoryRepository;
+use Webkul\Customer\Models\Customer;
 
 /**
  * Dashboard controller
@@ -182,14 +183,18 @@ class DashboardController extends Controller
     public function totalGold(){
         $plus = GoldSilverHistory::where([['status','completed'],['product_type','gold'],['activity','purchase']])->sum('quantity');
         $minus = GoldSilverHistory::where([['status','completed'],['product_type','gold'],['activity','buyback']])->sum('quantity');
+        $purchase_gold = Customer::sum('total_gold');
         $gold = $plus-$minus;
+        $gold = $gold + $purchase_gold;
         return $gold;
     }
 
     public function totalSilver(){
         $plus = GoldSilverHistory::where([['status','completed'],['product_type','silver'],['activity','purchase']])->sum('quantity');
         $minus = GoldSilverHistory::where([['status','completed'],['product_type','silver'],['activity','buyback']])->sum('quantity');
+        $purchase_silver = Customer::sum('total_silver');
         $silver = $plus-$minus;
+        $silver = $silver + $purchase_silver;
         return $silver;
     }
 
