@@ -12,6 +12,9 @@ use Artanis\GapSap\Models\GoldSilverHistory;
 
 use Illuminate\Support\Facades\Mail;
 use Artanis\AdminCustom\Mail\NewPurchaseGAPSAPInvoiceNotification;
+
+use Webkul\Customer\Models\Customer;
+
 /**
  * Sales Refund controller
  *
@@ -238,14 +241,18 @@ class PurchaseController extends Controller
         #calculate balance gold
         $purchaseGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
         $buybackGold = GoldSilverHistory::where('customer_id', $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $purchase_gold = Customer::where('id', $purchase->customer->id)->sum('total_gold');
 
         $balanceGold =  $purchaseGold-$buybackGold;
+        $balanceGold = $balanceGold + $purchase_gold;
 
         #calculate balance silver
         $purchaseSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
         $buybackSilver = GoldSilverHistory::where('customer_id',  $purchase->customer->id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $purchase_silver = Customer::where('id', $purchase->customer->id)->sum('total_silver');
 
         $balanceSilver = $purchaseSilver-$buybackSilver;
+        $balanceSilver = $balanceSilver + $purchase_silver;
 
 
         $pdf = PDF::loadView('gapsap::customers.account.purchase.pdf', compact(['purchase','balanceGold','balanceSilver']))->setPaper('a4');

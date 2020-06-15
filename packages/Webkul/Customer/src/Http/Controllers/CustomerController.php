@@ -77,7 +77,12 @@ class CustomerController extends Controller
         $countReferral = Customer::where('referral_id','=', auth()->guard('customer')->user()->id)->count();
         $uplineDetails = $this->customerRepository->find(($customer->referral_id));
         $gold_balance = $this->gapSapBalanceRepository->goldBalance($customer->id);
+        $purchase_gold = Customer::where('id', $customer->id)->sum('total_gold');
+        $gold_balance = $gold_balance + $purchase_gold;
+
         $silver_balance = $this->gapSapBalanceRepository->silverBalance($customer->id);
+        $purchase_silver = Customer::where('id', $customer->id)->sum('total_silver');
+        $silver_balance = $silver_balance + $purchase_silver;
         // dd($uplineDetails);
         return view($this->_config['view'], compact(['customer','countReferral','uplineDetails', 'gold_balance', 'silver_balance']));
     }
