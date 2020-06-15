@@ -23,6 +23,8 @@ class CustomerDataGrid extends DataGrid
 
     public function goldTotal($id){
         $purchase = GoldSilverHistory::where('customer_id', $id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $purchase_gold = Customer::where('id', $id)->sum('total_gold');
+        $purchase = $purchase + $purchase_gold;
         $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
 
         return $purchase-$buyback;
@@ -30,6 +32,8 @@ class CustomerDataGrid extends DataGrid
 
     public function silverTotal($id){
         $purchase = GoldSilverHistory::where('customer_id', $id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $purchase_silver = Customer::where('id', $id)->sum('total_silver');
+        $purchase = $purchase + $purchase_silver;
         $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
 
         return $purchase-$buyback;
@@ -206,6 +210,13 @@ class CustomerDataGrid extends DataGrid
             'icon' => 'icon pencil-lg-icon',
             'title' => trans('admin::app.customers.customers.edit-help-title')
         ]);
+
+        // $this->addAction([
+        //     'method' => 'POST', // use GET request only for redirect purposes
+        //     'route' => 'admin.customer.updateStatus',
+        //     'icon' => 'icon pencil-lg-icon',
+        //     'title' => trans('Update Customer Status')
+        // ]);
 
         $this->addAction([
             'method' => 'POST', // use GET request only for redirect purposes
