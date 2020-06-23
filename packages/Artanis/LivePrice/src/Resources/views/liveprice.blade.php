@@ -173,8 +173,10 @@
                                         @foreach($dataGold24k as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                          <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
-                                          <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
+                                          <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                          <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
+                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
+                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
                                         </tr>
                                          @endforeach
                                       </table>
@@ -214,8 +216,11 @@
                                        @foreach($dataGoldWafer24k as $key => $value)
                                        <tr>
                                          <td><a href="#"><span>{{$value["gram"]}} Dinar</span></a></td>
-                                         <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
-                                         <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
+                                         <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                         <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
+                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
+                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                        </tr>
                                         @endforeach
                                      </table>
@@ -254,8 +259,11 @@
                                       @foreach($dataGold24kFlexibar as $key => $value)
                                       <tr>
                                         <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                        <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
-                                        <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
+                                        <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                        <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
+                                        <td><a href="#">RM<span> xxxx.xx </span></a></td>
+                                        <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                       </tr>
                                        @endforeach
                                     </table>
@@ -292,8 +300,11 @@
                                        @foreach($dataGold24kTaifook as $key => $value)
                                        <tr>
                                          <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                         <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
-                                         <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
+                                         <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                         <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
+                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
+                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                        </tr>
                                         @endforeach
                                      </table>
@@ -326,7 +337,9 @@
                                         @foreach($dataGold24kSmall as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} {{$value["label"]}}</span></a></td>
-                                          <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                          <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                         </tr>
                                          @endforeach
                                       </table>
@@ -359,8 +372,11 @@
                                         @foreach($dataGoldWafer22k as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} Dinar</span></a></td>
-                                          <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
-                                          <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
+                                          <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                          <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
+                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
+                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                         </tr>
                                          @endforeach
                                       </table>
@@ -392,7 +408,9 @@
                                         @foreach($dataGold24kJewellary as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                          <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
+                                          <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
+                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                         </tr>
                                          @endforeach
                                       </table>
@@ -459,10 +477,11 @@
                                          @foreach($dataSilver24k as $key => $value)
                                          <tr>
                                            <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                           <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
-                                           <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
-                                           <!-- <td><a href="#">RM<span> {{$value["sell"]}}</span> = <span>{{$value["gram"]}} </span>g</a></td> -->
-                                           <!-- <td><a href="#">RM<span> {{$value["buy"]}}</span> = <span>{{$value["gram"]}} </span>g</a></td> -->
+                                           <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                           <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
+                                           <td><a href="#">RM<span> xxxx.xx </span></a></td>
+                                           <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                          </tr>
                                           @endforeach
                                        </table>
@@ -498,7 +517,9 @@
                                           @foreach($dataSilverDirham as $key => $value)
                                           <tr>
                                             <td><a href="#"><span>{{$value["gram"]}} Dirham</span></a></td>
-                                            <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                            <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
+                                            <td><a href="#">RM<span> xxxx.xx </span></a></td>
+
                                           </tr>
                                            @endforeach
                                         </table>
