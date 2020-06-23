@@ -23,19 +23,21 @@ class CustomerDataGrid extends DataGrid
 
     public function goldTotal($id){
         $purchase = GoldSilverHistory::where('customer_id', $id)->where('activity', 'purchase')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+        $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
+
         $purchase_gold = Customer::where('id', $id)->sum('total_gold');
-        $purchase = $purchase + $purchase_gold;
-        // $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'gold')->where('status', 'completed')->sum('quantity');
-        // $total = $purchase-$buyback;
+        $purchase = $purchase + $purchase_gold - $buyback;
+
         return $purchase;
     }
 
     public function silverTotal($id){
         $purchase = GoldSilverHistory::where('customer_id', $id)->where('activity', 'purchase')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+        $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
+
         $purchase_silver = Customer::where('id', $id)->sum('total_silver');
-        $purchase = $purchase + $purchase_silver;
-        // $buyback = GoldSilverHistory::where('customer_id', $id)->where('activity', 'buyback')->where('product_type', 'silver')->where('status', 'completed')->sum('quantity');
-        // $total = $purchase-$buyback;
+        $purchase = $purchase + $purchase_silver - $buyback;
+
         return $purchase;
     }
 
