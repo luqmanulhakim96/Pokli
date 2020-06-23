@@ -1,5 +1,5 @@
 <?php
-    $db = mysqli_connect("localhost","root","P@ssw0rd123","live_price_api");
+    $db = mysqli_connect(env('DB_HOST_SECOND'),env('DB_USERNAME_SECOND'),env('DB_PASSWORD_SECOND'),env('DB_DATABASE_SECOND'));
     if (mysqli_connect_errno())
     {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -110,25 +110,18 @@
            </div>
            <div class="featured-grid product-grid-price">
             <div class="block1" style="width:100%">
-              <div class="gold">
+              <!-- <div class="gold">
                  <div class="container">
                      <div class="col">
                          <div class="col-md-4 col-sm-6">
                              <div class="pricingTable">
                                  <div class="pricingTable-header">
                                      <h3 class="title" style="color:white;">MY Uncang Emas</h3>
-                                     <!-- <span class="duration">Monthly Plan</span> -->
                                  </div>
                                  <div class="pricing-content">
                                      <div class="price-value">
-                                         <!-- <span class="amount">$10.99</span> -->
                                      </div>
                                      <ul class="inner-content">
-                                         <!-- <li>50GB Disk Space</li>
-                                         <li>50 Email Accounts</li>
-                                         <li>50GB Bandwidth</li>
-                                         <li>15 Subdomains</li>
-                                         <li>15 Subdomains</li> -->
                                      </ul>
                                      <div class="pricingTable-signup">
                                        <table style="width: 100%;">
@@ -144,26 +137,19 @@
                          </div>
                      </div>
                  </div>
-             </div>
-             <div class="gold">
+             </div> -->
+             <!-- <div class="gold">
                 <div class="container">
                     <div class="col">
                         <div class="col-md-4 col-sm-6">
                             <div class="pricingTable">
                                 <div class="pricingTable-header">
                                     <h3 class="title" style="color:white;">LBMA Gold Bar (24k)</h3>
-                                    <!-- <span class="duration">Monthly Plan</span> -->
                                 </div>
                                 <div class="pricing-content">
                                     <div class="price-value">
-                                        <!-- <span class="amount">Sell | Buy</span> -->
                                     </div>
                                     <ul class="inner-content">
-                                        <!-- <li>50GB Disk Space</li>
-                                        <li>50 Email Accounts</li>
-                                        <li>50GB Bandwidth</li>
-                                        <li>15 Subdomains</li>
-                                        <li>15 Subdomains</li> -->
                                     </ul>
                                     <div class="pricingTable-signup">
                                       <table style="width: 100%;">
@@ -173,10 +159,8 @@
                                         @foreach($dataGold24k as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                          <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                          <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
-                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
-                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
+                                          <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                          <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
                                         </tr>
                                          @endforeach
                                       </table>
@@ -184,29 +168,21 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-            </div>
-              <div class="gold">
+            </div> -->
+              <!-- <div class="gold">
                  <div class="container">
                      <div class="col">
                        <div class="col-md-4 col-sm-6">
                            <div class="pricingTable">
                                <div class="pricingTable-header">
                                    <h3 class="title" style="color:white;">LBMA Gold Wafer - Dinar (24k)</h3>
-                                   <!-- <span class="duration">Monthly Plan</span> -->
                                </div>
                                <div class="pricing-content">
                                    <div class="price-value">
-                                       <!-- <span class="amount">Sell | Buy</span> -->
                                    </div>
                                    <ul class="inner-content">
-                                       <!-- <li>50GB Disk Space</li>
-                                       <li>50 Email Accounts</li>
-                                       <li>50GB Bandwidth</li>
-                                       <li>15 Subdomains</li>
-                                       <li>15 Subdomains</li> -->
                                    </ul>
                                    <div class="pricingTable-signup">
                                      <table style="width: 100%;">
@@ -216,11 +192,8 @@
                                        @foreach($dataGoldWafer24k as $key => $value)
                                        <tr>
                                          <td><a href="#"><span>{{$value["gram"]}} Dinar</span></a></td>
-                                         <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                         <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
-                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
-                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                         <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                         <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
                                        </tr>
                                         @endforeach
                                      </table>
@@ -230,26 +203,20 @@
                        </div>
                      </div>
                  </div>
-             </div>
-             <div class="gold">
+             </div> -->
+             <!-- <div class="gold">
                 <div class="container">
                     <div class="col">
                       <div class="col-md-4 col-sm-6">
                           <div class="pricingTable">
                               <div class="pricingTable-header">
                                   <h3 class="title" style="color:white;">Flexibar (24k)</h3>
-                                  <!-- <span class="duration">Monthly Plan</span> -->
                               </div>
                               <div class="pricing-content">
                                   <div class="price-value">
-                                      <!-- <span class="amount">Sell | Buy</span> -->
                                   </div>
                                   <ul class="inner-content">
-                                      <!-- <li>50GB Disk Space</li>
-                                      <li>50 Email Accounts</li>
-                                      <li>50GB Bandwidth</li>
-                                      <li>15 Subdomains</li>
-                                      <li>15 Subdomains</li> -->
+
                                   </ul>
                                   <div class="pricingTable-signup">
                                     <table style="width: 100%;">
@@ -259,11 +226,8 @@
                                       @foreach($dataGold24kFlexibar as $key => $value)
                                       <tr>
                                         <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                        <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                        <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
-                                        <td><a href="#">RM<span> xxxx.xx </span></a></td>
-                                        <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                        <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                        <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
                                       </tr>
                                        @endforeach
                                     </table>
@@ -273,24 +237,51 @@
                       </div>
                     </div>
                 </div>
-            </div>
-            </div>
+            </div> -->
+          </div>
+          <!-- 23/6/2020 -->
            <div class="block2" style="width:100%">
-               <div class="gold">
+             <div class="gold">
+                <div class="container">
+                    <div class="col">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="pricingTable">
+                                <div class="pricingTable-header">
+                                    <h3 class="title" style="color:white;">MY Uncang Emas</h3>
+                                </div>
+                                <div class="pricing-content">
+                                    <div class="price-value">
+                                    </div>
+                                    <ul class="inner-content">
+                                    </ul>
+                                    <div class="pricingTable-signup">
+                                      <table style="width: 100%;">
+                                        @foreach($dataGAP as $key => $value)
+                                        <tr>
+                                          <td><a href="#">RM <span>{{$value["price"]}}</span> = <span>{{$value["gram"]}} </span>gram</a></td>
+                                        </tr>
+                                         @endforeach
+                                      </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end 23/6/2020 -->
+               <!-- <div class="gold">
                   <div class="container">
                       <div class="col">
                         <div class="col-md-4 col-sm-6">
                             <div class="pricingTable">
                                 <div class="pricingTable-header">
                                     <h3 class="title" style="color:white;">Classic | Bungamas | Tai fook (24k)</h3>
-                                    <!-- <span class="duration">Monthly Plan</span> -->
                                 </div>
                                 <div class="pricing-content">
                                     <div class="price-value">
-                                        <!-- <span class="amount">Sell | Buy</span> -->
                                     </div>
                                     <ul class="inner-content">
-                                        <!-- <li>Sell | Buy</li> -->
                                     </ul>
                                    <div class="pricingTable-signup">
                                      <table style="width: 100%;">
@@ -300,11 +291,8 @@
                                        @foreach($dataGold24kTaifook as $key => $value)
                                        <tr>
                                          <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                         <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                         <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
-                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
-                                         <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                         <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                         <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
                                        </tr>
                                         @endforeach
                                      </table>
@@ -317,18 +305,11 @@
                             <div class="pricingTable">
                                 <div class="pricingTable-header">
                                     <h3 class="title" style="color:white;">LBMA Small Bar | Wafer (24k)</h3>
-                                    <!-- <span class="duration">Monthly Plan</span> -->
                                 </div>
                                 <div class="pricing-content">
                                     <div class="price-value">
-                                        <!-- <span class="amount">Sell</span> -->
                                     </div>
                                     <ul class="inner-content">
-                                        <!-- <li>50GB Disk Space</li>
-                                        <li>50 Email Accounts</li>
-                                        <li>50GB Bandwidth</li>
-                                        <li>15 Subdomains</li>
-                                        <li>15 Subdomains</li> -->
                                     </ul>
                                     <div class="pricingTable-signup">
                                       <table style="width: 100%;">
@@ -337,9 +318,7 @@
                                         @foreach($dataGold24kSmall as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} {{$value["label"]}}</span></a></td>
-                                          <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                          <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
                                         </tr>
                                          @endforeach
                                       </table>
@@ -351,18 +330,11 @@
                             <div class="pricingTable">
                                 <div class="pricingTable-header">
                                     <h3 class="title" style="color:white;">Gold Wafer - Dinar (22k)</h3>
-                                    <!-- <span class="duration">Monthly Plan</span> -->
                                 </div>
                                 <div class="pricing-content">
                                     <div class="price-value">
-                                        <!-- <span class="amount">Sell | Buy</span> -->
                                     </div>
                                     <ul class="inner-content">
-                                        <!-- <li>50GB Disk Space</li>
-                                        <li>50 Email Accounts</li>
-                                        <li>50GB Bandwidth</li>
-                                        <li>15 Subdomains</li>
-                                        <li>15 Subdomains</li> -->
                                     </ul>
                                     <div class="pricingTable-signup">
                                       <table style="width: 100%;">
@@ -372,11 +344,8 @@
                                         @foreach($dataGoldWafer22k as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} Dinar</span></a></td>
-                                          <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                          <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
-                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
-                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                          <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                          <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
                                         </tr>
                                          @endforeach
                                       </table>
@@ -388,18 +357,11 @@
                             <div class="pricingTable">
                                 <div class="pricingTable-header">
                                     <h3 class="title" style="color:white;">Gold Jewellery (22k)</h3>
-                                    <!-- <span class="duration">Monthly Plan</span> -->
                                 </div>
                                 <div class="pricing-content">
                                     <div class="price-value">
-                                        <!-- <span class="amount">Sell | Buy</span> -->
                                     </div>
                                     <ul class="inner-content">
-                                        <!-- <li>50GB Disk Space</li>
-                                        <li>50 Email Accounts</li>
-                                        <li>50GB Bandwidth</li>
-                                        <li>15 Subdomains</li>
-                                        <li>15 Subdomains</li> -->
                                     </ul>
                                     <div class="pricingTable-signup">
                                       <table style="width: 100%;">
@@ -408,9 +370,7 @@
                                         @foreach($dataGold24kJewellary as $key => $value)
                                         <tr>
                                           <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                          <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
-                                          <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                          <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
                                         </tr>
                                          @endforeach
                                       </table>
@@ -420,7 +380,7 @@
                         </div>
                       </div>
                   </div>
-              </div>
+              </div> -->
             </div>
             <div class="block3"  style="width:100%">
               <div class="silver">
@@ -430,20 +390,12 @@
                              <div class="pricingTable blue">
                                  <div class="pricingTable-header">
                                      <h3 class="title" style="color:white;">MY Uncang Perak</h3>
-                                     <!-- <span class="duration">Monthly Plan</span> -->
                                  </div>
                                  <div class="pricing-content">
                                      <div class="price-value">
-                                         <!-- <span class="amount">$10.99</span> -->
                                      </div>
                                      <ul class="inner-content">
-                                         <!-- <li>50GB Disk Space</li>
-                                         <li>50 Email Accounts</li>
-                                         <li>50GB Bandwidth</li>
-                                         <li>15 Subdomains</li>
-                                         <li>15 Subdomains</li> -->
                                      </ul>
-
                                      <div class="pricingTable-signup">
                                        <table style="width: 100%;">
                                          @foreach($dataSAP as $key => $value)
@@ -456,18 +408,26 @@
                                  </div>
                              </div>
                          </div>
-                         <div class="col-md-4 col-sm-6">
+                         <!-- 23/6/2020 -->
+                         <br>
+                         <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; border: 1px solid rgb(218, 165, 32)">
+                         <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
+                           <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
+                         </a>
+                         <a href="javascript:window.open('https://www.kitco.com/images/live/silver.gif','SilverChart','top=50,left=200,width=640,height=480');">
+                         <img src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" border="0" alt="Click to enlarge" align="right" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
+                       </a>
+                       <!-- end 23/6/2020 -->
+
+                         <!-- <div class="col-md-4 col-sm-6">
                              <div class="pricingTable blue">
                                  <div class="pricingTable-header">
                                      <h3 class="title" style="color:white;">Silver Bar (999)</h3>
-                                     <!-- <span class="duration">Monthly Plan</span> -->
                                  </div>
                                  <div class="pricing-content">
                                      <div class="price-value">
-                                         <!-- <span class="amount">Sell | Buy</span> -->
                                      </div>
                                      <ul class="inner-content">
-                                         <!-- <li>Sell</li> -->
                                      </ul>
                                      <div class="pricingTable-signup">
                                        <table style="width: 100%;">
@@ -477,18 +437,15 @@
                                          @foreach($dataSilver24k as $key => $value)
                                          <tr>
                                            <td><a href="#"><span>{{$value["gram"]}} gram</span></a></td>
-                                           <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                           <!-- <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td> -->
-                                           <td><a href="#">RM<span> xxxx.xx </span></a></td>
-                                           <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                           <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
+                                           <td><a href="#">RM<span> {{number_format($value["buy"])}}</span></a></td>
                                          </tr>
                                           @endforeach
                                        </table>
                                      </div>
                                  </div>
                              </div>
-                         </div>
+                         </div> -->
                      </div>
                  </div>
              </div>
@@ -497,18 +454,13 @@
                <div class="silver">
                   <div class="container">
                       <div class="col">
-                          <div class="col-md-12 col-sm-12">
+                          <!-- <div class="col-md-12 col-sm-12">
                               <div class="pricingTable blue">
                                   <div class="pricingTable-header">
                                       <h3 class="title" style="color:white;">Silver Wafer - Dirham (999)</h3>
-                                      <!-- <span class="duration">Monthly Plan</span> -->
                                   </div>
                                   <div class="pricing-content">
-                                      <!-- <div class="price-value">
-                                          <span class="amount">Sell</span>
-                                      </div> -->
                                       <ul class="inner-content">
-                                          <!-- <li>Sell</li> -->
                                       </ul>
                                       <div class="pricingTable-signup">
                                         <table style="width: 100%;">
@@ -517,23 +469,21 @@
                                           @foreach($dataSilverDirham as $key => $value)
                                           <tr>
                                             <td><a href="#"><span>{{$value["gram"]}} Dirham</span></a></td>
-                                            <!-- <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td> -->
-                                            <td><a href="#">RM<span> xxxx.xx </span></a></td>
-
+                                            <td><a href="#">RM<span> {{number_format($value["sell"])}}</span></a></td>
                                           </tr>
                                            @endforeach
                                         </table>
                                       </div>
                                   </div>
                               </div>
-                          </div>
-                          <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; border: 1px solid rgb(218, 165, 32)">
+                          </div> -->
+                          <!-- <img src="https://www.kitconet.com/images/quotes_2a.gif" border="0" alt="[Most Recent Quotes from www.kitco.com]" style="width:100%; height:44px; border: 1px solid rgb(218, 165, 32)">
                           <a href="javascript:window.open('https://www.kitco.com/images/live/gold.gif','GoldChart','top=50,left=200,width=640,height=480');">
                             <img src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" border="0" alt="Click to enlarge" align="center" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
                           </a>
                           <a href="javascript:window.open('https://www.kitco.com/images/live/silver.gif','SilverChart','top=50,left=200,width=640,height=480');">
                           <img src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" border="0" alt="Click to enlarge" align="right" width="50%" height="90" style="border: 1px solid rgb(218, 165, 32)">
-                        </a>
+                        </a> -->
                       </div>
                   </div>
               </div>
