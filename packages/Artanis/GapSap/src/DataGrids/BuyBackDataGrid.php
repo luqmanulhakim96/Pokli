@@ -178,6 +178,33 @@ class BuyBackDataGrid extends DataGrid
         // ]);
 
         $this->addColumn([
+            'index' => 'gold_silver_history.payment_attachment',
+            'label' => 'Bank Receipt Attachment',
+            'type' => 'string',
+            'searchable' => true,
+            'closure' => true,
+            'sortable' => true,
+            'filterable' => true,
+            'wrapper' => function ($value) {
+                if (!$value->payment_attachment) {
+                    return '-';
+                }
+                else{
+                    $file = asset('storage/'.$value->payment_attachment);
+                    // return 'http://127.0.0.1:8000/storage/'.$value->payment_attachment;
+                    // return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '"> Attachment </a>';
+                    // return '<a href="https://pokli.com.my/storage/' .$value->payment_attachment. '" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"> </a>';
+                    // return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"></a>';
+                    // return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"></a>';
+                    // return '<a href="'.$file.'" target="_blank"><img src="'.$file.'" alt="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" height="25" width="25"></a>';
+                    return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="https://image.flaticon.com/icons/svg/626/626013.svg" height="25" width="25"></a>';
+
+
+            }
+          }
+        ]);
+
+        $this->addColumn([
             'index' => 'gold_silver_history.status',
             'label' => 'Status',
             'type' => 'string',
@@ -187,7 +214,7 @@ class BuyBackDataGrid extends DataGrid
             'filterable' => true,
             'wrapper' => function ($value) {
                 if ($value->status == 'processing')
-                    return '<span class="badge badge-md badge-success">Processing</span>';
+                    return '<span class="badge badge-md badge-warning">Processing</span>';
                 else if ($value->status == 'completed')
                     return '<span class="badge badge-md badge-success">Completed</span>';
                 else if ($value->status == "canceled")
@@ -206,7 +233,7 @@ class BuyBackDataGrid extends DataGrid
 
     public function prepareActions() {
         $this->addAction([
-            'title' => 'Purchase View',
+            'title' => 'Buyback View',
             'method' => 'GET', // use GET request only for redirect purposes
             'route' => 'gapsap.account.buyback.view',
             'icon' => 'icon eye-icon'

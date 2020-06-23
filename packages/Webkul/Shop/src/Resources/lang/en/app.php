@@ -665,7 +665,7 @@ return [
           'heading' => 'My Uncang Purchase Order',
           'subject' => 'MY Uncang Purchase Order Placed [Do Not Reply]',
           'summary' => 'New Purchase has been placed. Please go to Pokli.com.my/admin to approve.',
-          'thanks' => 'Pokli Wealth Management Sdn. Bhd.',
+          'thanks' => 'Thanks, Pokli Wealth Management Sdn. Bhd.',
         ],
 
         'myuncang-buyback' => [
@@ -679,7 +679,7 @@ return [
           'heading' => 'My Uncang Buyback Order',
           'subject' => 'MY Uncang Buyback Order Placed [Do Not Reply]',
           'summary' => 'New Buyback has been placed. Please go to Pokli.com.my/admin to approve',
-          'thanks' => 'Pokli Wealth Management Sdn. Bhd.',
+          'thanks' => 'Thanks, Pokli Wealth Management Sdn. Bhd.',
         ],
 
         'myuncang-purchase-invoice' => [

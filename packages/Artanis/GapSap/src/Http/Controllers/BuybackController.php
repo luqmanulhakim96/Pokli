@@ -20,7 +20,7 @@ use PDF;
 use Illuminate\Support\Facades\Mail;
 use Artanis\GapSap\Mail\NewBuybackGAPSAPNotification;
 // use Artanis\GapSap\Mail\NewBuybackGAPSAPAdminNotification;
-// use App\Mail\NewBuybackGAPSAPAdminNotification;
+use App\Mail\NewBuybackGAPSAPAdminNotification;
 
 
 
@@ -162,10 +162,11 @@ class BuybackController extends Controller
         $history->save();
 
         Mail::send(new NewBuybackGAPSAPNotification($history));
-        // Mail::send(new NewBuybackGAPSAPAdminNotification($history));
+        Mail::send(new NewBuybackGAPSAPAdminNotification($history));
 
         session()->flash('success', 'Buyback Success.  The new balance will be updated in 24 hours.');
-        return redirect()->route('gapsap.buyback.index');
+        // return redirect()->route('gapsap.buyback.index');
+        return redirect('/customer/account/buyback');
     }
 
     public function form(Request $request)

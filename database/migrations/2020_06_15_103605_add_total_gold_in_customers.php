@@ -14,7 +14,7 @@ class AddTotalGoldInCustomers extends Migration
      public function up()
      {
        Schema::table('customers', function (Blueprint $table) {
-           $table->string('total_gold')->nullable();
+           $table->string('total_gold')->nullable(); //existing gold from old database
        });
      }
 

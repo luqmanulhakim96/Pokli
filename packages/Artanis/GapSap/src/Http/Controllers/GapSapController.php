@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Mail;
 use Artanis\GapSap\Mail\NewPurchaseGAPSAPNotification;
-use Artanis\GapSap\Mail\NewPurchaseGAPSAPAdminNotification;
+// use Artanis\GapSap\Mail\NewPurchaseGAPSAPAdminNotification;
+use App\Mail\NewPurchaseGAPSAPAdminNotification;
+
 
 /**
  * Customer controlller for the customer basically for the tasks of customers which will be
@@ -156,10 +158,11 @@ class GapSapController extends Controller
             return view('gapsap::redirect', compact(['input']));
         }
         else if($history->payment_method=='bankin'){
-            // Mail::send(new NewPurchaseGAPSAPAdminNotification($history));
+            Mail::send(new NewPurchaseGAPSAPAdminNotification($history));
             Mail::send(new NewPurchaseGAPSAPNotification($history));
             session()->flash('success', 'MYUncang Success. The new balance will be updated in 24 hours.');
-            return redirect()->route('gapsap.index');
+            // return redirect()->route('gapsap.index');
+            return redirect('/customer/account/purchase');
         }
     }
 

@@ -189,6 +189,32 @@ class BuybackDataGrid extends DataGrid
         //             return 'Bankin';
         //     }
         // ]);
+        $this->addColumn([
+            'index' => 'gold_silver_history.payment_attachment',
+            'label' => 'Bank Receipt Attachment',
+            'type' => 'string',
+            'searchable' => true,
+            'closure' => true,
+            'sortable' => true,
+            'filterable' => true,
+            'wrapper' => function ($value) {
+                if (!$value->payment_attachment) {
+                    return '-';
+                }
+                else{
+                    $file = asset('storage/'.$value->payment_attachment);
+                    // return 'http://127.0.0.1:8000/storage/'.$value->payment_attachment;
+                    // return '<a href="http://127.0.0.1:8000/storage/' .$value->payment_attachment. '"> Attachment </a>';
+                    // return '<a href="https://pokli.com.my/storage/' .$value->payment_attachment. '" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"> </a>';
+                    // return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"></a>';
+                    // return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download" height="25" width="25"></a>';
+                    // return '<a href="'.$file.'" target="_blank"><img src="'.$file.'" alt="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" height="25" width="25"></a>';
+                    return '<a href="'.$file.'" target="_blank"><img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="https://image.flaticon.com/icons/svg/626/626013.svg" height="25" width="25"></a>';
+
+
+            }
+          }
+        ]);
 
         $this->addColumn([
             'index' => 'gold_silver_history.status',
@@ -222,7 +248,15 @@ class BuybackDataGrid extends DataGrid
             'title' => 'Purchase View',
             'method' => 'GET', // use GET request only for redirect purposes
             'route' => 'admincustom.sales.buyback.view',
-            'icon' => 'icon eye-icon'
+            'icon' => 'icon eye-icon',
+            'title' => trans('View Buyback')
+        ]);
+
+        $this->addAction([
+            'method' => 'GET', // use GET request only for redirect purposes
+            'route' => 'admincustom.sales.buyback.upload',
+            'icon' => 'icon sort-up-icon',
+            'title' => trans('Upload  Receipt')
         ]);
     }
 }

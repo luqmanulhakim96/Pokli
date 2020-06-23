@@ -70,6 +70,17 @@
           </div>
         </div>
 
+        @if($result->payment_attachment)
+        <div class="section-content">
+          <div  style="margin-top: 40px; text-align: center">
+              <a href="{{ asset('storage/'.$result->payment_attachment) }}" style="font-size: 16px;
+              color: #FFFFFF; text-align: center; background: #FF0000; padding: 10px 100px;text-decoration: none;">
+                  Download Bank Receipt
+              </a>
+          </div>
+        </div>
+        @endif
+
         <div style="margin-top: 65px;font-size: 16px;color: #5E5E5E;line-height: 24px;display: inline-block">
             <p style="font-size: 12px;color: #5E5E5E;line-height: 24px;">
                 {{ __('shop::app.mail.order.terms-and-condition.kindly-remit') }}
