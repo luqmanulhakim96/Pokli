@@ -9,9 +9,10 @@ use Webkul\Sales\Repositories\OrderItemRepository;
 use Webkul\Sales\Repositories\RefundRepository;
 use Artanis\GapSap\Models\GoldSilverHistory;
 use PDF;
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Artanis\AdminCustom\Mail\NewBuybackGAPSAPInvoiceNotification;
+
 
 /**
  * Sales Refund controller
@@ -97,82 +98,6 @@ class BuybackController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @param int $orderId
-     * @return \Illuminate\Http\View
-     */
-    public function create($orderId)
-    {
-        $order = $this->orderRepository->findOrFail($orderId);
-
-        return view($this->_config['view'], compact('order'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param int $orderId
-     * @return \Illuminate\Http\Response
-     */
-    public function store($orderId)
-    {
-        $order = $this->orderRepository->findOrFail($orderId);
-
-        if (! $order->canRefund()) {
-            session()->flash('error', trans('admin::app.sales.refunds.creation-error'));
-
-            return redirect()->back();
-        }
-
-        $this->validate(request(), [
-            'refund.items.*' => 'required|numeric|min:0'
-        ]);
-
-        $data = request()->all();
-
-        $totals = $this->refundRepository->getOrderItemsRefundSummary($data['refund']['items'], $orderId);
-
-        $maxRefundAmount = $totals['grand_total']['price'] - $order->refunds()->sum('base_adjustment_refund');
-
-        $refundAmount = $totals['grand_total']['price'] - $totals['shipping']['price'] + $data['refund']['shipping'] + $data['refund']['adjustment_refund'] - $data['refund']['adjustment_fee'];
-
-        if (! $refundAmount) {
-            session()->flash('error', trans('admin::app.sales.refunds.invalid-refund-amount-error'));
-
-            return redirect()->back();
-        }
-
-        if ($refundAmount > $maxRefundAmount) {
-            session()->flash('error', trans('admin::app.sales.refunds.refund-limit-error', ['amount' => core()->formatBasePrice($maxRefundAmount)]));
-
-            return redirect()->back();
-        }
-
-        $this->refundRepository->create(array_merge($data, ['order_id' => $orderId]));
-
-        session()->flash('success', trans('admin::app.response.create-success', ['name' => 'Refund']));
-
-        return redirect()->route($this->_config['redirect'], $orderId);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param int $orderId
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function updateQty($orderId)
-    {
-        $data = $this->refundRepository->getOrderItemsRefundSummary(request()->all(), $orderId);
-
-        if (! $data)
-            return response('');
-
-        return response()->json($data);
-    }
-
-    /**
      * Show the view for the specified resource.
      *
      * @param int $id
@@ -253,5 +178,32 @@ class BuybackController extends Controller
         $pdf = PDF::loadView('gapsap::customers.account.buyback.pdf', compact(['purchase','balanceGold','balanceSilver']))->setPaper('a4');
 
         return $pdf->download('admin-' . $invoice->created_at->format('d-m-Y') . '.pdf');
+    }
+
+    public function upload($id)
+    {
+      $result = $this->buybackRepository->findOrFail($id);
+      // dd($result);
+      if ($result){
+          $purchase = $this->buybackRepository->findOrFail($id);
+          // dd($purchase);
+          return view($this->_config['view'], compact(['purchase']));
+      }
+    }
+
+    public function update($id)
+    {
+          $buyback_data = GoldSilverHistory::find($id);
+          $receipt = request()->payment_attachment;
+
+          $buyback_data->payment_attachment = $receipt ?? null;
+          if($buyback_data->payment_attachment){
+              $buyback_data->payment_attachment = $buyback_data->payment_attachment->store('uploads', 'public');
+          }
+          $buyback_data->save();
+
+          session()->flash('success', 'Receipt Uploaded.');
+
+          return redirect('/admin/sales/buyback');
     }
 }

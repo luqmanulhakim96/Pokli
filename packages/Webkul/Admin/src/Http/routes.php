@@ -76,6 +76,12 @@ Route::group(['middleware' => ['web']], function () {
                 'view' => 'admin::customers.view'
             ])->name('admin.customer.view');
 
+            // Luke 11/6/2020
+
+            // Route::post('customers/updateStatus/{id}', 'Webkul\Admin\Http\Controllers\Customer\CustomerController@updateStatus')->name('admin.customer.updateStatus');
+
+            //luke 11/6/2020
+
             Route::post('customers/delete/{id}', 'Webkul\Admin\Http\Controllers\Customer\CustomerController@destroy')->name('admin.customer.delete');
 
             Route::post('customers/masssdelete', 'Webkul\Admin\Http\Controllers\Customer\CustomerController@massDestroy')->name('admin.customer.mass-delete');
@@ -295,6 +301,13 @@ Route::group(['middleware' => ['web']], function () {
                     'view' => 'admincustom::sales.buyback.invoice.pdf'
                 ])->name('admincustom.sales.buyback.print');
 
+                Route::get('/buyback/upload/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\BuybackController@upload')->defaults('_config', [
+                    'view' => 'admincustom::sales.buyback.upload'
+                ])->name('admincustom.sales.buyback.upload');
+
+                Route::put('/buyback/upload/update/{id}', 'Artanis\AdminCustom\Http\Controllers\Sales\BuybackController@update')->defaults('_config', [
+                    'redirect' => 'admincustom::sales.buyback.view'
+                ])->name('admincustom.sales.buyback.upload.update');
                 // Route::get('/refunds/create/{order_id}', 'Webkul\Admin\Http\Controllers\Sales\RefundController@create')->defaults('_config', [
                 //     'view' => 'admin::sales.refunds.create'
                 // ])->name('admin.sales.refunds.create');

@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Illuminate\Support\Facades\Mail;
 use Artanis\GapSap\Mail\NewPurchaseGAPSAPNotification;
+use App\Mail\NewPurchaseGAPSAPAdminNotification;
 
 class StandardController extends Controller
 {
@@ -106,7 +107,9 @@ class StandardController extends Controller
         // session()->flash('order', $order);
         session()->flash('success', 'FPX payment successful.  The new balance will be updated in 24 hours.');
 
-        return redirect()->route('gapsap.index');
+        // return redirect()->route('gapsap.index');
+        return redirect('/customer/account/purchase');
+
     }
 
     public function verify()
@@ -131,6 +134,7 @@ class StandardController extends Controller
             // dd($purchase);
             // $data = json_encode($data);
             // return redirect()->route('gapsap.success',['data'=>$data]);
+            Mail::send(new NewPurchaseGAPSAPAdminNotification($purchase));
             Mail::send(new NewPurchaseGAPSAPNotification($purchase));
             return redirect()->route('gapsap.success');
         }
@@ -158,6 +162,7 @@ class StandardController extends Controller
       $billplzCreate = Client::make('cd98195a-0457-415a-8cc7-d013c86f05a5', 'S-gji-HhnXvrRpcfGB5NQvzA'); ##production
       $bill = $billplzCreate->bill();
       $response = $bill->create(
+          // 'x7afhxzc', //collection id sandbox
           'scqd4tln', //collection id
           $purchase->customer->email, //user email
           null,
