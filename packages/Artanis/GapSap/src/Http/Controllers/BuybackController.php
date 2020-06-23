@@ -95,15 +95,20 @@ class BuybackController extends Controller
         $purchase_silver = Customer::where('id', $customer->id)->sum('total_silver');
         $silver_balance = $silver_balance + $purchase_silver;
         // dd($gold_balance);
-        // $gold = DB::connection('mysql2')->select('gold_live_price_gap');
-        $gold_price = 191;
-        $silver_price = 2.37;
-        // $gold = DB::select('select * from live_price_api.gold_live_price_gap where gram = 1',[1]);
-        // $silver = DB::select('select * from live_price_api.silver_live_price_sap where gram != 1',[1]);
-        // $gold_price = $gold[0]->price;
-        // $silver_price = $silver[0]->price;
+        $gold = DB::connection('mysql2')->table('gold_live_price_gap')->first();
+        $silver = DB::connection('mysql2')->table('silver_live_price_sap')->first();
+        // $gold_price = 191;
+        // $silver_price = 2.37;
+        // $gold = DB::select('select * from live_price_api.gold_live_price_gap where gram = 1');
+        // dd($silver);
+        // $silver = DB::select('select * from live_price_api.silver_live_price_sap where gram != 1');
+        $gold_price = $gold->price;
+        $silver_price = $silver->price;
 
-        $current_price_datetime = '2019-12-18 16:44:57';
+        // $current_price_datetime = '2019-12-18 16:44:57';
+        $current_price_datetime = $gold->last_updated;
+
+        // dd($gold_price);
         return view($this->_config['view'], compact(['customer','gold_price','silver_price', 'gold_balance', 'silver_balance', 'current_price_datetime']));
     }
 
@@ -132,8 +137,8 @@ class BuybackController extends Controller
         $input = $request->all();
         $customer = $this->customerRepository->find(auth()->guard('customer')->user()->id);
         // dd($input);
-        $gold_price = 191;
-        $silver_price = 2.37;
+        // $gold_price = 191;
+        // $silver_price = 2.37;
         return view($this->_config['view'], compact(['customer','input']));
     }
 
@@ -167,8 +172,11 @@ class BuybackController extends Controller
     {
         $customer = $this->customerRepository->find(auth()->guard('customer')->user()->id);
 
-        $gold_price = 207;
-        $silver_price = 274;
+        $gold = DB::connection('mysql2')->table('gold_live_price_gap')->first();
+        $silver = DB::connection('mysql2')->table('silver_live_price_sap')->first();
+
+        $gold_price = $gold->price;
+        $silver_price = $silver->price;
 
         $input = $request->all();
 
