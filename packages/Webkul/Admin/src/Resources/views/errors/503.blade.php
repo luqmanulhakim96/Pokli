@@ -1,32 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<!doctype html>
+<title>Site Maintenance</title>
+<style>
+  body { text-align: center; padding: 150px; }
+  h1 { font-size: 50px; }
+  body { font: 20px Helvetica, sans-serif; color: #333; }
+  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+  a { color: #dc8100; text-decoration: none; }
+  a:hover { color: #333; text-decoration: none; }
+</style>
 
-<body>
-    <div class="error-container" style="padding: 40px; width: 100%; display: flex; justify-content: center;">
-
-        <div class="wrapper" style="display: flex; height: 60vh; width: 100%;
-            justify-content: start; align-items: center;">
-
-            <div class="error-box"  style="width: 50%">
-
-                <div class="error-title" style="font-size: 100px;color: #5E5E5E">
-                    {{ __('admin::app.error.in-maitainace') }}
-                </div>
-
-                <div class="error-messgae" style="font-size: 24px;color: #5E5E5E">
-                    {{ __('admin::app.error.right-back') }}
-                </div>
-            </div>
-
-            <div class="error-graphic icon-404" style="margin-left: 10% ;"></div>
-
-        </div>
+<article>
+    <h1>We&rsquo;ll be back soon!</h1>
+    <div>
+        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:admin@pokli.com">contact us</a> at admin@pokli.com, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>&mdash; Pokli Wealth Management</p>
     </div>
-</body>
-</html>
+</article>
