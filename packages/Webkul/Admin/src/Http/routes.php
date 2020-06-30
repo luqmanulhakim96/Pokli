@@ -383,6 +383,119 @@ Route::group(['middleware' => ['web']], function () {
 
                 Route::post('/serial-number/delete/{id}', 'Artanis\AdminCustom2\Http\Controllers\ProductSerialNumberController@destroy')->name('admincustom2.catalog.serial.delete');
 
+                //Live Price Routes
+                Route::get('/live-price-emas', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexMYUncangEmas')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGAP'
+                ])->name('admincustom2.catalog.gold_live_price_gap.index');
+
+                Route::get('/live-price-emas/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editMYUncangEmas')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGAP'
+                ])->name('admincustom2.catalog.gold_live_price_gap.edit');
+
+                Route::post('/live-price-emas/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateMYUncangEmas')->name('admincustom2.catalog.gold_live_price_gap.update');
+
+                Route::get('/live-price-emas-bar-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldBar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGoldBar24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_bar_24k.index');
+
+                Route::get('/live-price-emas-bar-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldBar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGoldBar24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_bar_24k.edit');
+
+                Route::post('/live-price-emas-bar-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldBar24k')->name('admincustom2.catalog.gold_live_price_gold_bar_24k.update');
+
+                Route::get('/live-price-emas-wafer-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldWafer24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGoldWafer24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_wafer_24k.index');
+
+                Route::get('/live-price-emas-wafer-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldWafer24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGoldWafer24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_wafer_24k.edit');
+
+                Route::post('/live-price-emas-wafer-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldWafer24k')->name('admincustom2.catalog.gold_live_price_gold_wafer_24k.update');
+
+                Route::get('/live-price-emas-smallbar-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldSmallBar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGoldSmallBar24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_smallbar_24k.index');
+
+                Route::get('/live-price-emas-smallbar-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldSmallBar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGoldSmallBar24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_smallbar_24k.edit');
+
+                Route::post('/live-price-emas-smallbar-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldSmallBar24k')->name('admincustom2.catalog.gold_live_price_gold_smallbar_24k.update');
+
+                Route::get('/live-price-emas-classic-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldClassic24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGoldClassic24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_classic_24k.index');
+
+                Route::get('/live-price-emas-classic-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldClassic24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGoldClassic24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_classic_24k.edit');
+
+                Route::post('/live-price-emas-classic-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldClassic24k')->name('admincustom2.catalog.gold_live_price_gold_classic_24k.update');
+
+                Route::get('/live-price-emas-flexibar-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldFlexibar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGoldFlexibar24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_flexibar_24k.index');
+
+                Route::get('/live-price-emas-flexibar-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldFlexibar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGoldFlexibar24k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_flexibar_24k.edit');
+
+                Route::post('/live-price-emas-flexibar-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldFlexibar24k')->name('admincustom2.catalog.gold_live_price_gold_flexibar_24k.update');
+
+                Route::get('/live-price-emas-wafer-22k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldWafer22k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGoldWafer22k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_wafer_22k.index');
+
+                Route::get('/live-price-emas-wafer-22k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldWafer22k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGoldWafer22k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_wafer_22k.edit');
+
+                Route::post('/live-price-emas-wafer-22k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldWafer22k')->name('admincustom2.catalog.gold_live_price_gold_wafer_22k.update');
+
+                Route::get('/live-price-emas-jewellary-22k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldJewellary22k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexGoldJewellary22k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_jewellary_22k.index');
+
+                Route::get('/live-price-emas-jewellary-22k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldJewellary22k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editGoldJewellary22k'
+                ])->name('admincustom2.catalog.gold_live_price_gold_jewellary_22k.edit');
+
+                Route::post('/live-price-emas-jewellary-22k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldJewellary22k')->name('admincustom2.catalog.gold_live_price_gold_jewellary_22k.update');
+
+                #perak route
+                Route::get('/live-price-perak', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexMYUncangPerak')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexSAP'
+                ])->name('admincustom2.catalog.gold_live_price_sap.index');
+
+                Route::get('/live-price-perak/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editMYUncangPerak')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editSAP'
+                ])->name('admincustom2.catalog.gold_live_price_sap.edit');
+
+                Route::post('/live-price-perak/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateMYUncangPerak')->name('admincustom2.catalog.gold_live_price_sap.update');
+
+                Route::get('/live-price-perak-bar-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexSilverBar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexSilverBar24k'
+                ])->name('admincustom2.catalog.silver_live_price_silver_bar_24k.index');
+
+                Route::get('/live-price-perak-bar-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editSilverBar24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editSilverBar24k'
+                ])->name('admincustom2.catalog.silver_live_price_silver_bar_24k.edit');
+
+                Route::post('/live-price-perak-bar-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateSilverBar24k')->name('admincustom2.catalog.silver_live_price_silver_bar_24k.update');
+
+                Route::get('/live-price-perak-dirham-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexSilverDirham24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.indexSilverDirham24k'
+                ])->name('admincustom2.catalog.silver_live_price_silver_dirham_24k.index');
+
+                Route::get('/live-price-perak-dirham-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editSilverDirham24k')->defaults('_config', [
+                    'view' => 'admincustom2::catalog.live_price.editSilverDirham24k'
+                ])->name('admincustom2.catalog.silver_live_price_silver_dirham_24k.edit');
+
+                Route::post('/live-price-perak-dirham-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateSilverDirham24k')->name('admincustom2.catalog.silver_live_price_silver_dirham_24k.update');
+
+
                 // Catalog Product Routes
                 Route::get('/products', 'Webkul\Product\Http\Controllers\ProductController@index')->defaults('_config', [
                     'view' => 'admin::catalog.products.index'
