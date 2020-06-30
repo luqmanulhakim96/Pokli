@@ -27,6 +27,21 @@ return [
         'route' => 'admin.sales.shipments.index',
         'sort' => 3
     ], [
+        'key' => 'sales.purchase',
+        'name' => 'MyUncang Purchases',
+        'route' => 'admincustom.sales.purchase.index',
+        'sort' => 4
+    ], [
+        'key' => 'sales.buyback',
+        'name' => 'MyUncang Buyback',
+        'route' => 'admincustom.sales.buyback.index',
+        'sort' => 5,
+    ], [
+        'key' => 'sales.easy_purchase_payment',
+        'name' => 'Easy Purchase Payment Record',
+        'route' => 'admincustom2.catalog.easy_purchase_payment.index',
+        'sort' => 6,
+    ], [
         'key' => 'catalog',
         'name' => 'admin::app.acl.catalog',
         'route' => 'admin.catalog.index',
@@ -91,26 +106,36 @@ return [
         'name' => 'admin::app.acl.delete',
         'route' => 'admin.catalog.attributes.delete',
         'sort' => 3
+    // ], [
+    //     'key' => 'catalog.families',
+    //     'name' => 'admin::app.acl.attribute-families',
+    //     'route' => 'admin.catalog.families.index',
+    //     'sort' => 4
+    // ], [
+    //     'key' => 'catalog.families.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.catalog.families.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'catalog.families.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.catalog.families.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'catalog.families.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.catalog.families.delete',
+    //     'sort' => 3
     ], [
-        'key' => 'catalog.families',
-        'name' => 'admin::app.acl.attribute-families',
-        'route' => 'admin.catalog.families.index',
-        'sort' => 4
+        'key' => 'catalog.delivery',
+        'name' => 'Delivery Order',
+        'route' => 'admincustom2.catalog.products.index',
+        'sort' => 4,
     ], [
-        'key' => 'catalog.families.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.catalog.families.create',
-        'sort' => 1
-    ], [
-        'key' => 'catalog.families.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.catalog.families.edit',
-        'sort' => 2
-    ], [
-        'key' => 'catalog.families.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.catalog.families.delete',
-        'sort' => 3
+        'key' => 'catalog.live_price',
+        'name' => 'Live Price',
+        'route' => 'admincustom2.catalog.gold_live_price_gap.index',
+        'sort' => 5,
     ], [
         'key' => 'customers',
         'name' => 'admin::app.acl.customers',
@@ -156,21 +181,21 @@ return [
         'name' => 'admin::app.acl.delete',
         'route' => 'admin.groups.delete',
         'sort' => 3
-    ], [
-        'key' => 'customers.reviews',
-        'name' => 'admin::app.acl.reviews',
-        'route' => 'admin.customer.review.index',
-        'sort' => 3
-    ], [
-        'key' => 'customers.reviews.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.customer.review.edit',
-        'sort' => 1
-    ], [
-        'key' => 'customers.reviews.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.customer.review.delete',
-        'sort' => 2
+    // ], [
+    //     'key' => 'customers.reviews',
+    //     'name' => 'admin::app.acl.reviews',
+    //     'route' => 'admin.customer.review.index',
+    //     'sort' => 3
+    // ], [
+    //     'key' => 'customers.reviews.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.customer.review.edit',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'customers.reviews.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.customer.review.delete',
+    //     'sort' => 2
     ], [
         'key' => 'configuration',
         'name' => 'admin::app.acl.configure',
@@ -182,66 +207,66 @@ return [
         'route' => 'admin.users.index',
         'sort' => 6
     ], [
-        'key' => 'settings.locales',
-        'name' => 'admin::app.acl.locales',
-        'route' => 'admin.locales.index',
-        'sort' => 1
-    ], [
-        'key' => 'settings.locales.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.locales.create',
-        'sort' => 1
-    ], [
-        'key' => 'settings.locales.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.locales.edit',
-        'sort' => 2
-    ], [
-        'key' => 'settings.locales.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.locales.delete',
-        'sort' => 3
-    ], [
-        'key' => 'settings.currencies',
-        'name' => 'admin::app.acl.currencies',
-        'route' => 'admin.currencies.index',
-        'sort' => 2
-    ], [
-        'key' => 'settings.currencies.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.currencies.create',
-        'sort' => 1
-    ], [
-        'key' => 'settings.currencies.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.currencies.edit',
-        'sort' => 2
-    ], [
-        'key' => 'settings.currencies.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.currencies.delete',
-        'sort' => 3
-    ], [
-        'key' => 'settings.exchange_rates',
-        'name' => 'admin::app.acl.exchange-rates',
-        'route' => 'admin.exchange_rates.index',
-        'sort' => 3
-    ], [
-        'key' => 'settings.exchange_rates.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.exchange_rates.create',
-        'sort' => 1
-    ], [
-        'key' => 'settings.exchange_rates.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.exchange_rates.edit',
-        'sort' => 2
-    ], [
-        'key' => 'settings.exchange_rates.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.exchange_rates.delete',
-        'sort' => 3
-    ], [
+    //     'key' => 'settings.locales',
+    //     'name' => 'admin::app.acl.locales',
+    //     'route' => 'admin.locales.index',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.locales.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.locales.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.locales.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.locales.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.locales.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.locales.delete',
+    //     'sort' => 3
+    // ], [
+    //     'key' => 'settings.currencies',
+    //     'name' => 'admin::app.acl.currencies',
+    //     'route' => 'admin.currencies.index',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.currencies.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.currencies.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.currencies.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.currencies.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.currencies.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.currencies.delete',
+    //     'sort' => 3
+    // ], [
+    //     'key' => 'settings.exchange_rates',
+    //     'name' => 'admin::app.acl.exchange-rates',
+    //     'route' => 'admin.exchange_rates.index',
+    //     'sort' => 3
+    // ], [
+    //     'key' => 'settings.exchange_rates.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.exchange_rates.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.exchange_rates.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.exchange_rates.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.exchange_rates.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.exchange_rates.delete',
+    //     'sort' => 3
+    // ], [
         'key' => 'settings.inventory_sources',
         'name' => 'admin::app.acl.inventory-sources',
         'route' => 'admin.inventory_sources.index',
@@ -262,26 +287,26 @@ return [
         'route' => 'admin.inventory_sources.delete',
         'sort' => 3
     ], [
-        'key' => 'settings.channels',
-        'name' => 'admin::app.acl.channels',
-        'route' => 'admin.channels.index',
-        'sort' => 5
-    ], [
-        'key' => 'settings.channels.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.channels.create',
-        'sort' => 1
-    ], [
-        'key' => 'settings.channels.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.channels.edit',
-        'sort' => 2
-    ], [
-        'key' => 'settings.channels.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.channels.delete',
-        'sort' => 3
-    ], [
+    //     'key' => 'settings.channels',
+    //     'name' => 'admin::app.acl.channels',
+    //     'route' => 'admin.channels.index',
+    //     'sort' => 5
+    // ], [
+    //     'key' => 'settings.channels.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.channels.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.channels.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.channels.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.channels.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.channels.delete',
+    //     'sort' => 3
+    // ], [
         'key' => 'settings.users',
         'name' => 'admin::app.acl.users',
         'route' => 'admin.users.index',
@@ -346,76 +371,76 @@ return [
         'name' => 'admin::app.acl.delete',
         'route' => 'admin.sliders.delete',
         'sort' => 3
-    ], [
-        'key' => 'settings.taxes',
-        'name' => 'admin::app.acl.taxes',
-        'route' => 'admin.tax-categories.index',
-        'sort' => 8
-    ], [
-        'key' => 'settings.taxes.tax-categories',
-        'name' => 'admin::app.acl.tax-categories',
-        'route' => 'admin.tax-categories.index',
-        'sort' => 1
-    ], [
-        'key' => 'settings.taxes.tax-categories.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.tax-categories.create',
-        'sort' => 1
-    ], [
-        'key' => 'settings.taxes.tax-categories.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.tax-categories.edit',
-        'sort' => 2
-    ], [
-        'key' => 'settings.taxes.tax-categories.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.tax-categories.delete',
-        'sort' => 3
-    ], [
-        'key' => 'settings.taxes.tax-rates',
-        'name' => 'admin::app.acl.tax-rates',
-        'route' => 'admin.tax-rates.index',
-        'sort' => 2
-    ], [
-        'key' => 'settings.taxes.tax-rates.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.tax-rates.create',
-        'sort' => 1
-    ], [
-        'key' => 'settings.taxes.tax-rates.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.tax-rates.edit',
-        'sort' => 2
-    ], [
-        'key' => 'settings.taxes.tax-rates.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.tax-rates.delete',
-        'sort' => 3
-    ], [
-        'key' => 'promotions',
-        'name' => 'admin::app.acl.promotions',
-        'route' => 'admin.cart-rule.index',
-        'sort' => 7
-    ], [
-        'key' => 'promotions.cart-rule',
-        'name' => 'admin::app.acl.cart-rules',
-        'route' => 'admin.cart-rule.index',
-        'sort' => 1
-    ], [
-        'key' => 'promotions.cart-rule.create',
-        'name' => 'admin::app.acl.create',
-        'route' => 'admin.cart-rule.create',
-        'sort' => 1
-    ], [
-        'key' => 'promotions.cart-rule.edit',
-        'name' => 'admin::app.acl.edit',
-        'route' => 'admin.cart-rule.edit',
-        'sort' => 2
-    ], [
-        'key' => 'promotions.cart-rule.delete',
-        'name' => 'admin::app.acl.delete',
-        'route' => 'admin.cart-rule.delete',
-        'sort' => 3
+    // ], [
+    //     'key' => 'settings.taxes',
+    //     'name' => 'admin::app.acl.taxes',
+    //     'route' => 'admin.tax-categories.index',
+    //     'sort' => 8
+    // ], [
+    //     'key' => 'settings.taxes.tax-categories',
+    //     'name' => 'admin::app.acl.tax-categories',
+    //     'route' => 'admin.tax-categories.index',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.taxes.tax-categories.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.tax-categories.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.taxes.tax-categories.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.tax-categories.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.taxes.tax-categories.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.tax-categories.delete',
+    //     'sort' => 3
+    // ], [
+    //     'key' => 'settings.taxes.tax-rates',
+    //     'name' => 'admin::app.acl.tax-rates',
+    //     'route' => 'admin.tax-rates.index',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.taxes.tax-rates.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.tax-rates.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'settings.taxes.tax-rates.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.tax-rates.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'settings.taxes.tax-rates.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.tax-rates.delete',
+    //     'sort' => 3
+    // ], [
+    //     'key' => 'promotions',
+    //     'name' => 'admin::app.acl.promotions',
+    //     'route' => 'admin.cart-rule.index',
+    //     'sort' => 7
+    // ], [
+    //     'key' => 'promotions.cart-rule',
+    //     'name' => 'admin::app.acl.cart-rules',
+    //     'route' => 'admin.cart-rule.index',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'promotions.cart-rule.create',
+    //     'name' => 'admin::app.acl.create',
+    //     'route' => 'admin.cart-rule.create',
+    //     'sort' => 1
+    // ], [
+    //     'key' => 'promotions.cart-rule.edit',
+    //     'name' => 'admin::app.acl.edit',
+    //     'route' => 'admin.cart-rule.edit',
+    //     'sort' => 2
+    // ], [
+    //     'key' => 'promotions.cart-rule.delete',
+    //     'name' => 'admin::app.acl.delete',
+    //     'route' => 'admin.cart-rule.delete',
+    //     'sort' => 3
     ],
 ];
 

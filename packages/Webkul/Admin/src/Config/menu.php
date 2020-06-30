@@ -79,12 +79,12 @@ return [
         'route' => 'admin.customer.index',
         'sort' => 1,
         'icon-class' => ''
-    ], [
-        'key' => 'customers.groups',
-        'name' => 'admin::app.layouts.groups',
-        'route' => 'admin.groups.index',
-        'sort' => 2,
-        'icon-class' => ''
+    // ], [
+    //     'key' => 'customers.groups',
+    //     'name' => 'admin::app.layouts.groups',
+    //     'route' => 'admin.groups.index',
+    //     'sort' => 2,
+    //     'icon-class' => ''
     // ], [
     //     'key' => 'customers.reviews',
     //     'name' => 'admin::app.layouts.reviews',
