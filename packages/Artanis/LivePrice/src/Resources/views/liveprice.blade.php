@@ -5,7 +5,7 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
      }
 
-          $getLast = "SELECT DATE_FORMAT(`last_updated`, '%d-%M-%Y %H:%i:%S') as dateLast FROM `gold_live_price_gap` GROUP BY `last_updated`";
+          $getLast = "SELECT DATE_FORMAT(`last_updated`, '%d-%M-%Y %H:%i:%S') as dateLast FROM `gold_live_price_gap` GROUP BY `last_updated` ORDER BY last_updated DESC";
 
           $getGAP = "SELECT * FROM gold_live_price_gap";
           $getGold24kBuys = "SELECT * FROM gold_live_price_24k WHERE buy IS NOT NULL ORDER BY gram ASC";
@@ -104,7 +104,7 @@
       ?>
       <section class="featured-products">
            <div class="featured-heading">
-              <b>Pokli Gold Price <br> (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @endforeach</font></b>
+              <b>Pokli Gold Price <br> (24 Hours Live)<br><font size="2">@foreach ($dataLast as $key => $value)(Last updated {{$value["dateLast"]}}) @break  @endforeach</font></b>
            </div>
            <div class="col-xs-12">
            </div>
