@@ -211,7 +211,6 @@
 
                 <br/>
 
-                <!-- Ordered By: {{ auth()->guard('admin')->user()->name }} -->
                 </pre>
             </td>
         </tr>
