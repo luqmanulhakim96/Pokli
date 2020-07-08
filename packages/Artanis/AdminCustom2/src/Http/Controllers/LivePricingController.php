@@ -50,6 +50,7 @@ class LivePricingController extends Controller
       // $gap_1_gram = GoldLivePriceGap::where('gram', '1')->update(['price' => request()->input('price_1_gram')]);
       $gap_1_gram = GoldLivePriceGap::find(1);
       $gap_1_gram->price =  request()->input('price_1_gram');
+      $gap_1_gram->buyback =  request()->input('price_buyback');
       $gap_1_gram->save();
 
       $gap_100_price = GoldLivePriceGap::find(2);
@@ -259,6 +260,7 @@ class LivePricingController extends Controller
       // $gap_1_gram = GoldLivePriceGap::where('gram', '1')->update(['price' => request()->input('price_1_gram')]);
       $gap_1_gram = SilverLivePriceSap::find(1);
       $gap_1_gram->price =  request()->input('price_1_gram');
+      $gap_1_gram->buyback =  request()->input('price_buyback');
       $gap_1_gram->save();
 
       $gap_100_price = SilverLivePriceSap::find(2);

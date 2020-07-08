@@ -102,8 +102,8 @@ class BuybackController extends Controller
         // $gold = DB::select('select * from live_price_api.gold_live_price_gap where gram = 1');
         // dd($silver);
         // $silver = DB::select('select * from live_price_api.silver_live_price_sap where gram != 1');
-        $gold_price = $gold->price;
-        $silver_price = $silver->price;
+        $gold_price = $gold->buyback;
+        $silver_price = $silver->buyback;
 
         // $current_price_datetime = '2019-12-18 16:44:57';
         $current_price_datetime = $gold->last_updated;
@@ -176,8 +176,8 @@ class BuybackController extends Controller
         $gold = DB::connection('mysql2')->table('gold_live_price_gap')->first();
         $silver = DB::connection('mysql2')->table('silver_live_price_sap')->first();
 
-        $gold_price = $gold->price;
-        $silver_price = $silver->price;
+        $gold_price = $gold->buyback;
+        $silver_price = $silver->buyback;
 
         $input = $request->all();
 

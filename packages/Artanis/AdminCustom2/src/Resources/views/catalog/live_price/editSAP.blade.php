@@ -43,6 +43,11 @@
                 <div slot="body">
                   @foreach($data as $gap)
                     @if($gap->gram == 100)
+                    <div class="control-group" :class="[errors.has('price_buyback') ? 'has-error' : '']">
+                        <label for="price_buyback" class="required">Buyback Price (RM) (1 gram)</label>
+                        <input type="text" v-validate="{ required: true, decimal:5 }" class="control" id="price_buyback" name="price_buyback" value="{{$gap->buyback}}" data-vv-as="&quot;Buyback Price (RM)&quot;"/>
+                        <span class="control-error" v-if="errors.has('price_buyback')">Only Numbers acceptable</span>
+                    </div>
                     <div class="control-group" :class="[errors.has('price_1_gram') ? 'has-error' : '']">
                         <label for="price_1_gram" class="required">{{$gap->gram}} gram</label>
                         <input type="text" v-validate="{ required: true, decimal:3 }" class="control" id="price_1_gram" name="price_1_gram" value="{{$gap->price}}" data-vv-as="&quot;Price 1 gram&quot;"/>
