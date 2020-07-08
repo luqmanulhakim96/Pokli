@@ -415,7 +415,7 @@ Route::group(['middleware' => ['web']], function () {
                 Route::post('/live-price-emas-wafer-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldWafer24k')->name('admincustom2.catalog.gold_live_price_gold_wafer_24k.update');
 
                 Route::get('/live-price-emas-smallbar-24k', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@indexGoldSmallBar24k')->defaults('_config', [
-                    'view' => 'admincustom2::catalog.live_price.indexGoldSmallBar24k'
+                    'view' => 'admincustom2::catalog.live_price.indexGoldSmallbar24k'
                 ])->name('admincustom2.catalog.gold_live_price_gold_smallbar_24k.index');
 
                 Route::get('/live-price-emas-smallbar-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldSmallBar24k')->defaults('_config', [
