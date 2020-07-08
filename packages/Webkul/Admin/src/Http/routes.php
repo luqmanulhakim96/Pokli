@@ -419,7 +419,7 @@ Route::group(['middleware' => ['web']], function () {
                 ])->name('admincustom2.catalog.gold_live_price_gold_smallbar_24k.index');
 
                 Route::get('/live-price-emas-smallbar-24k/edit', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@editGoldSmallBar24k')->defaults('_config', [
-                    'view' => 'admincustom2::catalog.live_price.editGoldSmallBar24k'
+                    'view' => 'admincustom2::catalog.live_price.editGoldSmallbar24k'
                 ])->name('admincustom2.catalog.gold_live_price_gold_smallbar_24k.edit');
 
                 Route::post('/live-price-emas-smallbar-24k/update', 'Artanis\AdminCustom2\Http\Controllers\LivePricingController@updateGoldSmallBar24k')->name('admincustom2.catalog.gold_live_price_gold_smallbar_24k.update');
