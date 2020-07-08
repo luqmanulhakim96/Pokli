@@ -22,7 +22,7 @@ class MYUncangEmasDataGrid extends DataGrid
     {
 
         $queryBuilder = DB::connection('mysql2')->table('gold_live_price_gap')
-                ->addSelect('gram' , 'price' , 'last_updated');
+                ->addSelect('gram' , 'price' , 'buyback', 'last_updated');
 
         $this->setQueryBuilder($queryBuilder);
 
@@ -55,6 +55,24 @@ class MYUncangEmasDataGrid extends DataGrid
             'searchable' => false,
             'sortable' => true,
             'filterable' => false
+        ]);
+
+        $this->addColumn([
+            'index' => 'buyback',
+            'label' => trans('Buyback Price'),
+            'type' => 'string',
+            'searchable' => true,
+            'closure' => true,
+            'sortable' => true,
+            'filterable' => true,
+            'wrapper' => function ($value) {
+                if ($value->buyback == '0') {
+                    return '-';
+                }
+                else{
+                  return $value->buyback;
+            }
+          }
         ]);
 
         $this->addColumn([

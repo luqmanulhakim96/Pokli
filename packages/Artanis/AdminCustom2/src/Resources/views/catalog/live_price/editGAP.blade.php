@@ -43,15 +43,20 @@
                 <div slot="body">
                   @foreach($data as $gap)
                     @if($gap->gram == 1)
+                    <div class="control-group" :class="[errors.has('price_buyback') ? 'has-error' : '']">
+                        <label for="price_buyback" class="required">Buyback Price (RM) (1 gram)</label>
+                        <input type="text" v-validate="{ required: true, decimal:5 }" class="control" id="price_buyback" name="price_buyback" value="{{$gap->buyback}}" data-vv-as="&quot;Buyback Price (RM)&quot;"/>
+                        <span class="control-error" v-if="errors.has('price_buyback')">Only Numbers acceptable</span>
+                    </div>
                     <div class="control-group" :class="[errors.has('price_1_gram') ? 'has-error' : '']">
-                        <label for="price_1_gram" class="required">{{$gap->gram}} gram</label>
+                        <label for="price_1_gram" class="required">{{$gap->gram}} gram (Sell Price)</label>
                         <input type="text" v-validate="{ required: true, decimal:3 }" class="control" id="price_1_gram" name="price_1_gram" value="{{$gap->price}}" data-vv-as="&quot;Price 1 gram&quot;"/>
                         <span class="control-error" v-if="errors.has('price_1_gram')">Only Numbers acceptable</span>
                     </div>
                     @endif
                     @if($gap->gram != 1)
                     <div class="control-group" :class="[errors.has('price_100_price') ? 'has-error' : '']">
-                        <label for="price_100_price" class="required">RM {{$gap->price}}</label>
+                        <label for="price_100_price" class="required">RM {{$gap->price}} (Sell Price)</label>
                         <input type="text" v-validate="{ required: true, decimal:5 }" class="control" id="price_100_price" name="price_100_price" value="{{$gap->gram}}" data-vv-as="&quot;Price RN100&quot;"/>
                         <span class="control-error" v-if="errors.has('price_100_price')">Only Numbers acceptable</span>
                     </div>
