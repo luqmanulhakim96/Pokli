@@ -44,16 +44,25 @@
   $get_datetime = "//div[@id='red-table2']";
   $get_datetime_array = $xpath->query($get_datetime);
   $date_and_time = $get_datetime_array->item(0)->textContent;
-
+  echo $date_and_time;
+  echo "<br>";
   //remove ")" in the string with whitespace
   $date_and_time_new = str_replace(")","",$date_and_time);
+  echo $date_and_time_new;
+  echo "<br>";
 
   //only pick the date which located after 49 words
-  $date_and_time_substr = substr($date_and_time_new ,49);
+  // $date_and_time_substr = substr($date_and_time_new ,48);
+  $date_and_time_substr = substr($date_and_time_new ,114);
+  echo $date_and_time_substr;
+  echo "<br>";
 
   //convert $date_and_time_substr to datetime for db compatibility
   $datetime_gold_updated = date("Y/m/d H:i:s", strtotime($date_and_time_substr));
+  echo "convert: ";
+  echo $datetime_gold_updated;
   $date_is_empty = False;
+  echo "<br>";
 
   if(empty($datetime_gold_updated))
   {
@@ -82,8 +91,10 @@
 
   ////////////////////////////////////////////////--CURL 24K--////////////////////////////////////////////////
   // get the 24k gold current price
-  // $get_24k_price = "//table[@id='beardgbt2']";
-  $get_24k_price = "//div[@id='goldbar-div-table2']";
+  // $get_24k_price = "//table[@id='dramagdvt2']";
+  // $get_24k_price = "//div[@id='goldbar-div-table2']";
+  $get_24k_price = "//div[@id='arenagdvt2']";
+
   $get_24k_price_array = $xpath->query($get_24k_price);
 
   $gold_24k_price = $get_24k_price_array->item(0)->textContent;

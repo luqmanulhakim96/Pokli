@@ -308,7 +308,7 @@
         $sql = "UPDATE product_flat, product_attribute_values
                 SET product_flat.price='".$get_gold_24k_20g_price."', product_flat.min_price='".$get_gold_24k_20g_price."',
                 product_flat.max_price='".$get_gold_24k_20g_price."', product_attribute_values.float_value='".$get_gold_24k_20g_price."'
-                WHERE product_flat.price_auto_update_label='LBMA Gold Bar (24k) - 10 gram'
+                WHERE product_flat.price_auto_update_label='LBMA Gold Bar (24k) - 20 gram'
                 AND product_flat.id = product_attribute_values.product_id AND product_attribute_values.attribute_id = '11'";
 
         if ($conn->query($sql) === TRUE) {
@@ -333,8 +333,8 @@
       else if($get_product_flat[$i]['price_auto_update_label'] == "LBMA Gold Bar (24k) - 100 gram"){
         $sql = "UPDATE product_flat, product_attribute_values
                 SET product_flat.price='".$get_gold_24k_100g_price."', product_flat.min_price='".$get_gold_24k_100g_price."',
-                product_flat.max_price='".$get_gold_24k_100g_price."', product_attribute_values.float_value='".$get_gold_24k_100g_prices."'
-                WHERE product_flat.price_auto_update_label='LBMA Gold Bar (24k) - 50 gram'
+                product_flat.max_price='".$get_gold_24k_100g_price."', product_attribute_values.float_value='".$get_gold_24k_100g_price."'
+                WHERE product_flat.price_auto_update_label='LBMA Gold Bar (24k) - 100 gram'
                 AND product_flat.id = product_attribute_values.product_id AND product_attribute_values.attribute_id = '11'";
 
         if ($conn->query($sql) === TRUE) {
@@ -343,6 +343,19 @@
             echo "Error updating record: " . $conn->error;
         }
       }
+      // else if($get_product_flat[$i]['price_auto_update_label'] == "LBMA Gold Bar (24k) - 100 gram"){
+      //   $sql = "UPDATE product_flat, product_attribute_values
+      //           SET product_flat.price='".$get_gold_24k_100g_price."', product_flat.min_price='".$get_gold_24k_100g_price."',
+      //           product_flat.max_price='".$get_gold_24k_100g_price."', product_attribute_values.float_value='".$get_gold_24k_100g_prices."'
+      //           WHERE product_flat.price_auto_update_label='LBMA Gold Bar (24k) - 100 gram'
+      //           AND product_flat.id = product_attribute_values.product_id AND product_attribute_values.attribute_id = '11'";
+      //
+      //   if ($conn->query($sql) === TRUE) {
+      //       echo "Price LBMA Gold Bar (24k) - 100 gram updated successfully <br>";
+      //   } else {
+      //       echo "Error updating record: " . $conn->error;
+      //   }
+      // }
       else if($get_product_flat[$i]['price_auto_update_label'] == "LBMA Gold Bar (24k) - 250 gram"){
         $sql = "UPDATE product_flat, product_attribute_values
                 SET product_flat.price='".$get_gold_24k_250g_price."', product_flat.min_price='".$get_gold_24k_250g_price."',
