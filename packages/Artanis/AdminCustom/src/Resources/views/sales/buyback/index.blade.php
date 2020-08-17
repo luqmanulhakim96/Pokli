@@ -11,19 +11,19 @@
                 <h1>{{ __('Buyback') }}</h1>
             </div>
 
-            {{-- <div class="page-action">
+            <div class="page-action">
                 <div class="export-import" @click="showModal('downloadDataGrid')">
                     <i class="export-icon"></i>
                     <span>
                         {{ __('admin::app.export.export') }}
                     </span>
                 </div>
-            </div> --}}
+            </div>
         </div>
 
         <div class="page-content">
             @inject('buybackGrid', 'Artanis\AdminCustom\DataGrids\BuybackDataGrid')
-            
+
             {!! $buybackGrid->render() !!}
         </div>
     </div>

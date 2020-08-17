@@ -10,6 +10,7 @@ use Webkul\Core\Eloquent\Repository;
 use Webkul\Sales\Contracts\Order;
 use Webkul\Sales\Repositories\OrderItemRepository;
 use Webkul\Core\Models\CoreConfig;
+use Webkul\Customer\Models\Customer;
 
 /**
  * Order Reposotory
@@ -111,9 +112,9 @@ class BuybackRepository extends Repository
             $order->save();
             return true;
         }
-        else   
+        else
             return false;
-        
+
         // dd($order);
 
     }
@@ -136,11 +137,22 @@ class BuybackRepository extends Repository
         $user = new GoldSilverHistory;
         $plus = $user->where([['customer_id',$history->customer_id],['status','completed'],['product_type',$history->product_type],['activity','purchase']])->sum('quantity');
         $minus = $user->where([['customer_id',$history->customer_id],['status','completed'],['product_type',$history->product_type],['activity', 'buyback']])->sum('quantity');
-        $balance = $plus-$minus;
-        // dd($history->quantity);
+
+        if($history->product_type == 'gold')
+        {
+          $purchase_gold = Customer::where('id', $history->customer_id)->sum('total_gold');
+          $balance = $plus+$purchase_gold-$minus;
+
+        }
+        else {
+          $purchase_silver = Customer::where('id', $history->customer_id)->sum('total_silver');
+          $balance = $plus+$purchase_silver-$minus;
+        }
+
+        // dd($balance);
         if($history->quantity<=$balance)
             return true;
-        else    
+        else
             return false;
     }
 
@@ -178,7 +190,7 @@ class BuybackRepository extends Repository
         // $lastId = $lastOrder ? $lastOrder->id : 0;
 
         // if ($invoiceNumberLength && ( $invoiceNumberPrefix || $invoiceNumberSuffix) ) {
-        //     // Default one is not accurate. 
+        //     // Default one is not accurate.
         //     // Source https://stackoverflow.com/questions/33602376/php-mysql-generate-invoice-number-from-an-integer-from-the-database
         //     // $invoiceNumber = $invoiceNumberPrefix . sprintf("%0{$invoiceNumberLength}d", 0) . ($lastId + 1) . $invoiceNumberSuffix;
         //     $invoiceNumber = sprintf("%s%s%s", $invoiceNumberPrefix, str_pad($lastId+1, 6, "0", STR_PAD_LEFT), $invoiceNumberSuffix);
@@ -195,7 +207,7 @@ class BuybackRepository extends Repository
         $prefix = 'BB';
         $lastPurchase = new GoldSilverHistory;
 
-        $increment_id = $lastPurchase->where('activity', 'buyback')->orderBy('invoice_id', 'desc')->limit(1)->first()->invoice_id 
+        $increment_id = $lastPurchase->where('activity', 'buyback')->orderBy('invoice_id', 'desc')->limit(1)->first()->invoice_id
                         ? $lastPurchase->where('activity', 'buyback')->orderBy('invoice_id', 'desc')->limit(1)->first()->invoice_id : '000000';
 
         $invoiceNumber = preg_replace('/[^0-9]/', '', $increment_id)+1;
