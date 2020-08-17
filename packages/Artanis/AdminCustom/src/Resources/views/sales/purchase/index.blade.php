@@ -11,19 +11,19 @@
                 <h1>Purchase</h1>
             </div>
 
-            {{-- <div class="page-action">
+            <div class="page-action">
                 <div class="export-import" @click="showModal('downloadDataGrid')">
                     <i class="export-icon"></i>
                     <span>
                         {{ __('admin::app.export.export') }}
                     </span>
                 </div>
-            </div> --}}
+            </div>
         </div>
 
         <div class="page-content">
             @inject('purchaseGrid', 'Artanis\AdminCustom\DataGrids\PurchaseDataGrid')
-            
+
             {!! $purchaseGrid->render() !!}
         </div>
     </div>
