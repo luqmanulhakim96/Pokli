@@ -17,10 +17,35 @@ return [
         'route' => 'admin.sales.orders.index',
         'sort' => 1
     ], [
+        'key' => 'sales.orders.view',
+        'name' => 'View',
+        'route' => 'admin.sales.orders.view',
+        'sort' => 1
+    ], [
+        'key' => 'sales.orders.cancel',
+        'name' => 'Cancel',
+        'route' => 'admin.sales.orders.cancel',
+        'sort' => 2
+    ], [
         'key' => 'sales.invoices',
         'name' => 'admin::app.acl.invoices',
         'route' => 'admin.sales.invoices.index',
         'sort' => 2
+    ], [
+        'key' => 'sales.invoices.create',
+        'name' => 'Create',
+        'route' => 'admin.sales.invoices.create',
+        'sort' => 1
+    ], [
+        'key' => 'sales.invoices.view',
+        'name' => 'View',
+        'route' => 'admin.sales.invoices.view',
+        'sort' => 2
+    ], [
+        'key' => 'sales.invoices.print',
+        'name' => 'Print',
+        'route' => 'admin.sales.invoices.print',
+        'sort' => 3
     ], [
         'key' => 'sales.shipments',
         'name' => 'admin::app.acl.shipments',
@@ -32,15 +57,70 @@ return [
         'route' => 'admincustom.sales.purchase.index',
         'sort' => 4
     ], [
+        'key' => 'sales.purchase.view',
+        'name' => 'View',
+        'route' => 'admincustom.sales.purchase.view',
+        'sort' => 1
+    ], [
+        'key' => 'sales.purchase.print',
+        'name' => 'Print',
+        'route' => 'admincustom.sales.purchase.print',
+        'sort' => 2
+    ], [
+        'key' => 'sales.purchase.cancel',
+        'name' => 'Cancel',
+        'route' => 'admincustom.sales.purchase.cancel',
+        'sort' => 3
+    ], [
+        'key' => 'sales.purchase.confirm',
+        'name' => 'Confirm',
+        'route' => 'admincustom.sales.purchase.confirm',
+        'sort' => 4
+    ], [
         'key' => 'sales.buyback',
         'name' => 'MyUncang Buyback',
         'route' => 'admincustom.sales.buyback.index',
         'sort' => 5,
     ], [
+        'key' => 'sales.buyback.view',
+        'name' => 'View',
+        'route' => 'admincustom.sales.buyback.view',
+        'sort' => 1,
+    ], [
+        'key' => 'sales.buyback.cancel',
+        'name' => 'Cancel',
+        'route' => 'admincustom.sales.buyback.cancel',
+        'sort' => 2,
+    ], [
+        'key' => 'sales.buyback.confirm',
+        'name' => 'Confirm',
+        'route' => 'admincustom.sales.buyback.confirm',
+        'sort' => 3,
+    ], [
+        'key' => 'sales.buyback.print',
+        'name' => 'Print',
+        'route' => 'admincustom.sales.buyback.print',
+        'sort' => 4,
+    ], [
+        'key' => 'sales.buyback.upload',
+        'name' => 'Upload',
+        'route' => 'admincustom.sales.buyback.upload',
+        'sort' => 5,
+    ], [
+        'key' => 'sales.buyback.upload.update',
+        'name' => 'Update Receipt',
+        'route' => 'admincustom.sales.buyback.upload.update',
+        'sort' => 1,
+    ], [
         'key' => 'sales.easy_purchase_payment',
         'name' => 'Easy Purchase Payment Record',
         'route' => 'admincustom2.catalog.easy_purchase_payment.index',
         'sort' => 6,
+    ], [
+        'key' => 'sales.easy_purchase_payment.update_status',
+        'name' => 'Update Status',
+        'route' => 'admincustom2.catalog.easy_purchase_payment.update_status',
+        'sort' => 1,
     ], [
         'key' => 'catalog',
         'name' => 'admin::app.acl.catalog',
