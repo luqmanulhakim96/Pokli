@@ -166,12 +166,12 @@
                                 </div>
                                 <div class="account-balance-right ">
                                     <img class="mobile-hide" src="https://gap.publicgold.com.my/assets/images/singlegoldbar.png" alt="" style="float:left;">
-                                    <span class="font-weight-bold title-small" style="line-height:1.5em"><u>GAP (gm)</u><br>
+                                    <span class="font-weight-bold title-small" style="line-height:1.5em"><u>My Uncang Emas (gm)</u><br>
                                     {{$gold_balance==0 ? '0.0000' : $gold_balance}}</span>
                                 </div>
                                 <div class="account-balance-right">
                                     <img class="mobile-hide" src="https://gap.publicgold.com.my/assets/images/singlesilverbar.png" alt="" style="float:left;">
-                                    <span class="font-weight-bold title-small" style="line-height:1.5em"><u>SAP (gm)</u><br>
+                                    <span class="font-weight-bold title-small" style="line-height:1.5em"><u>My Uncang Perak (gm)</u><br>
                                     {{$silver_balance==0 ? '0.0000' : $silver_balance}}</span>
                                 </div>
                             </div>
